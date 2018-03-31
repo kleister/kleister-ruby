@@ -17,7 +17,5 @@
 source "https://rubygems.org"
 gemspec
 
-gem "etc", platforms: :ruby_25
-
 group :development do
 end
