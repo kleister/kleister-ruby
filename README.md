@@ -20,7 +20,7 @@ TBD
 
 ## Security
 
-If you find a security issue please contact thomas@webhippie.de first.
+If you find a security issue please contact kleister@webhippie.de first.
 
 
 ## Contributing
@@ -41,5 +41,5 @@ Apache-2.0
 ## Copyright
 
 ```
-Copyright (c) 2018 Thomas Boerger <http://www.webhippie.de>
+Copyright (c) 2018 Thomas Boerger <thomas@webhippie.de>
 ```
