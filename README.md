@@ -1,6 +1,6 @@
 # Kleister: SDK for Ruby
 
-[![Build Status](http://github.dronehippie.de/api/badges/kleister/kleister-ruby/status.svg)](http://github.dronehippie.de/kleister/kleister-ruby)
+[![Build Status](http://drone.kleister.tech/api/badges/kleister/kleister-ruby/status.svg)](http://drone.kleister.tech/kleister/kleister-ruby)
 [![Stories in Ready](https://badge.waffle.io/kleister/kleister-api.svg?label=ready&title=Ready)](http://waffle.io/kleister/kleister-api)
 [![Join the Matrix chat at https://matrix.to/#/#kleister:matrix.org](https://img.shields.io/badge/matrix-%23kleister%3Amatrix.org-7bc9a4.svg)](https://matrix.to/#/#kleister:matrix.org)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/fdecdec5d38648c19470368426b2f064)](https://www.codacy.com/app/kleister/kleister-ruby?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=kleister/kleister-ruby&amp;utm_campaign=Badge_Grade)
