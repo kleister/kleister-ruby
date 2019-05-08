@@ -21,5 +21,5 @@
 #
 module Kleister
   autoload :Version,
-    File.expand_path("kleister/version", __DIR__)
+           File.expand_path("kleister/version", __DIR__)
 end
