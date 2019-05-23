@@ -10,7 +10,7 @@ OpenAPI Generator version: 4.0.1-SNAPSHOT
 
 =end
 
-if ENV.key? 'CODACY_TOKEN'
+if ENV.key? 'CODACY_PROJECT_TOKEN'
   require 'codacy-coverage'
   Codacy::Reporter.start
 end

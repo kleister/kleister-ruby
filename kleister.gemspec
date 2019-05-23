@@ -12,31 +12,31 @@ OpenAPI Generator version: 4.0.1-SNAPSHOT
 
 =end
 
-$LOAD_PATH.push File.expand_path("../lib", __FILE__)
-require "kleister/version"
+$LOAD_PATH.push File.expand_path('../lib', __FILE__)
+require 'kleister/version'
 
 Gem::Specification.new do |s|
-  s.name = "kleister"
+  s.name = 'kleister'
   s.version = Kleister::VERSION
-  s.date = Time.now.utc.strftime("%F")
+  s.date = Time.now.utc.strftime('%F')
   s.platform = Gem::Platform::RUBY
 
-  s.authors = ["Thomas Boerger"]
-  s.email = ["thomas@webhippie.de"]
-  s.homepage = "https://github.com/kleister/kleister-ruby"
-  s.summary = "Manage mod packs for Minecraft"
-  s.description = "A client library for the Kleister API generated from the OpenAPI spec."
+  s.authors = ['Thomas Boerger']
+  s.email = ['thomas@webhippie.de']
+  s.homepage = 'https://github.com/kleister/kleister-ruby'
+  s.summary = 'Manage mod packs for Minecraft'
+  s.description = 'A client library for the Kleister API generated from the OpenAPI spec.'
   s.license = 'Apache-2.0'
 
-  s.files = ["CHANGELOG.md", "CONTRIBUTING.md", "DCO", "README.md", "LICENSE"]
-  s.files += Dir.glob("lib/**/*")
+  s.files = ['CHANGELOG.md', 'CONTRIBUTING.md', 'DCO', 'README.md', 'LICENSE']
+  s.files += Dir.glob('lib/**/*')
 
-  s.test_files = Dir.glob("spec/**/*")
+  s.test_files = Dir.glob('spec/**/*')
 
   s.executables = []
-  s.require_paths = ["lib"]
+  s.require_paths = ['lib']
 
-  s.required_ruby_version = ">= 2.5.0"
+  s.required_ruby_version = '>= 2.5.0'
 
   s.add_runtime_dependency 'typhoeus', '~> 1.0', '>= 1.0.1'
   s.add_runtime_dependency 'json', '~> 2.1', '>= 2.1.0'

@@ -2,7 +2,7 @@
 {{> api_info}}
 =end
 
-if ENV.key? 'CODACY_TOKEN'
+if ENV.key? 'CODACY_PROJECT_TOKEN'
   begin
     require 'codacy-coverage'
     Codacy::Reporter.start
