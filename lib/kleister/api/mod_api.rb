@@ -23,7 +23,7 @@ module Kleister
     # @param mod_id [String] A mod UUID or slug
     # @param params [ModTeamParams] The mod team data to assign
     # @param [Hash] opts the optional parameters
-    # @return [Object]
+    # @return [GeneralError]
     def append_mod_to_team(mod_id, params, opts = {})
       data, _status_code, _headers = append_mod_to_team_with_http_info(mod_id, params, opts)
       data
@@ -33,7 +33,7 @@ module Kleister
     # @param mod_id [String] A mod UUID or slug
     # @param params [ModTeamParams] The mod team data to assign
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Object, Integer, Hash)>] Object data, response status code and response headers
+    # @return [Array<(GeneralError, Integer, Hash)>] GeneralError data, response status code and response headers
     def append_mod_to_team_with_http_info(mod_id, params, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModApi.append_mod_to_team ...'
@@ -66,7 +66,7 @@ module Kleister
       post_body = opts[:body] || @api_client.object_to_http_body(params) 
 
       # return_type
-      return_type = opts[:return_type] || 'Object' 
+      return_type = opts[:return_type] || 'GeneralError' 
 
       # auth_names
       auth_names = opts[:auth_names] || []
@@ -91,7 +91,7 @@ module Kleister
     # @param mod_id [String] A mod UUID or slug
     # @param params [ModUserParams] The mod user data to assign
     # @param [Hash] opts the optional parameters
-    # @return [Object]
+    # @return [GeneralError]
     def append_mod_to_user(mod_id, params, opts = {})
       data, _status_code, _headers = append_mod_to_user_with_http_info(mod_id, params, opts)
       data
@@ -101,7 +101,7 @@ module Kleister
     # @param mod_id [String] A mod UUID or slug
     # @param params [ModUserParams] The mod user data to assign
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Object, Integer, Hash)>] Object data, response status code and response headers
+    # @return [Array<(GeneralError, Integer, Hash)>] GeneralError data, response status code and response headers
     def append_mod_to_user_with_http_info(mod_id, params, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModApi.append_mod_to_user ...'
@@ -134,7 +134,7 @@ module Kleister
       post_body = opts[:body] || @api_client.object_to_http_body(params) 
 
       # return_type
-      return_type = opts[:return_type] || 'Object' 
+      return_type = opts[:return_type] || 'GeneralError' 
 
       # auth_names
       auth_names = opts[:auth_names] || []
@@ -160,7 +160,7 @@ module Kleister
     # @param version_id [String] A version UUID or slug
     # @param params [VersionBuildParams] The build data to append to version
     # @param [Hash] opts the optional parameters
-    # @return [Object]
+    # @return [GeneralError]
     def append_version_to_build(mod_id, version_id, params, opts = {})
       data, _status_code, _headers = append_version_to_build_with_http_info(mod_id, version_id, params, opts)
       data
@@ -171,7 +171,7 @@ module Kleister
     # @param version_id [String] A version UUID or slug
     # @param params [VersionBuildParams] The build data to append to version
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Object, Integer, Hash)>] Object data, response status code and response headers
+    # @return [Array<(GeneralError, Integer, Hash)>] GeneralError data, response status code and response headers
     def append_version_to_build_with_http_info(mod_id, version_id, params, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModApi.append_version_to_build ...'
@@ -208,7 +208,7 @@ module Kleister
       post_body = opts[:body] || @api_client.object_to_http_body(params) 
 
       # return_type
-      return_type = opts[:return_type] || 'Object' 
+      return_type = opts[:return_type] || 'GeneralError' 
 
       # auth_names
       auth_names = opts[:auth_names] || []
@@ -362,7 +362,7 @@ module Kleister
     # Delete a specific mod
     # @param mod_id [String] A mod UUID or slug
     # @param [Hash] opts the optional parameters
-    # @return [Object]
+    # @return [GeneralError]
     def delete_mod(mod_id, opts = {})
       data, _status_code, _headers = delete_mod_with_http_info(mod_id, opts)
       data
@@ -371,7 +371,7 @@ module Kleister
     # Delete a specific mod
     # @param mod_id [String] A mod UUID or slug
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Object, Integer, Hash)>] Object data, response status code and response headers
+    # @return [Array<(GeneralError, Integer, Hash)>] GeneralError data, response status code and response headers
     def delete_mod_with_http_info(mod_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModApi.delete_mod ...'
@@ -398,7 +398,7 @@ module Kleister
       post_body = opts[:body] 
 
       # return_type
-      return_type = opts[:return_type] || 'Object' 
+      return_type = opts[:return_type] || 'GeneralError' 
 
       # auth_names
       auth_names = opts[:auth_names] || []
@@ -423,7 +423,7 @@ module Kleister
     # @param mod_id [String] A mod UUID or slug
     # @param params [ModTeamParams] The mod team data to delete
     # @param [Hash] opts the optional parameters
-    # @return [Object]
+    # @return [GeneralError]
     def delete_mod_from_team(mod_id, params, opts = {})
       data, _status_code, _headers = delete_mod_from_team_with_http_info(mod_id, params, opts)
       data
@@ -433,7 +433,7 @@ module Kleister
     # @param mod_id [String] A mod UUID or slug
     # @param params [ModTeamParams] The mod team data to delete
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Object, Integer, Hash)>] Object data, response status code and response headers
+    # @return [Array<(GeneralError, Integer, Hash)>] GeneralError data, response status code and response headers
     def delete_mod_from_team_with_http_info(mod_id, params, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModApi.delete_mod_from_team ...'
@@ -466,7 +466,7 @@ module Kleister
       post_body = opts[:body] || @api_client.object_to_http_body(params) 
 
       # return_type
-      return_type = opts[:return_type] || 'Object' 
+      return_type = opts[:return_type] || 'GeneralError' 
 
       # auth_names
       auth_names = opts[:auth_names] || []
@@ -491,7 +491,7 @@ module Kleister
     # @param mod_id [String] A mod UUID or slug
     # @param params [ModUserParams] The mod user data to delete
     # @param [Hash] opts the optional parameters
-    # @return [Object]
+    # @return [GeneralError]
     def delete_mod_from_user(mod_id, params, opts = {})
       data, _status_code, _headers = delete_mod_from_user_with_http_info(mod_id, params, opts)
       data
@@ -501,7 +501,7 @@ module Kleister
     # @param mod_id [String] A mod UUID or slug
     # @param params [ModUserParams] The mod user data to delete
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Object, Integer, Hash)>] Object data, response status code and response headers
+    # @return [Array<(GeneralError, Integer, Hash)>] GeneralError data, response status code and response headers
     def delete_mod_from_user_with_http_info(mod_id, params, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModApi.delete_mod_from_user ...'
@@ -534,7 +534,7 @@ module Kleister
       post_body = opts[:body] || @api_client.object_to_http_body(params) 
 
       # return_type
-      return_type = opts[:return_type] || 'Object' 
+      return_type = opts[:return_type] || 'GeneralError' 
 
       # auth_names
       auth_names = opts[:auth_names] || []
@@ -559,7 +559,7 @@ module Kleister
     # @param mod_id [String] A mod UUID or slug
     # @param version_id [String] A version UUID or slug
     # @param [Hash] opts the optional parameters
-    # @return [Object]
+    # @return [GeneralError]
     def delete_version(mod_id, version_id, opts = {})
       data, _status_code, _headers = delete_version_with_http_info(mod_id, version_id, opts)
       data
@@ -569,7 +569,7 @@ module Kleister
     # @param mod_id [String] A mod UUID or slug
     # @param version_id [String] A version UUID or slug
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Object, Integer, Hash)>] Object data, response status code and response headers
+    # @return [Array<(GeneralError, Integer, Hash)>] GeneralError data, response status code and response headers
     def delete_version_with_http_info(mod_id, version_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModApi.delete_version ...'
@@ -600,7 +600,7 @@ module Kleister
       post_body = opts[:body] 
 
       # return_type
-      return_type = opts[:return_type] || 'Object' 
+      return_type = opts[:return_type] || 'GeneralError' 
 
       # auth_names
       auth_names = opts[:auth_names] || []
@@ -626,7 +626,7 @@ module Kleister
     # @param version_id [String] A version UUID or slug
     # @param params [VersionBuildParams] The build data to unlink from version
     # @param [Hash] opts the optional parameters
-    # @return [Object]
+    # @return [GeneralError]
     def delete_version_from_build(mod_id, version_id, params, opts = {})
       data, _status_code, _headers = delete_version_from_build_with_http_info(mod_id, version_id, params, opts)
       data
@@ -637,7 +637,7 @@ module Kleister
     # @param version_id [String] A version UUID or slug
     # @param params [VersionBuildParams] The build data to unlink from version
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Object, Integer, Hash)>] Object data, response status code and response headers
+    # @return [Array<(GeneralError, Integer, Hash)>] GeneralError data, response status code and response headers
     def delete_version_from_build_with_http_info(mod_id, version_id, params, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModApi.delete_version_from_build ...'
@@ -674,7 +674,7 @@ module Kleister
       post_body = opts[:body] || @api_client.object_to_http_body(params) 
 
       # return_type
-      return_type = opts[:return_type] || 'Object' 
+      return_type = opts[:return_type] || 'GeneralError' 
 
       # auth_names
       auth_names = opts[:auth_names] || []
@@ -999,7 +999,7 @@ module Kleister
     # @param mod_id [String] A mod UUID or slug
     # @param params [ModTeamParams] The mod team data to update
     # @param [Hash] opts the optional parameters
-    # @return [Object]
+    # @return [GeneralError]
     def permit_mod_team(mod_id, params, opts = {})
       data, _status_code, _headers = permit_mod_team_with_http_info(mod_id, params, opts)
       data
@@ -1009,7 +1009,7 @@ module Kleister
     # @param mod_id [String] A mod UUID or slug
     # @param params [ModTeamParams] The mod team data to update
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Object, Integer, Hash)>] Object data, response status code and response headers
+    # @return [Array<(GeneralError, Integer, Hash)>] GeneralError data, response status code and response headers
     def permit_mod_team_with_http_info(mod_id, params, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModApi.permit_mod_team ...'
@@ -1042,7 +1042,7 @@ module Kleister
       post_body = opts[:body] || @api_client.object_to_http_body(params) 
 
       # return_type
-      return_type = opts[:return_type] || 'Object' 
+      return_type = opts[:return_type] || 'GeneralError' 
 
       # auth_names
       auth_names = opts[:auth_names] || []
@@ -1067,7 +1067,7 @@ module Kleister
     # @param mod_id [String] A mod UUID or slug
     # @param params [ModUserParams] The mod user data to update
     # @param [Hash] opts the optional parameters
-    # @return [Object]
+    # @return [GeneralError]
     def permit_mod_user(mod_id, params, opts = {})
       data, _status_code, _headers = permit_mod_user_with_http_info(mod_id, params, opts)
       data
@@ -1077,7 +1077,7 @@ module Kleister
     # @param mod_id [String] A mod UUID or slug
     # @param params [ModUserParams] The mod user data to update
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Object, Integer, Hash)>] Object data, response status code and response headers
+    # @return [Array<(GeneralError, Integer, Hash)>] GeneralError data, response status code and response headers
     def permit_mod_user_with_http_info(mod_id, params, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModApi.permit_mod_user ...'
@@ -1110,7 +1110,7 @@ module Kleister
       post_body = opts[:body] || @api_client.object_to_http_body(params) 
 
       # return_type
-      return_type = opts[:return_type] || 'Object' 
+      return_type = opts[:return_type] || 'GeneralError' 
 
       # auth_names
       auth_names = opts[:auth_names] || []

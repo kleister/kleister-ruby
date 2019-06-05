@@ -1,4 +1,4 @@
-# Kleister::InlineObject
+# Kleister::AuthLogin
 
 ## Properties
 
@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ```ruby
 require 'Kleister'
 
-instance = Kleister::InlineObject.new(username: null,
+instance = Kleister::AuthLogin.new(username: null,
                                  password: null)
 ```
 

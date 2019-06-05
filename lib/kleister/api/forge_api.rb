@@ -331,7 +331,7 @@ module Kleister
 
     # Update the available Forge versions
     # @param [Hash] opts the optional parameters
-    # @return [Object]
+    # @return [GeneralError]
     def update_forge(opts = {})
       data, _status_code, _headers = update_forge_with_http_info(opts)
       data
@@ -339,7 +339,7 @@ module Kleister
 
     # Update the available Forge versions
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Object, Integer, Hash)>] Object data, response status code and response headers
+    # @return [Array<(GeneralError, Integer, Hash)>] GeneralError data, response status code and response headers
     def update_forge_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ForgeApi.update_forge ...'
@@ -362,7 +362,7 @@ module Kleister
       post_body = opts[:body] 
 
       # return_type
-      return_type = opts[:return_type] || 'Object' 
+      return_type = opts[:return_type] || 'GeneralError' 
 
       # auth_names
       auth_names = opts[:auth_names] || []

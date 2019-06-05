@@ -1,6 +1,6 @@
 # Kleister::TeamApi
 
-All URIs are relative to *http://http:/api/v1*
+All URIs are relative to *http://try.kleister.tech/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -26,7 +26,7 @@ Method | HTTP request | Description
 
 ## append_team_to_mod
 
-> Object append_team_to_mod(team_id, params)
+> GeneralError append_team_to_mod(team_id, params)
 
 Assign a mod to team
 
@@ -59,7 +59,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**GeneralError**](GeneralError.md)
 
 ### Authorization
 
@@ -73,7 +73,7 @@ No authorization required
 
 ## append_team_to_pack
 
-> Object append_team_to_pack(team_id, params)
+> GeneralError append_team_to_pack(team_id, params)
 
 Assign a pack to team
 
@@ -106,7 +106,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**GeneralError**](GeneralError.md)
 
 ### Authorization
 
@@ -120,7 +120,7 @@ No authorization required
 
 ## append_team_to_user
 
-> Object append_team_to_user(team_id, params)
+> GeneralError append_team_to_user(team_id, params)
 
 Assign a user to team
 
@@ -153,7 +153,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**GeneralError**](GeneralError.md)
 
 ### Authorization
 
@@ -212,7 +212,7 @@ No authorization required
 
 ## delete_team
 
-> Object delete_team(team_id)
+> GeneralError delete_team(team_id)
 
 Delete a specific team
 
@@ -243,7 +243,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**GeneralError**](GeneralError.md)
 
 ### Authorization
 
@@ -257,7 +257,7 @@ No authorization required
 
 ## delete_team_from_mod
 
-> Object delete_team_from_mod(team_id, params)
+> GeneralError delete_team_from_mod(team_id, params)
 
 Remove a mod from team
 
@@ -290,7 +290,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**GeneralError**](GeneralError.md)
 
 ### Authorization
 
@@ -304,7 +304,7 @@ No authorization required
 
 ## delete_team_from_pack
 
-> Object delete_team_from_pack(team_id, params)
+> GeneralError delete_team_from_pack(team_id, params)
 
 Remove a pack from team
 
@@ -337,7 +337,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**GeneralError**](GeneralError.md)
 
 ### Authorization
 
@@ -351,7 +351,7 @@ No authorization required
 
 ## delete_team_from_user
 
-> Object delete_team_from_user(team_id, params)
+> GeneralError delete_team_from_user(team_id, params)
 
 Remove a user from team
 
@@ -384,7 +384,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**GeneralError**](GeneralError.md)
 
 ### Authorization
 
@@ -574,7 +574,7 @@ No authorization required
 
 ## permit_team_mod
 
-> Object permit_team_mod(team_id, params)
+> GeneralError permit_team_mod(team_id, params)
 
 Update mod perms for team
 
@@ -607,7 +607,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**GeneralError**](GeneralError.md)
 
 ### Authorization
 
@@ -621,7 +621,7 @@ No authorization required
 
 ## permit_team_pack
 
-> Object permit_team_pack(team_id, params)
+> GeneralError permit_team_pack(team_id, params)
 
 Update pack perms for team
 
@@ -654,7 +654,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**GeneralError**](GeneralError.md)
 
 ### Authorization
 
@@ -668,7 +668,7 @@ No authorization required
 
 ## permit_team_user
 
-> Object permit_team_user(team_id, params)
+> GeneralError permit_team_user(team_id, params)
 
 Update user perms for team
 
@@ -701,7 +701,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**GeneralError**](GeneralError.md)
 
 ### Authorization
 

@@ -23,7 +23,7 @@ module Kleister
     # @param team_id [String] A team UUID or slug
     # @param params [TeamModParams] The team mod data to assign
     # @param [Hash] opts the optional parameters
-    # @return [Object]
+    # @return [GeneralError]
     def append_team_to_mod(team_id, params, opts = {})
       data, _status_code, _headers = append_team_to_mod_with_http_info(team_id, params, opts)
       data
@@ -33,7 +33,7 @@ module Kleister
     # @param team_id [String] A team UUID or slug
     # @param params [TeamModParams] The team mod data to assign
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Object, Integer, Hash)>] Object data, response status code and response headers
+    # @return [Array<(GeneralError, Integer, Hash)>] GeneralError data, response status code and response headers
     def append_team_to_mod_with_http_info(team_id, params, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TeamApi.append_team_to_mod ...'
@@ -66,7 +66,7 @@ module Kleister
       post_body = opts[:body] || @api_client.object_to_http_body(params) 
 
       # return_type
-      return_type = opts[:return_type] || 'Object' 
+      return_type = opts[:return_type] || 'GeneralError' 
 
       # auth_names
       auth_names = opts[:auth_names] || []
@@ -91,7 +91,7 @@ module Kleister
     # @param team_id [String] A team UUID or slug
     # @param params [TeamPackParams] The team pack data to assign
     # @param [Hash] opts the optional parameters
-    # @return [Object]
+    # @return [GeneralError]
     def append_team_to_pack(team_id, params, opts = {})
       data, _status_code, _headers = append_team_to_pack_with_http_info(team_id, params, opts)
       data
@@ -101,7 +101,7 @@ module Kleister
     # @param team_id [String] A team UUID or slug
     # @param params [TeamPackParams] The team pack data to assign
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Object, Integer, Hash)>] Object data, response status code and response headers
+    # @return [Array<(GeneralError, Integer, Hash)>] GeneralError data, response status code and response headers
     def append_team_to_pack_with_http_info(team_id, params, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TeamApi.append_team_to_pack ...'
@@ -134,7 +134,7 @@ module Kleister
       post_body = opts[:body] || @api_client.object_to_http_body(params) 
 
       # return_type
-      return_type = opts[:return_type] || 'Object' 
+      return_type = opts[:return_type] || 'GeneralError' 
 
       # auth_names
       auth_names = opts[:auth_names] || []
@@ -159,7 +159,7 @@ module Kleister
     # @param team_id [String] A team UUID or slug
     # @param params [TeamUserParams] The team user data to assign
     # @param [Hash] opts the optional parameters
-    # @return [Object]
+    # @return [GeneralError]
     def append_team_to_user(team_id, params, opts = {})
       data, _status_code, _headers = append_team_to_user_with_http_info(team_id, params, opts)
       data
@@ -169,7 +169,7 @@ module Kleister
     # @param team_id [String] A team UUID or slug
     # @param params [TeamUserParams] The team user data to assign
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Object, Integer, Hash)>] Object data, response status code and response headers
+    # @return [Array<(GeneralError, Integer, Hash)>] GeneralError data, response status code and response headers
     def append_team_to_user_with_http_info(team_id, params, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TeamApi.append_team_to_user ...'
@@ -202,7 +202,7 @@ module Kleister
       post_body = opts[:body] || @api_client.object_to_http_body(params) 
 
       # return_type
-      return_type = opts[:return_type] || 'Object' 
+      return_type = opts[:return_type] || 'GeneralError' 
 
       # auth_names
       auth_names = opts[:auth_names] || []
@@ -288,7 +288,7 @@ module Kleister
     # Delete a specific team
     # @param team_id [String] A team UUID or slug
     # @param [Hash] opts the optional parameters
-    # @return [Object]
+    # @return [GeneralError]
     def delete_team(team_id, opts = {})
       data, _status_code, _headers = delete_team_with_http_info(team_id, opts)
       data
@@ -297,7 +297,7 @@ module Kleister
     # Delete a specific team
     # @param team_id [String] A team UUID or slug
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Object, Integer, Hash)>] Object data, response status code and response headers
+    # @return [Array<(GeneralError, Integer, Hash)>] GeneralError data, response status code and response headers
     def delete_team_with_http_info(team_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TeamApi.delete_team ...'
@@ -324,7 +324,7 @@ module Kleister
       post_body = opts[:body] 
 
       # return_type
-      return_type = opts[:return_type] || 'Object' 
+      return_type = opts[:return_type] || 'GeneralError' 
 
       # auth_names
       auth_names = opts[:auth_names] || []
@@ -349,7 +349,7 @@ module Kleister
     # @param team_id [String] A team UUID or slug
     # @param params [TeamModParams] The team mod data to delete
     # @param [Hash] opts the optional parameters
-    # @return [Object]
+    # @return [GeneralError]
     def delete_team_from_mod(team_id, params, opts = {})
       data, _status_code, _headers = delete_team_from_mod_with_http_info(team_id, params, opts)
       data
@@ -359,7 +359,7 @@ module Kleister
     # @param team_id [String] A team UUID or slug
     # @param params [TeamModParams] The team mod data to delete
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Object, Integer, Hash)>] Object data, response status code and response headers
+    # @return [Array<(GeneralError, Integer, Hash)>] GeneralError data, response status code and response headers
     def delete_team_from_mod_with_http_info(team_id, params, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TeamApi.delete_team_from_mod ...'
@@ -392,7 +392,7 @@ module Kleister
       post_body = opts[:body] || @api_client.object_to_http_body(params) 
 
       # return_type
-      return_type = opts[:return_type] || 'Object' 
+      return_type = opts[:return_type] || 'GeneralError' 
 
       # auth_names
       auth_names = opts[:auth_names] || []
@@ -417,7 +417,7 @@ module Kleister
     # @param team_id [String] A team UUID or slug
     # @param params [TeamPackParams] The team pack data to delete
     # @param [Hash] opts the optional parameters
-    # @return [Object]
+    # @return [GeneralError]
     def delete_team_from_pack(team_id, params, opts = {})
       data, _status_code, _headers = delete_team_from_pack_with_http_info(team_id, params, opts)
       data
@@ -427,7 +427,7 @@ module Kleister
     # @param team_id [String] A team UUID or slug
     # @param params [TeamPackParams] The team pack data to delete
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Object, Integer, Hash)>] Object data, response status code and response headers
+    # @return [Array<(GeneralError, Integer, Hash)>] GeneralError data, response status code and response headers
     def delete_team_from_pack_with_http_info(team_id, params, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TeamApi.delete_team_from_pack ...'
@@ -460,7 +460,7 @@ module Kleister
       post_body = opts[:body] || @api_client.object_to_http_body(params) 
 
       # return_type
-      return_type = opts[:return_type] || 'Object' 
+      return_type = opts[:return_type] || 'GeneralError' 
 
       # auth_names
       auth_names = opts[:auth_names] || []
@@ -485,7 +485,7 @@ module Kleister
     # @param team_id [String] A team UUID or slug
     # @param params [TeamUserParams] The team user data to delete
     # @param [Hash] opts the optional parameters
-    # @return [Object]
+    # @return [GeneralError]
     def delete_team_from_user(team_id, params, opts = {})
       data, _status_code, _headers = delete_team_from_user_with_http_info(team_id, params, opts)
       data
@@ -495,7 +495,7 @@ module Kleister
     # @param team_id [String] A team UUID or slug
     # @param params [TeamUserParams] The team user data to delete
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Object, Integer, Hash)>] Object data, response status code and response headers
+    # @return [Array<(GeneralError, Integer, Hash)>] GeneralError data, response status code and response headers
     def delete_team_from_user_with_http_info(team_id, params, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TeamApi.delete_team_from_user ...'
@@ -528,7 +528,7 @@ module Kleister
       post_body = opts[:body] || @api_client.object_to_http_body(params) 
 
       # return_type
-      return_type = opts[:return_type] || 'Object' 
+      return_type = opts[:return_type] || 'GeneralError' 
 
       # auth_names
       auth_names = opts[:auth_names] || []
@@ -787,7 +787,7 @@ module Kleister
     # @param team_id [String] A team UUID or slug
     # @param params [TeamModParams] The team mod data to update
     # @param [Hash] opts the optional parameters
-    # @return [Object]
+    # @return [GeneralError]
     def permit_team_mod(team_id, params, opts = {})
       data, _status_code, _headers = permit_team_mod_with_http_info(team_id, params, opts)
       data
@@ -797,7 +797,7 @@ module Kleister
     # @param team_id [String] A team UUID or slug
     # @param params [TeamModParams] The team mod data to update
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Object, Integer, Hash)>] Object data, response status code and response headers
+    # @return [Array<(GeneralError, Integer, Hash)>] GeneralError data, response status code and response headers
     def permit_team_mod_with_http_info(team_id, params, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TeamApi.permit_team_mod ...'
@@ -830,7 +830,7 @@ module Kleister
       post_body = opts[:body] || @api_client.object_to_http_body(params) 
 
       # return_type
-      return_type = opts[:return_type] || 'Object' 
+      return_type = opts[:return_type] || 'GeneralError' 
 
       # auth_names
       auth_names = opts[:auth_names] || []
@@ -855,7 +855,7 @@ module Kleister
     # @param team_id [String] A team UUID or slug
     # @param params [TeamPackParams] The team pack data to update
     # @param [Hash] opts the optional parameters
-    # @return [Object]
+    # @return [GeneralError]
     def permit_team_pack(team_id, params, opts = {})
       data, _status_code, _headers = permit_team_pack_with_http_info(team_id, params, opts)
       data
@@ -865,7 +865,7 @@ module Kleister
     # @param team_id [String] A team UUID or slug
     # @param params [TeamPackParams] The team pack data to update
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Object, Integer, Hash)>] Object data, response status code and response headers
+    # @return [Array<(GeneralError, Integer, Hash)>] GeneralError data, response status code and response headers
     def permit_team_pack_with_http_info(team_id, params, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TeamApi.permit_team_pack ...'
@@ -898,7 +898,7 @@ module Kleister
       post_body = opts[:body] || @api_client.object_to_http_body(params) 
 
       # return_type
-      return_type = opts[:return_type] || 'Object' 
+      return_type = opts[:return_type] || 'GeneralError' 
 
       # auth_names
       auth_names = opts[:auth_names] || []
@@ -923,7 +923,7 @@ module Kleister
     # @param team_id [String] A team UUID or slug
     # @param params [TeamUserParams] The team user data to update
     # @param [Hash] opts the optional parameters
-    # @return [Object]
+    # @return [GeneralError]
     def permit_team_user(team_id, params, opts = {})
       data, _status_code, _headers = permit_team_user_with_http_info(team_id, params, opts)
       data
@@ -933,7 +933,7 @@ module Kleister
     # @param team_id [String] A team UUID or slug
     # @param params [TeamUserParams] The team user data to update
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Object, Integer, Hash)>] Object data, response status code and response headers
+    # @return [Array<(GeneralError, Integer, Hash)>] GeneralError data, response status code and response headers
     def permit_team_user_with_http_info(team_id, params, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TeamApi.permit_team_user ...'
@@ -966,7 +966,7 @@ module Kleister
       post_body = opts[:body] || @api_client.object_to_http_body(params) 
 
       # return_type
-      return_type = opts[:return_type] || 'Object' 
+      return_type = opts[:return_type] || 'GeneralError' 
 
       # auth_names
       auth_names = opts[:auth_names] || []

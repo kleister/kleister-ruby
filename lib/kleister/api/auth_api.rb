@@ -20,7 +20,7 @@ module Kleister
       @api_client = api_client
     end
     # Authenticate an user by credentials
-    # @param params [InlineObject] 
+    # @param params [AuthLogin] The credentials to authenticate
     # @param [Hash] opts the optional parameters
     # @return [AuthToken]
     def login_user(params, opts = {})
@@ -29,7 +29,7 @@ module Kleister
     end
 
     # Authenticate an user by credentials
-    # @param params [InlineObject] 
+    # @param params [AuthLogin] The credentials to authenticate
     # @param [Hash] opts the optional parameters
     # @return [Array<(AuthToken, Integer, Hash)>] AuthToken data, response status code and response headers
     def login_user_with_http_info(params, opts = {})

@@ -56,7 +56,7 @@ Please follow the [installation](#installation) instructions and then run the fo
 require 'kleister'
 
 api = Kleister::AuthApi.new
-params = Kleister::InlineObject.new # InlineObject | 
+params = Kleister::AuthLogin.new # AuthLogin | The credentials to authenticate
 
 begin
   # Authenticate an user by credentials
@@ -171,6 +171,7 @@ Class | Method | HTTP request | Description
 
 ## Documentation for models
 
+ - [Kleister::AuthLogin](docs/AuthLogin.md)
  - [Kleister::AuthToken](docs/AuthToken.md)
  - [Kleister::AuthVerify](docs/AuthVerify.md)
  - [Kleister::Build](docs/Build.md)
@@ -178,7 +179,7 @@ Class | Method | HTTP request | Description
  - [Kleister::BuildVersionParams](docs/BuildVersionParams.md)
  - [Kleister::Forge](docs/Forge.md)
  - [Kleister::ForgeBuildParams](docs/ForgeBuildParams.md)
- - [Kleister::InlineObject](docs/InlineObject.md)
+ - [Kleister::GeneralError](docs/GeneralError.md)
  - [Kleister::Minecraft](docs/Minecraft.md)
  - [Kleister::MinecraftBuildParams](docs/MinecraftBuildParams.md)
  - [Kleister::Mod](docs/Mod.md)
@@ -201,13 +202,25 @@ Class | Method | HTTP request | Description
  - [Kleister::UserPack](docs/UserPack.md)
  - [Kleister::UserPackParams](docs/UserPackParams.md)
  - [Kleister::UserTeamParams](docs/UserTeamParams.md)
+ - [Kleister::ValidationError](docs/ValidationError.md)
+ - [Kleister::ValidationErrorErrors](docs/ValidationErrorErrors.md)
  - [Kleister::Version](docs/Version.md)
  - [Kleister::VersionBuildParams](docs/VersionBuildParams.md)
 
 
 ## Documentation for authorization
 
- All endpoints do not require authorization.
+
+### BasicAuth
+
+- **Type**: HTTP basic authentication
+
+### HeaderAuth
+
+
+- **Type**: API key
+- **API key parameter name**: X-API-Key
+- **Location**: HTTP header
 
 
 ## Security

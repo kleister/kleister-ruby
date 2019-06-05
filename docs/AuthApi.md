@@ -1,6 +1,6 @@
 # Kleister::AuthApi
 
-All URIs are relative to *http://http:/api/v1*
+All URIs are relative to *http://try.kleister.tech/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -23,7 +23,7 @@ Authenticate an user by credentials
 require 'kleister'
 
 api_instance = Kleister::AuthApi.new
-params = Kleister::InlineObject.new # InlineObject | 
+params = Kleister::AuthLogin.new # AuthLogin | The credentials to authenticate
 
 begin
   #Authenticate an user by credentials
@@ -39,7 +39,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **params** | [**InlineObject**](InlineObject.md)|  | 
+ **params** | [**AuthLogin**](AuthLogin.md)| The credentials to authenticate | 
 
 ### Return type
 

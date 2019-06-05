@@ -23,7 +23,7 @@ module Kleister
     # @param user_id [String] A user UUID or slug
     # @param params [UserModParams] The user mod data to assign
     # @param [Hash] opts the optional parameters
-    # @return [Object]
+    # @return [GeneralError]
     def append_user_to_mod(user_id, params, opts = {})
       data, _status_code, _headers = append_user_to_mod_with_http_info(user_id, params, opts)
       data
@@ -33,7 +33,7 @@ module Kleister
     # @param user_id [String] A user UUID or slug
     # @param params [UserModParams] The user mod data to assign
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Object, Integer, Hash)>] Object data, response status code and response headers
+    # @return [Array<(GeneralError, Integer, Hash)>] GeneralError data, response status code and response headers
     def append_user_to_mod_with_http_info(user_id, params, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: UserApi.append_user_to_mod ...'
@@ -66,7 +66,7 @@ module Kleister
       post_body = opts[:body] || @api_client.object_to_http_body(params) 
 
       # return_type
-      return_type = opts[:return_type] || 'Object' 
+      return_type = opts[:return_type] || 'GeneralError' 
 
       # auth_names
       auth_names = opts[:auth_names] || []
@@ -91,7 +91,7 @@ module Kleister
     # @param user_id [String] A user UUID or slug
     # @param params [UserPackParams] The user pack data to assign
     # @param [Hash] opts the optional parameters
-    # @return [Object]
+    # @return [GeneralError]
     def append_user_to_pack(user_id, params, opts = {})
       data, _status_code, _headers = append_user_to_pack_with_http_info(user_id, params, opts)
       data
@@ -101,7 +101,7 @@ module Kleister
     # @param user_id [String] A user UUID or slug
     # @param params [UserPackParams] The user pack data to assign
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Object, Integer, Hash)>] Object data, response status code and response headers
+    # @return [Array<(GeneralError, Integer, Hash)>] GeneralError data, response status code and response headers
     def append_user_to_pack_with_http_info(user_id, params, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: UserApi.append_user_to_pack ...'
@@ -134,7 +134,7 @@ module Kleister
       post_body = opts[:body] || @api_client.object_to_http_body(params) 
 
       # return_type
-      return_type = opts[:return_type] || 'Object' 
+      return_type = opts[:return_type] || 'GeneralError' 
 
       # auth_names
       auth_names = opts[:auth_names] || []
@@ -159,7 +159,7 @@ module Kleister
     # @param user_id [String] A user UUID or slug
     # @param params [UserTeamParams] The user team data to assign
     # @param [Hash] opts the optional parameters
-    # @return [Object]
+    # @return [GeneralError]
     def append_user_to_team(user_id, params, opts = {})
       data, _status_code, _headers = append_user_to_team_with_http_info(user_id, params, opts)
       data
@@ -169,7 +169,7 @@ module Kleister
     # @param user_id [String] A user UUID or slug
     # @param params [UserTeamParams] The user team data to assign
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Object, Integer, Hash)>] Object data, response status code and response headers
+    # @return [Array<(GeneralError, Integer, Hash)>] GeneralError data, response status code and response headers
     def append_user_to_team_with_http_info(user_id, params, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: UserApi.append_user_to_team ...'
@@ -202,7 +202,7 @@ module Kleister
       post_body = opts[:body] || @api_client.object_to_http_body(params) 
 
       # return_type
-      return_type = opts[:return_type] || 'Object' 
+      return_type = opts[:return_type] || 'GeneralError' 
 
       # auth_names
       auth_names = opts[:auth_names] || []
@@ -288,7 +288,7 @@ module Kleister
     # Delete a specific user
     # @param user_id [String] A user UUID or slug
     # @param [Hash] opts the optional parameters
-    # @return [Object]
+    # @return [GeneralError]
     def delete_user(user_id, opts = {})
       data, _status_code, _headers = delete_user_with_http_info(user_id, opts)
       data
@@ -297,7 +297,7 @@ module Kleister
     # Delete a specific user
     # @param user_id [String] A user UUID or slug
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Object, Integer, Hash)>] Object data, response status code and response headers
+    # @return [Array<(GeneralError, Integer, Hash)>] GeneralError data, response status code and response headers
     def delete_user_with_http_info(user_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: UserApi.delete_user ...'
@@ -324,7 +324,7 @@ module Kleister
       post_body = opts[:body] 
 
       # return_type
-      return_type = opts[:return_type] || 'Object' 
+      return_type = opts[:return_type] || 'GeneralError' 
 
       # auth_names
       auth_names = opts[:auth_names] || []
@@ -349,7 +349,7 @@ module Kleister
     # @param user_id [String] A user UUID or slug
     # @param params [UserModParams] The user mod data to delete
     # @param [Hash] opts the optional parameters
-    # @return [Object]
+    # @return [GeneralError]
     def delete_user_from_mod(user_id, params, opts = {})
       data, _status_code, _headers = delete_user_from_mod_with_http_info(user_id, params, opts)
       data
@@ -359,7 +359,7 @@ module Kleister
     # @param user_id [String] A user UUID or slug
     # @param params [UserModParams] The user mod data to delete
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Object, Integer, Hash)>] Object data, response status code and response headers
+    # @return [Array<(GeneralError, Integer, Hash)>] GeneralError data, response status code and response headers
     def delete_user_from_mod_with_http_info(user_id, params, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: UserApi.delete_user_from_mod ...'
@@ -392,7 +392,7 @@ module Kleister
       post_body = opts[:body] || @api_client.object_to_http_body(params) 
 
       # return_type
-      return_type = opts[:return_type] || 'Object' 
+      return_type = opts[:return_type] || 'GeneralError' 
 
       # auth_names
       auth_names = opts[:auth_names] || []
@@ -417,7 +417,7 @@ module Kleister
     # @param user_id [String] A user UUID or slug
     # @param params [UserPackParams] The user pack data to delete
     # @param [Hash] opts the optional parameters
-    # @return [Object]
+    # @return [GeneralError]
     def delete_user_from_pack(user_id, params, opts = {})
       data, _status_code, _headers = delete_user_from_pack_with_http_info(user_id, params, opts)
       data
@@ -427,7 +427,7 @@ module Kleister
     # @param user_id [String] A user UUID or slug
     # @param params [UserPackParams] The user pack data to delete
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Object, Integer, Hash)>] Object data, response status code and response headers
+    # @return [Array<(GeneralError, Integer, Hash)>] GeneralError data, response status code and response headers
     def delete_user_from_pack_with_http_info(user_id, params, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: UserApi.delete_user_from_pack ...'
@@ -460,7 +460,7 @@ module Kleister
       post_body = opts[:body] || @api_client.object_to_http_body(params) 
 
       # return_type
-      return_type = opts[:return_type] || 'Object' 
+      return_type = opts[:return_type] || 'GeneralError' 
 
       # auth_names
       auth_names = opts[:auth_names] || []
@@ -485,7 +485,7 @@ module Kleister
     # @param user_id [String] A user UUID or slug
     # @param params [UserTeamParams] The user team data to delete
     # @param [Hash] opts the optional parameters
-    # @return [Object]
+    # @return [GeneralError]
     def delete_user_from_team(user_id, params, opts = {})
       data, _status_code, _headers = delete_user_from_team_with_http_info(user_id, params, opts)
       data
@@ -495,7 +495,7 @@ module Kleister
     # @param user_id [String] A user UUID or slug
     # @param params [UserTeamParams] The user team data to delete
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Object, Integer, Hash)>] Object data, response status code and response headers
+    # @return [Array<(GeneralError, Integer, Hash)>] GeneralError data, response status code and response headers
     def delete_user_from_team_with_http_info(user_id, params, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: UserApi.delete_user_from_team ...'
@@ -528,7 +528,7 @@ module Kleister
       post_body = opts[:body] || @api_client.object_to_http_body(params) 
 
       # return_type
-      return_type = opts[:return_type] || 'Object' 
+      return_type = opts[:return_type] || 'GeneralError' 
 
       # auth_names
       auth_names = opts[:auth_names] || []
@@ -787,7 +787,7 @@ module Kleister
     # @param user_id [String] A user UUID or slug
     # @param params [UserModParams] The user mod data to update
     # @param [Hash] opts the optional parameters
-    # @return [Object]
+    # @return [GeneralError]
     def permit_user_mod(user_id, params, opts = {})
       data, _status_code, _headers = permit_user_mod_with_http_info(user_id, params, opts)
       data
@@ -797,7 +797,7 @@ module Kleister
     # @param user_id [String] A user UUID or slug
     # @param params [UserModParams] The user mod data to update
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Object, Integer, Hash)>] Object data, response status code and response headers
+    # @return [Array<(GeneralError, Integer, Hash)>] GeneralError data, response status code and response headers
     def permit_user_mod_with_http_info(user_id, params, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: UserApi.permit_user_mod ...'
@@ -830,7 +830,7 @@ module Kleister
       post_body = opts[:body] || @api_client.object_to_http_body(params) 
 
       # return_type
-      return_type = opts[:return_type] || 'Object' 
+      return_type = opts[:return_type] || 'GeneralError' 
 
       # auth_names
       auth_names = opts[:auth_names] || []
@@ -855,7 +855,7 @@ module Kleister
     # @param user_id [String] A user UUID or slug
     # @param params [UserPackParams] The user pack data to update
     # @param [Hash] opts the optional parameters
-    # @return [Object]
+    # @return [GeneralError]
     def permit_user_pack(user_id, params, opts = {})
       data, _status_code, _headers = permit_user_pack_with_http_info(user_id, params, opts)
       data
@@ -865,7 +865,7 @@ module Kleister
     # @param user_id [String] A user UUID or slug
     # @param params [UserPackParams] The user pack data to update
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Object, Integer, Hash)>] Object data, response status code and response headers
+    # @return [Array<(GeneralError, Integer, Hash)>] GeneralError data, response status code and response headers
     def permit_user_pack_with_http_info(user_id, params, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: UserApi.permit_user_pack ...'
@@ -898,7 +898,7 @@ module Kleister
       post_body = opts[:body] || @api_client.object_to_http_body(params) 
 
       # return_type
-      return_type = opts[:return_type] || 'Object' 
+      return_type = opts[:return_type] || 'GeneralError' 
 
       # auth_names
       auth_names = opts[:auth_names] || []
@@ -923,7 +923,7 @@ module Kleister
     # @param user_id [String] A user UUID or slug
     # @param params [UserTeamParams] The user team data to update
     # @param [Hash] opts the optional parameters
-    # @return [Object]
+    # @return [GeneralError]
     def permit_user_team(user_id, params, opts = {})
       data, _status_code, _headers = permit_user_team_with_http_info(user_id, params, opts)
       data
@@ -933,7 +933,7 @@ module Kleister
     # @param user_id [String] A user UUID or slug
     # @param params [UserTeamParams] The user team data to update
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Object, Integer, Hash)>] Object data, response status code and response headers
+    # @return [Array<(GeneralError, Integer, Hash)>] GeneralError data, response status code and response headers
     def permit_user_team_with_http_info(user_id, params, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: UserApi.permit_user_team ...'
@@ -966,7 +966,7 @@ module Kleister
       post_body = opts[:body] || @api_client.object_to_http_body(params) 
 
       # return_type
-      return_type = opts[:return_type] || 'Object' 
+      return_type = opts[:return_type] || 'GeneralError' 
 
       # auth_names
       auth_names = opts[:auth_names] || []
