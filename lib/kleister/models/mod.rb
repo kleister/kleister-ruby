@@ -34,6 +34,28 @@ module Kleister
 
     attr_accessor :updated_at
 
+    class EnumAttributeValidator
+      attr_reader :datatype
+      attr_reader :allowable_values
+
+      def initialize(datatype, allowable_values)
+        @allowable_values = allowable_values.map do |value|
+          case datatype.to_s
+          when /Integer/i
+            value.to_i
+          when /Float/i
+            value.to_f
+          else
+            value
+          end
+        end
+      end
+
+      def valid?(value)
+        !value || allowable_values.include?(value)
+      end
+    end
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -137,7 +159,19 @@ module Kleister
     # @return true if the model is valid
     def valid?
       return false if @name.nil?
+      side_validator = EnumAttributeValidator.new('String', ["both", "server", "client"])
+      return false unless side_validator.valid?(@side)
       true
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] side Object to be assigned
+    def side=(side)
+      validator = EnumAttributeValidator.new('String', ["both", "server", "client"])
+      unless validator.valid?(side)
+        fail ArgumentError, "invalid value for \"side\", must be one of #{validator.allowable_values}."
+      end
+      @side = side
     end
 
     # Checks equality by comparing each attribute.

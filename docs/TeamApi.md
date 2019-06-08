@@ -26,7 +26,7 @@ Method | HTTP request | Description
 
 ## append_team_to_mod
 
-> GeneralError append_team_to_mod(team_id, params)
+> GeneralError append_team_to_mod(team_id, team_mod)
 
 Assign a mod to team
 
@@ -38,11 +38,11 @@ require 'kleister'
 
 api_instance = Kleister::TeamApi.new
 team_id = 'team_id_example' # String | A team UUID or slug
-params = Kleister::TeamModParams.new # TeamModParams | The team mod data to assign
+team_mod = Kleister::TeamModParams.new # TeamModParams | The team mod data to assign
 
 begin
   #Assign a mod to team
-  result = api_instance.append_team_to_mod(team_id, params)
+  result = api_instance.append_team_to_mod(team_id, team_mod)
   p result
 rescue Kleister::ApiError => e
   puts "Exception when calling TeamApi->append_team_to_mod: #{e}"
@@ -55,7 +55,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **team_id** | **String**| A team UUID or slug | 
- **params** | [**TeamModParams**](TeamModParams.md)| The team mod data to assign | 
+ **team_mod** | [**TeamModParams**](TeamModParams.md)| The team mod data to assign | 
 
 ### Return type
 
@@ -73,7 +73,7 @@ No authorization required
 
 ## append_team_to_pack
 
-> GeneralError append_team_to_pack(team_id, params)
+> GeneralError append_team_to_pack(team_id, team_pack)
 
 Assign a pack to team
 
@@ -85,11 +85,11 @@ require 'kleister'
 
 api_instance = Kleister::TeamApi.new
 team_id = 'team_id_example' # String | A team UUID or slug
-params = Kleister::TeamPackParams.new # TeamPackParams | The team pack data to assign
+team_pack = Kleister::TeamPackParams.new # TeamPackParams | The team pack data to assign
 
 begin
   #Assign a pack to team
-  result = api_instance.append_team_to_pack(team_id, params)
+  result = api_instance.append_team_to_pack(team_id, team_pack)
   p result
 rescue Kleister::ApiError => e
   puts "Exception when calling TeamApi->append_team_to_pack: #{e}"
@@ -102,7 +102,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **team_id** | **String**| A team UUID or slug | 
- **params** | [**TeamPackParams**](TeamPackParams.md)| The team pack data to assign | 
+ **team_pack** | [**TeamPackParams**](TeamPackParams.md)| The team pack data to assign | 
 
 ### Return type
 
@@ -120,7 +120,7 @@ No authorization required
 
 ## append_team_to_user
 
-> GeneralError append_team_to_user(team_id, params)
+> GeneralError append_team_to_user(team_id, team_user)
 
 Assign a user to team
 
@@ -132,11 +132,11 @@ require 'kleister'
 
 api_instance = Kleister::TeamApi.new
 team_id = 'team_id_example' # String | A team UUID or slug
-params = Kleister::TeamUserParams.new # TeamUserParams | The team user data to assign
+team_user = Kleister::TeamUserParams.new # TeamUserParams | The team user data to assign
 
 begin
   #Assign a user to team
-  result = api_instance.append_team_to_user(team_id, params)
+  result = api_instance.append_team_to_user(team_id, team_user)
   p result
 rescue Kleister::ApiError => e
   puts "Exception when calling TeamApi->append_team_to_user: #{e}"
@@ -149,7 +149,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **team_id** | **String**| A team UUID or slug | 
- **params** | [**TeamUserParams**](TeamUserParams.md)| The team user data to assign | 
+ **team_user** | [**TeamUserParams**](TeamUserParams.md)| The team user data to assign | 
 
 ### Return type
 
@@ -167,7 +167,7 @@ No authorization required
 
 ## create_team
 
-> Team create_team(params)
+> Team create_team(team)
 
 Create a new team
 
@@ -178,11 +178,11 @@ Create a new team
 require 'kleister'
 
 api_instance = Kleister::TeamApi.new
-params = Kleister::Team.new # Team | The team data to create
+team = Kleister::Team.new # Team | The team data to create
 
 begin
   #Create a new team
-  result = api_instance.create_team(params)
+  result = api_instance.create_team(team)
   p result
 rescue Kleister::ApiError => e
   puts "Exception when calling TeamApi->create_team: #{e}"
@@ -194,7 +194,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **params** | [**Team**](Team.md)| The team data to create | 
+ **team** | [**Team**](Team.md)| The team data to create | 
 
 ### Return type
 
@@ -257,7 +257,7 @@ No authorization required
 
 ## delete_team_from_mod
 
-> GeneralError delete_team_from_mod(team_id, params)
+> GeneralError delete_team_from_mod(team_id, team_mod)
 
 Remove a mod from team
 
@@ -269,11 +269,11 @@ require 'kleister'
 
 api_instance = Kleister::TeamApi.new
 team_id = 'team_id_example' # String | A team UUID or slug
-params = Kleister::TeamModParams.new # TeamModParams | The team mod data to delete
+team_mod = Kleister::TeamModParams.new # TeamModParams | The team mod data to delete
 
 begin
   #Remove a mod from team
-  result = api_instance.delete_team_from_mod(team_id, params)
+  result = api_instance.delete_team_from_mod(team_id, team_mod)
   p result
 rescue Kleister::ApiError => e
   puts "Exception when calling TeamApi->delete_team_from_mod: #{e}"
@@ -286,7 +286,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **team_id** | **String**| A team UUID or slug | 
- **params** | [**TeamModParams**](TeamModParams.md)| The team mod data to delete | 
+ **team_mod** | [**TeamModParams**](TeamModParams.md)| The team mod data to delete | 
 
 ### Return type
 
@@ -304,7 +304,7 @@ No authorization required
 
 ## delete_team_from_pack
 
-> GeneralError delete_team_from_pack(team_id, params)
+> GeneralError delete_team_from_pack(team_id, team_pack)
 
 Remove a pack from team
 
@@ -316,11 +316,11 @@ require 'kleister'
 
 api_instance = Kleister::TeamApi.new
 team_id = 'team_id_example' # String | A team UUID or slug
-params = Kleister::TeamPackParams.new # TeamPackParams | The team pack data to delete
+team_pack = Kleister::TeamPackParams.new # TeamPackParams | The team pack data to delete
 
 begin
   #Remove a pack from team
-  result = api_instance.delete_team_from_pack(team_id, params)
+  result = api_instance.delete_team_from_pack(team_id, team_pack)
   p result
 rescue Kleister::ApiError => e
   puts "Exception when calling TeamApi->delete_team_from_pack: #{e}"
@@ -333,7 +333,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **team_id** | **String**| A team UUID or slug | 
- **params** | [**TeamPackParams**](TeamPackParams.md)| The team pack data to delete | 
+ **team_pack** | [**TeamPackParams**](TeamPackParams.md)| The team pack data to delete | 
 
 ### Return type
 
@@ -351,7 +351,7 @@ No authorization required
 
 ## delete_team_from_user
 
-> GeneralError delete_team_from_user(team_id, params)
+> GeneralError delete_team_from_user(team_id, team_user)
 
 Remove a user from team
 
@@ -363,11 +363,11 @@ require 'kleister'
 
 api_instance = Kleister::TeamApi.new
 team_id = 'team_id_example' # String | A team UUID or slug
-params = Kleister::TeamUserParams.new # TeamUserParams | The team user data to delete
+team_user = Kleister::TeamUserParams.new # TeamUserParams | The team user data to delete
 
 begin
   #Remove a user from team
-  result = api_instance.delete_team_from_user(team_id, params)
+  result = api_instance.delete_team_from_user(team_id, team_user)
   p result
 rescue Kleister::ApiError => e
   puts "Exception when calling TeamApi->delete_team_from_user: #{e}"
@@ -380,7 +380,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **team_id** | **String**| A team UUID or slug | 
- **params** | [**TeamUserParams**](TeamUserParams.md)| The team user data to delete | 
+ **team_user** | [**TeamUserParams**](TeamUserParams.md)| The team user data to delete | 
 
 ### Return type
 
@@ -574,7 +574,7 @@ No authorization required
 
 ## permit_team_mod
 
-> GeneralError permit_team_mod(team_id, params)
+> GeneralError permit_team_mod(team_id, team_mod)
 
 Update mod perms for team
 
@@ -586,11 +586,11 @@ require 'kleister'
 
 api_instance = Kleister::TeamApi.new
 team_id = 'team_id_example' # String | A team UUID or slug
-params = Kleister::TeamModParams.new # TeamModParams | The team mod data to update
+team_mod = Kleister::TeamModParams.new # TeamModParams | The team mod data to update
 
 begin
   #Update mod perms for team
-  result = api_instance.permit_team_mod(team_id, params)
+  result = api_instance.permit_team_mod(team_id, team_mod)
   p result
 rescue Kleister::ApiError => e
   puts "Exception when calling TeamApi->permit_team_mod: #{e}"
@@ -603,7 +603,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **team_id** | **String**| A team UUID or slug | 
- **params** | [**TeamModParams**](TeamModParams.md)| The team mod data to update | 
+ **team_mod** | [**TeamModParams**](TeamModParams.md)| The team mod data to update | 
 
 ### Return type
 
@@ -621,7 +621,7 @@ No authorization required
 
 ## permit_team_pack
 
-> GeneralError permit_team_pack(team_id, params)
+> GeneralError permit_team_pack(team_id, team_pack)
 
 Update pack perms for team
 
@@ -633,11 +633,11 @@ require 'kleister'
 
 api_instance = Kleister::TeamApi.new
 team_id = 'team_id_example' # String | A team UUID or slug
-params = Kleister::TeamPackParams.new # TeamPackParams | The team pack data to update
+team_pack = Kleister::TeamPackParams.new # TeamPackParams | The team pack data to update
 
 begin
   #Update pack perms for team
-  result = api_instance.permit_team_pack(team_id, params)
+  result = api_instance.permit_team_pack(team_id, team_pack)
   p result
 rescue Kleister::ApiError => e
   puts "Exception when calling TeamApi->permit_team_pack: #{e}"
@@ -650,7 +650,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **team_id** | **String**| A team UUID or slug | 
- **params** | [**TeamPackParams**](TeamPackParams.md)| The team pack data to update | 
+ **team_pack** | [**TeamPackParams**](TeamPackParams.md)| The team pack data to update | 
 
 ### Return type
 
@@ -668,7 +668,7 @@ No authorization required
 
 ## permit_team_user
 
-> GeneralError permit_team_user(team_id, params)
+> GeneralError permit_team_user(team_id, team_user)
 
 Update user perms for team
 
@@ -680,11 +680,11 @@ require 'kleister'
 
 api_instance = Kleister::TeamApi.new
 team_id = 'team_id_example' # String | A team UUID or slug
-params = Kleister::TeamUserParams.new # TeamUserParams | The team user data to update
+team_user = Kleister::TeamUserParams.new # TeamUserParams | The team user data to update
 
 begin
   #Update user perms for team
-  result = api_instance.permit_team_user(team_id, params)
+  result = api_instance.permit_team_user(team_id, team_user)
   p result
 rescue Kleister::ApiError => e
   puts "Exception when calling TeamApi->permit_team_user: #{e}"
@@ -697,7 +697,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **team_id** | **String**| A team UUID or slug | 
- **params** | [**TeamUserParams**](TeamUserParams.md)| The team user data to update | 
+ **team_user** | [**TeamUserParams**](TeamUserParams.md)| The team user data to update | 
 
 ### Return type
 
@@ -760,7 +760,7 @@ No authorization required
 
 ## update_team
 
-> Team update_team(team_id, params)
+> Team update_team(team_id, team)
 
 Update a specific team
 
@@ -772,11 +772,11 @@ require 'kleister'
 
 api_instance = Kleister::TeamApi.new
 team_id = 'team_id_example' # String | A team UUID or slug
-params = Kleister::Team.new # Team | The team data to update
+team = Kleister::Team.new # Team | The team data to update
 
 begin
   #Update a specific team
-  result = api_instance.update_team(team_id, params)
+  result = api_instance.update_team(team_id, team)
   p result
 rescue Kleister::ApiError => e
   puts "Exception when calling TeamApi->update_team: #{e}"
@@ -789,7 +789,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **team_id** | **String**| A team UUID or slug | 
- **params** | [**Team**](Team.md)| The team data to update | 
+ **team** | [**Team**](Team.md)| The team data to update | 
 
 ### Return type
 

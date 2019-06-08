@@ -22,21 +22,21 @@ module Kleister
     # Assign a version to a build
     # @param pack_id [String] A pack UUID or slug
     # @param build_id [String] A build UUID or slug
-    # @param params [BuildVersionParams] The version data to append to build
+    # @param build_version [BuildVersionParams] The version data to append to build
     # @param [Hash] opts the optional parameters
     # @return [GeneralError]
-    def append_build_to_version(pack_id, build_id, params, opts = {})
-      data, _status_code, _headers = append_build_to_version_with_http_info(pack_id, build_id, params, opts)
+    def append_build_to_version(pack_id, build_id, build_version, opts = {})
+      data, _status_code, _headers = append_build_to_version_with_http_info(pack_id, build_id, build_version, opts)
       data
     end
 
     # Assign a version to a build
     # @param pack_id [String] A pack UUID or slug
     # @param build_id [String] A build UUID or slug
-    # @param params [BuildVersionParams] The version data to append to build
+    # @param build_version [BuildVersionParams] The version data to append to build
     # @param [Hash] opts the optional parameters
     # @return [Array<(GeneralError, Integer, Hash)>] GeneralError data, response status code and response headers
-    def append_build_to_version_with_http_info(pack_id, build_id, params, opts = {})
+    def append_build_to_version_with_http_info(pack_id, build_id, build_version, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PackApi.append_build_to_version ...'
       end
@@ -48,9 +48,9 @@ module Kleister
       if @api_client.config.client_side_validation && build_id.nil?
         fail ArgumentError, "Missing the required parameter 'build_id' when calling PackApi.append_build_to_version"
       end
-      # verify the required parameter 'params' is set
-      if @api_client.config.client_side_validation && params.nil?
-        fail ArgumentError, "Missing the required parameter 'params' when calling PackApi.append_build_to_version"
+      # verify the required parameter 'build_version' is set
+      if @api_client.config.client_side_validation && build_version.nil?
+        fail ArgumentError, "Missing the required parameter 'build_version' when calling PackApi.append_build_to_version"
       end
       # resource path
       local_var_path = '/packs/{pack_id}/builds/{build_id}/versions'.sub('{' + 'pack_id' + '}', pack_id.to_s).sub('{' + 'build_id' + '}', build_id.to_s)
@@ -69,7 +69,7 @@ module Kleister
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(params) 
+      post_body = opts[:body] || @api_client.object_to_http_body(build_version) 
 
       # return_type
       return_type = opts[:return_type] || 'GeneralError' 
@@ -95,20 +95,20 @@ module Kleister
 
     # Assign a team to pack
     # @param pack_id [String] A pack UUID or slug
-    # @param params [PackTeamParams] The pack team data to assign
+    # @param pack_team [PackTeamParams] The pack team data to assign
     # @param [Hash] opts the optional parameters
     # @return [GeneralError]
-    def append_pack_to_team(pack_id, params, opts = {})
-      data, _status_code, _headers = append_pack_to_team_with_http_info(pack_id, params, opts)
+    def append_pack_to_team(pack_id, pack_team, opts = {})
+      data, _status_code, _headers = append_pack_to_team_with_http_info(pack_id, pack_team, opts)
       data
     end
 
     # Assign a team to pack
     # @param pack_id [String] A pack UUID or slug
-    # @param params [PackTeamParams] The pack team data to assign
+    # @param pack_team [PackTeamParams] The pack team data to assign
     # @param [Hash] opts the optional parameters
     # @return [Array<(GeneralError, Integer, Hash)>] GeneralError data, response status code and response headers
-    def append_pack_to_team_with_http_info(pack_id, params, opts = {})
+    def append_pack_to_team_with_http_info(pack_id, pack_team, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PackApi.append_pack_to_team ...'
       end
@@ -116,9 +116,9 @@ module Kleister
       if @api_client.config.client_side_validation && pack_id.nil?
         fail ArgumentError, "Missing the required parameter 'pack_id' when calling PackApi.append_pack_to_team"
       end
-      # verify the required parameter 'params' is set
-      if @api_client.config.client_side_validation && params.nil?
-        fail ArgumentError, "Missing the required parameter 'params' when calling PackApi.append_pack_to_team"
+      # verify the required parameter 'pack_team' is set
+      if @api_client.config.client_side_validation && pack_team.nil?
+        fail ArgumentError, "Missing the required parameter 'pack_team' when calling PackApi.append_pack_to_team"
       end
       # resource path
       local_var_path = '/packs/{pack_id}/teams'.sub('{' + 'pack_id' + '}', pack_id.to_s)
@@ -137,7 +137,7 @@ module Kleister
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(params) 
+      post_body = opts[:body] || @api_client.object_to_http_body(pack_team) 
 
       # return_type
       return_type = opts[:return_type] || 'GeneralError' 
@@ -163,20 +163,20 @@ module Kleister
 
     # Assign a user to pack
     # @param pack_id [String] A pack UUID or slug
-    # @param params [PackUserParams] The pack user data to assign
+    # @param pack_user [PackUserParams] The pack user data to assign
     # @param [Hash] opts the optional parameters
     # @return [GeneralError]
-    def append_pack_to_user(pack_id, params, opts = {})
-      data, _status_code, _headers = append_pack_to_user_with_http_info(pack_id, params, opts)
+    def append_pack_to_user(pack_id, pack_user, opts = {})
+      data, _status_code, _headers = append_pack_to_user_with_http_info(pack_id, pack_user, opts)
       data
     end
 
     # Assign a user to pack
     # @param pack_id [String] A pack UUID or slug
-    # @param params [PackUserParams] The pack user data to assign
+    # @param pack_user [PackUserParams] The pack user data to assign
     # @param [Hash] opts the optional parameters
     # @return [Array<(GeneralError, Integer, Hash)>] GeneralError data, response status code and response headers
-    def append_pack_to_user_with_http_info(pack_id, params, opts = {})
+    def append_pack_to_user_with_http_info(pack_id, pack_user, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PackApi.append_pack_to_user ...'
       end
@@ -184,9 +184,9 @@ module Kleister
       if @api_client.config.client_side_validation && pack_id.nil?
         fail ArgumentError, "Missing the required parameter 'pack_id' when calling PackApi.append_pack_to_user"
       end
-      # verify the required parameter 'params' is set
-      if @api_client.config.client_side_validation && params.nil?
-        fail ArgumentError, "Missing the required parameter 'params' when calling PackApi.append_pack_to_user"
+      # verify the required parameter 'pack_user' is set
+      if @api_client.config.client_side_validation && pack_user.nil?
+        fail ArgumentError, "Missing the required parameter 'pack_user' when calling PackApi.append_pack_to_user"
       end
       # resource path
       local_var_path = '/packs/{pack_id}/users'.sub('{' + 'pack_id' + '}', pack_id.to_s)
@@ -205,7 +205,7 @@ module Kleister
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(params) 
+      post_body = opts[:body] || @api_client.object_to_http_body(pack_user) 
 
       # return_type
       return_type = opts[:return_type] || 'GeneralError' 
@@ -231,20 +231,20 @@ module Kleister
 
     # Create a new build for a pack
     # @param pack_id [String] A pack UUID or slug
-    # @param params [Build] The build data to create
+    # @param build [Build] The build data to create
     # @param [Hash] opts the optional parameters
     # @return [Build]
-    def create_build(pack_id, params, opts = {})
-      data, _status_code, _headers = create_build_with_http_info(pack_id, params, opts)
+    def create_build(pack_id, build, opts = {})
+      data, _status_code, _headers = create_build_with_http_info(pack_id, build, opts)
       data
     end
 
     # Create a new build for a pack
     # @param pack_id [String] A pack UUID or slug
-    # @param params [Build] The build data to create
+    # @param build [Build] The build data to create
     # @param [Hash] opts the optional parameters
     # @return [Array<(Build, Integer, Hash)>] Build data, response status code and response headers
-    def create_build_with_http_info(pack_id, params, opts = {})
+    def create_build_with_http_info(pack_id, build, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PackApi.create_build ...'
       end
@@ -252,9 +252,9 @@ module Kleister
       if @api_client.config.client_side_validation && pack_id.nil?
         fail ArgumentError, "Missing the required parameter 'pack_id' when calling PackApi.create_build"
       end
-      # verify the required parameter 'params' is set
-      if @api_client.config.client_side_validation && params.nil?
-        fail ArgumentError, "Missing the required parameter 'params' when calling PackApi.create_build"
+      # verify the required parameter 'build' is set
+      if @api_client.config.client_side_validation && build.nil?
+        fail ArgumentError, "Missing the required parameter 'build' when calling PackApi.create_build"
       end
       # resource path
       local_var_path = '/packs/{pack_id}/builds'.sub('{' + 'pack_id' + '}', pack_id.to_s)
@@ -273,7 +273,7 @@ module Kleister
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(params) 
+      post_body = opts[:body] || @api_client.object_to_http_body(build) 
 
       # return_type
       return_type = opts[:return_type] || 'Build' 
@@ -298,25 +298,25 @@ module Kleister
     end
 
     # Create a new pack
-    # @param params [Pack] The pack data to create
+    # @param pack [Pack] The pack data to create
     # @param [Hash] opts the optional parameters
     # @return [Pack]
-    def create_pack(params, opts = {})
-      data, _status_code, _headers = create_pack_with_http_info(params, opts)
+    def create_pack(pack, opts = {})
+      data, _status_code, _headers = create_pack_with_http_info(pack, opts)
       data
     end
 
     # Create a new pack
-    # @param params [Pack] The pack data to create
+    # @param pack [Pack] The pack data to create
     # @param [Hash] opts the optional parameters
     # @return [Array<(Pack, Integer, Hash)>] Pack data, response status code and response headers
-    def create_pack_with_http_info(params, opts = {})
+    def create_pack_with_http_info(pack, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PackApi.create_pack ...'
       end
-      # verify the required parameter 'params' is set
-      if @api_client.config.client_side_validation && params.nil?
-        fail ArgumentError, "Missing the required parameter 'params' when calling PackApi.create_pack"
+      # verify the required parameter 'pack' is set
+      if @api_client.config.client_side_validation && pack.nil?
+        fail ArgumentError, "Missing the required parameter 'pack' when calling PackApi.create_pack"
       end
       # resource path
       local_var_path = '/packs'
@@ -335,7 +335,7 @@ module Kleister
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(params) 
+      post_body = opts[:body] || @api_client.object_to_http_body(pack) 
 
       # return_type
       return_type = opts[:return_type] || 'Pack' 
@@ -428,21 +428,21 @@ module Kleister
     # Unlink a version from a build
     # @param pack_id [String] A pack UUID or slug
     # @param build_id [String] A build UUID or slug
-    # @param params [BuildVersionParams] The version data to unlink from build
+    # @param build_version [BuildVersionParams] The version data to unlink from build
     # @param [Hash] opts the optional parameters
     # @return [GeneralError]
-    def delete_build_from_version(pack_id, build_id, params, opts = {})
-      data, _status_code, _headers = delete_build_from_version_with_http_info(pack_id, build_id, params, opts)
+    def delete_build_from_version(pack_id, build_id, build_version, opts = {})
+      data, _status_code, _headers = delete_build_from_version_with_http_info(pack_id, build_id, build_version, opts)
       data
     end
 
     # Unlink a version from a build
     # @param pack_id [String] A pack UUID or slug
     # @param build_id [String] A build UUID or slug
-    # @param params [BuildVersionParams] The version data to unlink from build
+    # @param build_version [BuildVersionParams] The version data to unlink from build
     # @param [Hash] opts the optional parameters
     # @return [Array<(GeneralError, Integer, Hash)>] GeneralError data, response status code and response headers
-    def delete_build_from_version_with_http_info(pack_id, build_id, params, opts = {})
+    def delete_build_from_version_with_http_info(pack_id, build_id, build_version, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PackApi.delete_build_from_version ...'
       end
@@ -454,9 +454,9 @@ module Kleister
       if @api_client.config.client_side_validation && build_id.nil?
         fail ArgumentError, "Missing the required parameter 'build_id' when calling PackApi.delete_build_from_version"
       end
-      # verify the required parameter 'params' is set
-      if @api_client.config.client_side_validation && params.nil?
-        fail ArgumentError, "Missing the required parameter 'params' when calling PackApi.delete_build_from_version"
+      # verify the required parameter 'build_version' is set
+      if @api_client.config.client_side_validation && build_version.nil?
+        fail ArgumentError, "Missing the required parameter 'build_version' when calling PackApi.delete_build_from_version"
       end
       # resource path
       local_var_path = '/packs/{pack_id}/builds/{build_id}/versions'.sub('{' + 'pack_id' + '}', pack_id.to_s).sub('{' + 'build_id' + '}', build_id.to_s)
@@ -475,7 +475,7 @@ module Kleister
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(params) 
+      post_body = opts[:body] || @api_client.object_to_http_body(build_version) 
 
       # return_type
       return_type = opts[:return_type] || 'GeneralError' 
@@ -561,20 +561,20 @@ module Kleister
 
     # Remove a team from pack
     # @param pack_id [String] A pack UUID or slug
-    # @param params [PackTeamParams] The pack team data to delete
+    # @param pack_team [PackTeamParams] The pack team data to delete
     # @param [Hash] opts the optional parameters
     # @return [GeneralError]
-    def delete_pack_from_team(pack_id, params, opts = {})
-      data, _status_code, _headers = delete_pack_from_team_with_http_info(pack_id, params, opts)
+    def delete_pack_from_team(pack_id, pack_team, opts = {})
+      data, _status_code, _headers = delete_pack_from_team_with_http_info(pack_id, pack_team, opts)
       data
     end
 
     # Remove a team from pack
     # @param pack_id [String] A pack UUID or slug
-    # @param params [PackTeamParams] The pack team data to delete
+    # @param pack_team [PackTeamParams] The pack team data to delete
     # @param [Hash] opts the optional parameters
     # @return [Array<(GeneralError, Integer, Hash)>] GeneralError data, response status code and response headers
-    def delete_pack_from_team_with_http_info(pack_id, params, opts = {})
+    def delete_pack_from_team_with_http_info(pack_id, pack_team, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PackApi.delete_pack_from_team ...'
       end
@@ -582,9 +582,9 @@ module Kleister
       if @api_client.config.client_side_validation && pack_id.nil?
         fail ArgumentError, "Missing the required parameter 'pack_id' when calling PackApi.delete_pack_from_team"
       end
-      # verify the required parameter 'params' is set
-      if @api_client.config.client_side_validation && params.nil?
-        fail ArgumentError, "Missing the required parameter 'params' when calling PackApi.delete_pack_from_team"
+      # verify the required parameter 'pack_team' is set
+      if @api_client.config.client_side_validation && pack_team.nil?
+        fail ArgumentError, "Missing the required parameter 'pack_team' when calling PackApi.delete_pack_from_team"
       end
       # resource path
       local_var_path = '/packs/{pack_id}/teams'.sub('{' + 'pack_id' + '}', pack_id.to_s)
@@ -603,7 +603,7 @@ module Kleister
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(params) 
+      post_body = opts[:body] || @api_client.object_to_http_body(pack_team) 
 
       # return_type
       return_type = opts[:return_type] || 'GeneralError' 
@@ -629,20 +629,20 @@ module Kleister
 
     # Remove a user from pack
     # @param pack_id [String] A pack UUID or slug
-    # @param params [PackUserParams] The pack user data to delete
+    # @param pack_user [PackUserParams] The pack user data to delete
     # @param [Hash] opts the optional parameters
     # @return [GeneralError]
-    def delete_pack_from_user(pack_id, params, opts = {})
-      data, _status_code, _headers = delete_pack_from_user_with_http_info(pack_id, params, opts)
+    def delete_pack_from_user(pack_id, pack_user, opts = {})
+      data, _status_code, _headers = delete_pack_from_user_with_http_info(pack_id, pack_user, opts)
       data
     end
 
     # Remove a user from pack
     # @param pack_id [String] A pack UUID or slug
-    # @param params [PackUserParams] The pack user data to delete
+    # @param pack_user [PackUserParams] The pack user data to delete
     # @param [Hash] opts the optional parameters
     # @return [Array<(GeneralError, Integer, Hash)>] GeneralError data, response status code and response headers
-    def delete_pack_from_user_with_http_info(pack_id, params, opts = {})
+    def delete_pack_from_user_with_http_info(pack_id, pack_user, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PackApi.delete_pack_from_user ...'
       end
@@ -650,9 +650,9 @@ module Kleister
       if @api_client.config.client_side_validation && pack_id.nil?
         fail ArgumentError, "Missing the required parameter 'pack_id' when calling PackApi.delete_pack_from_user"
       end
-      # verify the required parameter 'params' is set
-      if @api_client.config.client_side_validation && params.nil?
-        fail ArgumentError, "Missing the required parameter 'params' when calling PackApi.delete_pack_from_user"
+      # verify the required parameter 'pack_user' is set
+      if @api_client.config.client_side_validation && pack_user.nil?
+        fail ArgumentError, "Missing the required parameter 'pack_user' when calling PackApi.delete_pack_from_user"
       end
       # resource path
       local_var_path = '/packs/{pack_id}/users'.sub('{' + 'pack_id' + '}', pack_id.to_s)
@@ -671,7 +671,7 @@ module Kleister
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(params) 
+      post_body = opts[:body] || @api_client.object_to_http_body(pack_user) 
 
       # return_type
       return_type = opts[:return_type] || 'GeneralError' 
@@ -997,20 +997,20 @@ module Kleister
 
     # Update team perms for pack
     # @param pack_id [String] A pack UUID or slug
-    # @param params [PackTeamParams] The pack team data to update
+    # @param pack_team [PackTeamParams] The pack team data to update
     # @param [Hash] opts the optional parameters
     # @return [GeneralError]
-    def permit_pack_team(pack_id, params, opts = {})
-      data, _status_code, _headers = permit_pack_team_with_http_info(pack_id, params, opts)
+    def permit_pack_team(pack_id, pack_team, opts = {})
+      data, _status_code, _headers = permit_pack_team_with_http_info(pack_id, pack_team, opts)
       data
     end
 
     # Update team perms for pack
     # @param pack_id [String] A pack UUID or slug
-    # @param params [PackTeamParams] The pack team data to update
+    # @param pack_team [PackTeamParams] The pack team data to update
     # @param [Hash] opts the optional parameters
     # @return [Array<(GeneralError, Integer, Hash)>] GeneralError data, response status code and response headers
-    def permit_pack_team_with_http_info(pack_id, params, opts = {})
+    def permit_pack_team_with_http_info(pack_id, pack_team, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PackApi.permit_pack_team ...'
       end
@@ -1018,9 +1018,9 @@ module Kleister
       if @api_client.config.client_side_validation && pack_id.nil?
         fail ArgumentError, "Missing the required parameter 'pack_id' when calling PackApi.permit_pack_team"
       end
-      # verify the required parameter 'params' is set
-      if @api_client.config.client_side_validation && params.nil?
-        fail ArgumentError, "Missing the required parameter 'params' when calling PackApi.permit_pack_team"
+      # verify the required parameter 'pack_team' is set
+      if @api_client.config.client_side_validation && pack_team.nil?
+        fail ArgumentError, "Missing the required parameter 'pack_team' when calling PackApi.permit_pack_team"
       end
       # resource path
       local_var_path = '/packs/{pack_id}/teams'.sub('{' + 'pack_id' + '}', pack_id.to_s)
@@ -1039,7 +1039,7 @@ module Kleister
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(params) 
+      post_body = opts[:body] || @api_client.object_to_http_body(pack_team) 
 
       # return_type
       return_type = opts[:return_type] || 'GeneralError' 
@@ -1065,20 +1065,20 @@ module Kleister
 
     # Update user perms for pack
     # @param pack_id [String] A pack UUID or slug
-    # @param params [PackUserParams] The pack user data to update
+    # @param pack_user [PackUserParams] The pack user data to update
     # @param [Hash] opts the optional parameters
     # @return [GeneralError]
-    def permit_pack_user(pack_id, params, opts = {})
-      data, _status_code, _headers = permit_pack_user_with_http_info(pack_id, params, opts)
+    def permit_pack_user(pack_id, pack_user, opts = {})
+      data, _status_code, _headers = permit_pack_user_with_http_info(pack_id, pack_user, opts)
       data
     end
 
     # Update user perms for pack
     # @param pack_id [String] A pack UUID or slug
-    # @param params [PackUserParams] The pack user data to update
+    # @param pack_user [PackUserParams] The pack user data to update
     # @param [Hash] opts the optional parameters
     # @return [Array<(GeneralError, Integer, Hash)>] GeneralError data, response status code and response headers
-    def permit_pack_user_with_http_info(pack_id, params, opts = {})
+    def permit_pack_user_with_http_info(pack_id, pack_user, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PackApi.permit_pack_user ...'
       end
@@ -1086,9 +1086,9 @@ module Kleister
       if @api_client.config.client_side_validation && pack_id.nil?
         fail ArgumentError, "Missing the required parameter 'pack_id' when calling PackApi.permit_pack_user"
       end
-      # verify the required parameter 'params' is set
-      if @api_client.config.client_side_validation && params.nil?
-        fail ArgumentError, "Missing the required parameter 'params' when calling PackApi.permit_pack_user"
+      # verify the required parameter 'pack_user' is set
+      if @api_client.config.client_side_validation && pack_user.nil?
+        fail ArgumentError, "Missing the required parameter 'pack_user' when calling PackApi.permit_pack_user"
       end
       # resource path
       local_var_path = '/packs/{pack_id}/users'.sub('{' + 'pack_id' + '}', pack_id.to_s)
@@ -1107,7 +1107,7 @@ module Kleister
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(params) 
+      post_body = opts[:body] || @api_client.object_to_http_body(pack_user) 
 
       # return_type
       return_type = opts[:return_type] || 'GeneralError' 
@@ -1260,21 +1260,21 @@ module Kleister
     # Update a specific build for a pack
     # @param pack_id [String] A pack UUID or slug
     # @param build_id [String] A build UUID or slug
-    # @param params [Build] The build data to update
+    # @param build [Build] The build data to update
     # @param [Hash] opts the optional parameters
     # @return [Build]
-    def update_build(pack_id, build_id, params, opts = {})
-      data, _status_code, _headers = update_build_with_http_info(pack_id, build_id, params, opts)
+    def update_build(pack_id, build_id, build, opts = {})
+      data, _status_code, _headers = update_build_with_http_info(pack_id, build_id, build, opts)
       data
     end
 
     # Update a specific build for a pack
     # @param pack_id [String] A pack UUID or slug
     # @param build_id [String] A build UUID or slug
-    # @param params [Build] The build data to update
+    # @param build [Build] The build data to update
     # @param [Hash] opts the optional parameters
     # @return [Array<(Build, Integer, Hash)>] Build data, response status code and response headers
-    def update_build_with_http_info(pack_id, build_id, params, opts = {})
+    def update_build_with_http_info(pack_id, build_id, build, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PackApi.update_build ...'
       end
@@ -1286,9 +1286,9 @@ module Kleister
       if @api_client.config.client_side_validation && build_id.nil?
         fail ArgumentError, "Missing the required parameter 'build_id' when calling PackApi.update_build"
       end
-      # verify the required parameter 'params' is set
-      if @api_client.config.client_side_validation && params.nil?
-        fail ArgumentError, "Missing the required parameter 'params' when calling PackApi.update_build"
+      # verify the required parameter 'build' is set
+      if @api_client.config.client_side_validation && build.nil?
+        fail ArgumentError, "Missing the required parameter 'build' when calling PackApi.update_build"
       end
       # resource path
       local_var_path = '/packs/{pack_id}/builds/{build_id}'.sub('{' + 'pack_id' + '}', pack_id.to_s).sub('{' + 'build_id' + '}', build_id.to_s)
@@ -1307,7 +1307,7 @@ module Kleister
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(params) 
+      post_body = opts[:body] || @api_client.object_to_http_body(build) 
 
       # return_type
       return_type = opts[:return_type] || 'Build' 
@@ -1333,20 +1333,20 @@ module Kleister
 
     # Update a specific pack
     # @param pack_id [String] A pack UUID or slug
-    # @param params [Pack] The pack data to update
+    # @param pack [Pack] The pack data to update
     # @param [Hash] opts the optional parameters
     # @return [Pack]
-    def update_pack(pack_id, params, opts = {})
-      data, _status_code, _headers = update_pack_with_http_info(pack_id, params, opts)
+    def update_pack(pack_id, pack, opts = {})
+      data, _status_code, _headers = update_pack_with_http_info(pack_id, pack, opts)
       data
     end
 
     # Update a specific pack
     # @param pack_id [String] A pack UUID or slug
-    # @param params [Pack] The pack data to update
+    # @param pack [Pack] The pack data to update
     # @param [Hash] opts the optional parameters
     # @return [Array<(Pack, Integer, Hash)>] Pack data, response status code and response headers
-    def update_pack_with_http_info(pack_id, params, opts = {})
+    def update_pack_with_http_info(pack_id, pack, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PackApi.update_pack ...'
       end
@@ -1354,9 +1354,9 @@ module Kleister
       if @api_client.config.client_side_validation && pack_id.nil?
         fail ArgumentError, "Missing the required parameter 'pack_id' when calling PackApi.update_pack"
       end
-      # verify the required parameter 'params' is set
-      if @api_client.config.client_side_validation && params.nil?
-        fail ArgumentError, "Missing the required parameter 'params' when calling PackApi.update_pack"
+      # verify the required parameter 'pack' is set
+      if @api_client.config.client_side_validation && pack.nil?
+        fail ArgumentError, "Missing the required parameter 'pack' when calling PackApi.update_pack"
       end
       # resource path
       local_var_path = '/packs/{pack_id}'.sub('{' + 'pack_id' + '}', pack_id.to_s)
@@ -1375,7 +1375,7 @@ module Kleister
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(params) 
+      post_body = opts[:body] || @api_client.object_to_http_body(pack) 
 
       # return_type
       return_type = opts[:return_type] || 'Pack' 

@@ -4,8 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**pack** | **String** |  | 
-**build** | **String** |  | 
 **mod** | **String** |  | 
 **version** | **String** |  | 
 
@@ -14,9 +12,7 @@ Name | Type | Description | Notes
 ```ruby
 require 'Kleister'
 
-instance = Kleister::BuildVersionParams.new(pack: null,
-                                 build: null,
-                                 mod: null,
+instance = Kleister::BuildVersionParams.new(mod: null,
                                  version: null)
 ```
 

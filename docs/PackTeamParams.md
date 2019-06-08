@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**pack** | **String** |  | 
 **team** | **String** |  | 
 **perm** | **String** |  | 
 
@@ -13,8 +12,7 @@ Name | Type | Description | Notes
 ```ruby
 require 'Kleister'
 
-instance = Kleister::PackTeamParams.new(pack: null,
-                                 team: null,
+instance = Kleister::PackTeamParams.new(team: null,
                                  perm: null)
 ```
 

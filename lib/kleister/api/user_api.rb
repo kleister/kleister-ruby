@@ -21,20 +21,20 @@ module Kleister
     end
     # Assign a mod to user
     # @param user_id [String] A user UUID or slug
-    # @param params [UserModParams] The user mod data to assign
+    # @param user_mod [UserModParams] The user mod data to assign
     # @param [Hash] opts the optional parameters
     # @return [GeneralError]
-    def append_user_to_mod(user_id, params, opts = {})
-      data, _status_code, _headers = append_user_to_mod_with_http_info(user_id, params, opts)
+    def append_user_to_mod(user_id, user_mod, opts = {})
+      data, _status_code, _headers = append_user_to_mod_with_http_info(user_id, user_mod, opts)
       data
     end
 
     # Assign a mod to user
     # @param user_id [String] A user UUID or slug
-    # @param params [UserModParams] The user mod data to assign
+    # @param user_mod [UserModParams] The user mod data to assign
     # @param [Hash] opts the optional parameters
     # @return [Array<(GeneralError, Integer, Hash)>] GeneralError data, response status code and response headers
-    def append_user_to_mod_with_http_info(user_id, params, opts = {})
+    def append_user_to_mod_with_http_info(user_id, user_mod, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: UserApi.append_user_to_mod ...'
       end
@@ -42,9 +42,9 @@ module Kleister
       if @api_client.config.client_side_validation && user_id.nil?
         fail ArgumentError, "Missing the required parameter 'user_id' when calling UserApi.append_user_to_mod"
       end
-      # verify the required parameter 'params' is set
-      if @api_client.config.client_side_validation && params.nil?
-        fail ArgumentError, "Missing the required parameter 'params' when calling UserApi.append_user_to_mod"
+      # verify the required parameter 'user_mod' is set
+      if @api_client.config.client_side_validation && user_mod.nil?
+        fail ArgumentError, "Missing the required parameter 'user_mod' when calling UserApi.append_user_to_mod"
       end
       # resource path
       local_var_path = '/users/{user_id}/mods'.sub('{' + 'user_id' + '}', user_id.to_s)
@@ -63,7 +63,7 @@ module Kleister
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(params) 
+      post_body = opts[:body] || @api_client.object_to_http_body(user_mod) 
 
       # return_type
       return_type = opts[:return_type] || 'GeneralError' 
@@ -89,20 +89,20 @@ module Kleister
 
     # Assign a pack to user
     # @param user_id [String] A user UUID or slug
-    # @param params [UserPackParams] The user pack data to assign
+    # @param user_pack [UserPackParams] The user pack data to assign
     # @param [Hash] opts the optional parameters
     # @return [GeneralError]
-    def append_user_to_pack(user_id, params, opts = {})
-      data, _status_code, _headers = append_user_to_pack_with_http_info(user_id, params, opts)
+    def append_user_to_pack(user_id, user_pack, opts = {})
+      data, _status_code, _headers = append_user_to_pack_with_http_info(user_id, user_pack, opts)
       data
     end
 
     # Assign a pack to user
     # @param user_id [String] A user UUID or slug
-    # @param params [UserPackParams] The user pack data to assign
+    # @param user_pack [UserPackParams] The user pack data to assign
     # @param [Hash] opts the optional parameters
     # @return [Array<(GeneralError, Integer, Hash)>] GeneralError data, response status code and response headers
-    def append_user_to_pack_with_http_info(user_id, params, opts = {})
+    def append_user_to_pack_with_http_info(user_id, user_pack, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: UserApi.append_user_to_pack ...'
       end
@@ -110,9 +110,9 @@ module Kleister
       if @api_client.config.client_side_validation && user_id.nil?
         fail ArgumentError, "Missing the required parameter 'user_id' when calling UserApi.append_user_to_pack"
       end
-      # verify the required parameter 'params' is set
-      if @api_client.config.client_side_validation && params.nil?
-        fail ArgumentError, "Missing the required parameter 'params' when calling UserApi.append_user_to_pack"
+      # verify the required parameter 'user_pack' is set
+      if @api_client.config.client_side_validation && user_pack.nil?
+        fail ArgumentError, "Missing the required parameter 'user_pack' when calling UserApi.append_user_to_pack"
       end
       # resource path
       local_var_path = '/users/{user_id}/packs'.sub('{' + 'user_id' + '}', user_id.to_s)
@@ -131,7 +131,7 @@ module Kleister
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(params) 
+      post_body = opts[:body] || @api_client.object_to_http_body(user_pack) 
 
       # return_type
       return_type = opts[:return_type] || 'GeneralError' 
@@ -157,20 +157,20 @@ module Kleister
 
     # Assign a team to user
     # @param user_id [String] A user UUID or slug
-    # @param params [UserTeamParams] The user team data to assign
+    # @param user_team [UserTeamParams] The user team data to assign
     # @param [Hash] opts the optional parameters
     # @return [GeneralError]
-    def append_user_to_team(user_id, params, opts = {})
-      data, _status_code, _headers = append_user_to_team_with_http_info(user_id, params, opts)
+    def append_user_to_team(user_id, user_team, opts = {})
+      data, _status_code, _headers = append_user_to_team_with_http_info(user_id, user_team, opts)
       data
     end
 
     # Assign a team to user
     # @param user_id [String] A user UUID or slug
-    # @param params [UserTeamParams] The user team data to assign
+    # @param user_team [UserTeamParams] The user team data to assign
     # @param [Hash] opts the optional parameters
     # @return [Array<(GeneralError, Integer, Hash)>] GeneralError data, response status code and response headers
-    def append_user_to_team_with_http_info(user_id, params, opts = {})
+    def append_user_to_team_with_http_info(user_id, user_team, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: UserApi.append_user_to_team ...'
       end
@@ -178,9 +178,9 @@ module Kleister
       if @api_client.config.client_side_validation && user_id.nil?
         fail ArgumentError, "Missing the required parameter 'user_id' when calling UserApi.append_user_to_team"
       end
-      # verify the required parameter 'params' is set
-      if @api_client.config.client_side_validation && params.nil?
-        fail ArgumentError, "Missing the required parameter 'params' when calling UserApi.append_user_to_team"
+      # verify the required parameter 'user_team' is set
+      if @api_client.config.client_side_validation && user_team.nil?
+        fail ArgumentError, "Missing the required parameter 'user_team' when calling UserApi.append_user_to_team"
       end
       # resource path
       local_var_path = '/users/{user_id}/teams'.sub('{' + 'user_id' + '}', user_id.to_s)
@@ -199,7 +199,7 @@ module Kleister
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(params) 
+      post_body = opts[:body] || @api_client.object_to_http_body(user_team) 
 
       # return_type
       return_type = opts[:return_type] || 'GeneralError' 
@@ -224,25 +224,25 @@ module Kleister
     end
 
     # Create a new user
-    # @param params [User] The user data to create
+    # @param user [User] The user data to create
     # @param [Hash] opts the optional parameters
     # @return [User]
-    def create_user(params, opts = {})
-      data, _status_code, _headers = create_user_with_http_info(params, opts)
+    def create_user(user, opts = {})
+      data, _status_code, _headers = create_user_with_http_info(user, opts)
       data
     end
 
     # Create a new user
-    # @param params [User] The user data to create
+    # @param user [User] The user data to create
     # @param [Hash] opts the optional parameters
     # @return [Array<(User, Integer, Hash)>] User data, response status code and response headers
-    def create_user_with_http_info(params, opts = {})
+    def create_user_with_http_info(user, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: UserApi.create_user ...'
       end
-      # verify the required parameter 'params' is set
-      if @api_client.config.client_side_validation && params.nil?
-        fail ArgumentError, "Missing the required parameter 'params' when calling UserApi.create_user"
+      # verify the required parameter 'user' is set
+      if @api_client.config.client_side_validation && user.nil?
+        fail ArgumentError, "Missing the required parameter 'user' when calling UserApi.create_user"
       end
       # resource path
       local_var_path = '/users'
@@ -261,7 +261,7 @@ module Kleister
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(params) 
+      post_body = opts[:body] || @api_client.object_to_http_body(user) 
 
       # return_type
       return_type = opts[:return_type] || 'User' 
@@ -347,20 +347,20 @@ module Kleister
 
     # Remove a mod from user
     # @param user_id [String] A user UUID or slug
-    # @param params [UserModParams] The user mod data to delete
+    # @param user_mod [UserModParams] The user mod data to delete
     # @param [Hash] opts the optional parameters
     # @return [GeneralError]
-    def delete_user_from_mod(user_id, params, opts = {})
-      data, _status_code, _headers = delete_user_from_mod_with_http_info(user_id, params, opts)
+    def delete_user_from_mod(user_id, user_mod, opts = {})
+      data, _status_code, _headers = delete_user_from_mod_with_http_info(user_id, user_mod, opts)
       data
     end
 
     # Remove a mod from user
     # @param user_id [String] A user UUID or slug
-    # @param params [UserModParams] The user mod data to delete
+    # @param user_mod [UserModParams] The user mod data to delete
     # @param [Hash] opts the optional parameters
     # @return [Array<(GeneralError, Integer, Hash)>] GeneralError data, response status code and response headers
-    def delete_user_from_mod_with_http_info(user_id, params, opts = {})
+    def delete_user_from_mod_with_http_info(user_id, user_mod, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: UserApi.delete_user_from_mod ...'
       end
@@ -368,9 +368,9 @@ module Kleister
       if @api_client.config.client_side_validation && user_id.nil?
         fail ArgumentError, "Missing the required parameter 'user_id' when calling UserApi.delete_user_from_mod"
       end
-      # verify the required parameter 'params' is set
-      if @api_client.config.client_side_validation && params.nil?
-        fail ArgumentError, "Missing the required parameter 'params' when calling UserApi.delete_user_from_mod"
+      # verify the required parameter 'user_mod' is set
+      if @api_client.config.client_side_validation && user_mod.nil?
+        fail ArgumentError, "Missing the required parameter 'user_mod' when calling UserApi.delete_user_from_mod"
       end
       # resource path
       local_var_path = '/users/{user_id}/mods'.sub('{' + 'user_id' + '}', user_id.to_s)
@@ -389,7 +389,7 @@ module Kleister
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(params) 
+      post_body = opts[:body] || @api_client.object_to_http_body(user_mod) 
 
       # return_type
       return_type = opts[:return_type] || 'GeneralError' 
@@ -415,20 +415,20 @@ module Kleister
 
     # Remove a pack from user
     # @param user_id [String] A user UUID or slug
-    # @param params [UserPackParams] The user pack data to delete
+    # @param user_pack [UserPackParams] The user pack data to delete
     # @param [Hash] opts the optional parameters
     # @return [GeneralError]
-    def delete_user_from_pack(user_id, params, opts = {})
-      data, _status_code, _headers = delete_user_from_pack_with_http_info(user_id, params, opts)
+    def delete_user_from_pack(user_id, user_pack, opts = {})
+      data, _status_code, _headers = delete_user_from_pack_with_http_info(user_id, user_pack, opts)
       data
     end
 
     # Remove a pack from user
     # @param user_id [String] A user UUID or slug
-    # @param params [UserPackParams] The user pack data to delete
+    # @param user_pack [UserPackParams] The user pack data to delete
     # @param [Hash] opts the optional parameters
     # @return [Array<(GeneralError, Integer, Hash)>] GeneralError data, response status code and response headers
-    def delete_user_from_pack_with_http_info(user_id, params, opts = {})
+    def delete_user_from_pack_with_http_info(user_id, user_pack, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: UserApi.delete_user_from_pack ...'
       end
@@ -436,9 +436,9 @@ module Kleister
       if @api_client.config.client_side_validation && user_id.nil?
         fail ArgumentError, "Missing the required parameter 'user_id' when calling UserApi.delete_user_from_pack"
       end
-      # verify the required parameter 'params' is set
-      if @api_client.config.client_side_validation && params.nil?
-        fail ArgumentError, "Missing the required parameter 'params' when calling UserApi.delete_user_from_pack"
+      # verify the required parameter 'user_pack' is set
+      if @api_client.config.client_side_validation && user_pack.nil?
+        fail ArgumentError, "Missing the required parameter 'user_pack' when calling UserApi.delete_user_from_pack"
       end
       # resource path
       local_var_path = '/users/{user_id}/packs'.sub('{' + 'user_id' + '}', user_id.to_s)
@@ -457,7 +457,7 @@ module Kleister
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(params) 
+      post_body = opts[:body] || @api_client.object_to_http_body(user_pack) 
 
       # return_type
       return_type = opts[:return_type] || 'GeneralError' 
@@ -483,20 +483,20 @@ module Kleister
 
     # Remove a team from user
     # @param user_id [String] A user UUID or slug
-    # @param params [UserTeamParams] The user team data to delete
+    # @param user_team [UserTeamParams] The user team data to delete
     # @param [Hash] opts the optional parameters
     # @return [GeneralError]
-    def delete_user_from_team(user_id, params, opts = {})
-      data, _status_code, _headers = delete_user_from_team_with_http_info(user_id, params, opts)
+    def delete_user_from_team(user_id, user_team, opts = {})
+      data, _status_code, _headers = delete_user_from_team_with_http_info(user_id, user_team, opts)
       data
     end
 
     # Remove a team from user
     # @param user_id [String] A user UUID or slug
-    # @param params [UserTeamParams] The user team data to delete
+    # @param user_team [UserTeamParams] The user team data to delete
     # @param [Hash] opts the optional parameters
     # @return [Array<(GeneralError, Integer, Hash)>] GeneralError data, response status code and response headers
-    def delete_user_from_team_with_http_info(user_id, params, opts = {})
+    def delete_user_from_team_with_http_info(user_id, user_team, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: UserApi.delete_user_from_team ...'
       end
@@ -504,9 +504,9 @@ module Kleister
       if @api_client.config.client_side_validation && user_id.nil?
         fail ArgumentError, "Missing the required parameter 'user_id' when calling UserApi.delete_user_from_team"
       end
-      # verify the required parameter 'params' is set
-      if @api_client.config.client_side_validation && params.nil?
-        fail ArgumentError, "Missing the required parameter 'params' when calling UserApi.delete_user_from_team"
+      # verify the required parameter 'user_team' is set
+      if @api_client.config.client_side_validation && user_team.nil?
+        fail ArgumentError, "Missing the required parameter 'user_team' when calling UserApi.delete_user_from_team"
       end
       # resource path
       local_var_path = '/users/{user_id}/teams'.sub('{' + 'user_id' + '}', user_id.to_s)
@@ -525,7 +525,7 @@ module Kleister
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(params) 
+      post_body = opts[:body] || @api_client.object_to_http_body(user_team) 
 
       # return_type
       return_type = opts[:return_type] || 'GeneralError' 
@@ -785,20 +785,20 @@ module Kleister
 
     # Update mod perms for user
     # @param user_id [String] A user UUID or slug
-    # @param params [UserModParams] The user mod data to update
+    # @param user_mod [UserModParams] The user mod data to update
     # @param [Hash] opts the optional parameters
     # @return [GeneralError]
-    def permit_user_mod(user_id, params, opts = {})
-      data, _status_code, _headers = permit_user_mod_with_http_info(user_id, params, opts)
+    def permit_user_mod(user_id, user_mod, opts = {})
+      data, _status_code, _headers = permit_user_mod_with_http_info(user_id, user_mod, opts)
       data
     end
 
     # Update mod perms for user
     # @param user_id [String] A user UUID or slug
-    # @param params [UserModParams] The user mod data to update
+    # @param user_mod [UserModParams] The user mod data to update
     # @param [Hash] opts the optional parameters
     # @return [Array<(GeneralError, Integer, Hash)>] GeneralError data, response status code and response headers
-    def permit_user_mod_with_http_info(user_id, params, opts = {})
+    def permit_user_mod_with_http_info(user_id, user_mod, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: UserApi.permit_user_mod ...'
       end
@@ -806,9 +806,9 @@ module Kleister
       if @api_client.config.client_side_validation && user_id.nil?
         fail ArgumentError, "Missing the required parameter 'user_id' when calling UserApi.permit_user_mod"
       end
-      # verify the required parameter 'params' is set
-      if @api_client.config.client_side_validation && params.nil?
-        fail ArgumentError, "Missing the required parameter 'params' when calling UserApi.permit_user_mod"
+      # verify the required parameter 'user_mod' is set
+      if @api_client.config.client_side_validation && user_mod.nil?
+        fail ArgumentError, "Missing the required parameter 'user_mod' when calling UserApi.permit_user_mod"
       end
       # resource path
       local_var_path = '/users/{user_id}/mods'.sub('{' + 'user_id' + '}', user_id.to_s)
@@ -827,7 +827,7 @@ module Kleister
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(params) 
+      post_body = opts[:body] || @api_client.object_to_http_body(user_mod) 
 
       # return_type
       return_type = opts[:return_type] || 'GeneralError' 
@@ -853,20 +853,20 @@ module Kleister
 
     # Update pack perms for user
     # @param user_id [String] A user UUID or slug
-    # @param params [UserPackParams] The user pack data to update
+    # @param user_pack [UserPackParams] The user pack data to update
     # @param [Hash] opts the optional parameters
     # @return [GeneralError]
-    def permit_user_pack(user_id, params, opts = {})
-      data, _status_code, _headers = permit_user_pack_with_http_info(user_id, params, opts)
+    def permit_user_pack(user_id, user_pack, opts = {})
+      data, _status_code, _headers = permit_user_pack_with_http_info(user_id, user_pack, opts)
       data
     end
 
     # Update pack perms for user
     # @param user_id [String] A user UUID or slug
-    # @param params [UserPackParams] The user pack data to update
+    # @param user_pack [UserPackParams] The user pack data to update
     # @param [Hash] opts the optional parameters
     # @return [Array<(GeneralError, Integer, Hash)>] GeneralError data, response status code and response headers
-    def permit_user_pack_with_http_info(user_id, params, opts = {})
+    def permit_user_pack_with_http_info(user_id, user_pack, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: UserApi.permit_user_pack ...'
       end
@@ -874,9 +874,9 @@ module Kleister
       if @api_client.config.client_side_validation && user_id.nil?
         fail ArgumentError, "Missing the required parameter 'user_id' when calling UserApi.permit_user_pack"
       end
-      # verify the required parameter 'params' is set
-      if @api_client.config.client_side_validation && params.nil?
-        fail ArgumentError, "Missing the required parameter 'params' when calling UserApi.permit_user_pack"
+      # verify the required parameter 'user_pack' is set
+      if @api_client.config.client_side_validation && user_pack.nil?
+        fail ArgumentError, "Missing the required parameter 'user_pack' when calling UserApi.permit_user_pack"
       end
       # resource path
       local_var_path = '/users/{user_id}/packs'.sub('{' + 'user_id' + '}', user_id.to_s)
@@ -895,7 +895,7 @@ module Kleister
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(params) 
+      post_body = opts[:body] || @api_client.object_to_http_body(user_pack) 
 
       # return_type
       return_type = opts[:return_type] || 'GeneralError' 
@@ -921,20 +921,20 @@ module Kleister
 
     # Update team perms for user
     # @param user_id [String] A user UUID or slug
-    # @param params [UserTeamParams] The user team data to update
+    # @param user_team [UserTeamParams] The user team data to update
     # @param [Hash] opts the optional parameters
     # @return [GeneralError]
-    def permit_user_team(user_id, params, opts = {})
-      data, _status_code, _headers = permit_user_team_with_http_info(user_id, params, opts)
+    def permit_user_team(user_id, user_team, opts = {})
+      data, _status_code, _headers = permit_user_team_with_http_info(user_id, user_team, opts)
       data
     end
 
     # Update team perms for user
     # @param user_id [String] A user UUID or slug
-    # @param params [UserTeamParams] The user team data to update
+    # @param user_team [UserTeamParams] The user team data to update
     # @param [Hash] opts the optional parameters
     # @return [Array<(GeneralError, Integer, Hash)>] GeneralError data, response status code and response headers
-    def permit_user_team_with_http_info(user_id, params, opts = {})
+    def permit_user_team_with_http_info(user_id, user_team, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: UserApi.permit_user_team ...'
       end
@@ -942,9 +942,9 @@ module Kleister
       if @api_client.config.client_side_validation && user_id.nil?
         fail ArgumentError, "Missing the required parameter 'user_id' when calling UserApi.permit_user_team"
       end
-      # verify the required parameter 'params' is set
-      if @api_client.config.client_side_validation && params.nil?
-        fail ArgumentError, "Missing the required parameter 'params' when calling UserApi.permit_user_team"
+      # verify the required parameter 'user_team' is set
+      if @api_client.config.client_side_validation && user_team.nil?
+        fail ArgumentError, "Missing the required parameter 'user_team' when calling UserApi.permit_user_team"
       end
       # resource path
       local_var_path = '/users/{user_id}/teams'.sub('{' + 'user_id' + '}', user_id.to_s)
@@ -963,7 +963,7 @@ module Kleister
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(params) 
+      post_body = opts[:body] || @api_client.object_to_http_body(user_team) 
 
       # return_type
       return_type = opts[:return_type] || 'GeneralError' 
@@ -1049,20 +1049,20 @@ module Kleister
 
     # Update a specific user
     # @param user_id [String] A user UUID or slug
-    # @param params [User] The user data to update
+    # @param user [User] The user data to update
     # @param [Hash] opts the optional parameters
     # @return [User]
-    def update_user(user_id, params, opts = {})
-      data, _status_code, _headers = update_user_with_http_info(user_id, params, opts)
+    def update_user(user_id, user, opts = {})
+      data, _status_code, _headers = update_user_with_http_info(user_id, user, opts)
       data
     end
 
     # Update a specific user
     # @param user_id [String] A user UUID or slug
-    # @param params [User] The user data to update
+    # @param user [User] The user data to update
     # @param [Hash] opts the optional parameters
     # @return [Array<(User, Integer, Hash)>] User data, response status code and response headers
-    def update_user_with_http_info(user_id, params, opts = {})
+    def update_user_with_http_info(user_id, user, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: UserApi.update_user ...'
       end
@@ -1070,9 +1070,9 @@ module Kleister
       if @api_client.config.client_side_validation && user_id.nil?
         fail ArgumentError, "Missing the required parameter 'user_id' when calling UserApi.update_user"
       end
-      # verify the required parameter 'params' is set
-      if @api_client.config.client_side_validation && params.nil?
-        fail ArgumentError, "Missing the required parameter 'params' when calling UserApi.update_user"
+      # verify the required parameter 'user' is set
+      if @api_client.config.client_side_validation && user.nil?
+        fail ArgumentError, "Missing the required parameter 'user' when calling UserApi.update_user"
       end
       # resource path
       local_var_path = '/users/{user_id}'.sub('{' + 'user_id' + '}', user_id.to_s)
@@ -1091,7 +1091,7 @@ module Kleister
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(params) 
+      post_body = opts[:body] || @api_client.object_to_http_body(user) 
 
       # return_type
       return_type = opts[:return_type] || 'User' 

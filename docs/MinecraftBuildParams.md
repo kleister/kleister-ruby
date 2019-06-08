@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**minecraft** | **String** |  | 
 **pack** | **String** |  | 
 **build** | **String** |  | 
 
@@ -13,8 +12,7 @@ Name | Type | Description | Notes
 ```ruby
 require 'Kleister'
 
-instance = Kleister::MinecraftBuildParams.new(minecraft: null,
-                                 pack: null,
+instance = Kleister::MinecraftBuildParams.new(pack: null,
                                  build: null)
 ```
 

@@ -32,12 +32,6 @@ describe 'ForgeBuildParams' do
       expect(@instance).to be_instance_of(Kleister::ForgeBuildParams)
     end
   end
-  describe 'test attribute "forge"' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
   describe 'test attribute "pack"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers

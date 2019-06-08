@@ -54,7 +54,7 @@ describe 'ProfileApi' do
 
   # unit tests for update_profile
   # Retrieve an unlimited auth token
-  # @param params The profile data to update
+  # @param profile The profile data to update
   # @param [Hash] opts the optional parameters
   # @return [Profile]
   describe 'update_profile test' do

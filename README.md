@@ -55,11 +55,11 @@ Please follow the [installation](#installation) instructions and then run the fo
 require 'kleister'
 
 api = Kleister::AuthApi.new
-params = Kleister::AuthLogin.new # AuthLogin | The credentials to authenticate
+auth_login = Kleister::AuthLogin.new # AuthLogin | The credentials to authenticate
 
 begin
   # Authenticate an user by credentials
-  result =  api.login_user(params)
+  result =  api.login_user(auth_login)
   p result
 rescue Kleister::ApiError => e
   puts "Exception when calling AuthApi->login_user: #{e}"

@@ -14,8 +14,6 @@ require 'date'
 
 module Kleister
   class ForgeBuildParams
-    attr_accessor :forge
-
     attr_accessor :pack
 
     attr_accessor :build
@@ -23,7 +21,6 @@ module Kleister
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'forge' => :'forge',
         :'pack' => :'pack',
         :'build' => :'build'
       }
@@ -32,7 +29,6 @@ module Kleister
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'forge' => :'String',
         :'pack' => :'String',
         :'build' => :'String'
       }
@@ -53,10 +49,6 @@ module Kleister
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'forge')
-        self.forge = attributes[:'forge']
-      end
-
       if attributes.key?(:'pack')
         self.pack = attributes[:'pack']
       end
@@ -70,10 +62,6 @@ module Kleister
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @forge.nil?
-        invalid_properties.push('invalid value for "forge", forge cannot be nil.')
-      end
-
       if @pack.nil?
         invalid_properties.push('invalid value for "pack", pack cannot be nil.')
       end
@@ -88,7 +76,6 @@ module Kleister
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @forge.nil?
       return false if @pack.nil?
       return false if @build.nil?
       true
@@ -99,7 +86,6 @@ module Kleister
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          forge == o.forge &&
           pack == o.pack &&
           build == o.build
     end
@@ -113,7 +99,7 @@ module Kleister
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [forge, pack, build].hash
+      [pack, build].hash
     end
 
     # Builds the object from hash

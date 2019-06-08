@@ -35,7 +35,7 @@ describe 'ModApi' do
   # unit tests for append_mod_to_team
   # Assign a team to mod
   # @param mod_id A mod UUID or slug
-  # @param params The mod team data to assign
+  # @param mod_team The mod team data to assign
   # @param [Hash] opts the optional parameters
   # @return [GeneralError]
   describe 'append_mod_to_team test' do
@@ -47,7 +47,7 @@ describe 'ModApi' do
   # unit tests for append_mod_to_user
   # Assign a user to mod
   # @param mod_id A mod UUID or slug
-  # @param params The mod user data to assign
+  # @param mod_user The mod user data to assign
   # @param [Hash] opts the optional parameters
   # @return [GeneralError]
   describe 'append_mod_to_user test' do
@@ -60,7 +60,7 @@ describe 'ModApi' do
   # Assign a build to a version
   # @param mod_id A mod UUID or slug
   # @param version_id A version UUID or slug
-  # @param params The build data to append to version
+  # @param version_build The build data to append to version
   # @param [Hash] opts the optional parameters
   # @return [GeneralError]
   describe 'append_version_to_build test' do
@@ -71,7 +71,7 @@ describe 'ModApi' do
 
   # unit tests for create_mod
   # Create a new mod
-  # @param params The mod data to create
+  # @param mod The mod data to create
   # @param [Hash] opts the optional parameters
   # @return [Mod]
   describe 'create_mod test' do
@@ -83,7 +83,7 @@ describe 'ModApi' do
   # unit tests for create_version
   # Create a new version for a mod
   # @param mod_id A mod UUID or slug
-  # @param params The version data to create
+  # @param version The version data to create
   # @param [Hash] opts the optional parameters
   # @return [Version]
   describe 'create_version test' do
@@ -106,7 +106,7 @@ describe 'ModApi' do
   # unit tests for delete_mod_from_team
   # Remove a team from mod
   # @param mod_id A mod UUID or slug
-  # @param params The mod team data to delete
+  # @param mod_team The mod team data to delete
   # @param [Hash] opts the optional parameters
   # @return [GeneralError]
   describe 'delete_mod_from_team test' do
@@ -118,7 +118,7 @@ describe 'ModApi' do
   # unit tests for delete_mod_from_user
   # Remove a user from mod
   # @param mod_id A mod UUID or slug
-  # @param params The mod user data to delete
+  # @param mod_user The mod user data to delete
   # @param [Hash] opts the optional parameters
   # @return [GeneralError]
   describe 'delete_mod_from_user test' do
@@ -143,7 +143,7 @@ describe 'ModApi' do
   # Unlink a build from a version
   # @param mod_id A mod UUID or slug
   # @param version_id A version UUID or slug
-  # @param params The build data to unlink from version
+  # @param version_build The build data to unlink from version
   # @param [Hash] opts the optional parameters
   # @return [GeneralError]
   describe 'delete_version_from_build test' do
@@ -210,7 +210,7 @@ describe 'ModApi' do
   # unit tests for permit_mod_team
   # Update team perms for mod
   # @param mod_id A mod UUID or slug
-  # @param params The mod team data to update
+  # @param mod_team The mod team data to update
   # @param [Hash] opts the optional parameters
   # @return [GeneralError]
   describe 'permit_mod_team test' do
@@ -222,7 +222,7 @@ describe 'ModApi' do
   # unit tests for permit_mod_user
   # Update user perms for mod
   # @param mod_id A mod UUID or slug
-  # @param params The mod user data to update
+  # @param mod_user The mod user data to update
   # @param [Hash] opts the optional parameters
   # @return [GeneralError]
   describe 'permit_mod_user test' do
@@ -257,7 +257,7 @@ describe 'ModApi' do
   # unit tests for update_mod
   # Update a specific mod
   # @param mod_id A mod UUID or slug
-  # @param params The mod data to update
+  # @param mod The mod data to update
   # @param [Hash] opts the optional parameters
   # @return [Mod]
   describe 'update_mod test' do
@@ -270,7 +270,7 @@ describe 'ModApi' do
   # Update a specific version for a mod
   # @param mod_id A mod UUID or slug
   # @param version_id A version UUID or slug
-  # @param params The version data to update
+  # @param version The version data to update
   # @param [Hash] opts the optional parameters
   # @return [Version]
   describe 'update_version test' do

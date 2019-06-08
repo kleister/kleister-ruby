@@ -14,10 +14,6 @@ require 'date'
 
 module Kleister
   class BuildVersionParams
-    attr_accessor :pack
-
-    attr_accessor :build
-
     attr_accessor :mod
 
     attr_accessor :version
@@ -25,8 +21,6 @@ module Kleister
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'pack' => :'pack',
-        :'build' => :'build',
         :'mod' => :'mod',
         :'version' => :'version'
       }
@@ -35,8 +29,6 @@ module Kleister
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'pack' => :'String',
-        :'build' => :'String',
         :'mod' => :'String',
         :'version' => :'String'
       }
@@ -57,14 +49,6 @@ module Kleister
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'pack')
-        self.pack = attributes[:'pack']
-      end
-
-      if attributes.key?(:'build')
-        self.build = attributes[:'build']
-      end
-
       if attributes.key?(:'mod')
         self.mod = attributes[:'mod']
       end
@@ -78,14 +62,6 @@ module Kleister
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @pack.nil?
-        invalid_properties.push('invalid value for "pack", pack cannot be nil.')
-      end
-
-      if @build.nil?
-        invalid_properties.push('invalid value for "build", build cannot be nil.')
-      end
-
       if @mod.nil?
         invalid_properties.push('invalid value for "mod", mod cannot be nil.')
       end
@@ -100,8 +76,6 @@ module Kleister
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @pack.nil?
-      return false if @build.nil?
       return false if @mod.nil?
       return false if @version.nil?
       true
@@ -112,8 +86,6 @@ module Kleister
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          pack == o.pack &&
-          build == o.build &&
           mod == o.mod &&
           version == o.version
     end
@@ -127,7 +99,7 @@ module Kleister
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [pack, build, mod, version].hash
+      [mod, version].hash
     end
 
     # Builds the object from hash

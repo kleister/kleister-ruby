@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**forge** | **String** |  | 
 **pack** | **String** |  | 
 **build** | **String** |  | 
 
@@ -13,8 +12,7 @@ Name | Type | Description | Notes
 ```ruby
 require 'Kleister'
 
-instance = Kleister::ForgeBuildParams.new(forge: null,
-                                 pack: null,
+instance = Kleister::ForgeBuildParams.new(pack: null,
                                  build: null)
 ```
 

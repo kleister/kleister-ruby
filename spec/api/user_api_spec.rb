@@ -35,7 +35,7 @@ describe 'UserApi' do
   # unit tests for append_user_to_mod
   # Assign a mod to user
   # @param user_id A user UUID or slug
-  # @param params The user mod data to assign
+  # @param user_mod The user mod data to assign
   # @param [Hash] opts the optional parameters
   # @return [GeneralError]
   describe 'append_user_to_mod test' do
@@ -47,7 +47,7 @@ describe 'UserApi' do
   # unit tests for append_user_to_pack
   # Assign a pack to user
   # @param user_id A user UUID or slug
-  # @param params The user pack data to assign
+  # @param user_pack The user pack data to assign
   # @param [Hash] opts the optional parameters
   # @return [GeneralError]
   describe 'append_user_to_pack test' do
@@ -59,7 +59,7 @@ describe 'UserApi' do
   # unit tests for append_user_to_team
   # Assign a team to user
   # @param user_id A user UUID or slug
-  # @param params The user team data to assign
+  # @param user_team The user team data to assign
   # @param [Hash] opts the optional parameters
   # @return [GeneralError]
   describe 'append_user_to_team test' do
@@ -70,7 +70,7 @@ describe 'UserApi' do
 
   # unit tests for create_user
   # Create a new user
-  # @param params The user data to create
+  # @param user The user data to create
   # @param [Hash] opts the optional parameters
   # @return [User]
   describe 'create_user test' do
@@ -93,7 +93,7 @@ describe 'UserApi' do
   # unit tests for delete_user_from_mod
   # Remove a mod from user
   # @param user_id A user UUID or slug
-  # @param params The user mod data to delete
+  # @param user_mod The user mod data to delete
   # @param [Hash] opts the optional parameters
   # @return [GeneralError]
   describe 'delete_user_from_mod test' do
@@ -105,7 +105,7 @@ describe 'UserApi' do
   # unit tests for delete_user_from_pack
   # Remove a pack from user
   # @param user_id A user UUID or slug
-  # @param params The user pack data to delete
+  # @param user_pack The user pack data to delete
   # @param [Hash] opts the optional parameters
   # @return [GeneralError]
   describe 'delete_user_from_pack test' do
@@ -117,7 +117,7 @@ describe 'UserApi' do
   # unit tests for delete_user_from_team
   # Remove a team from user
   # @param user_id A user UUID or slug
-  # @param params The user team data to delete
+  # @param user_team The user team data to delete
   # @param [Hash] opts the optional parameters
   # @return [GeneralError]
   describe 'delete_user_from_team test' do
@@ -172,7 +172,7 @@ describe 'UserApi' do
   # unit tests for permit_user_mod
   # Update mod perms for user
   # @param user_id A user UUID or slug
-  # @param params The user mod data to update
+  # @param user_mod The user mod data to update
   # @param [Hash] opts the optional parameters
   # @return [GeneralError]
   describe 'permit_user_mod test' do
@@ -184,7 +184,7 @@ describe 'UserApi' do
   # unit tests for permit_user_pack
   # Update pack perms for user
   # @param user_id A user UUID or slug
-  # @param params The user pack data to update
+  # @param user_pack The user pack data to update
   # @param [Hash] opts the optional parameters
   # @return [GeneralError]
   describe 'permit_user_pack test' do
@@ -196,7 +196,7 @@ describe 'UserApi' do
   # unit tests for permit_user_team
   # Update team perms for user
   # @param user_id A user UUID or slug
-  # @param params The user team data to update
+  # @param user_team The user team data to update
   # @param [Hash] opts the optional parameters
   # @return [GeneralError]
   describe 'permit_user_team test' do
@@ -219,7 +219,7 @@ describe 'UserApi' do
   # unit tests for update_user
   # Update a specific user
   # @param user_id A user UUID or slug
-  # @param params The user data to update
+  # @param user The user data to update
   # @param [Hash] opts the optional parameters
   # @return [User]
   describe 'update_user test' do

@@ -14,16 +14,35 @@ require 'date'
 
 module Kleister
   class TeamModParams
-    attr_accessor :team
-
     attr_accessor :mod
 
     attr_accessor :perm
 
+    class EnumAttributeValidator
+      attr_reader :datatype
+      attr_reader :allowable_values
+
+      def initialize(datatype, allowable_values)
+        @allowable_values = allowable_values.map do |value|
+          case datatype.to_s
+          when /Integer/i
+            value.to_i
+          when /Float/i
+            value.to_f
+          else
+            value
+          end
+        end
+      end
+
+      def valid?(value)
+        !value || allowable_values.include?(value)
+      end
+    end
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'team' => :'team',
         :'mod' => :'mod',
         :'perm' => :'perm'
       }
@@ -32,7 +51,6 @@ module Kleister
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'team' => :'String',
         :'mod' => :'String',
         :'perm' => :'String'
       }
@@ -53,10 +71,6 @@ module Kleister
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'team')
-        self.team = attributes[:'team']
-      end
-
       if attributes.key?(:'mod')
         self.mod = attributes[:'mod']
       end
@@ -70,10 +84,6 @@ module Kleister
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @team.nil?
-        invalid_properties.push('invalid value for "team", team cannot be nil.')
-      end
-
       if @mod.nil?
         invalid_properties.push('invalid value for "mod", mod cannot be nil.')
       end
@@ -88,10 +98,21 @@ module Kleister
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @team.nil?
       return false if @mod.nil?
       return false if @perm.nil?
+      perm_validator = EnumAttributeValidator.new('String', ["user", "admin", "owner"])
+      return false unless perm_validator.valid?(@perm)
       true
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] perm Object to be assigned
+    def perm=(perm)
+      validator = EnumAttributeValidator.new('String', ["user", "admin", "owner"])
+      unless validator.valid?(perm)
+        fail ArgumentError, "invalid value for \"perm\", must be one of #{validator.allowable_values}."
+      end
+      @perm = perm
     end
 
     # Checks equality by comparing each attribute.
@@ -99,7 +120,6 @@ module Kleister
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          team == o.team &&
           mod == o.mod &&
           perm == o.perm
     end
@@ -113,7 +133,7 @@ module Kleister
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [team, mod, perm].hash
+      [mod, perm].hash
     end
 
     # Builds the object from hash

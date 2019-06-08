@@ -94,7 +94,7 @@ No authorization required
 
 ## update_profile
 
-> Profile update_profile(params)
+> Profile update_profile(profile)
 
 Retrieve an unlimited auth token
 
@@ -105,11 +105,11 @@ Retrieve an unlimited auth token
 require 'kleister'
 
 api_instance = Kleister::ProfileApi.new
-params = Kleister::Profile.new # Profile | The profile data to update
+profile = Kleister::Profile.new # Profile | The profile data to update
 
 begin
   #Retrieve an unlimited auth token
-  result = api_instance.update_profile(params)
+  result = api_instance.update_profile(profile)
   p result
 rescue Kleister::ApiError => e
   puts "Exception when calling ProfileApi->update_profile: #{e}"
@@ -121,7 +121,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **params** | [**Profile**](Profile.md)| The profile data to update | 
+ **profile** | [**Profile**](Profile.md)| The profile data to update | 
 
 ### Return type
 

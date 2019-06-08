@@ -36,7 +36,7 @@ describe 'PackApi' do
   # Assign a version to a build
   # @param pack_id A pack UUID or slug
   # @param build_id A build UUID or slug
-  # @param params The version data to append to build
+  # @param build_version The version data to append to build
   # @param [Hash] opts the optional parameters
   # @return [GeneralError]
   describe 'append_build_to_version test' do
@@ -48,7 +48,7 @@ describe 'PackApi' do
   # unit tests for append_pack_to_team
   # Assign a team to pack
   # @param pack_id A pack UUID or slug
-  # @param params The pack team data to assign
+  # @param pack_team The pack team data to assign
   # @param [Hash] opts the optional parameters
   # @return [GeneralError]
   describe 'append_pack_to_team test' do
@@ -60,7 +60,7 @@ describe 'PackApi' do
   # unit tests for append_pack_to_user
   # Assign a user to pack
   # @param pack_id A pack UUID or slug
-  # @param params The pack user data to assign
+  # @param pack_user The pack user data to assign
   # @param [Hash] opts the optional parameters
   # @return [GeneralError]
   describe 'append_pack_to_user test' do
@@ -72,7 +72,7 @@ describe 'PackApi' do
   # unit tests for create_build
   # Create a new build for a pack
   # @param pack_id A pack UUID or slug
-  # @param params The build data to create
+  # @param build The build data to create
   # @param [Hash] opts the optional parameters
   # @return [Build]
   describe 'create_build test' do
@@ -83,7 +83,7 @@ describe 'PackApi' do
 
   # unit tests for create_pack
   # Create a new pack
-  # @param params The pack data to create
+  # @param pack The pack data to create
   # @param [Hash] opts the optional parameters
   # @return [Pack]
   describe 'create_pack test' do
@@ -108,7 +108,7 @@ describe 'PackApi' do
   # Unlink a version from a build
   # @param pack_id A pack UUID or slug
   # @param build_id A build UUID or slug
-  # @param params The version data to unlink from build
+  # @param build_version The version data to unlink from build
   # @param [Hash] opts the optional parameters
   # @return [GeneralError]
   describe 'delete_build_from_version test' do
@@ -131,7 +131,7 @@ describe 'PackApi' do
   # unit tests for delete_pack_from_team
   # Remove a team from pack
   # @param pack_id A pack UUID or slug
-  # @param params The pack team data to delete
+  # @param pack_team The pack team data to delete
   # @param [Hash] opts the optional parameters
   # @return [GeneralError]
   describe 'delete_pack_from_team test' do
@@ -143,7 +143,7 @@ describe 'PackApi' do
   # unit tests for delete_pack_from_user
   # Remove a user from pack
   # @param pack_id A pack UUID or slug
-  # @param params The pack user data to delete
+  # @param pack_user The pack user data to delete
   # @param [Hash] opts the optional parameters
   # @return [GeneralError]
   describe 'delete_pack_from_user test' do
@@ -210,7 +210,7 @@ describe 'PackApi' do
   # unit tests for permit_pack_team
   # Update team perms for pack
   # @param pack_id A pack UUID or slug
-  # @param params The pack team data to update
+  # @param pack_team The pack team data to update
   # @param [Hash] opts the optional parameters
   # @return [GeneralError]
   describe 'permit_pack_team test' do
@@ -222,7 +222,7 @@ describe 'PackApi' do
   # unit tests for permit_pack_user
   # Update user perms for pack
   # @param pack_id A pack UUID or slug
-  # @param params The pack user data to update
+  # @param pack_user The pack user data to update
   # @param [Hash] opts the optional parameters
   # @return [GeneralError]
   describe 'permit_pack_user test' do
@@ -258,7 +258,7 @@ describe 'PackApi' do
   # Update a specific build for a pack
   # @param pack_id A pack UUID or slug
   # @param build_id A build UUID or slug
-  # @param params The build data to update
+  # @param build The build data to update
   # @param [Hash] opts the optional parameters
   # @return [Build]
   describe 'update_build test' do
@@ -270,7 +270,7 @@ describe 'PackApi' do
   # unit tests for update_pack
   # Update a specific pack
   # @param pack_id A pack UUID or slug
-  # @param params The pack data to update
+  # @param pack The pack data to update
   # @param [Hash] opts the optional parameters
   # @return [Pack]
   describe 'update_pack test' do

@@ -21,20 +21,20 @@ module Kleister
     end
     # Assign a build to a Forge version
     # @param forge_id [String] A forge UUID or slug
-    # @param params [ForgeBuildParams] The build data to append
+    # @param forge_build [ForgeBuildParams] The build data to append
     # @param [Hash] opts the optional parameters
     # @return [Array<Build>]
-    def append_forge_to_build(forge_id, params, opts = {})
-      data, _status_code, _headers = append_forge_to_build_with_http_info(forge_id, params, opts)
+    def append_forge_to_build(forge_id, forge_build, opts = {})
+      data, _status_code, _headers = append_forge_to_build_with_http_info(forge_id, forge_build, opts)
       data
     end
 
     # Assign a build to a Forge version
     # @param forge_id [String] A forge UUID or slug
-    # @param params [ForgeBuildParams] The build data to append
+    # @param forge_build [ForgeBuildParams] The build data to append
     # @param [Hash] opts the optional parameters
     # @return [Array<(Array<Build>, Integer, Hash)>] Array<Build> data, response status code and response headers
-    def append_forge_to_build_with_http_info(forge_id, params, opts = {})
+    def append_forge_to_build_with_http_info(forge_id, forge_build, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ForgeApi.append_forge_to_build ...'
       end
@@ -42,9 +42,9 @@ module Kleister
       if @api_client.config.client_side_validation && forge_id.nil?
         fail ArgumentError, "Missing the required parameter 'forge_id' when calling ForgeApi.append_forge_to_build"
       end
-      # verify the required parameter 'params' is set
-      if @api_client.config.client_side_validation && params.nil?
-        fail ArgumentError, "Missing the required parameter 'params' when calling ForgeApi.append_forge_to_build"
+      # verify the required parameter 'forge_build' is set
+      if @api_client.config.client_side_validation && forge_build.nil?
+        fail ArgumentError, "Missing the required parameter 'forge_build' when calling ForgeApi.append_forge_to_build"
       end
       # resource path
       local_var_path = '/forge/{forge_id}/builds'.sub('{' + 'forge_id' + '}', forge_id.to_s)
@@ -63,7 +63,7 @@ module Kleister
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(params) 
+      post_body = opts[:body] || @api_client.object_to_http_body(forge_build) 
 
       # return_type
       return_type = opts[:return_type] || 'Array<Build>' 
@@ -89,20 +89,20 @@ module Kleister
 
     # Unlink a build from a Forge version
     # @param forge_id [String] A forge UUID or slug
-    # @param params [ForgeBuildParams] The build data to unlink
+    # @param forge_build [ForgeBuildParams] The build data to unlink
     # @param [Hash] opts the optional parameters
     # @return [Array<Build>]
-    def delete_forge_from_build(forge_id, params, opts = {})
-      data, _status_code, _headers = delete_forge_from_build_with_http_info(forge_id, params, opts)
+    def delete_forge_from_build(forge_id, forge_build, opts = {})
+      data, _status_code, _headers = delete_forge_from_build_with_http_info(forge_id, forge_build, opts)
       data
     end
 
     # Unlink a build from a Forge version
     # @param forge_id [String] A forge UUID or slug
-    # @param params [ForgeBuildParams] The build data to unlink
+    # @param forge_build [ForgeBuildParams] The build data to unlink
     # @param [Hash] opts the optional parameters
     # @return [Array<(Array<Build>, Integer, Hash)>] Array<Build> data, response status code and response headers
-    def delete_forge_from_build_with_http_info(forge_id, params, opts = {})
+    def delete_forge_from_build_with_http_info(forge_id, forge_build, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ForgeApi.delete_forge_from_build ...'
       end
@@ -110,9 +110,9 @@ module Kleister
       if @api_client.config.client_side_validation && forge_id.nil?
         fail ArgumentError, "Missing the required parameter 'forge_id' when calling ForgeApi.delete_forge_from_build"
       end
-      # verify the required parameter 'params' is set
-      if @api_client.config.client_side_validation && params.nil?
-        fail ArgumentError, "Missing the required parameter 'params' when calling ForgeApi.delete_forge_from_build"
+      # verify the required parameter 'forge_build' is set
+      if @api_client.config.client_side_validation && forge_build.nil?
+        fail ArgumentError, "Missing the required parameter 'forge_build' when calling ForgeApi.delete_forge_from_build"
       end
       # resource path
       local_var_path = '/forge/{forge_id}/builds'.sub('{' + 'forge_id' + '}', forge_id.to_s)
@@ -131,7 +131,7 @@ module Kleister
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(params) 
+      post_body = opts[:body] || @api_client.object_to_http_body(forge_build) 
 
       # return_type
       return_type = opts[:return_type] || 'Array<Build>' 

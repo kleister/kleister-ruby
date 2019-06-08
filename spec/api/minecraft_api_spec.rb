@@ -35,7 +35,7 @@ describe 'MinecraftApi' do
   # unit tests for append_minecraft_to_build
   # Assign a build to a Minecraft version
   # @param minecraft_id A minecraft UUID or slug
-  # @param params The build data to append
+  # @param minecraft_build The build data to append
   # @param [Hash] opts the optional parameters
   # @return [Array<Build>]
   describe 'append_minecraft_to_build test' do
@@ -47,7 +47,7 @@ describe 'MinecraftApi' do
   # unit tests for delete_minecraft_from_build
   # Unlink a build from a Minecraft version
   # @param minecraft_id A minecraft UUID or slug
-  # @param params The build data to unlink
+  # @param minecraft_build The build data to unlink
   # @param [Hash] opts the optional parameters
   # @return [Array<Build>]
   describe 'delete_minecraft_from_build test' do

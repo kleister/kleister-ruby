@@ -30,7 +30,7 @@ Method | HTTP request | Description
 
 ## append_build_to_version
 
-> GeneralError append_build_to_version(pack_id, build_id, params)
+> GeneralError append_build_to_version(pack_id, build_id, build_version)
 
 Assign a version to a build
 
@@ -43,11 +43,11 @@ require 'kleister'
 api_instance = Kleister::PackApi.new
 pack_id = 'pack_id_example' # String | A pack UUID or slug
 build_id = 'build_id_example' # String | A build UUID or slug
-params = Kleister::BuildVersionParams.new # BuildVersionParams | The version data to append to build
+build_version = Kleister::BuildVersionParams.new # BuildVersionParams | The version data to append to build
 
 begin
   #Assign a version to a build
-  result = api_instance.append_build_to_version(pack_id, build_id, params)
+  result = api_instance.append_build_to_version(pack_id, build_id, build_version)
   p result
 rescue Kleister::ApiError => e
   puts "Exception when calling PackApi->append_build_to_version: #{e}"
@@ -61,7 +61,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **pack_id** | **String**| A pack UUID or slug | 
  **build_id** | **String**| A build UUID or slug | 
- **params** | [**BuildVersionParams**](BuildVersionParams.md)| The version data to append to build | 
+ **build_version** | [**BuildVersionParams**](BuildVersionParams.md)| The version data to append to build | 
 
 ### Return type
 
@@ -79,7 +79,7 @@ No authorization required
 
 ## append_pack_to_team
 
-> GeneralError append_pack_to_team(pack_id, params)
+> GeneralError append_pack_to_team(pack_id, pack_team)
 
 Assign a team to pack
 
@@ -91,11 +91,11 @@ require 'kleister'
 
 api_instance = Kleister::PackApi.new
 pack_id = 'pack_id_example' # String | A pack UUID or slug
-params = Kleister::PackTeamParams.new # PackTeamParams | The pack team data to assign
+pack_team = Kleister::PackTeamParams.new # PackTeamParams | The pack team data to assign
 
 begin
   #Assign a team to pack
-  result = api_instance.append_pack_to_team(pack_id, params)
+  result = api_instance.append_pack_to_team(pack_id, pack_team)
   p result
 rescue Kleister::ApiError => e
   puts "Exception when calling PackApi->append_pack_to_team: #{e}"
@@ -108,7 +108,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **pack_id** | **String**| A pack UUID or slug | 
- **params** | [**PackTeamParams**](PackTeamParams.md)| The pack team data to assign | 
+ **pack_team** | [**PackTeamParams**](PackTeamParams.md)| The pack team data to assign | 
 
 ### Return type
 
@@ -126,7 +126,7 @@ No authorization required
 
 ## append_pack_to_user
 
-> GeneralError append_pack_to_user(pack_id, params)
+> GeneralError append_pack_to_user(pack_id, pack_user)
 
 Assign a user to pack
 
@@ -138,11 +138,11 @@ require 'kleister'
 
 api_instance = Kleister::PackApi.new
 pack_id = 'pack_id_example' # String | A pack UUID or slug
-params = Kleister::PackUserParams.new # PackUserParams | The pack user data to assign
+pack_user = Kleister::PackUserParams.new # PackUserParams | The pack user data to assign
 
 begin
   #Assign a user to pack
-  result = api_instance.append_pack_to_user(pack_id, params)
+  result = api_instance.append_pack_to_user(pack_id, pack_user)
   p result
 rescue Kleister::ApiError => e
   puts "Exception when calling PackApi->append_pack_to_user: #{e}"
@@ -155,7 +155,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **pack_id** | **String**| A pack UUID or slug | 
- **params** | [**PackUserParams**](PackUserParams.md)| The pack user data to assign | 
+ **pack_user** | [**PackUserParams**](PackUserParams.md)| The pack user data to assign | 
 
 ### Return type
 
@@ -173,7 +173,7 @@ No authorization required
 
 ## create_build
 
-> Build create_build(pack_id, params)
+> Build create_build(pack_id, build)
 
 Create a new build for a pack
 
@@ -185,11 +185,11 @@ require 'kleister'
 
 api_instance = Kleister::PackApi.new
 pack_id = 'pack_id_example' # String | A pack UUID or slug
-params = Kleister::Build.new # Build | The build data to create
+build = Kleister::Build.new # Build | The build data to create
 
 begin
   #Create a new build for a pack
-  result = api_instance.create_build(pack_id, params)
+  result = api_instance.create_build(pack_id, build)
   p result
 rescue Kleister::ApiError => e
   puts "Exception when calling PackApi->create_build: #{e}"
@@ -202,7 +202,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **pack_id** | **String**| A pack UUID or slug | 
- **params** | [**Build**](Build.md)| The build data to create | 
+ **build** | [**Build**](Build.md)| The build data to create | 
 
 ### Return type
 
@@ -220,7 +220,7 @@ No authorization required
 
 ## create_pack
 
-> Pack create_pack(params)
+> Pack create_pack(pack)
 
 Create a new pack
 
@@ -231,11 +231,11 @@ Create a new pack
 require 'kleister'
 
 api_instance = Kleister::PackApi.new
-params = Kleister::Pack.new # Pack | The pack data to create
+pack = Kleister::Pack.new # Pack | The pack data to create
 
 begin
   #Create a new pack
-  result = api_instance.create_pack(params)
+  result = api_instance.create_pack(pack)
   p result
 rescue Kleister::ApiError => e
   puts "Exception when calling PackApi->create_pack: #{e}"
@@ -247,7 +247,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **params** | [**Pack**](Pack.md)| The pack data to create | 
+ **pack** | [**Pack**](Pack.md)| The pack data to create | 
 
 ### Return type
 
@@ -312,7 +312,7 @@ No authorization required
 
 ## delete_build_from_version
 
-> GeneralError delete_build_from_version(pack_id, build_id, params)
+> GeneralError delete_build_from_version(pack_id, build_id, build_version)
 
 Unlink a version from a build
 
@@ -325,11 +325,11 @@ require 'kleister'
 api_instance = Kleister::PackApi.new
 pack_id = 'pack_id_example' # String | A pack UUID or slug
 build_id = 'build_id_example' # String | A build UUID or slug
-params = Kleister::BuildVersionParams.new # BuildVersionParams | The version data to unlink from build
+build_version = Kleister::BuildVersionParams.new # BuildVersionParams | The version data to unlink from build
 
 begin
   #Unlink a version from a build
-  result = api_instance.delete_build_from_version(pack_id, build_id, params)
+  result = api_instance.delete_build_from_version(pack_id, build_id, build_version)
   p result
 rescue Kleister::ApiError => e
   puts "Exception when calling PackApi->delete_build_from_version: #{e}"
@@ -343,7 +343,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **pack_id** | **String**| A pack UUID or slug | 
  **build_id** | **String**| A build UUID or slug | 
- **params** | [**BuildVersionParams**](BuildVersionParams.md)| The version data to unlink from build | 
+ **build_version** | [**BuildVersionParams**](BuildVersionParams.md)| The version data to unlink from build | 
 
 ### Return type
 
@@ -406,7 +406,7 @@ No authorization required
 
 ## delete_pack_from_team
 
-> GeneralError delete_pack_from_team(pack_id, params)
+> GeneralError delete_pack_from_team(pack_id, pack_team)
 
 Remove a team from pack
 
@@ -418,11 +418,11 @@ require 'kleister'
 
 api_instance = Kleister::PackApi.new
 pack_id = 'pack_id_example' # String | A pack UUID or slug
-params = Kleister::PackTeamParams.new # PackTeamParams | The pack team data to delete
+pack_team = Kleister::PackTeamParams.new # PackTeamParams | The pack team data to delete
 
 begin
   #Remove a team from pack
-  result = api_instance.delete_pack_from_team(pack_id, params)
+  result = api_instance.delete_pack_from_team(pack_id, pack_team)
   p result
 rescue Kleister::ApiError => e
   puts "Exception when calling PackApi->delete_pack_from_team: #{e}"
@@ -435,7 +435,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **pack_id** | **String**| A pack UUID or slug | 
- **params** | [**PackTeamParams**](PackTeamParams.md)| The pack team data to delete | 
+ **pack_team** | [**PackTeamParams**](PackTeamParams.md)| The pack team data to delete | 
 
 ### Return type
 
@@ -453,7 +453,7 @@ No authorization required
 
 ## delete_pack_from_user
 
-> GeneralError delete_pack_from_user(pack_id, params)
+> GeneralError delete_pack_from_user(pack_id, pack_user)
 
 Remove a user from pack
 
@@ -465,11 +465,11 @@ require 'kleister'
 
 api_instance = Kleister::PackApi.new
 pack_id = 'pack_id_example' # String | A pack UUID or slug
-params = Kleister::PackUserParams.new # PackUserParams | The pack user data to delete
+pack_user = Kleister::PackUserParams.new # PackUserParams | The pack user data to delete
 
 begin
   #Remove a user from pack
-  result = api_instance.delete_pack_from_user(pack_id, params)
+  result = api_instance.delete_pack_from_user(pack_id, pack_user)
   p result
 rescue Kleister::ApiError => e
   puts "Exception when calling PackApi->delete_pack_from_user: #{e}"
@@ -482,7 +482,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **pack_id** | **String**| A pack UUID or slug | 
- **params** | [**PackUserParams**](PackUserParams.md)| The pack user data to delete | 
+ **pack_user** | [**PackUserParams**](PackUserParams.md)| The pack user data to delete | 
 
 ### Return type
 
@@ -723,7 +723,7 @@ No authorization required
 
 ## permit_pack_team
 
-> GeneralError permit_pack_team(pack_id, params)
+> GeneralError permit_pack_team(pack_id, pack_team)
 
 Update team perms for pack
 
@@ -735,11 +735,11 @@ require 'kleister'
 
 api_instance = Kleister::PackApi.new
 pack_id = 'pack_id_example' # String | A pack UUID or slug
-params = Kleister::PackTeamParams.new # PackTeamParams | The pack team data to update
+pack_team = Kleister::PackTeamParams.new # PackTeamParams | The pack team data to update
 
 begin
   #Update team perms for pack
-  result = api_instance.permit_pack_team(pack_id, params)
+  result = api_instance.permit_pack_team(pack_id, pack_team)
   p result
 rescue Kleister::ApiError => e
   puts "Exception when calling PackApi->permit_pack_team: #{e}"
@@ -752,7 +752,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **pack_id** | **String**| A pack UUID or slug | 
- **params** | [**PackTeamParams**](PackTeamParams.md)| The pack team data to update | 
+ **pack_team** | [**PackTeamParams**](PackTeamParams.md)| The pack team data to update | 
 
 ### Return type
 
@@ -770,7 +770,7 @@ No authorization required
 
 ## permit_pack_user
 
-> GeneralError permit_pack_user(pack_id, params)
+> GeneralError permit_pack_user(pack_id, pack_user)
 
 Update user perms for pack
 
@@ -782,11 +782,11 @@ require 'kleister'
 
 api_instance = Kleister::PackApi.new
 pack_id = 'pack_id_example' # String | A pack UUID or slug
-params = Kleister::PackUserParams.new # PackUserParams | The pack user data to update
+pack_user = Kleister::PackUserParams.new # PackUserParams | The pack user data to update
 
 begin
   #Update user perms for pack
-  result = api_instance.permit_pack_user(pack_id, params)
+  result = api_instance.permit_pack_user(pack_id, pack_user)
   p result
 rescue Kleister::ApiError => e
   puts "Exception when calling PackApi->permit_pack_user: #{e}"
@@ -799,7 +799,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **pack_id** | **String**| A pack UUID or slug | 
- **params** | [**PackUserParams**](PackUserParams.md)| The pack user data to update | 
+ **pack_user** | [**PackUserParams**](PackUserParams.md)| The pack user data to update | 
 
 ### Return type
 
@@ -909,7 +909,7 @@ No authorization required
 
 ## update_build
 
-> Build update_build(pack_id, build_id, params)
+> Build update_build(pack_id, build_id, build)
 
 Update a specific build for a pack
 
@@ -922,11 +922,11 @@ require 'kleister'
 api_instance = Kleister::PackApi.new
 pack_id = 'pack_id_example' # String | A pack UUID or slug
 build_id = 'build_id_example' # String | A build UUID or slug
-params = Kleister::Build.new # Build | The build data to update
+build = Kleister::Build.new # Build | The build data to update
 
 begin
   #Update a specific build for a pack
-  result = api_instance.update_build(pack_id, build_id, params)
+  result = api_instance.update_build(pack_id, build_id, build)
   p result
 rescue Kleister::ApiError => e
   puts "Exception when calling PackApi->update_build: #{e}"
@@ -940,7 +940,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **pack_id** | **String**| A pack UUID or slug | 
  **build_id** | **String**| A build UUID or slug | 
- **params** | [**Build**](Build.md)| The build data to update | 
+ **build** | [**Build**](Build.md)| The build data to update | 
 
 ### Return type
 
@@ -958,7 +958,7 @@ No authorization required
 
 ## update_pack
 
-> Pack update_pack(pack_id, params)
+> Pack update_pack(pack_id, pack)
 
 Update a specific pack
 
@@ -970,11 +970,11 @@ require 'kleister'
 
 api_instance = Kleister::PackApi.new
 pack_id = 'pack_id_example' # String | A pack UUID or slug
-params = Kleister::Pack.new # Pack | The pack data to update
+pack = Kleister::Pack.new # Pack | The pack data to update
 
 begin
   #Update a specific pack
-  result = api_instance.update_pack(pack_id, params)
+  result = api_instance.update_pack(pack_id, pack)
   p result
 rescue Kleister::ApiError => e
   puts "Exception when calling PackApi->update_pack: #{e}"
@@ -987,7 +987,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **pack_id** | **String**| A pack UUID or slug | 
- **params** | [**Pack**](Pack.md)| The pack data to update | 
+ **pack** | [**Pack**](Pack.md)| The pack data to update | 
 
 ### Return type
 

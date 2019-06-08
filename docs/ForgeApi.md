@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 ## append_forge_to_build
 
-> Array&lt;Build&gt; append_forge_to_build(forge_id, params)
+> Array&lt;Build&gt; append_forge_to_build(forge_id, forge_build)
 
 Assign a build to a Forge version
 
@@ -27,11 +27,11 @@ require 'kleister'
 
 api_instance = Kleister::ForgeApi.new
 forge_id = 'forge_id_example' # String | A forge UUID or slug
-params = Kleister::ForgeBuildParams.new # ForgeBuildParams | The build data to append
+forge_build = Kleister::ForgeBuildParams.new # ForgeBuildParams | The build data to append
 
 begin
   #Assign a build to a Forge version
-  result = api_instance.append_forge_to_build(forge_id, params)
+  result = api_instance.append_forge_to_build(forge_id, forge_build)
   p result
 rescue Kleister::ApiError => e
   puts "Exception when calling ForgeApi->append_forge_to_build: #{e}"
@@ -44,7 +44,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **forge_id** | **String**| A forge UUID or slug | 
- **params** | [**ForgeBuildParams**](ForgeBuildParams.md)| The build data to append | 
+ **forge_build** | [**ForgeBuildParams**](ForgeBuildParams.md)| The build data to append | 
 
 ### Return type
 
@@ -62,7 +62,7 @@ No authorization required
 
 ## delete_forge_from_build
 
-> Array&lt;Build&gt; delete_forge_from_build(forge_id, params)
+> Array&lt;Build&gt; delete_forge_from_build(forge_id, forge_build)
 
 Unlink a build from a Forge version
 
@@ -74,11 +74,11 @@ require 'kleister'
 
 api_instance = Kleister::ForgeApi.new
 forge_id = 'forge_id_example' # String | A forge UUID or slug
-params = Kleister::ForgeBuildParams.new # ForgeBuildParams | The build data to unlink
+forge_build = Kleister::ForgeBuildParams.new # ForgeBuildParams | The build data to unlink
 
 begin
   #Unlink a build from a Forge version
-  result = api_instance.delete_forge_from_build(forge_id, params)
+  result = api_instance.delete_forge_from_build(forge_id, forge_build)
   p result
 rescue Kleister::ApiError => e
   puts "Exception when calling ForgeApi->delete_forge_from_build: #{e}"
@@ -91,7 +91,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **forge_id** | **String**| A forge UUID or slug | 
- **params** | [**ForgeBuildParams**](ForgeBuildParams.md)| The build data to unlink | 
+ **forge_build** | [**ForgeBuildParams**](ForgeBuildParams.md)| The build data to unlink | 
 
 ### Return type
 

@@ -30,7 +30,7 @@ Method | HTTP request | Description
 
 ## append_mod_to_team
 
-> GeneralError append_mod_to_team(mod_id, params)
+> GeneralError append_mod_to_team(mod_id, mod_team)
 
 Assign a team to mod
 
@@ -42,11 +42,11 @@ require 'kleister'
 
 api_instance = Kleister::ModApi.new
 mod_id = 'mod_id_example' # String | A mod UUID or slug
-params = Kleister::ModTeamParams.new # ModTeamParams | The mod team data to assign
+mod_team = Kleister::ModTeamParams.new # ModTeamParams | The mod team data to assign
 
 begin
   #Assign a team to mod
-  result = api_instance.append_mod_to_team(mod_id, params)
+  result = api_instance.append_mod_to_team(mod_id, mod_team)
   p result
 rescue Kleister::ApiError => e
   puts "Exception when calling ModApi->append_mod_to_team: #{e}"
@@ -59,7 +59,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **mod_id** | **String**| A mod UUID or slug | 
- **params** | [**ModTeamParams**](ModTeamParams.md)| The mod team data to assign | 
+ **mod_team** | [**ModTeamParams**](ModTeamParams.md)| The mod team data to assign | 
 
 ### Return type
 
@@ -77,7 +77,7 @@ No authorization required
 
 ## append_mod_to_user
 
-> GeneralError append_mod_to_user(mod_id, params)
+> GeneralError append_mod_to_user(mod_id, mod_user)
 
 Assign a user to mod
 
@@ -89,11 +89,11 @@ require 'kleister'
 
 api_instance = Kleister::ModApi.new
 mod_id = 'mod_id_example' # String | A mod UUID or slug
-params = Kleister::ModUserParams.new # ModUserParams | The mod user data to assign
+mod_user = Kleister::ModUserParams.new # ModUserParams | The mod user data to assign
 
 begin
   #Assign a user to mod
-  result = api_instance.append_mod_to_user(mod_id, params)
+  result = api_instance.append_mod_to_user(mod_id, mod_user)
   p result
 rescue Kleister::ApiError => e
   puts "Exception when calling ModApi->append_mod_to_user: #{e}"
@@ -106,7 +106,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **mod_id** | **String**| A mod UUID or slug | 
- **params** | [**ModUserParams**](ModUserParams.md)| The mod user data to assign | 
+ **mod_user** | [**ModUserParams**](ModUserParams.md)| The mod user data to assign | 
 
 ### Return type
 
@@ -124,7 +124,7 @@ No authorization required
 
 ## append_version_to_build
 
-> GeneralError append_version_to_build(mod_id, version_id, params)
+> GeneralError append_version_to_build(mod_id, version_id, version_build)
 
 Assign a build to a version
 
@@ -137,11 +137,11 @@ require 'kleister'
 api_instance = Kleister::ModApi.new
 mod_id = 'mod_id_example' # String | A mod UUID or slug
 version_id = 'version_id_example' # String | A version UUID or slug
-params = Kleister::VersionBuildParams.new # VersionBuildParams | The build data to append to version
+version_build = Kleister::VersionBuildParams.new # VersionBuildParams | The build data to append to version
 
 begin
   #Assign a build to a version
-  result = api_instance.append_version_to_build(mod_id, version_id, params)
+  result = api_instance.append_version_to_build(mod_id, version_id, version_build)
   p result
 rescue Kleister::ApiError => e
   puts "Exception when calling ModApi->append_version_to_build: #{e}"
@@ -155,7 +155,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **mod_id** | **String**| A mod UUID or slug | 
  **version_id** | **String**| A version UUID or slug | 
- **params** | [**VersionBuildParams**](VersionBuildParams.md)| The build data to append to version | 
+ **version_build** | [**VersionBuildParams**](VersionBuildParams.md)| The build data to append to version | 
 
 ### Return type
 
@@ -173,7 +173,7 @@ No authorization required
 
 ## create_mod
 
-> Mod create_mod(params)
+> Mod create_mod(mod)
 
 Create a new mod
 
@@ -184,11 +184,11 @@ Create a new mod
 require 'kleister'
 
 api_instance = Kleister::ModApi.new
-params = Kleister::Mod.new # Mod | The mod data to create
+mod = Kleister::Mod.new # Mod | The mod data to create
 
 begin
   #Create a new mod
-  result = api_instance.create_mod(params)
+  result = api_instance.create_mod(mod)
   p result
 rescue Kleister::ApiError => e
   puts "Exception when calling ModApi->create_mod: #{e}"
@@ -200,7 +200,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **params** | [**Mod**](Mod.md)| The mod data to create | 
+ **mod** | [**Mod**](Mod.md)| The mod data to create | 
 
 ### Return type
 
@@ -218,7 +218,7 @@ No authorization required
 
 ## create_version
 
-> Version create_version(mod_id, params)
+> Version create_version(mod_id, version)
 
 Create a new version for a mod
 
@@ -230,11 +230,11 @@ require 'kleister'
 
 api_instance = Kleister::ModApi.new
 mod_id = 'mod_id_example' # String | A mod UUID or slug
-params = Kleister::Version.new # Version | The version data to create
+version = Kleister::Version.new # Version | The version data to create
 
 begin
   #Create a new version for a mod
-  result = api_instance.create_version(mod_id, params)
+  result = api_instance.create_version(mod_id, version)
   p result
 rescue Kleister::ApiError => e
   puts "Exception when calling ModApi->create_version: #{e}"
@@ -247,7 +247,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **mod_id** | **String**| A mod UUID or slug | 
- **params** | [**Version**](Version.md)| The version data to create | 
+ **version** | [**Version**](Version.md)| The version data to create | 
 
 ### Return type
 
@@ -310,7 +310,7 @@ No authorization required
 
 ## delete_mod_from_team
 
-> GeneralError delete_mod_from_team(mod_id, params)
+> GeneralError delete_mod_from_team(mod_id, mod_team)
 
 Remove a team from mod
 
@@ -322,11 +322,11 @@ require 'kleister'
 
 api_instance = Kleister::ModApi.new
 mod_id = 'mod_id_example' # String | A mod UUID or slug
-params = Kleister::ModTeamParams.new # ModTeamParams | The mod team data to delete
+mod_team = Kleister::ModTeamParams.new # ModTeamParams | The mod team data to delete
 
 begin
   #Remove a team from mod
-  result = api_instance.delete_mod_from_team(mod_id, params)
+  result = api_instance.delete_mod_from_team(mod_id, mod_team)
   p result
 rescue Kleister::ApiError => e
   puts "Exception when calling ModApi->delete_mod_from_team: #{e}"
@@ -339,7 +339,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **mod_id** | **String**| A mod UUID or slug | 
- **params** | [**ModTeamParams**](ModTeamParams.md)| The mod team data to delete | 
+ **mod_team** | [**ModTeamParams**](ModTeamParams.md)| The mod team data to delete | 
 
 ### Return type
 
@@ -357,7 +357,7 @@ No authorization required
 
 ## delete_mod_from_user
 
-> GeneralError delete_mod_from_user(mod_id, params)
+> GeneralError delete_mod_from_user(mod_id, mod_user)
 
 Remove a user from mod
 
@@ -369,11 +369,11 @@ require 'kleister'
 
 api_instance = Kleister::ModApi.new
 mod_id = 'mod_id_example' # String | A mod UUID or slug
-params = Kleister::ModUserParams.new # ModUserParams | The mod user data to delete
+mod_user = Kleister::ModUserParams.new # ModUserParams | The mod user data to delete
 
 begin
   #Remove a user from mod
-  result = api_instance.delete_mod_from_user(mod_id, params)
+  result = api_instance.delete_mod_from_user(mod_id, mod_user)
   p result
 rescue Kleister::ApiError => e
   puts "Exception when calling ModApi->delete_mod_from_user: #{e}"
@@ -386,7 +386,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **mod_id** | **String**| A mod UUID or slug | 
- **params** | [**ModUserParams**](ModUserParams.md)| The mod user data to delete | 
+ **mod_user** | [**ModUserParams**](ModUserParams.md)| The mod user data to delete | 
 
 ### Return type
 
@@ -451,7 +451,7 @@ No authorization required
 
 ## delete_version_from_build
 
-> GeneralError delete_version_from_build(mod_id, version_id, params)
+> GeneralError delete_version_from_build(mod_id, version_id, version_build)
 
 Unlink a build from a version
 
@@ -464,11 +464,11 @@ require 'kleister'
 api_instance = Kleister::ModApi.new
 mod_id = 'mod_id_example' # String | A mod UUID or slug
 version_id = 'version_id_example' # String | A version UUID or slug
-params = Kleister::VersionBuildParams.new # VersionBuildParams | The build data to unlink from version
+version_build = Kleister::VersionBuildParams.new # VersionBuildParams | The build data to unlink from version
 
 begin
   #Unlink a build from a version
-  result = api_instance.delete_version_from_build(mod_id, version_id, params)
+  result = api_instance.delete_version_from_build(mod_id, version_id, version_build)
   p result
 rescue Kleister::ApiError => e
   puts "Exception when calling ModApi->delete_version_from_build: #{e}"
@@ -482,7 +482,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **mod_id** | **String**| A mod UUID or slug | 
  **version_id** | **String**| A version UUID or slug | 
- **params** | [**VersionBuildParams**](VersionBuildParams.md)| The build data to unlink from version | 
+ **version_build** | [**VersionBuildParams**](VersionBuildParams.md)| The build data to unlink from version | 
 
 ### Return type
 
@@ -723,7 +723,7 @@ No authorization required
 
 ## permit_mod_team
 
-> GeneralError permit_mod_team(mod_id, params)
+> GeneralError permit_mod_team(mod_id, mod_team)
 
 Update team perms for mod
 
@@ -735,11 +735,11 @@ require 'kleister'
 
 api_instance = Kleister::ModApi.new
 mod_id = 'mod_id_example' # String | A mod UUID or slug
-params = Kleister::ModTeamParams.new # ModTeamParams | The mod team data to update
+mod_team = Kleister::ModTeamParams.new # ModTeamParams | The mod team data to update
 
 begin
   #Update team perms for mod
-  result = api_instance.permit_mod_team(mod_id, params)
+  result = api_instance.permit_mod_team(mod_id, mod_team)
   p result
 rescue Kleister::ApiError => e
   puts "Exception when calling ModApi->permit_mod_team: #{e}"
@@ -752,7 +752,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **mod_id** | **String**| A mod UUID or slug | 
- **params** | [**ModTeamParams**](ModTeamParams.md)| The mod team data to update | 
+ **mod_team** | [**ModTeamParams**](ModTeamParams.md)| The mod team data to update | 
 
 ### Return type
 
@@ -770,7 +770,7 @@ No authorization required
 
 ## permit_mod_user
 
-> GeneralError permit_mod_user(mod_id, params)
+> GeneralError permit_mod_user(mod_id, mod_user)
 
 Update user perms for mod
 
@@ -782,11 +782,11 @@ require 'kleister'
 
 api_instance = Kleister::ModApi.new
 mod_id = 'mod_id_example' # String | A mod UUID or slug
-params = Kleister::ModUserParams.new # ModUserParams | The mod user data to update
+mod_user = Kleister::ModUserParams.new # ModUserParams | The mod user data to update
 
 begin
   #Update user perms for mod
-  result = api_instance.permit_mod_user(mod_id, params)
+  result = api_instance.permit_mod_user(mod_id, mod_user)
   p result
 rescue Kleister::ApiError => e
   puts "Exception when calling ModApi->permit_mod_user: #{e}"
@@ -799,7 +799,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **mod_id** | **String**| A mod UUID or slug | 
- **params** | [**ModUserParams**](ModUserParams.md)| The mod user data to update | 
+ **mod_user** | [**ModUserParams**](ModUserParams.md)| The mod user data to update | 
 
 ### Return type
 
@@ -909,7 +909,7 @@ No authorization required
 
 ## update_mod
 
-> Mod update_mod(mod_id, params)
+> Mod update_mod(mod_id, mod)
 
 Update a specific mod
 
@@ -921,11 +921,11 @@ require 'kleister'
 
 api_instance = Kleister::ModApi.new
 mod_id = 'mod_id_example' # String | A mod UUID or slug
-params = Kleister::Mod.new # Mod | The mod data to update
+mod = Kleister::Mod.new # Mod | The mod data to update
 
 begin
   #Update a specific mod
-  result = api_instance.update_mod(mod_id, params)
+  result = api_instance.update_mod(mod_id, mod)
   p result
 rescue Kleister::ApiError => e
   puts "Exception when calling ModApi->update_mod: #{e}"
@@ -938,7 +938,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **mod_id** | **String**| A mod UUID or slug | 
- **params** | [**Mod**](Mod.md)| The mod data to update | 
+ **mod** | [**Mod**](Mod.md)| The mod data to update | 
 
 ### Return type
 
@@ -956,7 +956,7 @@ No authorization required
 
 ## update_version
 
-> Version update_version(mod_id, version_id, params)
+> Version update_version(mod_id, version_id, version)
 
 Update a specific version for a mod
 
@@ -969,11 +969,11 @@ require 'kleister'
 api_instance = Kleister::ModApi.new
 mod_id = 'mod_id_example' # String | A mod UUID or slug
 version_id = 'version_id_example' # String | A version UUID or slug
-params = Kleister::Version.new # Version | The version data to update
+version = Kleister::Version.new # Version | The version data to update
 
 begin
   #Update a specific version for a mod
-  result = api_instance.update_version(mod_id, version_id, params)
+  result = api_instance.update_version(mod_id, version_id, version)
   p result
 rescue Kleister::ApiError => e
   puts "Exception when calling ModApi->update_version: #{e}"
@@ -987,7 +987,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **mod_id** | **String**| A mod UUID or slug | 
  **version_id** | **String**| A version UUID or slug | 
- **params** | [**Version**](Version.md)| The version data to update | 
+ **version** | [**Version**](Version.md)| The version data to update | 
 
 ### Return type
 

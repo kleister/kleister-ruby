@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 ## append_minecraft_to_build
 
-> Array&lt;Build&gt; append_minecraft_to_build(minecraft_id, params)
+> Array&lt;Build&gt; append_minecraft_to_build(minecraft_id, minecraft_build)
 
 Assign a build to a Minecraft version
 
@@ -27,11 +27,11 @@ require 'kleister'
 
 api_instance = Kleister::MinecraftApi.new
 minecraft_id = 'minecraft_id_example' # String | A minecraft UUID or slug
-params = Kleister::MinecraftBuildParams.new # MinecraftBuildParams | The build data to append
+minecraft_build = Kleister::MinecraftBuildParams.new # MinecraftBuildParams | The build data to append
 
 begin
   #Assign a build to a Minecraft version
-  result = api_instance.append_minecraft_to_build(minecraft_id, params)
+  result = api_instance.append_minecraft_to_build(minecraft_id, minecraft_build)
   p result
 rescue Kleister::ApiError => e
   puts "Exception when calling MinecraftApi->append_minecraft_to_build: #{e}"
@@ -44,7 +44,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **minecraft_id** | **String**| A minecraft UUID or slug | 
- **params** | [**MinecraftBuildParams**](MinecraftBuildParams.md)| The build data to append | 
+ **minecraft_build** | [**MinecraftBuildParams**](MinecraftBuildParams.md)| The build data to append | 
 
 ### Return type
 
@@ -62,7 +62,7 @@ No authorization required
 
 ## delete_minecraft_from_build
 
-> Array&lt;Build&gt; delete_minecraft_from_build(minecraft_id, params)
+> Array&lt;Build&gt; delete_minecraft_from_build(minecraft_id, minecraft_build)
 
 Unlink a build from a Minecraft version
 
@@ -74,11 +74,11 @@ require 'kleister'
 
 api_instance = Kleister::MinecraftApi.new
 minecraft_id = 'minecraft_id_example' # String | A minecraft UUID or slug
-params = Kleister::MinecraftBuildParams.new # MinecraftBuildParams | The build data to unlink
+minecraft_build = Kleister::MinecraftBuildParams.new # MinecraftBuildParams | The build data to unlink
 
 begin
   #Unlink a build from a Minecraft version
-  result = api_instance.delete_minecraft_from_build(minecraft_id, params)
+  result = api_instance.delete_minecraft_from_build(minecraft_id, minecraft_build)
   p result
 rescue Kleister::ApiError => e
   puts "Exception when calling MinecraftApi->delete_minecraft_from_build: #{e}"
@@ -91,7 +91,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **minecraft_id** | **String**| A minecraft UUID or slug | 
- **params** | [**MinecraftBuildParams**](MinecraftBuildParams.md)| The build data to unlink | 
+ **minecraft_build** | [**MinecraftBuildParams**](MinecraftBuildParams.md)| The build data to unlink | 
 
 ### Return type
 

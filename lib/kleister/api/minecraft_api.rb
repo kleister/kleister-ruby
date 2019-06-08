@@ -21,20 +21,20 @@ module Kleister
     end
     # Assign a build to a Minecraft version
     # @param minecraft_id [String] A minecraft UUID or slug
-    # @param params [MinecraftBuildParams] The build data to append
+    # @param minecraft_build [MinecraftBuildParams] The build data to append
     # @param [Hash] opts the optional parameters
     # @return [Array<Build>]
-    def append_minecraft_to_build(minecraft_id, params, opts = {})
-      data, _status_code, _headers = append_minecraft_to_build_with_http_info(minecraft_id, params, opts)
+    def append_minecraft_to_build(minecraft_id, minecraft_build, opts = {})
+      data, _status_code, _headers = append_minecraft_to_build_with_http_info(minecraft_id, minecraft_build, opts)
       data
     end
 
     # Assign a build to a Minecraft version
     # @param minecraft_id [String] A minecraft UUID or slug
-    # @param params [MinecraftBuildParams] The build data to append
+    # @param minecraft_build [MinecraftBuildParams] The build data to append
     # @param [Hash] opts the optional parameters
     # @return [Array<(Array<Build>, Integer, Hash)>] Array<Build> data, response status code and response headers
-    def append_minecraft_to_build_with_http_info(minecraft_id, params, opts = {})
+    def append_minecraft_to_build_with_http_info(minecraft_id, minecraft_build, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MinecraftApi.append_minecraft_to_build ...'
       end
@@ -42,9 +42,9 @@ module Kleister
       if @api_client.config.client_side_validation && minecraft_id.nil?
         fail ArgumentError, "Missing the required parameter 'minecraft_id' when calling MinecraftApi.append_minecraft_to_build"
       end
-      # verify the required parameter 'params' is set
-      if @api_client.config.client_side_validation && params.nil?
-        fail ArgumentError, "Missing the required parameter 'params' when calling MinecraftApi.append_minecraft_to_build"
+      # verify the required parameter 'minecraft_build' is set
+      if @api_client.config.client_side_validation && minecraft_build.nil?
+        fail ArgumentError, "Missing the required parameter 'minecraft_build' when calling MinecraftApi.append_minecraft_to_build"
       end
       # resource path
       local_var_path = '/minecraft/{minecraft_id}/builds'.sub('{' + 'minecraft_id' + '}', minecraft_id.to_s)
@@ -63,7 +63,7 @@ module Kleister
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(params) 
+      post_body = opts[:body] || @api_client.object_to_http_body(minecraft_build) 
 
       # return_type
       return_type = opts[:return_type] || 'Array<Build>' 
@@ -89,20 +89,20 @@ module Kleister
 
     # Unlink a build from a Minecraft version
     # @param minecraft_id [String] A minecraft UUID or slug
-    # @param params [MinecraftBuildParams] The build data to unlink
+    # @param minecraft_build [MinecraftBuildParams] The build data to unlink
     # @param [Hash] opts the optional parameters
     # @return [Array<Build>]
-    def delete_minecraft_from_build(minecraft_id, params, opts = {})
-      data, _status_code, _headers = delete_minecraft_from_build_with_http_info(minecraft_id, params, opts)
+    def delete_minecraft_from_build(minecraft_id, minecraft_build, opts = {})
+      data, _status_code, _headers = delete_minecraft_from_build_with_http_info(minecraft_id, minecraft_build, opts)
       data
     end
 
     # Unlink a build from a Minecraft version
     # @param minecraft_id [String] A minecraft UUID or slug
-    # @param params [MinecraftBuildParams] The build data to unlink
+    # @param minecraft_build [MinecraftBuildParams] The build data to unlink
     # @param [Hash] opts the optional parameters
     # @return [Array<(Array<Build>, Integer, Hash)>] Array<Build> data, response status code and response headers
-    def delete_minecraft_from_build_with_http_info(minecraft_id, params, opts = {})
+    def delete_minecraft_from_build_with_http_info(minecraft_id, minecraft_build, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: MinecraftApi.delete_minecraft_from_build ...'
       end
@@ -110,9 +110,9 @@ module Kleister
       if @api_client.config.client_side_validation && minecraft_id.nil?
         fail ArgumentError, "Missing the required parameter 'minecraft_id' when calling MinecraftApi.delete_minecraft_from_build"
       end
-      # verify the required parameter 'params' is set
-      if @api_client.config.client_side_validation && params.nil?
-        fail ArgumentError, "Missing the required parameter 'params' when calling MinecraftApi.delete_minecraft_from_build"
+      # verify the required parameter 'minecraft_build' is set
+      if @api_client.config.client_side_validation && minecraft_build.nil?
+        fail ArgumentError, "Missing the required parameter 'minecraft_build' when calling MinecraftApi.delete_minecraft_from_build"
       end
       # resource path
       local_var_path = '/minecraft/{minecraft_id}/builds'.sub('{' + 'minecraft_id' + '}', minecraft_id.to_s)
@@ -131,7 +131,7 @@ module Kleister
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(params) 
+      post_body = opts[:body] || @api_client.object_to_http_body(minecraft_build) 
 
       # return_type
       return_type = opts[:return_type] || 'Array<Build>' 

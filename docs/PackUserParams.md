@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**pack** | **String** |  | 
 **user** | **String** |  | 
 **perm** | **String** |  | 
 
@@ -13,8 +12,7 @@ Name | Type | Description | Notes
 ```ruby
 require 'Kleister'
 
-instance = Kleister::PackUserParams.new(pack: null,
-                                 user: null,
+instance = Kleister::PackUserParams.new(user: null,
                                  perm: null)
 ```
 

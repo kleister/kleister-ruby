@@ -35,7 +35,7 @@ describe 'ForgeApi' do
   # unit tests for append_forge_to_build
   # Assign a build to a Forge version
   # @param forge_id A forge UUID or slug
-  # @param params The build data to append
+  # @param forge_build The build data to append
   # @param [Hash] opts the optional parameters
   # @return [Array<Build>]
   describe 'append_forge_to_build test' do
@@ -47,7 +47,7 @@ describe 'ForgeApi' do
   # unit tests for delete_forge_from_build
   # Unlink a build from a Forge version
   # @param forge_id A forge UUID or slug
-  # @param params The build data to unlink
+  # @param forge_build The build data to unlink
   # @param [Hash] opts the optional parameters
   # @return [Array<Build>]
   describe 'delete_forge_from_build test' do

@@ -21,20 +21,20 @@ module Kleister
     end
     # Assign a team to mod
     # @param mod_id [String] A mod UUID or slug
-    # @param params [ModTeamParams] The mod team data to assign
+    # @param mod_team [ModTeamParams] The mod team data to assign
     # @param [Hash] opts the optional parameters
     # @return [GeneralError]
-    def append_mod_to_team(mod_id, params, opts = {})
-      data, _status_code, _headers = append_mod_to_team_with_http_info(mod_id, params, opts)
+    def append_mod_to_team(mod_id, mod_team, opts = {})
+      data, _status_code, _headers = append_mod_to_team_with_http_info(mod_id, mod_team, opts)
       data
     end
 
     # Assign a team to mod
     # @param mod_id [String] A mod UUID or slug
-    # @param params [ModTeamParams] The mod team data to assign
+    # @param mod_team [ModTeamParams] The mod team data to assign
     # @param [Hash] opts the optional parameters
     # @return [Array<(GeneralError, Integer, Hash)>] GeneralError data, response status code and response headers
-    def append_mod_to_team_with_http_info(mod_id, params, opts = {})
+    def append_mod_to_team_with_http_info(mod_id, mod_team, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModApi.append_mod_to_team ...'
       end
@@ -42,9 +42,9 @@ module Kleister
       if @api_client.config.client_side_validation && mod_id.nil?
         fail ArgumentError, "Missing the required parameter 'mod_id' when calling ModApi.append_mod_to_team"
       end
-      # verify the required parameter 'params' is set
-      if @api_client.config.client_side_validation && params.nil?
-        fail ArgumentError, "Missing the required parameter 'params' when calling ModApi.append_mod_to_team"
+      # verify the required parameter 'mod_team' is set
+      if @api_client.config.client_side_validation && mod_team.nil?
+        fail ArgumentError, "Missing the required parameter 'mod_team' when calling ModApi.append_mod_to_team"
       end
       # resource path
       local_var_path = '/mods/{mod_id}/teams'.sub('{' + 'mod_id' + '}', mod_id.to_s)
@@ -63,7 +63,7 @@ module Kleister
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(params) 
+      post_body = opts[:body] || @api_client.object_to_http_body(mod_team) 
 
       # return_type
       return_type = opts[:return_type] || 'GeneralError' 
@@ -89,20 +89,20 @@ module Kleister
 
     # Assign a user to mod
     # @param mod_id [String] A mod UUID or slug
-    # @param params [ModUserParams] The mod user data to assign
+    # @param mod_user [ModUserParams] The mod user data to assign
     # @param [Hash] opts the optional parameters
     # @return [GeneralError]
-    def append_mod_to_user(mod_id, params, opts = {})
-      data, _status_code, _headers = append_mod_to_user_with_http_info(mod_id, params, opts)
+    def append_mod_to_user(mod_id, mod_user, opts = {})
+      data, _status_code, _headers = append_mod_to_user_with_http_info(mod_id, mod_user, opts)
       data
     end
 
     # Assign a user to mod
     # @param mod_id [String] A mod UUID or slug
-    # @param params [ModUserParams] The mod user data to assign
+    # @param mod_user [ModUserParams] The mod user data to assign
     # @param [Hash] opts the optional parameters
     # @return [Array<(GeneralError, Integer, Hash)>] GeneralError data, response status code and response headers
-    def append_mod_to_user_with_http_info(mod_id, params, opts = {})
+    def append_mod_to_user_with_http_info(mod_id, mod_user, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModApi.append_mod_to_user ...'
       end
@@ -110,9 +110,9 @@ module Kleister
       if @api_client.config.client_side_validation && mod_id.nil?
         fail ArgumentError, "Missing the required parameter 'mod_id' when calling ModApi.append_mod_to_user"
       end
-      # verify the required parameter 'params' is set
-      if @api_client.config.client_side_validation && params.nil?
-        fail ArgumentError, "Missing the required parameter 'params' when calling ModApi.append_mod_to_user"
+      # verify the required parameter 'mod_user' is set
+      if @api_client.config.client_side_validation && mod_user.nil?
+        fail ArgumentError, "Missing the required parameter 'mod_user' when calling ModApi.append_mod_to_user"
       end
       # resource path
       local_var_path = '/mods/{mod_id}/users'.sub('{' + 'mod_id' + '}', mod_id.to_s)
@@ -131,7 +131,7 @@ module Kleister
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(params) 
+      post_body = opts[:body] || @api_client.object_to_http_body(mod_user) 
 
       # return_type
       return_type = opts[:return_type] || 'GeneralError' 
@@ -158,21 +158,21 @@ module Kleister
     # Assign a build to a version
     # @param mod_id [String] A mod UUID or slug
     # @param version_id [String] A version UUID or slug
-    # @param params [VersionBuildParams] The build data to append to version
+    # @param version_build [VersionBuildParams] The build data to append to version
     # @param [Hash] opts the optional parameters
     # @return [GeneralError]
-    def append_version_to_build(mod_id, version_id, params, opts = {})
-      data, _status_code, _headers = append_version_to_build_with_http_info(mod_id, version_id, params, opts)
+    def append_version_to_build(mod_id, version_id, version_build, opts = {})
+      data, _status_code, _headers = append_version_to_build_with_http_info(mod_id, version_id, version_build, opts)
       data
     end
 
     # Assign a build to a version
     # @param mod_id [String] A mod UUID or slug
     # @param version_id [String] A version UUID or slug
-    # @param params [VersionBuildParams] The build data to append to version
+    # @param version_build [VersionBuildParams] The build data to append to version
     # @param [Hash] opts the optional parameters
     # @return [Array<(GeneralError, Integer, Hash)>] GeneralError data, response status code and response headers
-    def append_version_to_build_with_http_info(mod_id, version_id, params, opts = {})
+    def append_version_to_build_with_http_info(mod_id, version_id, version_build, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModApi.append_version_to_build ...'
       end
@@ -184,9 +184,9 @@ module Kleister
       if @api_client.config.client_side_validation && version_id.nil?
         fail ArgumentError, "Missing the required parameter 'version_id' when calling ModApi.append_version_to_build"
       end
-      # verify the required parameter 'params' is set
-      if @api_client.config.client_side_validation && params.nil?
-        fail ArgumentError, "Missing the required parameter 'params' when calling ModApi.append_version_to_build"
+      # verify the required parameter 'version_build' is set
+      if @api_client.config.client_side_validation && version_build.nil?
+        fail ArgumentError, "Missing the required parameter 'version_build' when calling ModApi.append_version_to_build"
       end
       # resource path
       local_var_path = '/mods/{mod_id}/versions/{version_id}/builds'.sub('{' + 'mod_id' + '}', mod_id.to_s).sub('{' + 'version_id' + '}', version_id.to_s)
@@ -205,7 +205,7 @@ module Kleister
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(params) 
+      post_body = opts[:body] || @api_client.object_to_http_body(version_build) 
 
       # return_type
       return_type = opts[:return_type] || 'GeneralError' 
@@ -230,25 +230,25 @@ module Kleister
     end
 
     # Create a new mod
-    # @param params [Mod] The mod data to create
+    # @param mod [Mod] The mod data to create
     # @param [Hash] opts the optional parameters
     # @return [Mod]
-    def create_mod(params, opts = {})
-      data, _status_code, _headers = create_mod_with_http_info(params, opts)
+    def create_mod(mod, opts = {})
+      data, _status_code, _headers = create_mod_with_http_info(mod, opts)
       data
     end
 
     # Create a new mod
-    # @param params [Mod] The mod data to create
+    # @param mod [Mod] The mod data to create
     # @param [Hash] opts the optional parameters
     # @return [Array<(Mod, Integer, Hash)>] Mod data, response status code and response headers
-    def create_mod_with_http_info(params, opts = {})
+    def create_mod_with_http_info(mod, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModApi.create_mod ...'
       end
-      # verify the required parameter 'params' is set
-      if @api_client.config.client_side_validation && params.nil?
-        fail ArgumentError, "Missing the required parameter 'params' when calling ModApi.create_mod"
+      # verify the required parameter 'mod' is set
+      if @api_client.config.client_side_validation && mod.nil?
+        fail ArgumentError, "Missing the required parameter 'mod' when calling ModApi.create_mod"
       end
       # resource path
       local_var_path = '/mods'
@@ -267,7 +267,7 @@ module Kleister
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(params) 
+      post_body = opts[:body] || @api_client.object_to_http_body(mod) 
 
       # return_type
       return_type = opts[:return_type] || 'Mod' 
@@ -293,20 +293,20 @@ module Kleister
 
     # Create a new version for a mod
     # @param mod_id [String] A mod UUID or slug
-    # @param params [Version] The version data to create
+    # @param version [Version] The version data to create
     # @param [Hash] opts the optional parameters
     # @return [Version]
-    def create_version(mod_id, params, opts = {})
-      data, _status_code, _headers = create_version_with_http_info(mod_id, params, opts)
+    def create_version(mod_id, version, opts = {})
+      data, _status_code, _headers = create_version_with_http_info(mod_id, version, opts)
       data
     end
 
     # Create a new version for a mod
     # @param mod_id [String] A mod UUID or slug
-    # @param params [Version] The version data to create
+    # @param version [Version] The version data to create
     # @param [Hash] opts the optional parameters
     # @return [Array<(Version, Integer, Hash)>] Version data, response status code and response headers
-    def create_version_with_http_info(mod_id, params, opts = {})
+    def create_version_with_http_info(mod_id, version, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModApi.create_version ...'
       end
@@ -314,9 +314,9 @@ module Kleister
       if @api_client.config.client_side_validation && mod_id.nil?
         fail ArgumentError, "Missing the required parameter 'mod_id' when calling ModApi.create_version"
       end
-      # verify the required parameter 'params' is set
-      if @api_client.config.client_side_validation && params.nil?
-        fail ArgumentError, "Missing the required parameter 'params' when calling ModApi.create_version"
+      # verify the required parameter 'version' is set
+      if @api_client.config.client_side_validation && version.nil?
+        fail ArgumentError, "Missing the required parameter 'version' when calling ModApi.create_version"
       end
       # resource path
       local_var_path = '/mods/{mod_id}/versions'.sub('{' + 'mod_id' + '}', mod_id.to_s)
@@ -335,7 +335,7 @@ module Kleister
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(params) 
+      post_body = opts[:body] || @api_client.object_to_http_body(version) 
 
       # return_type
       return_type = opts[:return_type] || 'Version' 
@@ -421,20 +421,20 @@ module Kleister
 
     # Remove a team from mod
     # @param mod_id [String] A mod UUID or slug
-    # @param params [ModTeamParams] The mod team data to delete
+    # @param mod_team [ModTeamParams] The mod team data to delete
     # @param [Hash] opts the optional parameters
     # @return [GeneralError]
-    def delete_mod_from_team(mod_id, params, opts = {})
-      data, _status_code, _headers = delete_mod_from_team_with_http_info(mod_id, params, opts)
+    def delete_mod_from_team(mod_id, mod_team, opts = {})
+      data, _status_code, _headers = delete_mod_from_team_with_http_info(mod_id, mod_team, opts)
       data
     end
 
     # Remove a team from mod
     # @param mod_id [String] A mod UUID or slug
-    # @param params [ModTeamParams] The mod team data to delete
+    # @param mod_team [ModTeamParams] The mod team data to delete
     # @param [Hash] opts the optional parameters
     # @return [Array<(GeneralError, Integer, Hash)>] GeneralError data, response status code and response headers
-    def delete_mod_from_team_with_http_info(mod_id, params, opts = {})
+    def delete_mod_from_team_with_http_info(mod_id, mod_team, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModApi.delete_mod_from_team ...'
       end
@@ -442,9 +442,9 @@ module Kleister
       if @api_client.config.client_side_validation && mod_id.nil?
         fail ArgumentError, "Missing the required parameter 'mod_id' when calling ModApi.delete_mod_from_team"
       end
-      # verify the required parameter 'params' is set
-      if @api_client.config.client_side_validation && params.nil?
-        fail ArgumentError, "Missing the required parameter 'params' when calling ModApi.delete_mod_from_team"
+      # verify the required parameter 'mod_team' is set
+      if @api_client.config.client_side_validation && mod_team.nil?
+        fail ArgumentError, "Missing the required parameter 'mod_team' when calling ModApi.delete_mod_from_team"
       end
       # resource path
       local_var_path = '/mods/{mod_id}/teams'.sub('{' + 'mod_id' + '}', mod_id.to_s)
@@ -463,7 +463,7 @@ module Kleister
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(params) 
+      post_body = opts[:body] || @api_client.object_to_http_body(mod_team) 
 
       # return_type
       return_type = opts[:return_type] || 'GeneralError' 
@@ -489,20 +489,20 @@ module Kleister
 
     # Remove a user from mod
     # @param mod_id [String] A mod UUID or slug
-    # @param params [ModUserParams] The mod user data to delete
+    # @param mod_user [ModUserParams] The mod user data to delete
     # @param [Hash] opts the optional parameters
     # @return [GeneralError]
-    def delete_mod_from_user(mod_id, params, opts = {})
-      data, _status_code, _headers = delete_mod_from_user_with_http_info(mod_id, params, opts)
+    def delete_mod_from_user(mod_id, mod_user, opts = {})
+      data, _status_code, _headers = delete_mod_from_user_with_http_info(mod_id, mod_user, opts)
       data
     end
 
     # Remove a user from mod
     # @param mod_id [String] A mod UUID or slug
-    # @param params [ModUserParams] The mod user data to delete
+    # @param mod_user [ModUserParams] The mod user data to delete
     # @param [Hash] opts the optional parameters
     # @return [Array<(GeneralError, Integer, Hash)>] GeneralError data, response status code and response headers
-    def delete_mod_from_user_with_http_info(mod_id, params, opts = {})
+    def delete_mod_from_user_with_http_info(mod_id, mod_user, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModApi.delete_mod_from_user ...'
       end
@@ -510,9 +510,9 @@ module Kleister
       if @api_client.config.client_side_validation && mod_id.nil?
         fail ArgumentError, "Missing the required parameter 'mod_id' when calling ModApi.delete_mod_from_user"
       end
-      # verify the required parameter 'params' is set
-      if @api_client.config.client_side_validation && params.nil?
-        fail ArgumentError, "Missing the required parameter 'params' when calling ModApi.delete_mod_from_user"
+      # verify the required parameter 'mod_user' is set
+      if @api_client.config.client_side_validation && mod_user.nil?
+        fail ArgumentError, "Missing the required parameter 'mod_user' when calling ModApi.delete_mod_from_user"
       end
       # resource path
       local_var_path = '/mods/{mod_id}/users'.sub('{' + 'mod_id' + '}', mod_id.to_s)
@@ -531,7 +531,7 @@ module Kleister
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(params) 
+      post_body = opts[:body] || @api_client.object_to_http_body(mod_user) 
 
       # return_type
       return_type = opts[:return_type] || 'GeneralError' 
@@ -624,21 +624,21 @@ module Kleister
     # Unlink a build from a version
     # @param mod_id [String] A mod UUID or slug
     # @param version_id [String] A version UUID or slug
-    # @param params [VersionBuildParams] The build data to unlink from version
+    # @param version_build [VersionBuildParams] The build data to unlink from version
     # @param [Hash] opts the optional parameters
     # @return [GeneralError]
-    def delete_version_from_build(mod_id, version_id, params, opts = {})
-      data, _status_code, _headers = delete_version_from_build_with_http_info(mod_id, version_id, params, opts)
+    def delete_version_from_build(mod_id, version_id, version_build, opts = {})
+      data, _status_code, _headers = delete_version_from_build_with_http_info(mod_id, version_id, version_build, opts)
       data
     end
 
     # Unlink a build from a version
     # @param mod_id [String] A mod UUID or slug
     # @param version_id [String] A version UUID or slug
-    # @param params [VersionBuildParams] The build data to unlink from version
+    # @param version_build [VersionBuildParams] The build data to unlink from version
     # @param [Hash] opts the optional parameters
     # @return [Array<(GeneralError, Integer, Hash)>] GeneralError data, response status code and response headers
-    def delete_version_from_build_with_http_info(mod_id, version_id, params, opts = {})
+    def delete_version_from_build_with_http_info(mod_id, version_id, version_build, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModApi.delete_version_from_build ...'
       end
@@ -650,9 +650,9 @@ module Kleister
       if @api_client.config.client_side_validation && version_id.nil?
         fail ArgumentError, "Missing the required parameter 'version_id' when calling ModApi.delete_version_from_build"
       end
-      # verify the required parameter 'params' is set
-      if @api_client.config.client_side_validation && params.nil?
-        fail ArgumentError, "Missing the required parameter 'params' when calling ModApi.delete_version_from_build"
+      # verify the required parameter 'version_build' is set
+      if @api_client.config.client_side_validation && version_build.nil?
+        fail ArgumentError, "Missing the required parameter 'version_build' when calling ModApi.delete_version_from_build"
       end
       # resource path
       local_var_path = '/mods/{mod_id}/versions/{version_id}/builds'.sub('{' + 'mod_id' + '}', mod_id.to_s).sub('{' + 'version_id' + '}', version_id.to_s)
@@ -671,7 +671,7 @@ module Kleister
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(params) 
+      post_body = opts[:body] || @api_client.object_to_http_body(version_build) 
 
       # return_type
       return_type = opts[:return_type] || 'GeneralError' 
@@ -997,20 +997,20 @@ module Kleister
 
     # Update team perms for mod
     # @param mod_id [String] A mod UUID or slug
-    # @param params [ModTeamParams] The mod team data to update
+    # @param mod_team [ModTeamParams] The mod team data to update
     # @param [Hash] opts the optional parameters
     # @return [GeneralError]
-    def permit_mod_team(mod_id, params, opts = {})
-      data, _status_code, _headers = permit_mod_team_with_http_info(mod_id, params, opts)
+    def permit_mod_team(mod_id, mod_team, opts = {})
+      data, _status_code, _headers = permit_mod_team_with_http_info(mod_id, mod_team, opts)
       data
     end
 
     # Update team perms for mod
     # @param mod_id [String] A mod UUID or slug
-    # @param params [ModTeamParams] The mod team data to update
+    # @param mod_team [ModTeamParams] The mod team data to update
     # @param [Hash] opts the optional parameters
     # @return [Array<(GeneralError, Integer, Hash)>] GeneralError data, response status code and response headers
-    def permit_mod_team_with_http_info(mod_id, params, opts = {})
+    def permit_mod_team_with_http_info(mod_id, mod_team, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModApi.permit_mod_team ...'
       end
@@ -1018,9 +1018,9 @@ module Kleister
       if @api_client.config.client_side_validation && mod_id.nil?
         fail ArgumentError, "Missing the required parameter 'mod_id' when calling ModApi.permit_mod_team"
       end
-      # verify the required parameter 'params' is set
-      if @api_client.config.client_side_validation && params.nil?
-        fail ArgumentError, "Missing the required parameter 'params' when calling ModApi.permit_mod_team"
+      # verify the required parameter 'mod_team' is set
+      if @api_client.config.client_side_validation && mod_team.nil?
+        fail ArgumentError, "Missing the required parameter 'mod_team' when calling ModApi.permit_mod_team"
       end
       # resource path
       local_var_path = '/mods/{mod_id}/teams'.sub('{' + 'mod_id' + '}', mod_id.to_s)
@@ -1039,7 +1039,7 @@ module Kleister
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(params) 
+      post_body = opts[:body] || @api_client.object_to_http_body(mod_team) 
 
       # return_type
       return_type = opts[:return_type] || 'GeneralError' 
@@ -1065,20 +1065,20 @@ module Kleister
 
     # Update user perms for mod
     # @param mod_id [String] A mod UUID or slug
-    # @param params [ModUserParams] The mod user data to update
+    # @param mod_user [ModUserParams] The mod user data to update
     # @param [Hash] opts the optional parameters
     # @return [GeneralError]
-    def permit_mod_user(mod_id, params, opts = {})
-      data, _status_code, _headers = permit_mod_user_with_http_info(mod_id, params, opts)
+    def permit_mod_user(mod_id, mod_user, opts = {})
+      data, _status_code, _headers = permit_mod_user_with_http_info(mod_id, mod_user, opts)
       data
     end
 
     # Update user perms for mod
     # @param mod_id [String] A mod UUID or slug
-    # @param params [ModUserParams] The mod user data to update
+    # @param mod_user [ModUserParams] The mod user data to update
     # @param [Hash] opts the optional parameters
     # @return [Array<(GeneralError, Integer, Hash)>] GeneralError data, response status code and response headers
-    def permit_mod_user_with_http_info(mod_id, params, opts = {})
+    def permit_mod_user_with_http_info(mod_id, mod_user, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModApi.permit_mod_user ...'
       end
@@ -1086,9 +1086,9 @@ module Kleister
       if @api_client.config.client_side_validation && mod_id.nil?
         fail ArgumentError, "Missing the required parameter 'mod_id' when calling ModApi.permit_mod_user"
       end
-      # verify the required parameter 'params' is set
-      if @api_client.config.client_side_validation && params.nil?
-        fail ArgumentError, "Missing the required parameter 'params' when calling ModApi.permit_mod_user"
+      # verify the required parameter 'mod_user' is set
+      if @api_client.config.client_side_validation && mod_user.nil?
+        fail ArgumentError, "Missing the required parameter 'mod_user' when calling ModApi.permit_mod_user"
       end
       # resource path
       local_var_path = '/mods/{mod_id}/users'.sub('{' + 'mod_id' + '}', mod_id.to_s)
@@ -1107,7 +1107,7 @@ module Kleister
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(params) 
+      post_body = opts[:body] || @api_client.object_to_http_body(mod_user) 
 
       # return_type
       return_type = opts[:return_type] || 'GeneralError' 
@@ -1259,20 +1259,20 @@ module Kleister
 
     # Update a specific mod
     # @param mod_id [String] A mod UUID or slug
-    # @param params [Mod] The mod data to update
+    # @param mod [Mod] The mod data to update
     # @param [Hash] opts the optional parameters
     # @return [Mod]
-    def update_mod(mod_id, params, opts = {})
-      data, _status_code, _headers = update_mod_with_http_info(mod_id, params, opts)
+    def update_mod(mod_id, mod, opts = {})
+      data, _status_code, _headers = update_mod_with_http_info(mod_id, mod, opts)
       data
     end
 
     # Update a specific mod
     # @param mod_id [String] A mod UUID or slug
-    # @param params [Mod] The mod data to update
+    # @param mod [Mod] The mod data to update
     # @param [Hash] opts the optional parameters
     # @return [Array<(Mod, Integer, Hash)>] Mod data, response status code and response headers
-    def update_mod_with_http_info(mod_id, params, opts = {})
+    def update_mod_with_http_info(mod_id, mod, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModApi.update_mod ...'
       end
@@ -1280,9 +1280,9 @@ module Kleister
       if @api_client.config.client_side_validation && mod_id.nil?
         fail ArgumentError, "Missing the required parameter 'mod_id' when calling ModApi.update_mod"
       end
-      # verify the required parameter 'params' is set
-      if @api_client.config.client_side_validation && params.nil?
-        fail ArgumentError, "Missing the required parameter 'params' when calling ModApi.update_mod"
+      # verify the required parameter 'mod' is set
+      if @api_client.config.client_side_validation && mod.nil?
+        fail ArgumentError, "Missing the required parameter 'mod' when calling ModApi.update_mod"
       end
       # resource path
       local_var_path = '/mods/{mod_id}'.sub('{' + 'mod_id' + '}', mod_id.to_s)
@@ -1301,7 +1301,7 @@ module Kleister
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(params) 
+      post_body = opts[:body] || @api_client.object_to_http_body(mod) 
 
       # return_type
       return_type = opts[:return_type] || 'Mod' 
@@ -1328,21 +1328,21 @@ module Kleister
     # Update a specific version for a mod
     # @param mod_id [String] A mod UUID or slug
     # @param version_id [String] A version UUID or slug
-    # @param params [Version] The version data to update
+    # @param version [Version] The version data to update
     # @param [Hash] opts the optional parameters
     # @return [Version]
-    def update_version(mod_id, version_id, params, opts = {})
-      data, _status_code, _headers = update_version_with_http_info(mod_id, version_id, params, opts)
+    def update_version(mod_id, version_id, version, opts = {})
+      data, _status_code, _headers = update_version_with_http_info(mod_id, version_id, version, opts)
       data
     end
 
     # Update a specific version for a mod
     # @param mod_id [String] A mod UUID or slug
     # @param version_id [String] A version UUID or slug
-    # @param params [Version] The version data to update
+    # @param version [Version] The version data to update
     # @param [Hash] opts the optional parameters
     # @return [Array<(Version, Integer, Hash)>] Version data, response status code and response headers
-    def update_version_with_http_info(mod_id, version_id, params, opts = {})
+    def update_version_with_http_info(mod_id, version_id, version, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModApi.update_version ...'
       end
@@ -1354,9 +1354,9 @@ module Kleister
       if @api_client.config.client_side_validation && version_id.nil?
         fail ArgumentError, "Missing the required parameter 'version_id' when calling ModApi.update_version"
       end
-      # verify the required parameter 'params' is set
-      if @api_client.config.client_side_validation && params.nil?
-        fail ArgumentError, "Missing the required parameter 'params' when calling ModApi.update_version"
+      # verify the required parameter 'version' is set
+      if @api_client.config.client_side_validation && version.nil?
+        fail ArgumentError, "Missing the required parameter 'version' when calling ModApi.update_version"
       end
       # resource path
       local_var_path = '/mods/{mod_id}/versions/{version_id}'.sub('{' + 'mod_id' + '}', mod_id.to_s).sub('{' + 'version_id' + '}', version_id.to_s)
@@ -1375,7 +1375,7 @@ module Kleister
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(params) 
+      post_body = opts[:body] || @api_client.object_to_http_body(version) 
 
       # return_type
       return_type = opts[:return_type] || 'Version' 

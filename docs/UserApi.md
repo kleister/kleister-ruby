@@ -26,7 +26,7 @@ Method | HTTP request | Description
 
 ## append_user_to_mod
 
-> GeneralError append_user_to_mod(user_id, params)
+> GeneralError append_user_to_mod(user_id, user_mod)
 
 Assign a mod to user
 
@@ -38,11 +38,11 @@ require 'kleister'
 
 api_instance = Kleister::UserApi.new
 user_id = 'user_id_example' # String | A user UUID or slug
-params = Kleister::UserModParams.new # UserModParams | The user mod data to assign
+user_mod = Kleister::UserModParams.new # UserModParams | The user mod data to assign
 
 begin
   #Assign a mod to user
-  result = api_instance.append_user_to_mod(user_id, params)
+  result = api_instance.append_user_to_mod(user_id, user_mod)
   p result
 rescue Kleister::ApiError => e
   puts "Exception when calling UserApi->append_user_to_mod: #{e}"
@@ -55,7 +55,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **user_id** | **String**| A user UUID or slug | 
- **params** | [**UserModParams**](UserModParams.md)| The user mod data to assign | 
+ **user_mod** | [**UserModParams**](UserModParams.md)| The user mod data to assign | 
 
 ### Return type
 
@@ -73,7 +73,7 @@ No authorization required
 
 ## append_user_to_pack
 
-> GeneralError append_user_to_pack(user_id, params)
+> GeneralError append_user_to_pack(user_id, user_pack)
 
 Assign a pack to user
 
@@ -85,11 +85,11 @@ require 'kleister'
 
 api_instance = Kleister::UserApi.new
 user_id = 'user_id_example' # String | A user UUID or slug
-params = Kleister::UserPackParams.new # UserPackParams | The user pack data to assign
+user_pack = Kleister::UserPackParams.new # UserPackParams | The user pack data to assign
 
 begin
   #Assign a pack to user
-  result = api_instance.append_user_to_pack(user_id, params)
+  result = api_instance.append_user_to_pack(user_id, user_pack)
   p result
 rescue Kleister::ApiError => e
   puts "Exception when calling UserApi->append_user_to_pack: #{e}"
@@ -102,7 +102,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **user_id** | **String**| A user UUID or slug | 
- **params** | [**UserPackParams**](UserPackParams.md)| The user pack data to assign | 
+ **user_pack** | [**UserPackParams**](UserPackParams.md)| The user pack data to assign | 
 
 ### Return type
 
@@ -120,7 +120,7 @@ No authorization required
 
 ## append_user_to_team
 
-> GeneralError append_user_to_team(user_id, params)
+> GeneralError append_user_to_team(user_id, user_team)
 
 Assign a team to user
 
@@ -132,11 +132,11 @@ require 'kleister'
 
 api_instance = Kleister::UserApi.new
 user_id = 'user_id_example' # String | A user UUID or slug
-params = Kleister::UserTeamParams.new # UserTeamParams | The user team data to assign
+user_team = Kleister::UserTeamParams.new # UserTeamParams | The user team data to assign
 
 begin
   #Assign a team to user
-  result = api_instance.append_user_to_team(user_id, params)
+  result = api_instance.append_user_to_team(user_id, user_team)
   p result
 rescue Kleister::ApiError => e
   puts "Exception when calling UserApi->append_user_to_team: #{e}"
@@ -149,7 +149,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **user_id** | **String**| A user UUID or slug | 
- **params** | [**UserTeamParams**](UserTeamParams.md)| The user team data to assign | 
+ **user_team** | [**UserTeamParams**](UserTeamParams.md)| The user team data to assign | 
 
 ### Return type
 
@@ -167,7 +167,7 @@ No authorization required
 
 ## create_user
 
-> User create_user(params)
+> User create_user(user)
 
 Create a new user
 
@@ -178,11 +178,11 @@ Create a new user
 require 'kleister'
 
 api_instance = Kleister::UserApi.new
-params = Kleister::User.new # User | The user data to create
+user = Kleister::User.new # User | The user data to create
 
 begin
   #Create a new user
-  result = api_instance.create_user(params)
+  result = api_instance.create_user(user)
   p result
 rescue Kleister::ApiError => e
   puts "Exception when calling UserApi->create_user: #{e}"
@@ -194,7 +194,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **params** | [**User**](User.md)| The user data to create | 
+ **user** | [**User**](User.md)| The user data to create | 
 
 ### Return type
 
@@ -257,7 +257,7 @@ No authorization required
 
 ## delete_user_from_mod
 
-> GeneralError delete_user_from_mod(user_id, params)
+> GeneralError delete_user_from_mod(user_id, user_mod)
 
 Remove a mod from user
 
@@ -269,11 +269,11 @@ require 'kleister'
 
 api_instance = Kleister::UserApi.new
 user_id = 'user_id_example' # String | A user UUID or slug
-params = Kleister::UserModParams.new # UserModParams | The user mod data to delete
+user_mod = Kleister::UserModParams.new # UserModParams | The user mod data to delete
 
 begin
   #Remove a mod from user
-  result = api_instance.delete_user_from_mod(user_id, params)
+  result = api_instance.delete_user_from_mod(user_id, user_mod)
   p result
 rescue Kleister::ApiError => e
   puts "Exception when calling UserApi->delete_user_from_mod: #{e}"
@@ -286,7 +286,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **user_id** | **String**| A user UUID or slug | 
- **params** | [**UserModParams**](UserModParams.md)| The user mod data to delete | 
+ **user_mod** | [**UserModParams**](UserModParams.md)| The user mod data to delete | 
 
 ### Return type
 
@@ -304,7 +304,7 @@ No authorization required
 
 ## delete_user_from_pack
 
-> GeneralError delete_user_from_pack(user_id, params)
+> GeneralError delete_user_from_pack(user_id, user_pack)
 
 Remove a pack from user
 
@@ -316,11 +316,11 @@ require 'kleister'
 
 api_instance = Kleister::UserApi.new
 user_id = 'user_id_example' # String | A user UUID or slug
-params = Kleister::UserPackParams.new # UserPackParams | The user pack data to delete
+user_pack = Kleister::UserPackParams.new # UserPackParams | The user pack data to delete
 
 begin
   #Remove a pack from user
-  result = api_instance.delete_user_from_pack(user_id, params)
+  result = api_instance.delete_user_from_pack(user_id, user_pack)
   p result
 rescue Kleister::ApiError => e
   puts "Exception when calling UserApi->delete_user_from_pack: #{e}"
@@ -333,7 +333,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **user_id** | **String**| A user UUID or slug | 
- **params** | [**UserPackParams**](UserPackParams.md)| The user pack data to delete | 
+ **user_pack** | [**UserPackParams**](UserPackParams.md)| The user pack data to delete | 
 
 ### Return type
 
@@ -351,7 +351,7 @@ No authorization required
 
 ## delete_user_from_team
 
-> GeneralError delete_user_from_team(user_id, params)
+> GeneralError delete_user_from_team(user_id, user_team)
 
 Remove a team from user
 
@@ -363,11 +363,11 @@ require 'kleister'
 
 api_instance = Kleister::UserApi.new
 user_id = 'user_id_example' # String | A user UUID or slug
-params = Kleister::UserTeamParams.new # UserTeamParams | The user team data to delete
+user_team = Kleister::UserTeamParams.new # UserTeamParams | The user team data to delete
 
 begin
   #Remove a team from user
-  result = api_instance.delete_user_from_team(user_id, params)
+  result = api_instance.delete_user_from_team(user_id, user_team)
   p result
 rescue Kleister::ApiError => e
   puts "Exception when calling UserApi->delete_user_from_team: #{e}"
@@ -380,7 +380,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **user_id** | **String**| A user UUID or slug | 
- **params** | [**UserTeamParams**](UserTeamParams.md)| The user team data to delete | 
+ **user_team** | [**UserTeamParams**](UserTeamParams.md)| The user team data to delete | 
 
 ### Return type
 
@@ -574,7 +574,7 @@ No authorization required
 
 ## permit_user_mod
 
-> GeneralError permit_user_mod(user_id, params)
+> GeneralError permit_user_mod(user_id, user_mod)
 
 Update mod perms for user
 
@@ -586,11 +586,11 @@ require 'kleister'
 
 api_instance = Kleister::UserApi.new
 user_id = 'user_id_example' # String | A user UUID or slug
-params = Kleister::UserModParams.new # UserModParams | The user mod data to update
+user_mod = Kleister::UserModParams.new # UserModParams | The user mod data to update
 
 begin
   #Update mod perms for user
-  result = api_instance.permit_user_mod(user_id, params)
+  result = api_instance.permit_user_mod(user_id, user_mod)
   p result
 rescue Kleister::ApiError => e
   puts "Exception when calling UserApi->permit_user_mod: #{e}"
@@ -603,7 +603,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **user_id** | **String**| A user UUID or slug | 
- **params** | [**UserModParams**](UserModParams.md)| The user mod data to update | 
+ **user_mod** | [**UserModParams**](UserModParams.md)| The user mod data to update | 
 
 ### Return type
 
@@ -621,7 +621,7 @@ No authorization required
 
 ## permit_user_pack
 
-> GeneralError permit_user_pack(user_id, params)
+> GeneralError permit_user_pack(user_id, user_pack)
 
 Update pack perms for user
 
@@ -633,11 +633,11 @@ require 'kleister'
 
 api_instance = Kleister::UserApi.new
 user_id = 'user_id_example' # String | A user UUID or slug
-params = Kleister::UserPackParams.new # UserPackParams | The user pack data to update
+user_pack = Kleister::UserPackParams.new # UserPackParams | The user pack data to update
 
 begin
   #Update pack perms for user
-  result = api_instance.permit_user_pack(user_id, params)
+  result = api_instance.permit_user_pack(user_id, user_pack)
   p result
 rescue Kleister::ApiError => e
   puts "Exception when calling UserApi->permit_user_pack: #{e}"
@@ -650,7 +650,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **user_id** | **String**| A user UUID or slug | 
- **params** | [**UserPackParams**](UserPackParams.md)| The user pack data to update | 
+ **user_pack** | [**UserPackParams**](UserPackParams.md)| The user pack data to update | 
 
 ### Return type
 
@@ -668,7 +668,7 @@ No authorization required
 
 ## permit_user_team
 
-> GeneralError permit_user_team(user_id, params)
+> GeneralError permit_user_team(user_id, user_team)
 
 Update team perms for user
 
@@ -680,11 +680,11 @@ require 'kleister'
 
 api_instance = Kleister::UserApi.new
 user_id = 'user_id_example' # String | A user UUID or slug
-params = Kleister::UserTeamParams.new # UserTeamParams | The user team data to update
+user_team = Kleister::UserTeamParams.new # UserTeamParams | The user team data to update
 
 begin
   #Update team perms for user
-  result = api_instance.permit_user_team(user_id, params)
+  result = api_instance.permit_user_team(user_id, user_team)
   p result
 rescue Kleister::ApiError => e
   puts "Exception when calling UserApi->permit_user_team: #{e}"
@@ -697,7 +697,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **user_id** | **String**| A user UUID or slug | 
- **params** | [**UserTeamParams**](UserTeamParams.md)| The user team data to update | 
+ **user_team** | [**UserTeamParams**](UserTeamParams.md)| The user team data to update | 
 
 ### Return type
 
@@ -760,7 +760,7 @@ No authorization required
 
 ## update_user
 
-> User update_user(user_id, params)
+> User update_user(user_id, user)
 
 Update a specific user
 
@@ -772,11 +772,11 @@ require 'kleister'
 
 api_instance = Kleister::UserApi.new
 user_id = 'user_id_example' # String | A user UUID or slug
-params = Kleister::User.new # User | The user data to update
+user = Kleister::User.new # User | The user data to update
 
 begin
   #Update a specific user
-  result = api_instance.update_user(user_id, params)
+  result = api_instance.update_user(user_id, user)
   p result
 rescue Kleister::ApiError => e
   puts "Exception when calling UserApi->update_user: #{e}"
@@ -789,7 +789,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **user_id** | **String**| A user UUID or slug | 
- **params** | [**User**](User.md)| The user data to update | 
+ **user** | [**User**](User.md)| The user data to update | 
 
 ### Return type
 

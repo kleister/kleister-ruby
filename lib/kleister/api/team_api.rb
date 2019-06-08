@@ -21,20 +21,20 @@ module Kleister
     end
     # Assign a mod to team
     # @param team_id [String] A team UUID or slug
-    # @param params [TeamModParams] The team mod data to assign
+    # @param team_mod [TeamModParams] The team mod data to assign
     # @param [Hash] opts the optional parameters
     # @return [GeneralError]
-    def append_team_to_mod(team_id, params, opts = {})
-      data, _status_code, _headers = append_team_to_mod_with_http_info(team_id, params, opts)
+    def append_team_to_mod(team_id, team_mod, opts = {})
+      data, _status_code, _headers = append_team_to_mod_with_http_info(team_id, team_mod, opts)
       data
     end
 
     # Assign a mod to team
     # @param team_id [String] A team UUID or slug
-    # @param params [TeamModParams] The team mod data to assign
+    # @param team_mod [TeamModParams] The team mod data to assign
     # @param [Hash] opts the optional parameters
     # @return [Array<(GeneralError, Integer, Hash)>] GeneralError data, response status code and response headers
-    def append_team_to_mod_with_http_info(team_id, params, opts = {})
+    def append_team_to_mod_with_http_info(team_id, team_mod, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TeamApi.append_team_to_mod ...'
       end
@@ -42,9 +42,9 @@ module Kleister
       if @api_client.config.client_side_validation && team_id.nil?
         fail ArgumentError, "Missing the required parameter 'team_id' when calling TeamApi.append_team_to_mod"
       end
-      # verify the required parameter 'params' is set
-      if @api_client.config.client_side_validation && params.nil?
-        fail ArgumentError, "Missing the required parameter 'params' when calling TeamApi.append_team_to_mod"
+      # verify the required parameter 'team_mod' is set
+      if @api_client.config.client_side_validation && team_mod.nil?
+        fail ArgumentError, "Missing the required parameter 'team_mod' when calling TeamApi.append_team_to_mod"
       end
       # resource path
       local_var_path = '/teams/{team_id}/mods'.sub('{' + 'team_id' + '}', team_id.to_s)
@@ -63,7 +63,7 @@ module Kleister
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(params) 
+      post_body = opts[:body] || @api_client.object_to_http_body(team_mod) 
 
       # return_type
       return_type = opts[:return_type] || 'GeneralError' 
@@ -89,20 +89,20 @@ module Kleister
 
     # Assign a pack to team
     # @param team_id [String] A team UUID or slug
-    # @param params [TeamPackParams] The team pack data to assign
+    # @param team_pack [TeamPackParams] The team pack data to assign
     # @param [Hash] opts the optional parameters
     # @return [GeneralError]
-    def append_team_to_pack(team_id, params, opts = {})
-      data, _status_code, _headers = append_team_to_pack_with_http_info(team_id, params, opts)
+    def append_team_to_pack(team_id, team_pack, opts = {})
+      data, _status_code, _headers = append_team_to_pack_with_http_info(team_id, team_pack, opts)
       data
     end
 
     # Assign a pack to team
     # @param team_id [String] A team UUID or slug
-    # @param params [TeamPackParams] The team pack data to assign
+    # @param team_pack [TeamPackParams] The team pack data to assign
     # @param [Hash] opts the optional parameters
     # @return [Array<(GeneralError, Integer, Hash)>] GeneralError data, response status code and response headers
-    def append_team_to_pack_with_http_info(team_id, params, opts = {})
+    def append_team_to_pack_with_http_info(team_id, team_pack, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TeamApi.append_team_to_pack ...'
       end
@@ -110,9 +110,9 @@ module Kleister
       if @api_client.config.client_side_validation && team_id.nil?
         fail ArgumentError, "Missing the required parameter 'team_id' when calling TeamApi.append_team_to_pack"
       end
-      # verify the required parameter 'params' is set
-      if @api_client.config.client_side_validation && params.nil?
-        fail ArgumentError, "Missing the required parameter 'params' when calling TeamApi.append_team_to_pack"
+      # verify the required parameter 'team_pack' is set
+      if @api_client.config.client_side_validation && team_pack.nil?
+        fail ArgumentError, "Missing the required parameter 'team_pack' when calling TeamApi.append_team_to_pack"
       end
       # resource path
       local_var_path = '/teams/{team_id}/packs'.sub('{' + 'team_id' + '}', team_id.to_s)
@@ -131,7 +131,7 @@ module Kleister
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(params) 
+      post_body = opts[:body] || @api_client.object_to_http_body(team_pack) 
 
       # return_type
       return_type = opts[:return_type] || 'GeneralError' 
@@ -157,20 +157,20 @@ module Kleister
 
     # Assign a user to team
     # @param team_id [String] A team UUID or slug
-    # @param params [TeamUserParams] The team user data to assign
+    # @param team_user [TeamUserParams] The team user data to assign
     # @param [Hash] opts the optional parameters
     # @return [GeneralError]
-    def append_team_to_user(team_id, params, opts = {})
-      data, _status_code, _headers = append_team_to_user_with_http_info(team_id, params, opts)
+    def append_team_to_user(team_id, team_user, opts = {})
+      data, _status_code, _headers = append_team_to_user_with_http_info(team_id, team_user, opts)
       data
     end
 
     # Assign a user to team
     # @param team_id [String] A team UUID or slug
-    # @param params [TeamUserParams] The team user data to assign
+    # @param team_user [TeamUserParams] The team user data to assign
     # @param [Hash] opts the optional parameters
     # @return [Array<(GeneralError, Integer, Hash)>] GeneralError data, response status code and response headers
-    def append_team_to_user_with_http_info(team_id, params, opts = {})
+    def append_team_to_user_with_http_info(team_id, team_user, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TeamApi.append_team_to_user ...'
       end
@@ -178,9 +178,9 @@ module Kleister
       if @api_client.config.client_side_validation && team_id.nil?
         fail ArgumentError, "Missing the required parameter 'team_id' when calling TeamApi.append_team_to_user"
       end
-      # verify the required parameter 'params' is set
-      if @api_client.config.client_side_validation && params.nil?
-        fail ArgumentError, "Missing the required parameter 'params' when calling TeamApi.append_team_to_user"
+      # verify the required parameter 'team_user' is set
+      if @api_client.config.client_side_validation && team_user.nil?
+        fail ArgumentError, "Missing the required parameter 'team_user' when calling TeamApi.append_team_to_user"
       end
       # resource path
       local_var_path = '/teams/{team_id}/users'.sub('{' + 'team_id' + '}', team_id.to_s)
@@ -199,7 +199,7 @@ module Kleister
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(params) 
+      post_body = opts[:body] || @api_client.object_to_http_body(team_user) 
 
       # return_type
       return_type = opts[:return_type] || 'GeneralError' 
@@ -224,25 +224,25 @@ module Kleister
     end
 
     # Create a new team
-    # @param params [Team] The team data to create
+    # @param team [Team] The team data to create
     # @param [Hash] opts the optional parameters
     # @return [Team]
-    def create_team(params, opts = {})
-      data, _status_code, _headers = create_team_with_http_info(params, opts)
+    def create_team(team, opts = {})
+      data, _status_code, _headers = create_team_with_http_info(team, opts)
       data
     end
 
     # Create a new team
-    # @param params [Team] The team data to create
+    # @param team [Team] The team data to create
     # @param [Hash] opts the optional parameters
     # @return [Array<(Team, Integer, Hash)>] Team data, response status code and response headers
-    def create_team_with_http_info(params, opts = {})
+    def create_team_with_http_info(team, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TeamApi.create_team ...'
       end
-      # verify the required parameter 'params' is set
-      if @api_client.config.client_side_validation && params.nil?
-        fail ArgumentError, "Missing the required parameter 'params' when calling TeamApi.create_team"
+      # verify the required parameter 'team' is set
+      if @api_client.config.client_side_validation && team.nil?
+        fail ArgumentError, "Missing the required parameter 'team' when calling TeamApi.create_team"
       end
       # resource path
       local_var_path = '/teams'
@@ -261,7 +261,7 @@ module Kleister
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(params) 
+      post_body = opts[:body] || @api_client.object_to_http_body(team) 
 
       # return_type
       return_type = opts[:return_type] || 'Team' 
@@ -347,20 +347,20 @@ module Kleister
 
     # Remove a mod from team
     # @param team_id [String] A team UUID or slug
-    # @param params [TeamModParams] The team mod data to delete
+    # @param team_mod [TeamModParams] The team mod data to delete
     # @param [Hash] opts the optional parameters
     # @return [GeneralError]
-    def delete_team_from_mod(team_id, params, opts = {})
-      data, _status_code, _headers = delete_team_from_mod_with_http_info(team_id, params, opts)
+    def delete_team_from_mod(team_id, team_mod, opts = {})
+      data, _status_code, _headers = delete_team_from_mod_with_http_info(team_id, team_mod, opts)
       data
     end
 
     # Remove a mod from team
     # @param team_id [String] A team UUID or slug
-    # @param params [TeamModParams] The team mod data to delete
+    # @param team_mod [TeamModParams] The team mod data to delete
     # @param [Hash] opts the optional parameters
     # @return [Array<(GeneralError, Integer, Hash)>] GeneralError data, response status code and response headers
-    def delete_team_from_mod_with_http_info(team_id, params, opts = {})
+    def delete_team_from_mod_with_http_info(team_id, team_mod, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TeamApi.delete_team_from_mod ...'
       end
@@ -368,9 +368,9 @@ module Kleister
       if @api_client.config.client_side_validation && team_id.nil?
         fail ArgumentError, "Missing the required parameter 'team_id' when calling TeamApi.delete_team_from_mod"
       end
-      # verify the required parameter 'params' is set
-      if @api_client.config.client_side_validation && params.nil?
-        fail ArgumentError, "Missing the required parameter 'params' when calling TeamApi.delete_team_from_mod"
+      # verify the required parameter 'team_mod' is set
+      if @api_client.config.client_side_validation && team_mod.nil?
+        fail ArgumentError, "Missing the required parameter 'team_mod' when calling TeamApi.delete_team_from_mod"
       end
       # resource path
       local_var_path = '/teams/{team_id}/mods'.sub('{' + 'team_id' + '}', team_id.to_s)
@@ -389,7 +389,7 @@ module Kleister
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(params) 
+      post_body = opts[:body] || @api_client.object_to_http_body(team_mod) 
 
       # return_type
       return_type = opts[:return_type] || 'GeneralError' 
@@ -415,20 +415,20 @@ module Kleister
 
     # Remove a pack from team
     # @param team_id [String] A team UUID or slug
-    # @param params [TeamPackParams] The team pack data to delete
+    # @param team_pack [TeamPackParams] The team pack data to delete
     # @param [Hash] opts the optional parameters
     # @return [GeneralError]
-    def delete_team_from_pack(team_id, params, opts = {})
-      data, _status_code, _headers = delete_team_from_pack_with_http_info(team_id, params, opts)
+    def delete_team_from_pack(team_id, team_pack, opts = {})
+      data, _status_code, _headers = delete_team_from_pack_with_http_info(team_id, team_pack, opts)
       data
     end
 
     # Remove a pack from team
     # @param team_id [String] A team UUID or slug
-    # @param params [TeamPackParams] The team pack data to delete
+    # @param team_pack [TeamPackParams] The team pack data to delete
     # @param [Hash] opts the optional parameters
     # @return [Array<(GeneralError, Integer, Hash)>] GeneralError data, response status code and response headers
-    def delete_team_from_pack_with_http_info(team_id, params, opts = {})
+    def delete_team_from_pack_with_http_info(team_id, team_pack, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TeamApi.delete_team_from_pack ...'
       end
@@ -436,9 +436,9 @@ module Kleister
       if @api_client.config.client_side_validation && team_id.nil?
         fail ArgumentError, "Missing the required parameter 'team_id' when calling TeamApi.delete_team_from_pack"
       end
-      # verify the required parameter 'params' is set
-      if @api_client.config.client_side_validation && params.nil?
-        fail ArgumentError, "Missing the required parameter 'params' when calling TeamApi.delete_team_from_pack"
+      # verify the required parameter 'team_pack' is set
+      if @api_client.config.client_side_validation && team_pack.nil?
+        fail ArgumentError, "Missing the required parameter 'team_pack' when calling TeamApi.delete_team_from_pack"
       end
       # resource path
       local_var_path = '/teams/{team_id}/packs'.sub('{' + 'team_id' + '}', team_id.to_s)
@@ -457,7 +457,7 @@ module Kleister
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(params) 
+      post_body = opts[:body] || @api_client.object_to_http_body(team_pack) 
 
       # return_type
       return_type = opts[:return_type] || 'GeneralError' 
@@ -483,20 +483,20 @@ module Kleister
 
     # Remove a user from team
     # @param team_id [String] A team UUID or slug
-    # @param params [TeamUserParams] The team user data to delete
+    # @param team_user [TeamUserParams] The team user data to delete
     # @param [Hash] opts the optional parameters
     # @return [GeneralError]
-    def delete_team_from_user(team_id, params, opts = {})
-      data, _status_code, _headers = delete_team_from_user_with_http_info(team_id, params, opts)
+    def delete_team_from_user(team_id, team_user, opts = {})
+      data, _status_code, _headers = delete_team_from_user_with_http_info(team_id, team_user, opts)
       data
     end
 
     # Remove a user from team
     # @param team_id [String] A team UUID or slug
-    # @param params [TeamUserParams] The team user data to delete
+    # @param team_user [TeamUserParams] The team user data to delete
     # @param [Hash] opts the optional parameters
     # @return [Array<(GeneralError, Integer, Hash)>] GeneralError data, response status code and response headers
-    def delete_team_from_user_with_http_info(team_id, params, opts = {})
+    def delete_team_from_user_with_http_info(team_id, team_user, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TeamApi.delete_team_from_user ...'
       end
@@ -504,9 +504,9 @@ module Kleister
       if @api_client.config.client_side_validation && team_id.nil?
         fail ArgumentError, "Missing the required parameter 'team_id' when calling TeamApi.delete_team_from_user"
       end
-      # verify the required parameter 'params' is set
-      if @api_client.config.client_side_validation && params.nil?
-        fail ArgumentError, "Missing the required parameter 'params' when calling TeamApi.delete_team_from_user"
+      # verify the required parameter 'team_user' is set
+      if @api_client.config.client_side_validation && team_user.nil?
+        fail ArgumentError, "Missing the required parameter 'team_user' when calling TeamApi.delete_team_from_user"
       end
       # resource path
       local_var_path = '/teams/{team_id}/users'.sub('{' + 'team_id' + '}', team_id.to_s)
@@ -525,7 +525,7 @@ module Kleister
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(params) 
+      post_body = opts[:body] || @api_client.object_to_http_body(team_user) 
 
       # return_type
       return_type = opts[:return_type] || 'GeneralError' 
@@ -785,20 +785,20 @@ module Kleister
 
     # Update mod perms for team
     # @param team_id [String] A team UUID or slug
-    # @param params [TeamModParams] The team mod data to update
+    # @param team_mod [TeamModParams] The team mod data to update
     # @param [Hash] opts the optional parameters
     # @return [GeneralError]
-    def permit_team_mod(team_id, params, opts = {})
-      data, _status_code, _headers = permit_team_mod_with_http_info(team_id, params, opts)
+    def permit_team_mod(team_id, team_mod, opts = {})
+      data, _status_code, _headers = permit_team_mod_with_http_info(team_id, team_mod, opts)
       data
     end
 
     # Update mod perms for team
     # @param team_id [String] A team UUID or slug
-    # @param params [TeamModParams] The team mod data to update
+    # @param team_mod [TeamModParams] The team mod data to update
     # @param [Hash] opts the optional parameters
     # @return [Array<(GeneralError, Integer, Hash)>] GeneralError data, response status code and response headers
-    def permit_team_mod_with_http_info(team_id, params, opts = {})
+    def permit_team_mod_with_http_info(team_id, team_mod, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TeamApi.permit_team_mod ...'
       end
@@ -806,9 +806,9 @@ module Kleister
       if @api_client.config.client_side_validation && team_id.nil?
         fail ArgumentError, "Missing the required parameter 'team_id' when calling TeamApi.permit_team_mod"
       end
-      # verify the required parameter 'params' is set
-      if @api_client.config.client_side_validation && params.nil?
-        fail ArgumentError, "Missing the required parameter 'params' when calling TeamApi.permit_team_mod"
+      # verify the required parameter 'team_mod' is set
+      if @api_client.config.client_side_validation && team_mod.nil?
+        fail ArgumentError, "Missing the required parameter 'team_mod' when calling TeamApi.permit_team_mod"
       end
       # resource path
       local_var_path = '/teams/{team_id}/mods'.sub('{' + 'team_id' + '}', team_id.to_s)
@@ -827,7 +827,7 @@ module Kleister
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(params) 
+      post_body = opts[:body] || @api_client.object_to_http_body(team_mod) 
 
       # return_type
       return_type = opts[:return_type] || 'GeneralError' 
@@ -853,20 +853,20 @@ module Kleister
 
     # Update pack perms for team
     # @param team_id [String] A team UUID or slug
-    # @param params [TeamPackParams] The team pack data to update
+    # @param team_pack [TeamPackParams] The team pack data to update
     # @param [Hash] opts the optional parameters
     # @return [GeneralError]
-    def permit_team_pack(team_id, params, opts = {})
-      data, _status_code, _headers = permit_team_pack_with_http_info(team_id, params, opts)
+    def permit_team_pack(team_id, team_pack, opts = {})
+      data, _status_code, _headers = permit_team_pack_with_http_info(team_id, team_pack, opts)
       data
     end
 
     # Update pack perms for team
     # @param team_id [String] A team UUID or slug
-    # @param params [TeamPackParams] The team pack data to update
+    # @param team_pack [TeamPackParams] The team pack data to update
     # @param [Hash] opts the optional parameters
     # @return [Array<(GeneralError, Integer, Hash)>] GeneralError data, response status code and response headers
-    def permit_team_pack_with_http_info(team_id, params, opts = {})
+    def permit_team_pack_with_http_info(team_id, team_pack, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TeamApi.permit_team_pack ...'
       end
@@ -874,9 +874,9 @@ module Kleister
       if @api_client.config.client_side_validation && team_id.nil?
         fail ArgumentError, "Missing the required parameter 'team_id' when calling TeamApi.permit_team_pack"
       end
-      # verify the required parameter 'params' is set
-      if @api_client.config.client_side_validation && params.nil?
-        fail ArgumentError, "Missing the required parameter 'params' when calling TeamApi.permit_team_pack"
+      # verify the required parameter 'team_pack' is set
+      if @api_client.config.client_side_validation && team_pack.nil?
+        fail ArgumentError, "Missing the required parameter 'team_pack' when calling TeamApi.permit_team_pack"
       end
       # resource path
       local_var_path = '/teams/{team_id}/packs'.sub('{' + 'team_id' + '}', team_id.to_s)
@@ -895,7 +895,7 @@ module Kleister
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(params) 
+      post_body = opts[:body] || @api_client.object_to_http_body(team_pack) 
 
       # return_type
       return_type = opts[:return_type] || 'GeneralError' 
@@ -921,20 +921,20 @@ module Kleister
 
     # Update user perms for team
     # @param team_id [String] A team UUID or slug
-    # @param params [TeamUserParams] The team user data to update
+    # @param team_user [TeamUserParams] The team user data to update
     # @param [Hash] opts the optional parameters
     # @return [GeneralError]
-    def permit_team_user(team_id, params, opts = {})
-      data, _status_code, _headers = permit_team_user_with_http_info(team_id, params, opts)
+    def permit_team_user(team_id, team_user, opts = {})
+      data, _status_code, _headers = permit_team_user_with_http_info(team_id, team_user, opts)
       data
     end
 
     # Update user perms for team
     # @param team_id [String] A team UUID or slug
-    # @param params [TeamUserParams] The team user data to update
+    # @param team_user [TeamUserParams] The team user data to update
     # @param [Hash] opts the optional parameters
     # @return [Array<(GeneralError, Integer, Hash)>] GeneralError data, response status code and response headers
-    def permit_team_user_with_http_info(team_id, params, opts = {})
+    def permit_team_user_with_http_info(team_id, team_user, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TeamApi.permit_team_user ...'
       end
@@ -942,9 +942,9 @@ module Kleister
       if @api_client.config.client_side_validation && team_id.nil?
         fail ArgumentError, "Missing the required parameter 'team_id' when calling TeamApi.permit_team_user"
       end
-      # verify the required parameter 'params' is set
-      if @api_client.config.client_side_validation && params.nil?
-        fail ArgumentError, "Missing the required parameter 'params' when calling TeamApi.permit_team_user"
+      # verify the required parameter 'team_user' is set
+      if @api_client.config.client_side_validation && team_user.nil?
+        fail ArgumentError, "Missing the required parameter 'team_user' when calling TeamApi.permit_team_user"
       end
       # resource path
       local_var_path = '/teams/{team_id}/users'.sub('{' + 'team_id' + '}', team_id.to_s)
@@ -963,7 +963,7 @@ module Kleister
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(params) 
+      post_body = opts[:body] || @api_client.object_to_http_body(team_user) 
 
       # return_type
       return_type = opts[:return_type] || 'GeneralError' 
@@ -1049,20 +1049,20 @@ module Kleister
 
     # Update a specific team
     # @param team_id [String] A team UUID or slug
-    # @param params [Team] The team data to update
+    # @param team [Team] The team data to update
     # @param [Hash] opts the optional parameters
     # @return [Team]
-    def update_team(team_id, params, opts = {})
-      data, _status_code, _headers = update_team_with_http_info(team_id, params, opts)
+    def update_team(team_id, team, opts = {})
+      data, _status_code, _headers = update_team_with_http_info(team_id, team, opts)
       data
     end
 
     # Update a specific team
     # @param team_id [String] A team UUID or slug
-    # @param params [Team] The team data to update
+    # @param team [Team] The team data to update
     # @param [Hash] opts the optional parameters
     # @return [Array<(Team, Integer, Hash)>] Team data, response status code and response headers
-    def update_team_with_http_info(team_id, params, opts = {})
+    def update_team_with_http_info(team_id, team, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: TeamApi.update_team ...'
       end
@@ -1070,9 +1070,9 @@ module Kleister
       if @api_client.config.client_side_validation && team_id.nil?
         fail ArgumentError, "Missing the required parameter 'team_id' when calling TeamApi.update_team"
       end
-      # verify the required parameter 'params' is set
-      if @api_client.config.client_side_validation && params.nil?
-        fail ArgumentError, "Missing the required parameter 'params' when calling TeamApi.update_team"
+      # verify the required parameter 'team' is set
+      if @api_client.config.client_side_validation && team.nil?
+        fail ArgumentError, "Missing the required parameter 'team' when calling TeamApi.update_team"
       end
       # resource path
       local_var_path = '/teams/{team_id}'.sub('{' + 'team_id' + '}', team_id.to_s)
@@ -1091,7 +1091,7 @@ module Kleister
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(params) 
+      post_body = opts[:body] || @api_client.object_to_http_body(team) 
 
       # return_type
       return_type = opts[:return_type] || 'Team' 

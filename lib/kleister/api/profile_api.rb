@@ -128,25 +128,25 @@ module Kleister
     end
 
     # Retrieve an unlimited auth token
-    # @param params [Profile] The profile data to update
+    # @param profile [Profile] The profile data to update
     # @param [Hash] opts the optional parameters
     # @return [Profile]
-    def update_profile(params, opts = {})
-      data, _status_code, _headers = update_profile_with_http_info(params, opts)
+    def update_profile(profile, opts = {})
+      data, _status_code, _headers = update_profile_with_http_info(profile, opts)
       data
     end
 
     # Retrieve an unlimited auth token
-    # @param params [Profile] The profile data to update
+    # @param profile [Profile] The profile data to update
     # @param [Hash] opts the optional parameters
     # @return [Array<(Profile, Integer, Hash)>] Profile data, response status code and response headers
-    def update_profile_with_http_info(params, opts = {})
+    def update_profile_with_http_info(profile, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ProfileApi.update_profile ...'
       end
-      # verify the required parameter 'params' is set
-      if @api_client.config.client_side_validation && params.nil?
-        fail ArgumentError, "Missing the required parameter 'params' when calling ProfileApi.update_profile"
+      # verify the required parameter 'profile' is set
+      if @api_client.config.client_side_validation && profile.nil?
+        fail ArgumentError, "Missing the required parameter 'profile' when calling ProfileApi.update_profile"
       end
       # resource path
       local_var_path = '/profile/self'
@@ -165,7 +165,7 @@ module Kleister
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(params) 
+      post_body = opts[:body] || @api_client.object_to_http_body(profile) 
 
       # return_type
       return_type = opts[:return_type] || 'Profile' 

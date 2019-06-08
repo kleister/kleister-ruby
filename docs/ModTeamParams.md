@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**mod** | **String** |  | 
 **team** | **String** |  | 
 **perm** | **String** |  | 
 
@@ -13,8 +12,7 @@ Name | Type | Description | Notes
 ```ruby
 require 'Kleister'
 
-instance = Kleister::ModTeamParams.new(mod: null,
-                                 team: null,
+instance = Kleister::ModTeamParams.new(team: null,
                                  perm: null)
 ```
 
