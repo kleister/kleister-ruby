@@ -2,6 +2,7 @@ doc/
 gems/
 pkg/
 
+*.gem
 .yardoc
 .bundle
 
