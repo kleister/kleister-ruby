@@ -1,6 +1,7 @@
 ---
 exclude_paths:
   - .github/**
+  - docs/
   - README.md
 
 ...
