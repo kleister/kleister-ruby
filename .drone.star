@@ -32,7 +32,7 @@ def testing(ctx):
           'CODACY_PROJECT_TOKEN': {
             'from_secret': 'codacy_token',
           },
-        }.
+        },
         'commands': [
           'bundle exec rake rubocop',
         ],
@@ -45,7 +45,7 @@ def testing(ctx):
           'CODACY_PROJECT_TOKEN': {
             'from_secret': 'codacy_token',
           },
-        }.
+        },
         'commands': [
           'bundle exec rake spec',
         ],
