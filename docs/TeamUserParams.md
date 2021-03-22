@@ -2,18 +2,19 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**user** | **String** |  | 
-**perm** | **String** |  | 
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **user** | **String** |  |  |
+| **perm** | **String** |  |  |
 
-## Code Sample
+## Example
 
 ```ruby
-require 'Kleister'
+require 'kleister'
 
-instance = Kleister::TeamUserParams.new(user: null,
-                                 perm: null)
+instance = Kleister::TeamUserParams.new(
+  user: null,
+  perm: null
+)
 ```
-
 

@@ -2,18 +2,19 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**mod** | **String** |  | 
-**perm** | **String** |  | 
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **mod** | **String** |  |  |
+| **perm** | **String** |  |  |
 
-## Code Sample
+## Example
 
 ```ruby
-require 'Kleister'
+require 'kleister'
 
-instance = Kleister::UserModParams.new(mod: null,
-                                 perm: null)
+instance = Kleister::UserModParams.new(
+  mod: null,
+  perm: null
+)
 ```
-
 

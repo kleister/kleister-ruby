@@ -2,10 +2,8 @@
 
 [![Build Status](https://cloud.drone.io/api/badges/kleister/kleister-ruby/status.svg)](https://cloud.drone.io/kleister/kleister-ruby)
 [![Join the Matrix chat at https://matrix.to/#/#kleister:matrix.org](https://img.shields.io/badge/matrix-%23kleister%3Amatrix.org-7bc9a4.svg)](https://matrix.to/#/#kleister:matrix.org)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/fdecdec5d38648c19470368426b2f064)](https://www.codacy.com/app/kleister/kleister-ruby?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=kleister/kleister-ruby&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/032f6220e14a4942931d5a9beef13243)](https://www.codacy.com/gh/kleister/kleister-ruby/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=kleister/kleister-ruby&amp;utm_campaign=Badge_Grade)
 [![Gem Version](https://badge.fury.io/rb/kleister.svg)](https://badge.fury.io/rb/kleister)
-
-**This project is under heavy development, it's not in a working state yet!**
 
 Where does this name come from or what does it mean? It's quite simple, it's one german word for paste/glue, I thought it's a good match as it glues together the modpacks for Minecraft.
 
@@ -15,9 +13,7 @@ This repository provides a client SDK for Ruby. This SDK is automatically genera
 - Package version: 1.0.0-alpha1
 - Build package: org.openapitools.codegen.languages.RubyClientCodegen
 
-
 ## Installation
-
 
 ### Build a gem
 
@@ -28,7 +24,6 @@ gem build kleister.gemspec
 gem install ./kleister-1.0.0-alpha1.gem
 ```
 
-
 ## Install from Rubygems
 
 If you want to install a published version you just need to add the gem to your Gemfile:
@@ -36,7 +31,6 @@ If you want to install a published version you just need to add the gem to your 
 ```ruby
 gem 'kleister', '~> 1.0.0-alpha1'
 ```
-
 
 ### Install from Git
 
@@ -46,7 +40,6 @@ If you want to install a unpublished version through this git repository just ad
 gem 'kleister', git: 'https://github.com/kleister/kleister-ruby.git'
 ```
 
-
 ## Getting Started
 
 Please follow the [installation](#installation) instructions and then run the following code:
@@ -55,7 +48,7 @@ Please follow the [installation](#installation) instructions and then run the fo
 require 'kleister'
 
 api = Kleister::AuthApi.new
-auth_login = Kleister::AuthLogin.new # AuthLogin | The credentials to authenticate
+auth_login =  # AuthLogin | The credentials to authenticate
 
 begin
   # Authenticate an user by credentials
@@ -66,7 +59,6 @@ rescue Kleister::ApiError => e
 end
 
 ```
-
 
 ## Documentation for endpoints
 
@@ -226,24 +218,20 @@ Class | Method | HTTP request | Description
 
 If you find a security issue please contact kleister@webhippie.de first.
 
-
 ## Contributing
 
 Fork -> Patch -> Push -> Pull Request
-
 
 ## Authors
 
 * [Thomas Boerger](https://github.com/tboerger)
 
-
 ## License
 
 Apache-2.0
 
-
 ## Copyright
 
-```
+```console
 Copyright (c) 2018 Thomas Boerger <thomas@webhippie.de>
 ```

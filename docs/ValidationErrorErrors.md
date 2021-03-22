@@ -2,18 +2,19 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**field** | **String** |  | [optional] 
-**message** | **String** |  | [optional] 
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **field** | **String** |  | [optional] |
+| **message** | **String** |  | [optional] |
 
-## Code Sample
+## Example
 
 ```ruby
-require 'Kleister'
+require 'kleister'
 
-instance = Kleister::ValidationErrorErrors.new(field: null,
-                                 message: null)
+instance = Kleister::ValidationErrorErrors.new(
+  field: null,
+  message: null
+)
 ```
-
 

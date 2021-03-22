@@ -2,20 +2,21 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**status** | **Integer** |  | 
-**message** | **String** |  | 
-**errors** | [**Array&lt;ValidationErrorErrors&gt;**](ValidationErrorErrors.md) |  | [optional] 
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **status** | **Integer** |  |  |
+| **message** | **String** |  |  |
+| **errors** | [**Array&lt;ValidationErrorErrors&gt;**](ValidationErrorErrors.md) |  | [optional] |
 
-## Code Sample
+## Example
 
 ```ruby
-require 'Kleister'
+require 'kleister'
 
-instance = Kleister::ValidationError.new(status: null,
-                                 message: null,
-                                 errors: null)
+instance = Kleister::ValidationError.new(
+  status: null,
+  message: null,
+  errors: null
+)
 ```
-
 

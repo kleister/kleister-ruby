@@ -2,18 +2,19 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**pack** | **String** |  | 
-**perm** | **String** |  | 
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pack** | **String** |  |  |
+| **perm** | **String** |  |  |
 
-## Code Sample
+## Example
 
 ```ruby
-require 'Kleister'
+require 'kleister'
 
-instance = Kleister::TeamPackParams.new(pack: null,
-                                 perm: null)
+instance = Kleister::TeamPackParams.new(
+  pack: null,
+  perm: null
+)
 ```
-
 

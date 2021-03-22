@@ -2,18 +2,19 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**pack** | **String** |  | 
-**build** | **String** |  | 
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pack** | **String** |  |  |
+| **build** | **String** |  |  |
 
-## Code Sample
+## Example
 
 ```ruby
-require 'Kleister'
+require 'kleister'
 
-instance = Kleister::ForgeBuildParams.new(pack: null,
-                                 build: null)
+instance = Kleister::ForgeBuildParams.new(
+  pack: null,
+  build: null
+)
 ```
-
 

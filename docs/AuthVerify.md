@@ -2,18 +2,19 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**username** | **String** |  | 
-**created_at** | **DateTime** |  | 
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **username** | **String** |  |  |
+| **created_at** | **Time** |  |  |
 
-## Code Sample
+## Example
 
 ```ruby
-require 'Kleister'
+require 'kleister'
 
-instance = Kleister::AuthVerify.new(username: null,
-                                 created_at: null)
+instance = Kleister::AuthVerify.new(
+  username: null,
+  created_at: null
+)
 ```
-
 

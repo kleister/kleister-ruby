@@ -2,18 +2,19 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**build_id** | **String** |  | 
-**version_id** | **String** |  | 
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **build_id** | **String** |  |  |
+| **version_id** | **String** |  |  |
 
-## Code Sample
+## Example
 
 ```ruby
-require 'Kleister'
+require 'kleister'
 
-instance = Kleister::BuildVersion.new(build_id: null,
-                                 version_id: null)
+instance = Kleister::BuildVersion.new(
+  build_id: null,
+  version_id: null
+)
 ```
-
 
