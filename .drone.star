@@ -95,7 +95,7 @@ def changes(ctx):
       },
       {
         'name': 'generate',
-        'image': 'webhippie/calens:latest',
+        'image': 'toolhippie/calens:latest',
         'pull': 'always',
         'commands': [
           'calens >| CHANGELOG.md',
@@ -103,7 +103,7 @@ def changes(ctx):
       },
       {
         'name': 'output',
-        'image': 'webhippie/calens:latest',
+        'image': 'toolhippie/calens:latest',
         'pull': 'always',
         'commands': [
           'cat CHANGELOG.md',
