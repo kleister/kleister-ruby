@@ -198,7 +198,7 @@ def release(ctx):
         ],
       },
       {
-        'name': 'release',
+        'name': 'github',
         'image': 'plugins/github-release:1',
         'pull': 'always',
         'settings': {
