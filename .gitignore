@@ -2,8 +2,10 @@ doc/
 gems/
 pkg/
 
-*.gem
 .yardoc
 .bundle
+
+*.gem
+*.rbc
 
 Gemfile.lock

@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 gemspec
 
 group :development, :test do
+  gem 'rake', '~> 13.0.1'
   gem 'pry-byebug'
-  gem 'codacy-coverage', '~> 2.2.1'
-  gem 'rake', '~> 13.0.3'
+  gem 'rubocop', '~> 0.66.0'
 end

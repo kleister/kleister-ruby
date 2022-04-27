@@ -1,9 +1,12 @@
-gemName: 'kleister'
-gemVersion: '1.0.0-alpha1'
-gemLicense: 'Apache-2.0'
-gemHomepage: 'https://github.com/kleister/kleister-ruby'
-gemSummary: 'Manage mod packs for Minecraft'
-gemDescription: 'A client library for the Kleister API generated from the OpenAPI spec.'
-gemAuthor: 'Thomas Boerger'
-gemAuthorEmail: 'thomas@webhippie.de'
-gemRequiredRubyVersion: '>= 2.5.0'
+---
+gemAuthor: Thomas Boerger
+gemAuthorEmail: thomas@webhippie.de
+gemDescription: OpenAPI client for Kleister
+gemHomepage: https://github.com/kleister/kleister-ruby
+gemLicense: Apache-2.0
+gemName: kleister
+gemSummary: Manage mod packs for Minecraft
+gemVersion: 1.0.0-alpha1
+moduleName: Kleister
+
+...

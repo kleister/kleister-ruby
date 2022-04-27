@@ -28,15 +28,12 @@ Layout/EmptyLinesAroundMethodBody:
 Layout/EmptyLinesAroundModuleBody:
   Enabled: true
 
-Layout/FirstArgumentIndentation:
-  Enabled: true
-
 Style/HashSyntax:
   Enabled: false
 
 Layout/IndentationConsistency:
   Enabled: true
-  EnforcedStyle: indented_internal_methods
+  EnforcedStyle: normal
 
 Layout/IndentationWidth:
   Enabled: true
@@ -87,17 +84,8 @@ Layout/SpaceInsideHashLiteralBraces:
 Layout/SpaceInsideParens:
   Enabled: true
 
-Layout/IndentationStyle:
-  Enabled: true
-
-Layout/TrailingEmptyLines:
-  Enabled: true
-
 Layout/TrailingWhitespace:
   Enabled: false
-
-Style/RedundantPercentQ:
-  Enabled: true
 
 Layout/EndAlignment:
   Enabled: true

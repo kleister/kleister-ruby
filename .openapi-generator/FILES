@@ -60,7 +60,6 @@ lib/kleister/api/user_api.rb
 lib/kleister/api_client.rb
 lib/kleister/api_error.rb
 lib/kleister/configuration.rb
-lib/kleister/configuration.rb
 lib/kleister/models/auth_login.rb
 lib/kleister/models/auth_token.rb
 lib/kleister/models/auth_verify.rb
