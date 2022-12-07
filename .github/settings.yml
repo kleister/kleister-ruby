@@ -3,7 +3,7 @@ repository:
   name: kleister-ruby
   description: "Kleister: SDK for Ruby"
   homepage: https://kleister.eu
-  topics: kleister, minecraft, sdk, openapi, ruby
+  topics: kleister, minecraft, sdk, client, grpc, ruby
 
   private: false
   has_issues: true
