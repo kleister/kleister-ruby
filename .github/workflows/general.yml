@@ -15,7 +15,20 @@ jobs:
 
     steps:
       - name: Checkout source
-        id: source
         uses: actions/checkout@v4
+
+      - name: Setup ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+
+      - name: Install dependencies
+        run: bundle install
+
+      - name: Run rubocop
+        run: bundle exec rake rubocop
+
+      - name: Run rspec
+        run: bundle exec rake spec
 
 ...
