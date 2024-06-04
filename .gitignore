@@ -1,2 +1,13 @@
 .direnv
 .devenv
+
+vendor
+doc
+gems
+pkg
+
+.yardoc
+.bundle
+
+*.gem
+*.rbc

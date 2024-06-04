@@ -357,7 +357,7 @@ module {{moduleName}}
       return url unless server.key? :variables
 
       # go through variable and assign a value
-      server[:variables].keys.each do |name|
+      server[:variables].each_key do |name|
         if variables.key?(name)
           if (!server[:variables][name].key?(:enum_values) || server[:variables][name][:enum_values].include?(variables[name]))
             url.gsub! "{" + name.to_s + "}", variables[name]

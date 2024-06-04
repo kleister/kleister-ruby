@@ -3,4 +3,4 @@ git_push.sh
 .gitlab-ci.yml
 Gemfile
 Gemfile.lock
-gopad.gemspec
+kleister.gemspec
