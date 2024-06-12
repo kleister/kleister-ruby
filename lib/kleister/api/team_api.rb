@@ -589,7 +589,7 @@ module Kleister
     # @param team_id [String] A team identifier or slug
     # @param [Hash] opts the optional parameters
     # @option opts [String] :search Search query
-    # @option opts [String] :sort Sorting column (default to 'modname')
+    # @option opts [String] :sort Sorting column (default to 'name')
     # @option opts [String] :order Sorting order (default to 'asc')
     # @option opts [Integer] :limit Paging limit (default to 100)
     # @option opts [Integer] :offset Paging offset (default to 0)
@@ -603,7 +603,7 @@ module Kleister
     # @param team_id [String] A team identifier or slug
     # @param [Hash] opts the optional parameters
     # @option opts [String] :search Search query
-    # @option opts [String] :sort Sorting column (default to 'modname')
+    # @option opts [String] :sort Sorting column (default to 'name')
     # @option opts [String] :order Sorting order (default to 'asc')
     # @option opts [Integer] :limit Paging limit (default to 100)
     # @option opts [Integer] :offset Paging offset (default to 0)
@@ -617,7 +617,7 @@ module Kleister
         raise ArgumentError, "Missing the required parameter 'team_id' when calling TeamApi.list_team_mods"
       end
 
-      allowable_values = %w[modname email fullname admin active]
+      allowable_values = %w[slug name public]
       if @api_client.config.client_side_validation && opts[:sort] && !allowable_values.include?(opts[:sort])
         raise ArgumentError, "invalid value for \"sort\", must be one of #{allowable_values}"
       end
@@ -676,7 +676,7 @@ module Kleister
     # @param team_id [String] A team identifier or slug
     # @param [Hash] opts the optional parameters
     # @option opts [String] :search Search query
-    # @option opts [String] :sort Sorting column (default to 'packname')
+    # @option opts [String] :sort Sorting column (default to 'name')
     # @option opts [String] :order Sorting order (default to 'asc')
     # @option opts [Integer] :limit Paging limit (default to 100)
     # @option opts [Integer] :offset Paging offset (default to 0)
@@ -690,7 +690,7 @@ module Kleister
     # @param team_id [String] A team identifier or slug
     # @param [Hash] opts the optional parameters
     # @option opts [String] :search Search query
-    # @option opts [String] :sort Sorting column (default to 'packname')
+    # @option opts [String] :sort Sorting column (default to 'name')
     # @option opts [String] :order Sorting order (default to 'asc')
     # @option opts [Integer] :limit Paging limit (default to 100)
     # @option opts [Integer] :offset Paging offset (default to 0)
@@ -704,7 +704,7 @@ module Kleister
         raise ArgumentError, "Missing the required parameter 'team_id' when calling TeamApi.list_team_packs"
       end
 
-      allowable_values = %w[packname email fullname admin active]
+      allowable_values = %w[slug name public]
       if @api_client.config.client_side_validation && opts[:sort] && !allowable_values.include?(opts[:sort])
         raise ArgumentError, "invalid value for \"sort\", must be one of #{allowable_values}"
       end

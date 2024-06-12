@@ -168,7 +168,7 @@ module Kleister
     # @param fabric_id [String] A fabric identifier or slug
     # @param [Hash] opts the optional parameters
     # @option opts [String] :search Search query
-    # @option opts [String] :sort Sorting column (default to 'name')
+    # @option opts [String] :sort Sorting column (default to 'build_name')
     # @option opts [String] :order Sorting order (default to 'asc')
     # @option opts [Integer] :limit Paging limit (default to 100)
     # @option opts [Integer] :offset Paging offset (default to 0)
@@ -182,7 +182,7 @@ module Kleister
     # @param fabric_id [String] A fabric identifier or slug
     # @param [Hash] opts the optional parameters
     # @option opts [String] :search Search query
-    # @option opts [String] :sort Sorting column (default to 'name')
+    # @option opts [String] :sort Sorting column (default to 'build_name')
     # @option opts [String] :order Sorting order (default to 'asc')
     # @option opts [Integer] :limit Paging limit (default to 100)
     # @option opts [Integer] :offset Paging offset (default to 0)
@@ -196,7 +196,7 @@ module Kleister
         raise ArgumentError, "Missing the required parameter 'fabric_id' when calling FabricApi.list_fabric_builds"
       end
 
-      allowable_values = %w[name public]
+      allowable_values = %w[build_name build_public pack_slug pack_name]
       if @api_client.config.client_side_validation && opts[:sort] && !allowable_values.include?(opts[:sort])
         raise ArgumentError, "invalid value for \"sort\", must be one of #{allowable_values}"
       end

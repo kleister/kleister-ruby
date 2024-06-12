@@ -5,7 +5,6 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **id** | **String** |  | [optional][readonly] |
-| **pack_id** | **String** |  | [optional] |
 | **pack** | [**Pack**](Pack.md) |  | [optional] |
 | **minecraft_id** | **String** |  | [optional] |
 | **minecraft** | [**Minecraft**](Minecraft.md) |  | [optional] |
@@ -21,10 +20,11 @@
 | **name** | **String** |  | [optional] |
 | **java** | **String** |  | [optional] |
 | **memory** | **String** |  | [optional] |
+| **latest** | **Boolean** |  | [optional] |
+| **recommended** | **Boolean** |  | [optional] |
 | **public** | **Boolean** |  | [optional] |
 | **created_at** | **Time** |  | [optional][readonly] |
 | **updated_at** | **Time** |  | [optional][readonly] |
-| **versions** | [**Array&lt;BuildVersion&gt;**](BuildVersion.md) |  | [optional][readonly] |
 
 ## Example
 
@@ -33,7 +33,6 @@ require 'kleister'
 
 instance = Kleister::Build.new(
   id: null,
-  pack_id: null,
   pack: null,
   minecraft_id: null,
   minecraft: null,
@@ -49,10 +48,11 @@ instance = Kleister::Build.new(
   name: null,
   java: null,
   memory: null,
+  latest: null,
+  recommended: null,
   public: null,
   created_at: null,
-  updated_at: null,
-  versions: null
+  updated_at: null
 )
 ```
 

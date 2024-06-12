@@ -14,14 +14,12 @@ require 'time'
 module Kleister
   # Model to represent version file
   class VersionFile
-    attr_accessor :id, :version_id, :version, :slug, :content_type, :md5, :path, :url, :upload, :created_at, :updated_at
+    attr_accessor :id, :slug, :content_type, :md5, :path, :url, :upload, :created_at, :updated_at
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         id: :id,
-        version_id: :version_id,
-        version: :version,
         slug: :slug,
         content_type: :content_type,
         md5: :md5,
@@ -42,8 +40,6 @@ module Kleister
     def self.openapi_types
       {
         id: :String,
-        version_id: :String,
-        version: :Version,
         slug: :String,
         content_type: :String,
         md5: :String,
@@ -85,14 +81,6 @@ module Kleister
 
       if attributes.key?(:id)
         self.id = attributes[:id]
-      end
-
-      if attributes.key?(:version_id)
-        self.version_id = attributes[:version_id]
-      end
-
-      if attributes.key?(:version)
-        self.version = attributes[:version]
       end
 
       if attributes.key?(:slug)
@@ -149,8 +137,6 @@ module Kleister
 
       self.class == other.class &&
         id == other.id &&
-        version_id == other.version_id &&
-        version == other.version &&
         slug == other.slug &&
         content_type == other.content_type &&
         md5 == other.md5 &&
@@ -170,7 +156,7 @@ module Kleister
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, version_id, version, slug, content_type, md5, path, url, upload, created_at, updated_at].hash
+      [id, slug, content_type, md5, path, url, upload, created_at, updated_at].hash
     end
 
     # Builds the object from hash

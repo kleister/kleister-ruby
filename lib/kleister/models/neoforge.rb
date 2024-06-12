@@ -14,14 +14,13 @@ require 'time'
 module Kleister
   # Model to represent neoforge
   class Neoforge
-    attr_accessor :id, :name, :minecraft, :created_at, :updated_at
+    attr_accessor :id, :name, :created_at, :updated_at
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         id: :id,
         name: :name,
-        minecraft: :minecraft,
         created_at: :created_at,
         updated_at: :updated_at
       }
@@ -37,7 +36,6 @@ module Kleister
       {
         id: :String,
         name: :String,
-        minecraft: :String,
         created_at: :Time,
         updated_at: :Time
       }
@@ -45,9 +43,8 @@ module Kleister
 
     # List of attributes with nullable: true
     def self.openapi_nullable
-      Set.new(%i[
-                name
-                minecraft
+      Set.new([
+                :name
               ])
     end
 
@@ -73,10 +70,6 @@ module Kleister
 
       if attributes.key?(:name)
         self.name = attributes[:name]
-      end
-
-      if attributes.key?(:minecraft)
-        self.minecraft = attributes[:minecraft]
       end
 
       if attributes.key?(:created_at)
@@ -110,7 +103,6 @@ module Kleister
       self.class == other.class &&
         id == other.id &&
         name == other.name &&
-        minecraft == other.minecraft &&
         created_at == other.created_at &&
         updated_at == other.updated_at
     end
@@ -124,7 +116,7 @@ module Kleister
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, name, minecraft, created_at, updated_at].hash
+      [id, name, created_at, updated_at].hash
     end
 
     # Builds the object from hash

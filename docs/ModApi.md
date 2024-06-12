@@ -59,7 +59,7 @@ Kleister.configure do |config|
 end
 
 api_instance = Kleister::ModApi.new
-mod_id = 'mod_id_example' # String | A mod identifier or slug
+mod_id = '"9hkaizdrwypr4ewjp4tu"' # String | A mod identifier or slug
 mod_team_params = Kleister::ModTeamParams.new({team: 'team_example'}) # ModTeamParams | The team data to attach
 
 begin
@@ -142,7 +142,7 @@ Kleister.configure do |config|
 end
 
 api_instance = Kleister::ModApi.new
-mod_id = 'mod_id_example' # String | A mod identifier or slug
+mod_id = '"9hkaizdrwypr4ewjp4tu"' # String | A mod identifier or slug
 mod_user_params = Kleister::ModUserParams.new({user: 'user_example'}) # ModUserParams | The user data to attach
 
 begin
@@ -225,8 +225,8 @@ Kleister.configure do |config|
 end
 
 api_instance = Kleister::ModApi.new
-mod_id = 'mod_id_example' # String | A mod identifier or slug
-version_id = 'version_id_example' # String | A version identifier or slug
+mod_id = '"9hkaizdrwypr4ewjp4tu"' # String | A mod identifier or slug
+version_id = '"rh5bogtvofnmoxglyjrm"' # String | A version identifier or slug
 version_build_params = Kleister::VersionBuildParams.new({pack: 'pack_example', build: 'build_example'}) # VersionBuildParams | The version build data to attach
 
 begin
@@ -280,7 +280,7 @@ end
 
 ## create_mod
 
-> <User> create_mod(mod)
+> <Mod> create_mod(mod)
 
 Create a new mod
 
@@ -325,7 +325,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<User>, Integer, Hash)> create_mod_with_http_info(mod)
+> <Array(<Mod>, Integer, Hash)> create_mod_with_http_info(mod)
 
 ```ruby
 begin
@@ -333,7 +333,7 @@ begin
   data, status_code, headers = api_instance.create_mod_with_http_info(mod)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <User>
+  p data # => <Mod>
 rescue Kleister::ApiError => e
   puts "Error when calling ModApi->create_mod_with_http_info: #{e}"
 end
@@ -347,7 +347,7 @@ end
 
 ### Return type
 
-[**User**](User.md)
+[**Mod**](Mod.md)
 
 ### Authorization
 
@@ -391,7 +391,7 @@ Kleister.configure do |config|
 end
 
 api_instance = Kleister::ModApi.new
-mod_id = 'mod_id_example' # String | A mod identifier or slug
+mod_id = '"9hkaizdrwypr4ewjp4tu"' # String | A mod identifier or slug
 version = Kleister::Version.new # Version | The version data to create
 
 begin
@@ -474,7 +474,7 @@ Kleister.configure do |config|
 end
 
 api_instance = Kleister::ModApi.new
-mod_id = 'mod_id_example' # String | A mod identifier or slug
+mod_id = '"9hkaizdrwypr4ewjp4tu"' # String | A mod identifier or slug
 
 begin
   # Delete a specific mod
@@ -555,7 +555,7 @@ Kleister.configure do |config|
 end
 
 api_instance = Kleister::ModApi.new
-mod_id = 'mod_id_example' # String | A mod identifier or slug
+mod_id = '"9hkaizdrwypr4ewjp4tu"' # String | A mod identifier or slug
 mod_team_params = Kleister::ModTeamParams.new({team: 'team_example'}) # ModTeamParams | The mod team data to unlink
 
 begin
@@ -638,7 +638,7 @@ Kleister.configure do |config|
 end
 
 api_instance = Kleister::ModApi.new
-mod_id = 'mod_id_example' # String | A mod identifier or slug
+mod_id = '"9hkaizdrwypr4ewjp4tu"' # String | A mod identifier or slug
 mod_user_params = Kleister::ModUserParams.new({user: 'user_example'}) # ModUserParams | The mod user data to unlink
 
 begin
@@ -721,8 +721,8 @@ Kleister.configure do |config|
 end
 
 api_instance = Kleister::ModApi.new
-mod_id = 'mod_id_example' # String | A mod identifier or slug
-version_id = 'version_id_example' # String | A version identifier or slug
+mod_id = '"9hkaizdrwypr4ewjp4tu"' # String | A mod identifier or slug
+version_id = '"rh5bogtvofnmoxglyjrm"' # String | A version identifier or slug
 
 begin
   # Delete a specific version for a mod
@@ -804,8 +804,8 @@ Kleister.configure do |config|
 end
 
 api_instance = Kleister::ModApi.new
-mod_id = 'mod_id_example' # String | A mod identifier or slug
-version_id = 'version_id_example' # String | A version identifier or slug
+mod_id = '"9hkaizdrwypr4ewjp4tu"' # String | A mod identifier or slug
+version_id = '"rh5bogtvofnmoxglyjrm"' # String | A version identifier or slug
 version_build_params = Kleister::VersionBuildParams.new({pack: 'pack_example', build: 'build_example'}) # VersionBuildParams | The version build data to unlink
 
 begin
@@ -889,7 +889,7 @@ Kleister.configure do |config|
 end
 
 api_instance = Kleister::ModApi.new
-mod_id = 'mod_id_example' # String | A mod identifier or slug
+mod_id = '"9hkaizdrwypr4ewjp4tu"' # String | A mod identifier or slug
 opts = {
   search: '"John Doe"', # String | Search query
   sort: 'slug', # String | Sorting column
@@ -982,7 +982,7 @@ Kleister.configure do |config|
 end
 
 api_instance = Kleister::ModApi.new
-mod_id = 'mod_id_example' # String | A mod identifier or slug
+mod_id = '"9hkaizdrwypr4ewjp4tu"' # String | A mod identifier or slug
 opts = {
   search: '"John Doe"', # String | Search query
   sort: 'username', # String | Sorting column
@@ -1077,7 +1077,7 @@ end
 api_instance = Kleister::ModApi.new
 opts = {
   search: '"John Doe"', # String | Search query
-  sort: 'name', # String | Sorting column
+  sort: 'slug', # String | Sorting column
   order: 'asc', # String | Sorting order
   limit: 100, # Integer | Paging limit
   offset: 0 # Integer | Paging offset
@@ -1166,11 +1166,11 @@ Kleister.configure do |config|
 end
 
 api_instance = Kleister::ModApi.new
-mod_id = 'mod_id_example' # String | A mod identifier or slug
-version_id = 'version_id_example' # String | A version identifier or slug
+mod_id = '"9hkaizdrwypr4ewjp4tu"' # String | A mod identifier or slug
+version_id = '"rh5bogtvofnmoxglyjrm"' # String | A version identifier or slug
 opts = {
   search: '"John Doe"', # String | Search query
-  sort: 'slug', # String | Sorting column
+  sort: 'name', # String | Sorting column
   order: 'asc', # String | Sorting order
   limit: 100, # Integer | Paging limit
   offset: 0 # Integer | Paging offset
@@ -1261,10 +1261,10 @@ Kleister.configure do |config|
 end
 
 api_instance = Kleister::ModApi.new
-mod_id = 'mod_id_example' # String | A mod identifier or slug
+mod_id = '"9hkaizdrwypr4ewjp4tu"' # String | A mod identifier or slug
 opts = {
   search: '"John Doe"', # String | Search query
-  sort: 'slug', # String | Sorting column
+  sort: 'name', # String | Sorting column
   order: 'asc', # String | Sorting order
   limit: 100, # Integer | Paging limit
   offset: 0 # Integer | Paging offset
@@ -1354,7 +1354,7 @@ Kleister.configure do |config|
 end
 
 api_instance = Kleister::ModApi.new
-mod_id = 'mod_id_example' # String | A mod identifier or slug
+mod_id = '"9hkaizdrwypr4ewjp4tu"' # String | A mod identifier or slug
 mod_team_params = Kleister::ModTeamParams.new({team: 'team_example'}) # ModTeamParams | The team data to update
 
 begin
@@ -1437,7 +1437,7 @@ Kleister.configure do |config|
 end
 
 api_instance = Kleister::ModApi.new
-mod_id = 'mod_id_example' # String | A mod identifier or slug
+mod_id = '"9hkaizdrwypr4ewjp4tu"' # String | A mod identifier or slug
 mod_user_params = Kleister::ModUserParams.new({user: 'user_example'}) # ModUserParams | The user data to update
 
 begin
@@ -1520,7 +1520,7 @@ Kleister.configure do |config|
 end
 
 api_instance = Kleister::ModApi.new
-mod_id = 'mod_id_example' # String | A mod identifier or slug
+mod_id = '"9hkaizdrwypr4ewjp4tu"' # String | A mod identifier or slug
 
 begin
   # Fetch a specific mod
@@ -1601,8 +1601,8 @@ Kleister.configure do |config|
 end
 
 api_instance = Kleister::ModApi.new
-mod_id = 'mod_id_example' # String | A mod identifier or slug
-version_id = 'version_id_example' # String | A version identifier or slug
+mod_id = '"9hkaizdrwypr4ewjp4tu"' # String | A mod identifier or slug
+version_id = '"rh5bogtvofnmoxglyjrm"' # String | A version identifier or slug
 
 begin
   # Fetch a specific version for a mod
@@ -1684,7 +1684,7 @@ Kleister.configure do |config|
 end
 
 api_instance = Kleister::ModApi.new
-mod_id = 'mod_id_example' # String | A mod identifier or slug
+mod_id = '"9hkaizdrwypr4ewjp4tu"' # String | A mod identifier or slug
 mod = Kleister::Mod.new # Mod | The mod data to update
 
 begin
@@ -1767,8 +1767,8 @@ Kleister.configure do |config|
 end
 
 api_instance = Kleister::ModApi.new
-mod_id = 'mod_id_example' # String | A mod identifier or slug
-version_id = 'version_id_example' # String | A version identifier or slug
+mod_id = '"9hkaizdrwypr4ewjp4tu"' # String | A mod identifier or slug
+version_id = '"rh5bogtvofnmoxglyjrm"' # String | A version identifier or slug
 version = Kleister::Version.new # Version | The version data to update
 
 begin

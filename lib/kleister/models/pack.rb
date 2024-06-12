@@ -14,7 +14,7 @@ require 'time'
 module Kleister
   # Model to represent pack
   class Pack
-    attr_accessor :id, :icon, :logo, :back, :recommended_id, :recommended, :latest_id, :latest, :slug, :name, :website, :public, :created_at, :updated_at, :builds, :users, :teams
+    attr_accessor :id, :icon, :logo, :back, :slug, :name, :website, :public, :created_at, :updated_at
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
@@ -23,19 +23,12 @@ module Kleister
         icon: :icon,
         logo: :logo,
         back: :back,
-        recommended_id: :recommended_id,
-        recommended: :recommended,
-        latest_id: :latest_id,
-        latest: :latest,
         slug: :slug,
         name: :name,
         website: :website,
         public: :public,
         created_at: :created_at,
-        updated_at: :updated_at,
-        builds: :builds,
-        users: :users,
-        teams: :teams
+        updated_at: :updated_at
       }
     end
 
@@ -51,34 +44,22 @@ module Kleister
         icon: :PackIcon,
         logo: :PackLogo,
         back: :PackBack,
-        recommended_id: :String,
-        recommended: :Build,
-        latest_id: :String,
-        latest: :Build,
         slug: :String,
         name: :String,
         website: :String,
         public: :Boolean,
         created_at: :Time,
-        updated_at: :Time,
-        builds: :'Array<Build>',
-        users: :'Array<UserPack>',
-        teams: :'Array<TeamPack>'
+        updated_at: :Time
       }
     end
 
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new(%i[
-                recommended_id
-                latest_id
                 slug
                 name
                 website
                 public
-                builds
-                users
-                teams
               ])
     end
 
@@ -114,22 +95,6 @@ module Kleister
         self.back = attributes[:back]
       end
 
-      if attributes.key?(:recommended_id)
-        self.recommended_id = attributes[:recommended_id]
-      end
-
-      if attributes.key?(:recommended)
-        self.recommended = attributes[:recommended]
-      end
-
-      if attributes.key?(:latest_id)
-        self.latest_id = attributes[:latest_id]
-      end
-
-      if attributes.key?(:latest)
-        self.latest = attributes[:latest]
-      end
-
       if attributes.key?(:slug)
         self.slug = attributes[:slug]
       end
@@ -152,18 +117,6 @@ module Kleister
 
       if attributes.key?(:updated_at)
         self.updated_at = attributes[:updated_at]
-      end
-
-      if attributes.key?(:builds) && (value = attributes[:builds]).is_a?(Array)
-        self.builds = value
-      end
-
-      if attributes.key?(:users) && (value = attributes[:users]).is_a?(Array)
-        self.users = value
-      end
-
-      if attributes.key?(:teams) && (value = attributes[:teams]).is_a?(Array)
-        self.teams = value
       end
     end
 
@@ -191,19 +144,12 @@ module Kleister
         icon == other.icon &&
         logo == other.logo &&
         back == other.back &&
-        recommended_id == other.recommended_id &&
-        recommended == other.recommended &&
-        latest_id == other.latest_id &&
-        latest == other.latest &&
         slug == other.slug &&
         name == other.name &&
         website == other.website &&
         public == other.public &&
         created_at == other.created_at &&
-        updated_at == other.updated_at &&
-        builds == other.builds &&
-        users == other.users &&
-        teams == other.teams
+        updated_at == other.updated_at
     end
 
     # @see the `==` method
@@ -215,7 +161,7 @@ module Kleister
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, icon, logo, back, recommended_id, recommended, latest_id, latest, slug, name, website, public, created_at, updated_at, builds, users, teams].hash
+      [id, icon, logo, back, slug, name, website, public, created_at, updated_at].hash
     end
 
     # Builds the object from hash

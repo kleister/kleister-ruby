@@ -55,7 +55,7 @@ Kleister.configure do |config|
 end
 
 api_instance = Kleister::UserApi.new
-user_id = 'user_id_example' # String | A user identifier or slug
+user_id = '"jdoe"' # String | A user identifier or slug
 user_mod_params = Kleister::UserModParams.new({mod: 'mod_example'}) # UserModParams | The user mod data to attach
 
 begin
@@ -138,7 +138,7 @@ Kleister.configure do |config|
 end
 
 api_instance = Kleister::UserApi.new
-user_id = 'user_id_example' # String | A user identifier or slug
+user_id = '"jdoe"' # String | A user identifier or slug
 user_pack_params = Kleister::UserPackParams.new({pack: 'pack_example'}) # UserPackParams | The user pack data to attach
 
 begin
@@ -221,7 +221,7 @@ Kleister.configure do |config|
 end
 
 api_instance = Kleister::UserApi.new
-user_id = 'user_id_example' # String | A user identifier or slug
+user_id = '"jdoe"' # String | A user identifier or slug
 user_team_params = Kleister::UserTeamParams.new({team: 'team_example'}) # UserTeamParams | The user team data to attach
 
 begin
@@ -385,7 +385,7 @@ Kleister.configure do |config|
 end
 
 api_instance = Kleister::UserApi.new
-user_id = 'user_id_example' # String | A user identifier or slug
+user_id = '"jdoe"' # String | A user identifier or slug
 
 begin
   # Delete a specific user
@@ -466,7 +466,7 @@ Kleister.configure do |config|
 end
 
 api_instance = Kleister::UserApi.new
-user_id = 'user_id_example' # String | A user identifier or slug
+user_id = '"jdoe"' # String | A user identifier or slug
 user_mod_params = Kleister::UserModParams.new({mod: 'mod_example'}) # UserModParams | The user mod data to unlink
 
 begin
@@ -549,7 +549,7 @@ Kleister.configure do |config|
 end
 
 api_instance = Kleister::UserApi.new
-user_id = 'user_id_example' # String | A user identifier or slug
+user_id = '"jdoe"' # String | A user identifier or slug
 user_pack_params = Kleister::UserPackParams.new({pack: 'pack_example'}) # UserPackParams | The user pack data to unlink
 
 begin
@@ -632,7 +632,7 @@ Kleister.configure do |config|
 end
 
 api_instance = Kleister::UserApi.new
-user_id = 'user_id_example' # String | A user identifier or slug
+user_id = '"jdoe"' # String | A user identifier or slug
 user_team_params = Kleister::UserTeamParams.new({team: 'team_example'}) # UserTeamParams | The user team data to unlink
 
 begin
@@ -715,7 +715,7 @@ Kleister.configure do |config|
 end
 
 api_instance = Kleister::UserApi.new
-user_id = 'user_id_example' # String | A user identifier or slug
+user_id = '"jdoe"' # String | A user identifier or slug
 opts = {
   search: '"John Doe"', # String | Search query
   sort: 'slug', # String | Sorting column
@@ -808,7 +808,7 @@ Kleister.configure do |config|
 end
 
 api_instance = Kleister::UserApi.new
-user_id = 'user_id_example' # String | A user identifier or slug
+user_id = '"jdoe"' # String | A user identifier or slug
 opts = {
   search: '"John Doe"', # String | Search query
   sort: 'slug', # String | Sorting column
@@ -901,7 +901,7 @@ Kleister.configure do |config|
 end
 
 api_instance = Kleister::UserApi.new
-user_id = 'user_id_example' # String | A user identifier or slug
+user_id = '"jdoe"' # String | A user identifier or slug
 opts = {
   search: '"John Doe"', # String | Search query
   sort: 'slug', # String | Sorting column
@@ -1085,7 +1085,7 @@ Kleister.configure do |config|
 end
 
 api_instance = Kleister::UserApi.new
-user_id = 'user_id_example' # String | A user identifier or slug
+user_id = '"jdoe"' # String | A user identifier or slug
 user_mod_params = Kleister::UserModParams.new({mod: 'mod_example'}) # UserModParams | The user mod data to update
 
 begin
@@ -1168,7 +1168,7 @@ Kleister.configure do |config|
 end
 
 api_instance = Kleister::UserApi.new
-user_id = 'user_id_example' # String | A user identifier or slug
+user_id = '"jdoe"' # String | A user identifier or slug
 user_pack_params = Kleister::UserPackParams.new({pack: 'pack_example'}) # UserPackParams | The user pack data to update
 
 begin
@@ -1251,7 +1251,7 @@ Kleister.configure do |config|
 end
 
 api_instance = Kleister::UserApi.new
-user_id = 'user_id_example' # String | A user identifier or slug
+user_id = '"jdoe"' # String | A user identifier or slug
 user_team_params = Kleister::UserTeamParams.new({team: 'team_example'}) # UserTeamParams | The user team data to update
 
 begin
@@ -1334,7 +1334,7 @@ Kleister.configure do |config|
 end
 
 api_instance = Kleister::UserApi.new
-user_id = 'user_id_example' # String | A user identifier or slug
+user_id = '"jdoe"' # String | A user identifier or slug
 
 begin
   # Fetch a specific user
@@ -1415,7 +1415,7 @@ Kleister.configure do |config|
 end
 
 api_instance = Kleister::UserApi.new
-user_id = 'user_id_example' # String | A user identifier or slug
+user_id = '"jdoe"' # String | A user identifier or slug
 user = Kleister::User.new # User | The user data to update
 
 begin

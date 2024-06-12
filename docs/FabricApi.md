@@ -212,7 +212,7 @@ api_instance = Kleister::FabricApi.new
 fabric_id = 'fabric_id_example' # String | A fabric identifier or slug
 opts = {
   search: '"John Doe"', # String | Search query
-  sort: 'name', # String | Sorting column
+  sort: 'build_name', # String | Sorting column
   order: 'asc', # String | Sorting order
   limit: 100, # Integer | Paging limit
   offset: 0 # Integer | Paging offset
@@ -251,7 +251,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **fabric_id** | **String** | A fabric identifier or slug |  |
 | **search** | **String** | Search query | [optional] |
-| **sort** | **String** | Sorting column | [optional][default to &#39;name&#39;] |
+| **sort** | **String** | Sorting column | [optional][default to &#39;build_name&#39;] |
 | **order** | **String** | Sorting order | [optional][default to &#39;asc&#39;] |
 | **limit** | **Integer** | Paging limit | [optional][default to 100] |
 | **offset** | **Integer** | Paging offset | [optional][default to 0] |

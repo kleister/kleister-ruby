@@ -14,7 +14,7 @@ require 'time'
 module Kleister
   # Model to represent team
   class Team
-    attr_accessor :id, :slug, :name, :created_at, :updated_at, :users, :packs, :mods
+    attr_accessor :id, :slug, :name, :created_at, :updated_at
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
@@ -23,10 +23,7 @@ module Kleister
         slug: :slug,
         name: :name,
         created_at: :created_at,
-        updated_at: :updated_at,
-        users: :users,
-        packs: :packs,
-        mods: :mods
+        updated_at: :updated_at
       }
     end
 
@@ -42,10 +39,7 @@ module Kleister
         slug: :String,
         name: :String,
         created_at: :Time,
-        updated_at: :Time,
-        users: :'Array<UserTeam>',
-        packs: :'Array<TeamPack>',
-        mods: :'Array<TeamMod>'
+        updated_at: :Time
       }
     end
 
@@ -54,9 +48,6 @@ module Kleister
       Set.new(%i[
                 slug
                 name
-                users
-                packs
-                mods
               ])
     end
 
@@ -95,18 +86,6 @@ module Kleister
       if attributes.key?(:updated_at)
         self.updated_at = attributes[:updated_at]
       end
-
-      if attributes.key?(:users) && (value = attributes[:users]).is_a?(Array)
-        self.users = value
-      end
-
-      if attributes.key?(:packs) && (value = attributes[:packs]).is_a?(Array)
-        self.packs = value
-      end
-
-      if attributes.key?(:mods) && (value = attributes[:mods]).is_a?(Array)
-        self.mods = value
-      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -133,10 +112,7 @@ module Kleister
         slug == other.slug &&
         name == other.name &&
         created_at == other.created_at &&
-        updated_at == other.updated_at &&
-        users == other.users &&
-        packs == other.packs &&
-        mods == other.mods
+        updated_at == other.updated_at
     end
 
     # @see the `==` method
@@ -148,7 +124,7 @@ module Kleister
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, slug, name, created_at, updated_at, users, packs, mods].hash
+      [id, slug, name, created_at, updated_at].hash
     end
 
     # Builds the object from hash
