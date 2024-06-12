@@ -14,21 +14,19 @@ require 'time'
 module Kleister
   # Model to represent version
   class Version
-    attr_accessor :id, :file, :mod_id, :mod, :slug, :name, :public, :created_at, :updated_at, :builds
+    attr_accessor :id, :file, :mod, :slug, :name, :public, :created_at, :updated_at
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         id: :id,
         file: :file,
-        mod_id: :mod_id,
         mod: :mod,
         slug: :slug,
         name: :name,
         public: :public,
         created_at: :created_at,
-        updated_at: :updated_at,
-        builds: :builds
+        updated_at: :updated_at
       }
     end
 
@@ -42,14 +40,12 @@ module Kleister
       {
         id: :String,
         file: :VersionFile,
-        mod_id: :String,
         mod: :Mod,
         slug: :String,
         name: :String,
         public: :Boolean,
         created_at: :Time,
-        updated_at: :Time,
-        builds: :'Array<BuildVersion>'
+        updated_at: :Time
       }
     end
 
@@ -59,7 +55,6 @@ module Kleister
                 slug
                 name
                 public
-                builds
               ])
     end
 
@@ -87,10 +82,6 @@ module Kleister
         self.file = attributes[:file]
       end
 
-      if attributes.key?(:mod_id)
-        self.mod_id = attributes[:mod_id]
-      end
-
       if attributes.key?(:mod)
         self.mod = attributes[:mod]
       end
@@ -113,10 +104,6 @@ module Kleister
 
       if attributes.key?(:updated_at)
         self.updated_at = attributes[:updated_at]
-      end
-
-      if attributes.key?(:builds) && (value = attributes[:builds]).is_a?(Array)
-        self.builds = value
       end
     end
 
@@ -142,14 +129,12 @@ module Kleister
       self.class == other.class &&
         id == other.id &&
         file == other.file &&
-        mod_id == other.mod_id &&
         mod == other.mod &&
         slug == other.slug &&
         name == other.name &&
         public == other.public &&
         created_at == other.created_at &&
-        updated_at == other.updated_at &&
-        builds == other.builds
+        updated_at == other.updated_at
     end
 
     # @see the `==` method
@@ -161,7 +146,7 @@ module Kleister
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, file, mod_id, mod, slug, name, public, created_at, updated_at, builds].hash
+      [id, file, mod, slug, name, public, created_at, updated_at].hash
     end
 
     # Builds the object from hash

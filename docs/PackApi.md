@@ -859,7 +859,7 @@ end
 
 ## list_build_versions
 
-> <UserTeams> list_build_versions(pack_id, build_id, opts)
+> <BuildVersions> list_build_versions(pack_id, build_id, opts)
 
 Fetch all versions attached to build
 
@@ -893,7 +893,7 @@ pack_id = 'pack_id_example' # String | A pack identifier or slug
 build_id = 'build_id_example' # String | A build identifier or slug
 opts = {
   search: '"John Doe"', # String | Search query
-  sort: 'slug', # String | Sorting column
+  sort: 'name', # String | Sorting column
   order: 'asc', # String | Sorting order
   limit: 100, # Integer | Paging limit
   offset: 0 # Integer | Paging offset
@@ -912,7 +912,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<UserTeams>, Integer, Hash)> list_build_versions_with_http_info(pack_id, build_id, opts)
+> <Array(<BuildVersions>, Integer, Hash)> list_build_versions_with_http_info(pack_id, build_id, opts)
 
 ```ruby
 begin
@@ -920,7 +920,7 @@ begin
   data, status_code, headers = api_instance.list_build_versions_with_http_info(pack_id, build_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <UserTeams>
+  p data # => <BuildVersions>
 rescue Kleister::ApiError => e
   puts "Error when calling PackApi->list_build_versions_with_http_info: #{e}"
 end
@@ -940,7 +940,7 @@ end
 
 ### Return type
 
-[**UserTeams**](UserTeams.md)
+[**BuildVersions**](BuildVersions.md)
 
 ### Authorization
 
@@ -987,7 +987,7 @@ api_instance = Kleister::PackApi.new
 pack_id = 'pack_id_example' # String | A pack identifier or slug
 opts = {
   search: '"John Doe"', # String | Search query
-  sort: 'slug', # String | Sorting column
+  sort: 'name', # String | Sorting column
   order: 'asc', # String | Sorting order
   limit: 100, # Integer | Paging limit
   offset: 0 # Integer | Paging offset
@@ -1265,7 +1265,7 @@ end
 api_instance = Kleister::PackApi.new
 opts = {
   search: '"John Doe"', # String | Search query
-  sort: 'name', # String | Sorting column
+  sort: 'slug', # String | Sorting column
   order: 'asc', # String | Sorting order
   limit: 100, # Integer | Paging limit
   offset: 0 # Integer | Paging offset

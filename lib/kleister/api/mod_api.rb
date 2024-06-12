@@ -246,7 +246,7 @@ module Kleister
     # Create a new mod
     # @param mod [Mod] The mod data to create
     # @param [Hash] opts the optional parameters
-    # @return [User]
+    # @return [Mod]
     def create_mod(mod, opts = {})
       data, _status_code, _headers = create_mod_with_http_info(mod, opts)
       data
@@ -255,7 +255,7 @@ module Kleister
     # Create a new mod
     # @param mod [Mod] The mod data to create
     # @param [Hash] opts the optional parameters
-    # @return [Array<(User, Integer, Hash)>] User data, response status code and response headers
+    # @return [Array<(Mod, Integer, Hash)>] Mod data, response status code and response headers
     def create_mod_with_http_info(mod, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModApi.create_mod ...'
@@ -288,7 +288,7 @@ module Kleister
       post_body = opts[:debug_body] || @api_client.object_to_http_body(mod)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'User'
+      return_type = opts[:debug_return_type] || 'Mod'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || %w[Cookie Basic Header Bearer]
@@ -937,7 +937,7 @@ module Kleister
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModApi.list_mods ...'
       end
-      allowable_values = %w[name public]
+      allowable_values = %w[slug name public]
       if @api_client.config.client_side_validation && opts[:sort] && !allowable_values.include?(opts[:sort])
         raise ArgumentError, "invalid value for \"sort\", must be one of #{allowable_values}"
       end
@@ -1030,7 +1030,7 @@ module Kleister
         raise ArgumentError, "Missing the required parameter 'version_id' when calling ModApi.list_version_builds"
       end
 
-      allowable_values = %w[slug name]
+      allowable_values = %w[name public]
       if @api_client.config.client_side_validation && opts[:sort] && !allowable_values.include?(opts[:sort])
         raise ArgumentError, "invalid value for \"sort\", must be one of #{allowable_values}"
       end
@@ -1117,7 +1117,7 @@ module Kleister
         raise ArgumentError, "Missing the required parameter 'mod_id' when calling ModApi.list_versions"
       end
 
-      allowable_values = %w[slug name]
+      allowable_values = %w[name public]
       if @api_client.config.client_side_validation && opts[:sort] && !allowable_values.include?(opts[:sort])
         raise ArgumentError, "invalid value for \"sort\", must be one of #{allowable_values}"
       end

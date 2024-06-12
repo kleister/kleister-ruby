@@ -747,7 +747,7 @@ module Kleister
     # @option opts [String] :order Sorting order (default to 'asc')
     # @option opts [Integer] :limit Paging limit
     # @option opts [Integer] :offset Paging offset
-    # @return [UserTeams]
+    # @return [BuildVersions]
     def list_build_versions(pack_id, build_id, opts = {})
       data, _status_code, _headers = list_build_versions_with_http_info(pack_id, build_id, opts)
       data
@@ -762,7 +762,7 @@ module Kleister
     # @option opts [String] :order Sorting order (default to 'asc')
     # @option opts [Integer] :limit Paging limit
     # @option opts [Integer] :offset Paging offset
-    # @return [Array<(UserTeams, Integer, Hash)>] UserTeams data, response status code and response headers
+    # @return [Array<(BuildVersions, Integer, Hash)>] BuildVersions data, response status code and response headers
     def list_build_versions_with_http_info(pack_id, build_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PackApi.list_build_versions ...'
@@ -776,7 +776,7 @@ module Kleister
         raise ArgumentError, "Missing the required parameter 'build_id' when calling PackApi.list_build_versions"
       end
 
-      allowable_values = %w[slug name]
+      allowable_values = %w[name public]
       if @api_client.config.client_side_validation && opts[:sort] && !allowable_values.include?(opts[:sort])
         raise ArgumentError, "invalid value for \"sort\", must be one of #{allowable_values}"
       end
@@ -809,7 +809,7 @@ module Kleister
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'UserTeams'
+      return_type = opts[:debug_return_type] || 'BuildVersions'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || %w[Cookie Basic Header Bearer]
@@ -863,7 +863,7 @@ module Kleister
         raise ArgumentError, "Missing the required parameter 'pack_id' when calling PackApi.list_builds"
       end
 
-      allowable_values = %w[slug name]
+      allowable_values = %w[name public]
       if @api_client.config.client_side_validation && opts[:sort] && !allowable_values.include?(opts[:sort])
         raise ArgumentError, "invalid value for \"sort\", must be one of #{allowable_values}"
       end
@@ -1117,7 +1117,7 @@ module Kleister
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PackApi.list_packs ...'
       end
-      allowable_values = %w[name public]
+      allowable_values = %w[slug name public]
       if @api_client.config.client_side_validation && opts[:sort] && !allowable_values.include?(opts[:sort])
         raise ArgumentError, "invalid value for \"sort\", must be one of #{allowable_values}"
       end

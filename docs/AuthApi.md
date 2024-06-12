@@ -24,7 +24,7 @@ require 'time'
 require 'kleister'
 
 api_instance = Kleister::AuthApi.new
-provider = 'provider_example' # String | An identifier for the auth provider
+provider = '"github"' # String | An identifier for the auth provider
 opts = {
   state: 'state_example', # String | Auth state
   code: 'code_example' # String | Auth code
@@ -92,7 +92,7 @@ require 'time'
 require 'kleister'
 
 api_instance = Kleister::AuthApi.new
-provider = 'provider_example' # String | An identifier for the auth provider
+provider = '"github"' # String | An identifier for the auth provider
 opts = {
   state: 'state_example' # String | Auth state
 }

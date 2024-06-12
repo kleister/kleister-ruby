@@ -14,7 +14,7 @@ require 'time'
 module Kleister
   # Model to represent user
   class User
-    attr_accessor :id, :username, :password, :email, :fullname, :profile, :admin, :active, :created_at, :updated_at, :auths, :teams, :packs, :mods
+    attr_accessor :id, :username, :password, :email, :fullname, :profile, :admin, :active, :created_at, :updated_at, :auths
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
@@ -29,10 +29,7 @@ module Kleister
         active: :active,
         created_at: :created_at,
         updated_at: :updated_at,
-        auths: :auths,
-        teams: :teams,
-        packs: :packs,
-        mods: :mods
+        auths: :auths
       }
     end
 
@@ -54,10 +51,7 @@ module Kleister
         active: :Boolean,
         created_at: :Time,
         updated_at: :Time,
-        auths: :'Array<UserAuth>',
-        teams: :'Array<UserTeam>',
-        packs: :'Array<UserPack>',
-        mods: :'Array<UserMod>'
+        auths: :'Array<UserAuth>'
       }
     end
 
@@ -72,9 +66,6 @@ module Kleister
                 admin
                 active
                 auths
-                teams
-                packs
-                mods
               ])
     end
 
@@ -137,18 +128,6 @@ module Kleister
       if attributes.key?(:auths) && (value = attributes[:auths]).is_a?(Array)
         self.auths = value
       end
-
-      if attributes.key?(:teams) && (value = attributes[:teams]).is_a?(Array)
-        self.teams = value
-      end
-
-      if attributes.key?(:packs) && (value = attributes[:packs]).is_a?(Array)
-        self.packs = value
-      end
-
-      if attributes.key?(:mods) && (value = attributes[:mods]).is_a?(Array)
-        self.mods = value
-      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -181,10 +160,7 @@ module Kleister
         active == other.active &&
         created_at == other.created_at &&
         updated_at == other.updated_at &&
-        auths == other.auths &&
-        teams == other.teams &&
-        packs == other.packs &&
-        mods == other.mods
+        auths == other.auths
     end
 
     # @see the `==` method
@@ -196,7 +172,7 @@ module Kleister
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, username, password, email, fullname, profile, admin, active, created_at, updated_at, auths, teams, packs, mods].hash
+      [id, username, password, email, fullname, profile, admin, active, created_at, updated_at, auths].hash
     end
 
     # Builds the object from hash

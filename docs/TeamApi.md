@@ -55,7 +55,7 @@ Kleister.configure do |config|
 end
 
 api_instance = Kleister::TeamApi.new
-team_id = 'team_id_example' # String | A team identifier or slug
+team_id = '"team-1"' # String | A team identifier or slug
 team_mod_params = Kleister::TeamModParams.new({mod: 'mod_example'}) # TeamModParams | The team mod data to attach
 
 begin
@@ -138,7 +138,7 @@ Kleister.configure do |config|
 end
 
 api_instance = Kleister::TeamApi.new
-team_id = 'team_id_example' # String | A team identifier or slug
+team_id = '"team-1"' # String | A team identifier or slug
 team_pack_params = Kleister::TeamPackParams.new({pack: 'pack_example'}) # TeamPackParams | The team pack data to attach
 
 begin
@@ -221,7 +221,7 @@ Kleister.configure do |config|
 end
 
 api_instance = Kleister::TeamApi.new
-team_id = 'team_id_example' # String | A team identifier or slug
+team_id = '"team-1"' # String | A team identifier or slug
 team_user_params = Kleister::TeamUserParams.new({user: 'user_example'}) # TeamUserParams | The team user data to attach
 
 begin
@@ -385,7 +385,7 @@ Kleister.configure do |config|
 end
 
 api_instance = Kleister::TeamApi.new
-team_id = 'team_id_example' # String | A team identifier or slug
+team_id = '"team-1"' # String | A team identifier or slug
 
 begin
   # Delete a specific team
@@ -466,7 +466,7 @@ Kleister.configure do |config|
 end
 
 api_instance = Kleister::TeamApi.new
-team_id = 'team_id_example' # String | A team identifier or slug
+team_id = '"team-1"' # String | A team identifier or slug
 team_mod_params = Kleister::TeamModParams.new({mod: 'mod_example'}) # TeamModParams | The team mod data to unlink
 
 begin
@@ -549,7 +549,7 @@ Kleister.configure do |config|
 end
 
 api_instance = Kleister::TeamApi.new
-team_id = 'team_id_example' # String | A team identifier or slug
+team_id = '"team-1"' # String | A team identifier or slug
 team_pack_params = Kleister::TeamPackParams.new({pack: 'pack_example'}) # TeamPackParams | The team pack data to unlink
 
 begin
@@ -632,7 +632,7 @@ Kleister.configure do |config|
 end
 
 api_instance = Kleister::TeamApi.new
-team_id = 'team_id_example' # String | A team identifier or slug
+team_id = '"team-1"' # String | A team identifier or slug
 team_user_params = Kleister::TeamUserParams.new({user: 'user_example'}) # TeamUserParams | The team user data to unlink
 
 begin
@@ -715,10 +715,10 @@ Kleister.configure do |config|
 end
 
 api_instance = Kleister::TeamApi.new
-team_id = 'team_id_example' # String | A team identifier or slug
+team_id = '"team-1"' # String | A team identifier or slug
 opts = {
   search: '"John Doe"', # String | Search query
-  sort: 'modname', # String | Sorting column
+  sort: 'slug', # String | Sorting column
   order: 'asc', # String | Sorting order
   limit: 100, # Integer | Paging limit
   offset: 0 # Integer | Paging offset
@@ -757,7 +757,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **team_id** | **String** | A team identifier or slug |  |
 | **search** | **String** | Search query | [optional] |
-| **sort** | **String** | Sorting column | [optional][default to &#39;modname&#39;] |
+| **sort** | **String** | Sorting column | [optional][default to &#39;name&#39;] |
 | **order** | **String** | Sorting order | [optional][default to &#39;asc&#39;] |
 | **limit** | **Integer** | Paging limit | [optional][default to 100] |
 | **offset** | **Integer** | Paging offset | [optional][default to 0] |
@@ -808,10 +808,10 @@ Kleister.configure do |config|
 end
 
 api_instance = Kleister::TeamApi.new
-team_id = 'team_id_example' # String | A team identifier or slug
+team_id = '"team-1"' # String | A team identifier or slug
 opts = {
   search: '"John Doe"', # String | Search query
-  sort: 'packname', # String | Sorting column
+  sort: 'slug', # String | Sorting column
   order: 'asc', # String | Sorting order
   limit: 100, # Integer | Paging limit
   offset: 0 # Integer | Paging offset
@@ -850,7 +850,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **team_id** | **String** | A team identifier or slug |  |
 | **search** | **String** | Search query | [optional] |
-| **sort** | **String** | Sorting column | [optional][default to &#39;packname&#39;] |
+| **sort** | **String** | Sorting column | [optional][default to &#39;name&#39;] |
 | **order** | **String** | Sorting order | [optional][default to &#39;asc&#39;] |
 | **limit** | **Integer** | Paging limit | [optional][default to 100] |
 | **offset** | **Integer** | Paging offset | [optional][default to 0] |
@@ -901,7 +901,7 @@ Kleister.configure do |config|
 end
 
 api_instance = Kleister::TeamApi.new
-team_id = 'team_id_example' # String | A team identifier or slug
+team_id = '"team-1"' # String | A team identifier or slug
 opts = {
   search: '"John Doe"', # String | Search query
   sort: 'username', # String | Sorting column
@@ -1085,7 +1085,7 @@ Kleister.configure do |config|
 end
 
 api_instance = Kleister::TeamApi.new
-team_id = 'team_id_example' # String | A team identifier or slug
+team_id = '"team-1"' # String | A team identifier or slug
 team_mod_params = Kleister::TeamModParams.new({mod: 'mod_example'}) # TeamModParams | The team mod data to update
 
 begin
@@ -1168,7 +1168,7 @@ Kleister.configure do |config|
 end
 
 api_instance = Kleister::TeamApi.new
-team_id = 'team_id_example' # String | A team identifier or slug
+team_id = '"team-1"' # String | A team identifier or slug
 team_pack_params = Kleister::TeamPackParams.new({pack: 'pack_example'}) # TeamPackParams | The team pack data to update
 
 begin
@@ -1251,7 +1251,7 @@ Kleister.configure do |config|
 end
 
 api_instance = Kleister::TeamApi.new
-team_id = 'team_id_example' # String | A team identifier or slug
+team_id = '"team-1"' # String | A team identifier or slug
 team_user_params = Kleister::TeamUserParams.new({user: 'user_example'}) # TeamUserParams | The team user data to update
 
 begin
@@ -1334,7 +1334,7 @@ Kleister.configure do |config|
 end
 
 api_instance = Kleister::TeamApi.new
-team_id = 'team_id_example' # String | A team identifier or slug
+team_id = '"team-1"' # String | A team identifier or slug
 
 begin
   # Fetch a specific team
@@ -1415,7 +1415,7 @@ Kleister.configure do |config|
 end
 
 api_instance = Kleister::TeamApi.new
-team_id = 'team_id_example' # String | A team identifier or slug
+team_id = '"team-1"' # String | A team identifier or slug
 team = Kleister::Team.new # Team | The team data to update
 
 begin

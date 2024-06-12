@@ -14,28 +14,7 @@ require 'time'
 module Kleister
   # Model to represent mod
   class Mod
-    attr_accessor :id, :slug, :name, :side, :description, :author, :website, :donate, :public, :created_at, :updated_at, :versions, :users, :teams
-
-    class EnumAttributeValidator
-      attr_reader :datatype, :allowable_values
-
-      def initialize(datatype, allowable_values)
-        @allowable_values = allowable_values.map do |value|
-          case datatype.to_s
-          when /Integer/i
-            value.to_i
-          when /Float/i
-            value.to_f
-          else
-            value
-          end
-        end
-      end
-
-      def valid?(value)
-        !value || allowable_values.include?(value)
-      end
-    end
+    attr_accessor :id, :slug, :name, :side, :description, :author, :website, :donate, :public, :created_at, :updated_at
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
@@ -50,10 +29,7 @@ module Kleister
         donate: :donate,
         public: :public,
         created_at: :created_at,
-        updated_at: :updated_at,
-        versions: :versions,
-        users: :users,
-        teams: :teams
+        updated_at: :updated_at
       }
     end
 
@@ -75,10 +51,7 @@ module Kleister
         donate: :String,
         public: :Boolean,
         created_at: :Time,
-        updated_at: :Time,
-        versions: :'Array<Version>',
-        users: :'Array<UserMod>',
-        teams: :'Array<TeamMod>'
+        updated_at: :Time
       }
     end
 
@@ -93,9 +66,6 @@ module Kleister
                 website
                 donate
                 public
-                versions
-                users
-                teams
               ])
     end
 
@@ -158,18 +128,6 @@ module Kleister
       if attributes.key?(:updated_at)
         self.updated_at = attributes[:updated_at]
       end
-
-      if attributes.key?(:versions) && (value = attributes[:versions]).is_a?(Array)
-        self.versions = value
-      end
-
-      if attributes.key?(:users) && (value = attributes[:users]).is_a?(Array)
-        self.users = value
-      end
-
-      if attributes.key?(:teams) && (value = attributes[:teams]).is_a?(Array)
-        self.teams = value
-      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -183,21 +141,7 @@ module Kleister
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      side_validator = EnumAttributeValidator.new('String', %w[both server client])
-      return false unless side_validator.valid?(@side)
-
       true
-    end
-
-    # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] side Object to be assigned
-    def side=(side)
-      validator = EnumAttributeValidator.new('String', %w[both server client])
-      unless validator.valid?(side)
-        raise ArgumentError, "invalid value for \"side\", must be one of #{validator.allowable_values}."
-      end
-
-      @side = side
     end
 
     # Checks equality by comparing each attribute.
@@ -216,10 +160,7 @@ module Kleister
         donate == other.donate &&
         public == other.public &&
         created_at == other.created_at &&
-        updated_at == other.updated_at &&
-        versions == other.versions &&
-        users == other.users &&
-        teams == other.teams
+        updated_at == other.updated_at
     end
 
     # @see the `==` method
@@ -231,7 +172,7 @@ module Kleister
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, slug, name, side, description, author, website, donate, public, created_at, updated_at, versions, users, teams].hash
+      [id, slug, name, side, description, author, website, donate, public, created_at, updated_at].hash
     end
 
     # Builds the object from hash

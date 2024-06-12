@@ -15,9 +15,6 @@
 | **public** | **Boolean** |  | [optional] |
 | **created_at** | **Time** |  | [optional][readonly] |
 | **updated_at** | **Time** |  | [optional][readonly] |
-| **versions** | [**Array&lt;Version&gt;**](Version.md) |  | [optional][readonly] |
-| **users** | [**Array&lt;UserMod&gt;**](UserMod.md) |  | [optional][readonly] |
-| **teams** | [**Array&lt;TeamMod&gt;**](TeamMod.md) |  | [optional][readonly] |
 
 ## Example
 
@@ -35,10 +32,7 @@ instance = Kleister::Mod.new(
   donate: null,
   public: null,
   created_at: null,
-  updated_at: null,
-  versions: null,
-  users: null,
-  teams: null
+  updated_at: null
 )
 ```
 

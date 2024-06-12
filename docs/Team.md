@@ -9,9 +9,6 @@
 | **name** | **String** |  | [optional] |
 | **created_at** | **Time** |  | [optional][readonly] |
 | **updated_at** | **Time** |  | [optional][readonly] |
-| **users** | [**Array&lt;UserTeam&gt;**](UserTeam.md) |  | [optional][readonly] |
-| **packs** | [**Array&lt;TeamPack&gt;**](TeamPack.md) |  | [optional][readonly] |
-| **mods** | [**Array&lt;TeamMod&gt;**](TeamMod.md) |  | [optional][readonly] |
 
 ## Example
 
@@ -23,10 +20,7 @@ instance = Kleister::Team.new(
   slug: null,
   name: null,
   created_at: null,
-  updated_at: null,
-  users: null,
-  packs: null,
-  mods: null
+  updated_at: null
 )
 ```
 

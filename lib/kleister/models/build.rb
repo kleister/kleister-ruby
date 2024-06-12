@@ -14,14 +14,13 @@ require 'time'
 module Kleister
   # Model to represent build
   class Build
-    attr_accessor :id, :pack_id, :pack, :minecraft_id, :minecraft, :forge_id, :forge, :neoforge_id, :neoforge, :quilt_id, :quilt, :fabric_id, :fabric, :slug, :name, :java, :memory, :public,
-                  :created_at, :updated_at, :versions
+    attr_accessor :id, :pack, :minecraft_id, :minecraft, :forge_id, :forge, :neoforge_id, :neoforge, :quilt_id, :quilt, :fabric_id, :fabric, :slug, :name, :java, :memory, :latest, :recommended,
+                  :public, :created_at, :updated_at
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         id: :id,
-        pack_id: :pack_id,
         pack: :pack,
         minecraft_id: :minecraft_id,
         minecraft: :minecraft,
@@ -37,10 +36,11 @@ module Kleister
         name: :name,
         java: :java,
         memory: :memory,
+        latest: :latest,
+        recommended: :recommended,
         public: :public,
         created_at: :created_at,
-        updated_at: :updated_at,
-        versions: :versions
+        updated_at: :updated_at
       }
     end
 
@@ -53,7 +53,6 @@ module Kleister
     def self.openapi_types
       {
         id: :String,
-        pack_id: :String,
         pack: :Pack,
         minecraft_id: :String,
         minecraft: :Minecraft,
@@ -69,10 +68,11 @@ module Kleister
         name: :String,
         java: :String,
         memory: :String,
+        latest: :Boolean,
+        recommended: :Boolean,
         public: :Boolean,
         created_at: :Time,
-        updated_at: :Time,
-        versions: :'Array<BuildVersion>'
+        updated_at: :Time
       }
     end
 
@@ -88,8 +88,9 @@ module Kleister
                 name
                 java
                 memory
+                latest
+                recommended
                 public
-                versions
               ])
     end
 
@@ -111,10 +112,6 @@ module Kleister
 
       if attributes.key?(:id)
         self.id = attributes[:id]
-      end
-
-      if attributes.key?(:pack_id)
-        self.pack_id = attributes[:pack_id]
       end
 
       if attributes.key?(:pack)
@@ -177,6 +174,14 @@ module Kleister
         self.memory = attributes[:memory]
       end
 
+      if attributes.key?(:latest)
+        self.latest = attributes[:latest]
+      end
+
+      if attributes.key?(:recommended)
+        self.recommended = attributes[:recommended]
+      end
+
       if attributes.key?(:public)
         self.public = attributes[:public]
       end
@@ -187,10 +192,6 @@ module Kleister
 
       if attributes.key?(:updated_at)
         self.updated_at = attributes[:updated_at]
-      end
-
-      if attributes.key?(:versions) && (value = attributes[:versions]).is_a?(Array)
-        self.versions = value
       end
     end
 
@@ -215,7 +216,6 @@ module Kleister
 
       self.class == other.class &&
         id == other.id &&
-        pack_id == other.pack_id &&
         pack == other.pack &&
         minecraft_id == other.minecraft_id &&
         minecraft == other.minecraft &&
@@ -231,10 +231,11 @@ module Kleister
         name == other.name &&
         java == other.java &&
         memory == other.memory &&
+        latest == other.latest &&
+        recommended == other.recommended &&
         public == other.public &&
         created_at == other.created_at &&
-        updated_at == other.updated_at &&
-        versions == other.versions
+        updated_at == other.updated_at
     end
 
     # @see the `==` method
@@ -246,7 +247,8 @@ module Kleister
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, pack_id, pack, minecraft_id, minecraft, forge_id, forge, neoforge_id, neoforge, quilt_id, quilt, fabric_id, fabric, slug, name, java, memory, public, created_at, updated_at, versions].hash
+      [id, pack, minecraft_id, minecraft, forge_id, forge, neoforge_id, neoforge, quilt_id, quilt, fabric_id, fabric, slug, name, java, memory, latest, recommended, public, created_at,
+       updated_at].hash
     end
 
     # Builds the object from hash

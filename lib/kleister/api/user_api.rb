@@ -617,7 +617,7 @@ module Kleister
         raise ArgumentError, "Missing the required parameter 'user_id' when calling UserApi.list_user_mods"
       end
 
-      allowable_values = %w[slug name]
+      allowable_values = %w[slug name public]
       if @api_client.config.client_side_validation && opts[:sort] && !allowable_values.include?(opts[:sort])
         raise ArgumentError, "invalid value for \"sort\", must be one of #{allowable_values}"
       end
@@ -704,7 +704,7 @@ module Kleister
         raise ArgumentError, "Missing the required parameter 'user_id' when calling UserApi.list_user_packs"
       end
 
-      allowable_values = %w[slug name]
+      allowable_values = %w[slug name public]
       if @api_client.config.client_side_validation && opts[:sort] && !allowable_values.include?(opts[:sort])
         raise ArgumentError, "invalid value for \"sort\", must be one of #{allowable_values}"
       end

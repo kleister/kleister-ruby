@@ -5,8 +5,6 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **id** | **String** |  | [optional][readonly] |
-| **pack_id** | **String** |  | [optional] |
-| **pack** | [**Pack**](Pack.md) |  | [optional] |
 | **slug** | **String** |  | [optional] |
 | **content_type** | **String** |  | [optional] |
 | **md5** | **String** |  | [optional] |
@@ -23,8 +21,6 @@ require 'kleister'
 
 instance = Kleister::PackBack.new(
   id: null,
-  pack_id: null,
-  pack: null,
   slug: null,
   content_type: null,
   md5: null,
