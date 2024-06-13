@@ -176,7 +176,7 @@ module Kleister
       return_type = opts[:debug_return_type] || 'Profile'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || []
+      auth_names = opts[:debug_auth_names] || %w[Cookie Basic Header Bearer]
 
       new_options = opts.merge(
         operation: :'ProfileApi.update_profile',

@@ -176,6 +176,25 @@ Update your own profile information
 ```ruby
 require 'time'
 require 'kleister'
+# setup authorization
+Kleister.configure do |config|
+  # Configure API key authorization: Cookie
+  config.api_key['Cookie'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Cookie'] = 'Bearer'
+
+  # Configure HTTP basic authorization: Basic
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+
+  # Configure API key authorization: Header
+  config.api_key['Header'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Header'] = 'Bearer'
+
+  # Configure Bearer authorization: Bearer
+  config.access_token = 'YOUR_BEARER_TOKEN'
+end
 
 api_instance = Kleister::ProfileApi.new
 profile = Kleister::Profile.new # Profile | The profile data to update
@@ -219,7 +238,7 @@ end
 
 ### Authorization
 
-No authorization required
+[Cookie](../README.md#Cookie), [Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
