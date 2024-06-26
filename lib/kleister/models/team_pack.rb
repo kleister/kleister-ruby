@@ -144,7 +144,7 @@ module Kleister
       return false if @team_id.nil?
       return false if @pack_id.nil?
 
-      perm_validator = EnumAttributeValidator.new('String', %w[team admin owner])
+      perm_validator = EnumAttributeValidator.new('String', %w[user admin owner])
       return false unless perm_validator.valid?(@perm)
 
       true
@@ -153,7 +153,7 @@ module Kleister
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] perm Object to be assigned
     def perm=(perm)
-      validator = EnumAttributeValidator.new('String', %w[team admin owner])
+      validator = EnumAttributeValidator.new('String', %w[user admin owner])
       unless validator.valid?(perm)
         raise ArgumentError, "invalid value for \"perm\", must be one of #{validator.allowable_values}."
       end
