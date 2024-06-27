@@ -109,7 +109,7 @@ module Kleister
       self.perm = if attributes.key?(:perm)
                     attributes[:perm]
                   else
-                    'team'
+                    'user'
                   end
 
       if attributes.key?(:created_at)
