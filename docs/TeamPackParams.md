@@ -5,7 +5,7 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **pack** | **String** |  |  |
-| **perm** | **String** |  | [optional][default to &#39;team&#39;] |
+| **perm** | **String** |  | [optional][default to &#39;user&#39;] |
 
 ## Example
 

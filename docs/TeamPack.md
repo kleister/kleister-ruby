@@ -8,7 +8,7 @@
 | **team** | [**Team**](Team.md) |  | [optional] |
 | **pack_id** | **String** |  |  |
 | **pack** | [**Pack**](Pack.md) |  | [optional] |
-| **perm** | **String** |  | [optional][default to &#39;team&#39;] |
+| **perm** | **String** |  | [optional][default to &#39;user&#39;] |
 | **created_at** | **Time** |  | [optional][readonly] |
 | **updated_at** | **Time** |  | [optional][readonly] |
 

@@ -8,7 +8,7 @@
 | **team** | [**Team**](Team.md) |  | [optional] |
 | **mod_id** | **String** |  |  |
 | **mod** | [**Mod**](Mod.md) |  | [optional] |
-| **perm** | **String** |  | [optional][default to &#39;team&#39;] |
+| **perm** | **String** |  | [optional][default to &#39;user&#39;] |
 | **created_at** | **Time** |  | [optional][readonly] |
 | **updated_at** | **Time** |  | [optional][readonly] |
 
