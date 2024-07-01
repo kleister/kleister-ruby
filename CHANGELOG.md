@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.2.0](https://github.com/kleister/kleister-ruby/compare/v1.1.0...v1.2.0) (2024-07-01)
+
+
+### Features
+
+* automated openapi client update ([7c276cf](https://github.com/kleister/kleister-ruby/commit/7c276cf7ec961ed99b61ddf4be35ea59ac70eed7))
+
+
+### Bugfixes
+
+* use right values for perm enum ([c46115a](https://github.com/kleister/kleister-ruby/commit/c46115a81b3a1f4e9ec487db386e2448cfd90c07))
+
 ## [1.1.0](https://github.com/kleister/kleister-ruby/compare/v1.0.0...v1.1.0) (2024-06-17)
 
 
