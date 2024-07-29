@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.4.0](https://github.com/kleister/kleister-ruby/compare/v1.3.0...v1.4.0) (2024-07-29)
+
+
+### Features
+
+* automated openapi client update ([ce4ceb9](https://github.com/kleister/kleister-ruby/commit/ce4ceb9087dd4b194501623d993f0c8f60e9937a))
+
+
+### Bugfixes
+
+* resolve vulnerable dependencies ([90c3b38](https://github.com/kleister/kleister-ruby/commit/90c3b389216bb8ffdc78faf65d543bda12c84307))
+
 ## [1.3.0](https://github.com/kleister/kleister-ruby/compare/v1.2.0...v1.3.0) (2024-07-15)
 
 
