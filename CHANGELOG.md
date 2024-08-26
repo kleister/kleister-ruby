@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.3](https://github.com/kleister/kleister-ruby/compare/v1.4.2...v1.4.3) (2024-08-26)
+
+
+### Bugfixes
+
+* **deps:** update dependency rexml to v3.3.6 ([9b1370f](https://github.com/kleister/kleister-ruby/commit/9b1370f9f6b87b613629e6e24e2ebfb432ac227a))
+
 ## [1.4.2](https://github.com/kleister/kleister-ruby/compare/v1.4.1...v1.4.2) (2024-08-12)
 
 
