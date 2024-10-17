@@ -52,6 +52,8 @@ docs/PackUsers.md
 docs/Packs.md
 docs/Profile.md
 docs/ProfileApi.md
+docs/Provider.md
+docs/Providers.md
 docs/Quilt.md
 docs/QuiltApi.md
 docs/QuiltBuildParams.md
@@ -143,6 +145,8 @@ lib/kleister/models/pack_user_params.rb
 lib/kleister/models/pack_users.rb
 lib/kleister/models/packs.rb
 lib/kleister/models/profile.rb
+lib/kleister/models/provider.rb
+lib/kleister/models/providers.rb
 lib/kleister/models/quilt.rb
 lib/kleister/models/quilt_build_params.rb
 lib/kleister/models/quilt_builds.rb
@@ -176,4 +180,6 @@ lib/kleister/models/version_builds.rb
 lib/kleister/models/version_file.rb
 lib/kleister/models/versions.rb
 lib/kleister/version.rb
+spec/models/provider_spec.rb
+spec/models/providers_spec.rb
 spec/spec_helper.rb
