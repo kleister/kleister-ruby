@@ -151,6 +151,61 @@ module Kleister
       [data, status_code, headers]
     end
 
+    # Fetch the available auth providers
+    # @param [Hash] opts the optional parameters
+    # @return [Providers]
+    def external_providers(opts = {})
+      data, _status_code, _headers = external_providers_with_http_info(opts)
+      data
+    end
+
+    # Fetch the available auth providers
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(Providers, Integer, Hash)>] Providers data, response status code and response headers
+    def external_providers_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: AuthApi.external_providers ...'
+      end
+      # resource path
+      local_var_path = '/auth/providers'
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'Providers'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        operation: :'AuthApi.external_providers',
+        header_params: header_params,
+        query_params: query_params,
+        form_params: form_params,
+        body: post_body,
+        auth_names: auth_names,
+        return_type: return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: AuthApi#external_providers\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      [data, status_code, headers]
+    end
+
     # Authenticate an user by credentials
     # @param auth_login [AuthLogin] The credentials to authenticate
     # @param [Hash] opts the optional parameters

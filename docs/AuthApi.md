@@ -6,6 +6,7 @@ All URIs are relative to *https://try.kleister.eu/api/v1*
 | ------ | ------------ | ----------- |
 | [**external_callback**](AuthApi.md#external_callback) | **GET** /auth/{provider}/callback | Callback for external authentication |
 | [**external_initialize**](AuthApi.md#external_initialize) | **GET** /auth/{provider}/initialize | Initialize the external authentication |
+| [**external_providers**](AuthApi.md#external_providers) | **GET** /auth/providers | Fetch the available auth providers |
 | [**login_auth**](AuthApi.md#login_auth) | **POST** /auth/login | Authenticate an user by credentials |
 | [**refresh_auth**](AuthApi.md#refresh_auth) | **GET** /auth/refresh | Refresh an auth token before it expires |
 | [**verify_auth**](AuthApi.md#verify_auth) | **GET** /auth/verify | Verify validity for an authentication token |
@@ -134,6 +135,65 @@ end
 ### Return type
 
 [**Notification**](Notification.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## external_providers
+
+> <Providers> external_providers
+
+Fetch the available auth providers
+
+### Examples
+
+```ruby
+require 'time'
+require 'kleister'
+
+api_instance = Kleister::AuthApi.new
+
+begin
+  # Fetch the available auth providers
+  result = api_instance.external_providers
+  p result
+rescue Kleister::ApiError => e
+  puts "Error when calling AuthApi->external_providers: #{e}"
+end
+```
+
+#### Using the external_providers_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<Providers>, Integer, Hash)> external_providers_with_http_info
+
+```ruby
+begin
+  # Fetch the available auth providers
+  data, status_code, headers = api_instance.external_providers_with_http_info
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <Providers>
+rescue Kleister::ApiError => e
+  puts "Error when calling AuthApi->external_providers_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**Providers**](Providers.md)
 
 ### Authorization
 
