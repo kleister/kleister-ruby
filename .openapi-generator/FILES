@@ -180,6 +180,4 @@ lib/kleister/models/version_builds.rb
 lib/kleister/models/version_file.rb
 lib/kleister/models/versions.rb
 lib/kleister/version.rb
-spec/models/provider_spec.rb
-spec/models/providers_spec.rb
 spec/spec_helper.rb
