@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.1](https://github.com/kleister/kleister-ruby/compare/v1.7.0...v1.7.1) (2024-11-11)
+
+
+### Bugfixes
+
+* **deps:** update dependency ruby to v3.3.6 ([b23ef38](https://github.com/kleister/kleister-ruby/commit/b23ef38744ab90ff8e7c75d6497c82d54fb87510))
+
 ## [1.7.0](https://github.com/kleister/kleister-ruby/compare/v1.6.1...v1.7.0) (2024-11-04)
 
 
