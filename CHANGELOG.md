@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.9.0](https://github.com/kleister/kleister-ruby/compare/v1.8.1...v1.9.0) (2024-12-16)
+
+
+### Features
+
+* automated openapi client update ([9f9f607](https://github.com/kleister/kleister-ruby/commit/9f9f6077c304538dd0fd70c6c3a4931e0feb7c4a))
+* **deps:** update dependency rexml to v3.4.0 ([#77](https://github.com/kleister/kleister-ruby/issues/77)) ([0131978](https://github.com/kleister/kleister-ruby/commit/0131978b8f4d31bbabaa121de45b0adac212eec7))
+
+
+### Bugfixes
+
+* **deps:** update dependency rubocop to v1.69.2 ([#75](https://github.com/kleister/kleister-ruby/issues/75)) ([6eebb34](https://github.com/kleister/kleister-ruby/commit/6eebb34385cf04e45adc49aa3deb994020fdaaf4))
+
 ## [1.8.1](https://github.com/kleister/kleister-ruby/compare/v1.8.0...v1.8.1) (2024-12-09)
 
 
