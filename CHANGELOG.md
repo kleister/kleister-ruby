@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.12.0](https://github.com/kleister/kleister-ruby/compare/v1.11.0...v1.12.0) (2025-01-27)
+
+
+### Features
+
+* **deps:** update dependency rubocop to '~> 1.71.0' ([#81](https://github.com/kleister/kleister-ruby/issues/81)) ([fa4892d](https://github.com/kleister/kleister-ruby/commit/fa4892d669d227fd6315e1eef2a22e43fc3e6b20))
+
 ## [1.11.0](https://github.com/kleister/kleister-ruby/compare/v1.10.0...v1.11.0) (2025-01-13)
 
 
