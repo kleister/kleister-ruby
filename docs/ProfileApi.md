@@ -22,11 +22,6 @@ require 'time'
 require 'kleister'
 # setup authorization
 Kleister.configure do |config|
-  # Configure API key authorization: Cookie
-  config.api_key['Cookie'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Cookie'] = 'Bearer'
-
   # Configure HTTP basic authorization: Basic
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -79,7 +74,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[Cookie](../README.md#Cookie), [Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
+[Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -100,11 +95,6 @@ require 'time'
 require 'kleister'
 # setup authorization
 Kleister.configure do |config|
-  # Configure API key authorization: Cookie
-  config.api_key['Cookie'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Cookie'] = 'Bearer'
-
   # Configure HTTP basic authorization: Basic
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -157,7 +147,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[Cookie](../README.md#Cookie), [Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
+[Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -167,7 +157,7 @@ This endpoint does not need any parameter.
 
 ## update_profile
 
-> <Profile> update_profile(profile)
+> <Profile> update_profile(update_profile_request)
 
 Update your own profile information
 
@@ -178,11 +168,6 @@ require 'time'
 require 'kleister'
 # setup authorization
 Kleister.configure do |config|
-  # Configure API key authorization: Cookie
-  config.api_key['Cookie'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Cookie'] = 'Bearer'
-
   # Configure HTTP basic authorization: Basic
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
@@ -197,11 +182,11 @@ Kleister.configure do |config|
 end
 
 api_instance = Kleister::ProfileApi.new
-profile = Kleister::Profile.new # Profile | The profile data to update
+update_profile_request = Kleister::UpdateProfileRequest.new # UpdateProfileRequest | The profile data to update
 
 begin
   # Update your own profile information
-  result = api_instance.update_profile(profile)
+  result = api_instance.update_profile(update_profile_request)
   p result
 rescue Kleister::ApiError => e
   puts "Error when calling ProfileApi->update_profile: #{e}"
@@ -212,12 +197,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Profile>, Integer, Hash)> update_profile_with_http_info(profile)
+> <Array(<Profile>, Integer, Hash)> update_profile_with_http_info(update_profile_request)
 
 ```ruby
 begin
   # Update your own profile information
-  data, status_code, headers = api_instance.update_profile_with_http_info(profile)
+  data, status_code, headers = api_instance.update_profile_with_http_info(update_profile_request)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Profile>
@@ -230,7 +215,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **profile** | [**Profile**](Profile.md) | The profile data to update |  |
+| **update_profile_request** | [**UpdateProfileRequest**](UpdateProfileRequest.md) | The profile data to update |  |
 
 ### Return type
 
@@ -238,7 +223,7 @@ end
 
 ### Authorization
 
-[Cookie](../README.md#Cookie), [Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
+[Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
