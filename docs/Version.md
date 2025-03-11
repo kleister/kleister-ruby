@@ -7,7 +7,6 @@
 | **id** | **String** |  | [optional][readonly] |
 | **file** | [**VersionFile**](VersionFile.md) |  | [optional] |
 | **mod** | [**Mod**](Mod.md) |  | [optional] |
-| **slug** | **String** |  | [optional] |
 | **name** | **String** |  | [optional] |
 | **public** | **Boolean** |  | [optional] |
 | **created_at** | **Time** |  | [optional][readonly] |
@@ -22,7 +21,6 @@ instance = Kleister::Version.new(
   id: null,
   file: null,
   mod: null,
-  slug: null,
   name: null,
   public: null,
   created_at: null,
