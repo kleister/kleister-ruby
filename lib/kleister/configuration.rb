@@ -254,13 +254,6 @@ module Kleister
             in: 'header',
             key: 'Authorization',
             value: basic_auth_token
-          },
-        'Cookie' =>
-          {
-            type: 'api_key',
-            in: 'header',
-            key: 'Cookie',
-            value: api_key_with_prefix('Cookie')
           }
       }
     end
