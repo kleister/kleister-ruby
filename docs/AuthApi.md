@@ -4,19 +4,20 @@ All URIs are relative to *https://try.kleister.eu/api/v1*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
-| [**external_callback**](AuthApi.md#external_callback) | **GET** /auth/{provider}/callback | Callback for external authentication |
-| [**external_initialize**](AuthApi.md#external_initialize) | **GET** /auth/{provider}/initialize | Initialize the external authentication |
-| [**external_providers**](AuthApi.md#external_providers) | **GET** /auth/providers | Fetch the available auth providers |
+| [**callback_provider**](AuthApi.md#callback_provider) | **GET** /auth/{provider}/callback | Callback to parse the defined provider |
+| [**list_providers**](AuthApi.md#list_providers) | **GET** /auth/providers | Fetch the available auth providers |
 | [**login_auth**](AuthApi.md#login_auth) | **POST** /auth/login | Authenticate an user by credentials |
+| [**redirect_auth**](AuthApi.md#redirect_auth) | **POST** /auth/redirect | Retrieve real token after redirect |
 | [**refresh_auth**](AuthApi.md#refresh_auth) | **GET** /auth/refresh | Refresh an auth token before it expires |
+| [**request_provider**](AuthApi.md#request_provider) | **GET** /auth/{provider}/request | Request the redirect to defined provider |
 | [**verify_auth**](AuthApi.md#verify_auth) | **GET** /auth/verify | Verify validity for an authentication token |
 
 
-## external_callback
+## callback_provider
 
-> <Notification> external_callback(provider, opts)
+> callback_provider(provider, opts)
 
-Callback for external authentication
+Callback to parse the defined provider
 
 ### Examples
 
@@ -32,29 +33,28 @@ opts = {
 }
 
 begin
-  # Callback for external authentication
-  result = api_instance.external_callback(provider, opts)
-  p result
+  # Callback to parse the defined provider
+  api_instance.callback_provider(provider, opts)
 rescue Kleister::ApiError => e
-  puts "Error when calling AuthApi->external_callback: #{e}"
+  puts "Error when calling AuthApi->callback_provider: #{e}"
 end
 ```
 
-#### Using the external_callback_with_http_info variant
+#### Using the callback_provider_with_http_info variant
 
-This returns an Array which contains the response data, status code and headers.
+This returns an Array which contains the response data (`nil` in this case), status code and headers.
 
-> <Array(<Notification>, Integer, Hash)> external_callback_with_http_info(provider, opts)
+> <Array(nil, Integer, Hash)> callback_provider_with_http_info(provider, opts)
 
 ```ruby
 begin
-  # Callback for external authentication
-  data, status_code, headers = api_instance.external_callback_with_http_info(provider, opts)
+  # Callback to parse the defined provider
+  data, status_code, headers = api_instance.callback_provider_with_http_info(provider, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <Notification>
+  p data # => nil
 rescue Kleister::ApiError => e
-  puts "Error when calling AuthApi->external_callback_with_http_info: #{e}"
+  puts "Error when calling AuthApi->callback_provider_with_http_info: #{e}"
 end
 ```
 
@@ -68,7 +68,7 @@ end
 
 ### Return type
 
-[**Notification**](Notification.md)
+nil (empty response body)
 
 ### Authorization
 
@@ -77,78 +77,12 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: text/html
 
 
-## external_initialize
+## list_providers
 
-> <Notification> external_initialize(provider, opts)
-
-Initialize the external authentication
-
-### Examples
-
-```ruby
-require 'time'
-require 'kleister'
-
-api_instance = Kleister::AuthApi.new
-provider = '"github"' # String | An identifier for the auth provider
-opts = {
-  state: 'state_example' # String | Auth state
-}
-
-begin
-  # Initialize the external authentication
-  result = api_instance.external_initialize(provider, opts)
-  p result
-rescue Kleister::ApiError => e
-  puts "Error when calling AuthApi->external_initialize: #{e}"
-end
-```
-
-#### Using the external_initialize_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<Notification>, Integer, Hash)> external_initialize_with_http_info(provider, opts)
-
-```ruby
-begin
-  # Initialize the external authentication
-  data, status_code, headers = api_instance.external_initialize_with_http_info(provider, opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <Notification>
-rescue Kleister::ApiError => e
-  puts "Error when calling AuthApi->external_initialize_with_http_info: #{e}"
-end
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **provider** | **String** | An identifier for the auth provider |  |
-| **state** | **String** | Auth state | [optional] |
-
-### Return type
-
-[**Notification**](Notification.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## external_providers
-
-> <Providers> external_providers
+> <ListProviders200Response> list_providers
 
 Fetch the available auth providers
 
@@ -162,28 +96,28 @@ api_instance = Kleister::AuthApi.new
 
 begin
   # Fetch the available auth providers
-  result = api_instance.external_providers
+  result = api_instance.list_providers
   p result
 rescue Kleister::ApiError => e
-  puts "Error when calling AuthApi->external_providers: #{e}"
+  puts "Error when calling AuthApi->list_providers: #{e}"
 end
 ```
 
-#### Using the external_providers_with_http_info variant
+#### Using the list_providers_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Providers>, Integer, Hash)> external_providers_with_http_info
+> <Array(<ListProviders200Response>, Integer, Hash)> list_providers_with_http_info
 
 ```ruby
 begin
   # Fetch the available auth providers
-  data, status_code, headers = api_instance.external_providers_with_http_info
+  data, status_code, headers = api_instance.list_providers_with_http_info
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <Providers>
+  p data # => <ListProviders200Response>
 rescue Kleister::ApiError => e
-  puts "Error when calling AuthApi->external_providers_with_http_info: #{e}"
+  puts "Error when calling AuthApi->list_providers_with_http_info: #{e}"
 end
 ```
 
@@ -193,7 +127,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**Providers**](Providers.md)
+[**ListProviders200Response**](ListProviders200Response.md)
 
 ### Authorization
 
@@ -207,7 +141,7 @@ No authorization required
 
 ## login_auth
 
-> <AuthToken> login_auth(auth_login)
+> <AuthToken> login_auth(login_auth_request)
 
 Authenticate an user by credentials
 
@@ -218,11 +152,11 @@ require 'time'
 require 'kleister'
 
 api_instance = Kleister::AuthApi.new
-auth_login = Kleister::AuthLogin.new({username: 'username_example', password: 'password_example'}) # AuthLogin | The credentials to authenticate
+login_auth_request = Kleister::LoginAuthRequest.new({username: 'username_example', password: 'password_example'}) # LoginAuthRequest | The credentials to authenticate
 
 begin
   # Authenticate an user by credentials
-  result = api_instance.login_auth(auth_login)
+  result = api_instance.login_auth(login_auth_request)
   p result
 rescue Kleister::ApiError => e
   puts "Error when calling AuthApi->login_auth: #{e}"
@@ -233,12 +167,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<AuthToken>, Integer, Hash)> login_auth_with_http_info(auth_login)
+> <Array(<AuthToken>, Integer, Hash)> login_auth_with_http_info(login_auth_request)
 
 ```ruby
 begin
   # Authenticate an user by credentials
-  data, status_code, headers = api_instance.login_auth_with_http_info(auth_login)
+  data, status_code, headers = api_instance.login_auth_with_http_info(login_auth_request)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <AuthToken>
@@ -251,7 +185,69 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **auth_login** | [**AuthLogin**](AuthLogin.md) | The credentials to authenticate |  |
+| **login_auth_request** | [**LoginAuthRequest**](LoginAuthRequest.md) | The credentials to authenticate |  |
+
+### Return type
+
+[**AuthToken**](AuthToken.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## redirect_auth
+
+> <AuthToken> redirect_auth(redirect_auth_request)
+
+Retrieve real token after redirect
+
+### Examples
+
+```ruby
+require 'time'
+require 'kleister'
+
+api_instance = Kleister::AuthApi.new
+redirect_auth_request = Kleister::RedirectAuthRequest.new({token: 'token_example'}) # RedirectAuthRequest | The redirect token to authenticate
+
+begin
+  # Retrieve real token after redirect
+  result = api_instance.redirect_auth(redirect_auth_request)
+  p result
+rescue Kleister::ApiError => e
+  puts "Error when calling AuthApi->redirect_auth: #{e}"
+end
+```
+
+#### Using the redirect_auth_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<AuthToken>, Integer, Hash)> redirect_auth_with_http_info(redirect_auth_request)
+
+```ruby
+begin
+  # Retrieve real token after redirect
+  data, status_code, headers = api_instance.redirect_auth_with_http_info(redirect_auth_request)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <AuthToken>
+rescue Kleister::ApiError => e
+  puts "Error when calling AuthApi->redirect_auth_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **redirect_auth_request** | [**RedirectAuthRequest**](RedirectAuthRequest.md) | The redirect token to authenticate |  |
 
 ### Return type
 
@@ -280,19 +276,14 @@ require 'time'
 require 'kleister'
 # setup authorization
 Kleister.configure do |config|
-  # Configure API key authorization: Cookie
-  config.api_key['Cookie'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Cookie'] = 'Bearer'
-
   # Configure HTTP basic authorization: Basic
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 
   # Configure API key authorization: Header
-  config.api_key['Header'] = 'YOUR API KEY'
+  config.api_key['X-API-Key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Header'] = 'Bearer'
+  # config.api_key_prefix['X-API-Key'] = 'Bearer'
 
   # Configure Bearer authorization: Bearer
   config.access_token = 'YOUR_BEARER_TOKEN'
@@ -337,12 +328,73 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[Cookie](../README.md#Cookie), [Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
+[Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
 - **Accept**: application/json
+
+
+## request_provider
+
+> request_provider(provider)
+
+Request the redirect to defined provider
+
+### Examples
+
+```ruby
+require 'time'
+require 'kleister'
+
+api_instance = Kleister::AuthApi.new
+provider = '"github"' # String | An identifier for the auth provider
+
+begin
+  # Request the redirect to defined provider
+  api_instance.request_provider(provider)
+rescue Kleister::ApiError => e
+  puts "Error when calling AuthApi->request_provider: #{e}"
+end
+```
+
+#### Using the request_provider_with_http_info variant
+
+This returns an Array which contains the response data (`nil` in this case), status code and headers.
+
+> <Array(nil, Integer, Hash)> request_provider_with_http_info(provider)
+
+```ruby
+begin
+  # Request the redirect to defined provider
+  data, status_code, headers = api_instance.request_provider_with_http_info(provider)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => nil
+rescue Kleister::ApiError => e
+  puts "Error when calling AuthApi->request_provider_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **provider** | **String** | An identifier for the auth provider |  |
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: text/html
 
 
 ## verify_auth
@@ -358,19 +410,14 @@ require 'time'
 require 'kleister'
 # setup authorization
 Kleister.configure do |config|
-  # Configure API key authorization: Cookie
-  config.api_key['Cookie'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Cookie'] = 'Bearer'
-
   # Configure HTTP basic authorization: Basic
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 
   # Configure API key authorization: Header
-  config.api_key['Header'] = 'YOUR API KEY'
+  config.api_key['X-API-Key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Header'] = 'Bearer'
+  # config.api_key_prefix['X-API-Key'] = 'Bearer'
 
   # Configure Bearer authorization: Bearer
   config.access_token = 'YOUR_BEARER_TOKEN'
@@ -415,7 +462,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[Cookie](../README.md#Cookie), [Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
+[Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 

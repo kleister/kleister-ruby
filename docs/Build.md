@@ -16,7 +16,6 @@
 | **quilt** | [**Quilt**](Quilt.md) |  | [optional] |
 | **fabric_id** | **String** |  | [optional] |
 | **fabric** | [**Fabric**](Fabric.md) |  | [optional] |
-| **slug** | **String** |  | [optional] |
 | **name** | **String** |  | [optional] |
 | **java** | **String** |  | [optional] |
 | **memory** | **String** |  | [optional] |
@@ -44,7 +43,6 @@ instance = Kleister::Build.new(
   quilt: null,
   fabric_id: null,
   fabric: null,
-  slug: null,
   name: null,
   java: null,
   memory: null,

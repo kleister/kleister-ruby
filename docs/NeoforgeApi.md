@@ -13,7 +13,7 @@ All URIs are relative to *https://try.kleister.eu/api/v1*
 
 ## attach_neoforge_to_build
 
-> <Notification> attach_neoforge_to_build(neoforge_id, neoforge_build_params)
+> <Notification> attach_neoforge_to_build(neoforge_id, attach_minecraft_to_build_request)
 
 Attach a build to a Neoforge version
 
@@ -24,31 +24,26 @@ require 'time'
 require 'kleister'
 # setup authorization
 Kleister.configure do |config|
-  # Configure API key authorization: Cookie
-  config.api_key['Cookie'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Cookie'] = 'Bearer'
-
   # Configure HTTP basic authorization: Basic
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 
   # Configure API key authorization: Header
-  config.api_key['Header'] = 'YOUR API KEY'
+  config.api_key['X-API-Key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Header'] = 'Bearer'
+  # config.api_key_prefix['X-API-Key'] = 'Bearer'
 
   # Configure Bearer authorization: Bearer
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
 api_instance = Kleister::NeoforgeApi.new
-neoforge_id = 'neoforge_id_example' # String | A neoforge identifier or slug
-neoforge_build_params = Kleister::NeoforgeBuildParams.new({pack: 'pack_example', build: 'build_example'}) # NeoforgeBuildParams | The build data to attach
+neoforge_id = '"neoforge-1"' # String | A neoforge identifier or slug
+attach_minecraft_to_build_request = Kleister::AttachMinecraftToBuildRequest.new({pack: 'pack_example', build: 'build_example'}) # AttachMinecraftToBuildRequest | The neoforge build data to create or update
 
 begin
   # Attach a build to a Neoforge version
-  result = api_instance.attach_neoforge_to_build(neoforge_id, neoforge_build_params)
+  result = api_instance.attach_neoforge_to_build(neoforge_id, attach_minecraft_to_build_request)
   p result
 rescue Kleister::ApiError => e
   puts "Error when calling NeoforgeApi->attach_neoforge_to_build: #{e}"
@@ -59,12 +54,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Notification>, Integer, Hash)> attach_neoforge_to_build_with_http_info(neoforge_id, neoforge_build_params)
+> <Array(<Notification>, Integer, Hash)> attach_neoforge_to_build_with_http_info(neoforge_id, attach_minecraft_to_build_request)
 
 ```ruby
 begin
   # Attach a build to a Neoforge version
-  data, status_code, headers = api_instance.attach_neoforge_to_build_with_http_info(neoforge_id, neoforge_build_params)
+  data, status_code, headers = api_instance.attach_neoforge_to_build_with_http_info(neoforge_id, attach_minecraft_to_build_request)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Notification>
@@ -78,7 +73,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **neoforge_id** | **String** | A neoforge identifier or slug |  |
-| **neoforge_build_params** | [**NeoforgeBuildParams**](NeoforgeBuildParams.md) | The build data to attach |  |
+| **attach_minecraft_to_build_request** | [**AttachMinecraftToBuildRequest**](AttachMinecraftToBuildRequest.md) | The neoforge build data to create or update |  |
 
 ### Return type
 
@@ -86,7 +81,7 @@ end
 
 ### Authorization
 
-[Cookie](../README.md#Cookie), [Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
+[Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -96,7 +91,7 @@ end
 
 ## delete_neoforge_from_build
 
-> <Notification> delete_neoforge_from_build(neoforge_id, neoforge_build_params)
+> <Notification> delete_neoforge_from_build(neoforge_id, attach_minecraft_to_build_request)
 
 Unlink a build from a Neoforge version
 
@@ -107,31 +102,26 @@ require 'time'
 require 'kleister'
 # setup authorization
 Kleister.configure do |config|
-  # Configure API key authorization: Cookie
-  config.api_key['Cookie'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Cookie'] = 'Bearer'
-
   # Configure HTTP basic authorization: Basic
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 
   # Configure API key authorization: Header
-  config.api_key['Header'] = 'YOUR API KEY'
+  config.api_key['X-API-Key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Header'] = 'Bearer'
+  # config.api_key_prefix['X-API-Key'] = 'Bearer'
 
   # Configure Bearer authorization: Bearer
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
 api_instance = Kleister::NeoforgeApi.new
-neoforge_id = 'neoforge_id_example' # String | A neoforge identifier or slug
-neoforge_build_params = Kleister::NeoforgeBuildParams.new({pack: 'pack_example', build: 'build_example'}) # NeoforgeBuildParams | The build data to unlink
+neoforge_id = '"neoforge-1"' # String | A neoforge identifier or slug
+attach_minecraft_to_build_request = Kleister::AttachMinecraftToBuildRequest.new({pack: 'pack_example', build: 'build_example'}) # AttachMinecraftToBuildRequest | The neoforge build data to create or update
 
 begin
   # Unlink a build from a Neoforge version
-  result = api_instance.delete_neoforge_from_build(neoforge_id, neoforge_build_params)
+  result = api_instance.delete_neoforge_from_build(neoforge_id, attach_minecraft_to_build_request)
   p result
 rescue Kleister::ApiError => e
   puts "Error when calling NeoforgeApi->delete_neoforge_from_build: #{e}"
@@ -142,12 +132,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Notification>, Integer, Hash)> delete_neoforge_from_build_with_http_info(neoforge_id, neoforge_build_params)
+> <Array(<Notification>, Integer, Hash)> delete_neoforge_from_build_with_http_info(neoforge_id, attach_minecraft_to_build_request)
 
 ```ruby
 begin
   # Unlink a build from a Neoforge version
-  data, status_code, headers = api_instance.delete_neoforge_from_build_with_http_info(neoforge_id, neoforge_build_params)
+  data, status_code, headers = api_instance.delete_neoforge_from_build_with_http_info(neoforge_id, attach_minecraft_to_build_request)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Notification>
@@ -161,7 +151,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **neoforge_id** | **String** | A neoforge identifier or slug |  |
-| **neoforge_build_params** | [**NeoforgeBuildParams**](NeoforgeBuildParams.md) | The build data to unlink |  |
+| **attach_minecraft_to_build_request** | [**AttachMinecraftToBuildRequest**](AttachMinecraftToBuildRequest.md) | The neoforge build data to create or update |  |
 
 ### Return type
 
@@ -169,7 +159,7 @@ end
 
 ### Authorization
 
-[Cookie](../README.md#Cookie), [Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
+[Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -179,7 +169,7 @@ end
 
 ## list_neoforge_builds
 
-> <NeoforgeBuilds> list_neoforge_builds(neoforge_id, opts)
+> <ListNeoforgeBuilds200Response> list_neoforge_builds(neoforge_id, opts)
 
 Fetch the builds attached to a Neoforge version
 
@@ -190,29 +180,24 @@ require 'time'
 require 'kleister'
 # setup authorization
 Kleister.configure do |config|
-  # Configure API key authorization: Cookie
-  config.api_key['Cookie'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Cookie'] = 'Bearer'
-
   # Configure HTTP basic authorization: Basic
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 
   # Configure API key authorization: Header
-  config.api_key['Header'] = 'YOUR API KEY'
+  config.api_key['X-API-Key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Header'] = 'Bearer'
+  # config.api_key_prefix['X-API-Key'] = 'Bearer'
 
   # Configure Bearer authorization: Bearer
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
 api_instance = Kleister::NeoforgeApi.new
-neoforge_id = 'neoforge_id_example' # String | A neoforge identifier or slug
+neoforge_id = '"neoforge-1"' # String | A neoforge identifier or slug
 opts = {
-  search: '"John Doe"', # String | Search query
-  sort: 'build_name', # String | Sorting column
+  search: 'search_example', # String | Search query
+  sort: 'sort_example', # String | Sorting column
   order: 'asc', # String | Sorting order
   limit: 100, # Integer | Paging limit
   offset: 0 # Integer | Paging offset
@@ -231,7 +216,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<NeoforgeBuilds>, Integer, Hash)> list_neoforge_builds_with_http_info(neoforge_id, opts)
+> <Array(<ListNeoforgeBuilds200Response>, Integer, Hash)> list_neoforge_builds_with_http_info(neoforge_id, opts)
 
 ```ruby
 begin
@@ -239,7 +224,7 @@ begin
   data, status_code, headers = api_instance.list_neoforge_builds_with_http_info(neoforge_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <NeoforgeBuilds>
+  p data # => <ListNeoforgeBuilds200Response>
 rescue Kleister::ApiError => e
   puts "Error when calling NeoforgeApi->list_neoforge_builds_with_http_info: #{e}"
 end
@@ -251,18 +236,18 @@ end
 | ---- | ---- | ----------- | ----- |
 | **neoforge_id** | **String** | A neoforge identifier or slug |  |
 | **search** | **String** | Search query | [optional] |
-| **sort** | **String** | Sorting column | [optional][default to &#39;build_name&#39;] |
+| **sort** | **String** | Sorting column | [optional] |
 | **order** | **String** | Sorting order | [optional][default to &#39;asc&#39;] |
 | **limit** | **Integer** | Paging limit | [optional][default to 100] |
 | **offset** | **Integer** | Paging offset | [optional][default to 0] |
 
 ### Return type
 
-[**NeoforgeBuilds**](NeoforgeBuilds.md)
+[**ListNeoforgeBuilds200Response**](ListNeoforgeBuilds200Response.md)
 
 ### Authorization
 
-[Cookie](../README.md#Cookie), [Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
+[Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -272,7 +257,7 @@ end
 
 ## list_neoforges
 
-> <Neoforges> list_neoforges(opts)
+> <ListNeoforges200Response> list_neoforges(opts)
 
 Fetch the available Neoforge versions
 
@@ -283,19 +268,14 @@ require 'time'
 require 'kleister'
 # setup authorization
 Kleister.configure do |config|
-  # Configure API key authorization: Cookie
-  config.api_key['Cookie'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Cookie'] = 'Bearer'
-
   # Configure HTTP basic authorization: Basic
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 
   # Configure API key authorization: Header
-  config.api_key['Header'] = 'YOUR API KEY'
+  config.api_key['X-API-Key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Header'] = 'Bearer'
+  # config.api_key_prefix['X-API-Key'] = 'Bearer'
 
   # Configure Bearer authorization: Bearer
   config.access_token = 'YOUR_BEARER_TOKEN'
@@ -303,7 +283,7 @@ end
 
 api_instance = Kleister::NeoforgeApi.new
 opts = {
-  search: '"John Doe"' # String | Search query
+  search: 'search_example' # String | Search query
 }
 
 begin
@@ -319,7 +299,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Neoforges>, Integer, Hash)> list_neoforges_with_http_info(opts)
+> <Array(<ListNeoforges200Response>, Integer, Hash)> list_neoforges_with_http_info(opts)
 
 ```ruby
 begin
@@ -327,7 +307,7 @@ begin
   data, status_code, headers = api_instance.list_neoforges_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <Neoforges>
+  p data # => <ListNeoforges200Response>
 rescue Kleister::ApiError => e
   puts "Error when calling NeoforgeApi->list_neoforges_with_http_info: #{e}"
 end
@@ -341,11 +321,11 @@ end
 
 ### Return type
 
-[**Neoforges**](Neoforges.md)
+[**ListNeoforges200Response**](ListNeoforges200Response.md)
 
 ### Authorization
 
-[Cookie](../README.md#Cookie), [Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
+[Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -366,19 +346,14 @@ require 'time'
 require 'kleister'
 # setup authorization
 Kleister.configure do |config|
-  # Configure API key authorization: Cookie
-  config.api_key['Cookie'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Cookie'] = 'Bearer'
-
   # Configure HTTP basic authorization: Basic
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 
   # Configure API key authorization: Header
-  config.api_key['Header'] = 'YOUR API KEY'
+  config.api_key['X-API-Key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Header'] = 'Bearer'
+  # config.api_key_prefix['X-API-Key'] = 'Bearer'
 
   # Configure Bearer authorization: Bearer
   config.access_token = 'YOUR_BEARER_TOKEN'
@@ -423,7 +398,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[Cookie](../README.md#Cookie), [Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
+[Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 

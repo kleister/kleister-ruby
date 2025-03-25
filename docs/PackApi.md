@@ -5,21 +5,21 @@ All URIs are relative to *https://try.kleister.eu/api/v1*
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
 | [**attach_build_to_version**](PackApi.md#attach_build_to_version) | **POST** /packs/{pack_id}/builds/{build_id}/versions | Attach a version to a build |
-| [**attach_pack_to_team**](PackApi.md#attach_pack_to_team) | **POST** /packs/{pack_id}/teams | Attach a team to pack |
+| [**attach_pack_to_group**](PackApi.md#attach_pack_to_group) | **POST** /packs/{pack_id}/groups | Attach a group to pack |
 | [**attach_pack_to_user**](PackApi.md#attach_pack_to_user) | **POST** /packs/{pack_id}/users | Attach a user to pack |
 | [**create_build**](PackApi.md#create_build) | **POST** /packs/{pack_id}/builds | Create a new build for a pack |
 | [**create_pack**](PackApi.md#create_pack) | **POST** /packs | Create a new pack |
 | [**delete_build**](PackApi.md#delete_build) | **DELETE** /packs/{pack_id}/builds/{build_id} | Delete a specific build for a pack |
 | [**delete_build_from_version**](PackApi.md#delete_build_from_version) | **DELETE** /packs/{pack_id}/builds/{build_id}/versions | Unlink a version from a build |
 | [**delete_pack**](PackApi.md#delete_pack) | **DELETE** /packs/{pack_id} | Delete a specific pack |
-| [**delete_pack_from_team**](PackApi.md#delete_pack_from_team) | **DELETE** /packs/{pack_id}/teams | Unlink a team from pack |
+| [**delete_pack_from_group**](PackApi.md#delete_pack_from_group) | **DELETE** /packs/{pack_id}/groups | Unlink a group from pack |
 | [**delete_pack_from_user**](PackApi.md#delete_pack_from_user) | **DELETE** /packs/{pack_id}/users | Unlink a user from pack |
 | [**list_build_versions**](PackApi.md#list_build_versions) | **GET** /packs/{pack_id}/builds/{build_id}/versions | Fetch all versions attached to build |
 | [**list_builds**](PackApi.md#list_builds) | **GET** /packs/{pack_id}/builds | Fetch all available builds for a pack |
-| [**list_pack_teams**](PackApi.md#list_pack_teams) | **GET** /packs/{pack_id}/teams | Fetch all teams attached to pack |
+| [**list_pack_groups**](PackApi.md#list_pack_groups) | **GET** /packs/{pack_id}/groups | Fetch all groups attached to pack |
 | [**list_pack_users**](PackApi.md#list_pack_users) | **GET** /packs/{pack_id}/users | Fetch all users attached to pack |
 | [**list_packs**](PackApi.md#list_packs) | **GET** /packs | Fetch all available packs |
-| [**permit_pack_team**](PackApi.md#permit_pack_team) | **PUT** /packs/{pack_id}/teams | Update team perms for pack |
+| [**permit_pack_group**](PackApi.md#permit_pack_group) | **PUT** /packs/{pack_id}/groups | Update group perms for pack |
 | [**permit_pack_user**](PackApi.md#permit_pack_user) | **PUT** /packs/{pack_id}/users | Update user perms for pack |
 | [**show_build**](PackApi.md#show_build) | **GET** /packs/{pack_id}/builds/{build_id} | Fetch a specific build for a pack |
 | [**show_pack**](PackApi.md#show_pack) | **GET** /packs/{pack_id} | Fetch a specific pack |
@@ -29,7 +29,7 @@ All URIs are relative to *https://try.kleister.eu/api/v1*
 
 ## attach_build_to_version
 
-> <Notification> attach_build_to_version(pack_id, build_id, build_version_params)
+> <Notification> attach_build_to_version(pack_id, build_id, attach_build_to_version_request)
 
 Attach a version to a build
 
@@ -40,32 +40,27 @@ require 'time'
 require 'kleister'
 # setup authorization
 Kleister.configure do |config|
-  # Configure API key authorization: Cookie
-  config.api_key['Cookie'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Cookie'] = 'Bearer'
-
   # Configure HTTP basic authorization: Basic
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 
   # Configure API key authorization: Header
-  config.api_key['Header'] = 'YOUR API KEY'
+  config.api_key['X-API-Key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Header'] = 'Bearer'
+  # config.api_key_prefix['X-API-Key'] = 'Bearer'
 
   # Configure Bearer authorization: Bearer
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
 api_instance = Kleister::PackApi.new
-pack_id = 'pack_id_example' # String | A pack identifier or slug
-build_id = 'build_id_example' # String | A build identifier or slug
-build_version_params = Kleister::BuildVersionParams.new({mod: 'mod_example', version: 'version_example'}) # BuildVersionParams | The build version data to attach
+pack_id = '"pack-1"' # String | A pack identifier or slug
+build_id = '"build-1"' # String | A build identifier or slug
+attach_build_to_version_request = Kleister::AttachBuildToVersionRequest.new({mod: 'mod_example', version: 'version_example'}) # AttachBuildToVersionRequest | The build version data to create or delete
 
 begin
   # Attach a version to a build
-  result = api_instance.attach_build_to_version(pack_id, build_id, build_version_params)
+  result = api_instance.attach_build_to_version(pack_id, build_id, attach_build_to_version_request)
   p result
 rescue Kleister::ApiError => e
   puts "Error when calling PackApi->attach_build_to_version: #{e}"
@@ -76,12 +71,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Notification>, Integer, Hash)> attach_build_to_version_with_http_info(pack_id, build_id, build_version_params)
+> <Array(<Notification>, Integer, Hash)> attach_build_to_version_with_http_info(pack_id, build_id, attach_build_to_version_request)
 
 ```ruby
 begin
   # Attach a version to a build
-  data, status_code, headers = api_instance.attach_build_to_version_with_http_info(pack_id, build_id, build_version_params)
+  data, status_code, headers = api_instance.attach_build_to_version_with_http_info(pack_id, build_id, attach_build_to_version_request)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Notification>
@@ -96,7 +91,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **pack_id** | **String** | A pack identifier or slug |  |
 | **build_id** | **String** | A build identifier or slug |  |
-| **build_version_params** | [**BuildVersionParams**](BuildVersionParams.md) | The build version data to attach |  |
+| **attach_build_to_version_request** | [**AttachBuildToVersionRequest**](AttachBuildToVersionRequest.md) | The build version data to create or delete |  |
 
 ### Return type
 
@@ -104,7 +99,7 @@ end
 
 ### Authorization
 
-[Cookie](../README.md#Cookie), [Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
+[Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -112,11 +107,11 @@ end
 - **Accept**: application/json
 
 
-## attach_pack_to_team
+## attach_pack_to_group
 
-> <Notification> attach_pack_to_team(pack_id, pack_team_params)
+> <Notification> attach_pack_to_group(pack_id, permit_pack_group_request)
 
-Attach a team to pack
+Attach a group to pack
 
 ### Examples
 
@@ -125,52 +120,47 @@ require 'time'
 require 'kleister'
 # setup authorization
 Kleister.configure do |config|
-  # Configure API key authorization: Cookie
-  config.api_key['Cookie'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Cookie'] = 'Bearer'
-
   # Configure HTTP basic authorization: Basic
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 
   # Configure API key authorization: Header
-  config.api_key['Header'] = 'YOUR API KEY'
+  config.api_key['X-API-Key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Header'] = 'Bearer'
+  # config.api_key_prefix['X-API-Key'] = 'Bearer'
 
   # Configure Bearer authorization: Bearer
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
 api_instance = Kleister::PackApi.new
-pack_id = 'pack_id_example' # String | A pack identifier or slug
-pack_team_params = Kleister::PackTeamParams.new({team: 'team_example'}) # PackTeamParams | The team data to attach
+pack_id = '"pack-1"' # String | A pack identifier or slug
+permit_pack_group_request = Kleister::PermitPackGroupRequest.new({group: 'group_example', perm: 'perm_example'}) # PermitPackGroupRequest | The pack group data to permit
 
 begin
-  # Attach a team to pack
-  result = api_instance.attach_pack_to_team(pack_id, pack_team_params)
+  # Attach a group to pack
+  result = api_instance.attach_pack_to_group(pack_id, permit_pack_group_request)
   p result
 rescue Kleister::ApiError => e
-  puts "Error when calling PackApi->attach_pack_to_team: #{e}"
+  puts "Error when calling PackApi->attach_pack_to_group: #{e}"
 end
 ```
 
-#### Using the attach_pack_to_team_with_http_info variant
+#### Using the attach_pack_to_group_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Notification>, Integer, Hash)> attach_pack_to_team_with_http_info(pack_id, pack_team_params)
+> <Array(<Notification>, Integer, Hash)> attach_pack_to_group_with_http_info(pack_id, permit_pack_group_request)
 
 ```ruby
 begin
-  # Attach a team to pack
-  data, status_code, headers = api_instance.attach_pack_to_team_with_http_info(pack_id, pack_team_params)
+  # Attach a group to pack
+  data, status_code, headers = api_instance.attach_pack_to_group_with_http_info(pack_id, permit_pack_group_request)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Notification>
 rescue Kleister::ApiError => e
-  puts "Error when calling PackApi->attach_pack_to_team_with_http_info: #{e}"
+  puts "Error when calling PackApi->attach_pack_to_group_with_http_info: #{e}"
 end
 ```
 
@@ -179,7 +169,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **pack_id** | **String** | A pack identifier or slug |  |
-| **pack_team_params** | [**PackTeamParams**](PackTeamParams.md) | The team data to attach |  |
+| **permit_pack_group_request** | [**PermitPackGroupRequest**](PermitPackGroupRequest.md) | The pack group data to permit |  |
 
 ### Return type
 
@@ -187,7 +177,7 @@ end
 
 ### Authorization
 
-[Cookie](../README.md#Cookie), [Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
+[Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -197,7 +187,7 @@ end
 
 ## attach_pack_to_user
 
-> <Notification> attach_pack_to_user(pack_id, pack_user_params)
+> <Notification> attach_pack_to_user(pack_id, permit_pack_user_request)
 
 Attach a user to pack
 
@@ -208,31 +198,26 @@ require 'time'
 require 'kleister'
 # setup authorization
 Kleister.configure do |config|
-  # Configure API key authorization: Cookie
-  config.api_key['Cookie'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Cookie'] = 'Bearer'
-
   # Configure HTTP basic authorization: Basic
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 
   # Configure API key authorization: Header
-  config.api_key['Header'] = 'YOUR API KEY'
+  config.api_key['X-API-Key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Header'] = 'Bearer'
+  # config.api_key_prefix['X-API-Key'] = 'Bearer'
 
   # Configure Bearer authorization: Bearer
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
 api_instance = Kleister::PackApi.new
-pack_id = 'pack_id_example' # String | A pack identifier or slug
-pack_user_params = Kleister::PackUserParams.new({user: 'user_example'}) # PackUserParams | The user data to attach
+pack_id = '"pack-1"' # String | A pack identifier or slug
+permit_pack_user_request = Kleister::PermitPackUserRequest.new({user: 'user_example', perm: 'perm_example'}) # PermitPackUserRequest | The pack user data to permit
 
 begin
   # Attach a user to pack
-  result = api_instance.attach_pack_to_user(pack_id, pack_user_params)
+  result = api_instance.attach_pack_to_user(pack_id, permit_pack_user_request)
   p result
 rescue Kleister::ApiError => e
   puts "Error when calling PackApi->attach_pack_to_user: #{e}"
@@ -243,12 +228,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Notification>, Integer, Hash)> attach_pack_to_user_with_http_info(pack_id, pack_user_params)
+> <Array(<Notification>, Integer, Hash)> attach_pack_to_user_with_http_info(pack_id, permit_pack_user_request)
 
 ```ruby
 begin
   # Attach a user to pack
-  data, status_code, headers = api_instance.attach_pack_to_user_with_http_info(pack_id, pack_user_params)
+  data, status_code, headers = api_instance.attach_pack_to_user_with_http_info(pack_id, permit_pack_user_request)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Notification>
@@ -262,7 +247,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **pack_id** | **String** | A pack identifier or slug |  |
-| **pack_user_params** | [**PackUserParams**](PackUserParams.md) | The user data to attach |  |
+| **permit_pack_user_request** | [**PermitPackUserRequest**](PermitPackUserRequest.md) | The pack user data to permit |  |
 
 ### Return type
 
@@ -270,7 +255,7 @@ end
 
 ### Authorization
 
-[Cookie](../README.md#Cookie), [Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
+[Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -280,7 +265,7 @@ end
 
 ## create_build
 
-> <Build> create_build(pack_id, build)
+> <Build> create_build(pack_id, create_build_request)
 
 Create a new build for a pack
 
@@ -291,31 +276,26 @@ require 'time'
 require 'kleister'
 # setup authorization
 Kleister.configure do |config|
-  # Configure API key authorization: Cookie
-  config.api_key['Cookie'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Cookie'] = 'Bearer'
-
   # Configure HTTP basic authorization: Basic
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 
   # Configure API key authorization: Header
-  config.api_key['Header'] = 'YOUR API KEY'
+  config.api_key['X-API-Key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Header'] = 'Bearer'
+  # config.api_key_prefix['X-API-Key'] = 'Bearer'
 
   # Configure Bearer authorization: Bearer
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
 api_instance = Kleister::PackApi.new
-pack_id = 'pack_id_example' # String | A pack identifier or slug
-build = Kleister::Build.new # Build | The build data to create
+pack_id = '"pack-1"' # String | A pack identifier or slug
+create_build_request = Kleister::CreateBuildRequest.new # CreateBuildRequest | The build data to create
 
 begin
   # Create a new build for a pack
-  result = api_instance.create_build(pack_id, build)
+  result = api_instance.create_build(pack_id, create_build_request)
   p result
 rescue Kleister::ApiError => e
   puts "Error when calling PackApi->create_build: #{e}"
@@ -326,12 +306,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Build>, Integer, Hash)> create_build_with_http_info(pack_id, build)
+> <Array(<Build>, Integer, Hash)> create_build_with_http_info(pack_id, create_build_request)
 
 ```ruby
 begin
   # Create a new build for a pack
-  data, status_code, headers = api_instance.create_build_with_http_info(pack_id, build)
+  data, status_code, headers = api_instance.create_build_with_http_info(pack_id, create_build_request)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Build>
@@ -345,7 +325,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **pack_id** | **String** | A pack identifier or slug |  |
-| **build** | [**Build**](Build.md) | The build data to create |  |
+| **create_build_request** | [**CreateBuildRequest**](CreateBuildRequest.md) | The build data to create |  |
 
 ### Return type
 
@@ -353,7 +333,7 @@ end
 
 ### Authorization
 
-[Cookie](../README.md#Cookie), [Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
+[Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -363,7 +343,7 @@ end
 
 ## create_pack
 
-> <Pack> create_pack(pack)
+> <Pack> create_pack(create_pack_request)
 
 Create a new pack
 
@@ -374,30 +354,25 @@ require 'time'
 require 'kleister'
 # setup authorization
 Kleister.configure do |config|
-  # Configure API key authorization: Cookie
-  config.api_key['Cookie'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Cookie'] = 'Bearer'
-
   # Configure HTTP basic authorization: Basic
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 
   # Configure API key authorization: Header
-  config.api_key['Header'] = 'YOUR API KEY'
+  config.api_key['X-API-Key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Header'] = 'Bearer'
+  # config.api_key_prefix['X-API-Key'] = 'Bearer'
 
   # Configure Bearer authorization: Bearer
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
 api_instance = Kleister::PackApi.new
-pack = Kleister::Pack.new # Pack | The pack data to create
+create_pack_request = Kleister::CreatePackRequest.new # CreatePackRequest | The pack data to create
 
 begin
   # Create a new pack
-  result = api_instance.create_pack(pack)
+  result = api_instance.create_pack(create_pack_request)
   p result
 rescue Kleister::ApiError => e
   puts "Error when calling PackApi->create_pack: #{e}"
@@ -408,12 +383,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Pack>, Integer, Hash)> create_pack_with_http_info(pack)
+> <Array(<Pack>, Integer, Hash)> create_pack_with_http_info(create_pack_request)
 
 ```ruby
 begin
   # Create a new pack
-  data, status_code, headers = api_instance.create_pack_with_http_info(pack)
+  data, status_code, headers = api_instance.create_pack_with_http_info(create_pack_request)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Pack>
@@ -426,7 +401,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **pack** | [**Pack**](Pack.md) | The pack data to create |  |
+| **create_pack_request** | [**CreatePackRequest**](CreatePackRequest.md) | The pack data to create |  |
 
 ### Return type
 
@@ -434,7 +409,7 @@ end
 
 ### Authorization
 
-[Cookie](../README.md#Cookie), [Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
+[Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -455,27 +430,22 @@ require 'time'
 require 'kleister'
 # setup authorization
 Kleister.configure do |config|
-  # Configure API key authorization: Cookie
-  config.api_key['Cookie'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Cookie'] = 'Bearer'
-
   # Configure HTTP basic authorization: Basic
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 
   # Configure API key authorization: Header
-  config.api_key['Header'] = 'YOUR API KEY'
+  config.api_key['X-API-Key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Header'] = 'Bearer'
+  # config.api_key_prefix['X-API-Key'] = 'Bearer'
 
   # Configure Bearer authorization: Bearer
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
 api_instance = Kleister::PackApi.new
-pack_id = 'pack_id_example' # String | A pack identifier or slug
-build_id = 'build_id_example' # String | A build identifier or slug
+pack_id = '"pack-1"' # String | A pack identifier or slug
+build_id = '"build-1"' # String | A build identifier or slug
 
 begin
   # Delete a specific build for a pack
@@ -517,7 +487,7 @@ end
 
 ### Authorization
 
-[Cookie](../README.md#Cookie), [Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
+[Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -527,7 +497,7 @@ end
 
 ## delete_build_from_version
 
-> <Notification> delete_build_from_version(pack_id, build_id, build_version_params)
+> <Notification> delete_build_from_version(pack_id, build_id, attach_build_to_version_request)
 
 Unlink a version from a build
 
@@ -538,32 +508,27 @@ require 'time'
 require 'kleister'
 # setup authorization
 Kleister.configure do |config|
-  # Configure API key authorization: Cookie
-  config.api_key['Cookie'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Cookie'] = 'Bearer'
-
   # Configure HTTP basic authorization: Basic
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 
   # Configure API key authorization: Header
-  config.api_key['Header'] = 'YOUR API KEY'
+  config.api_key['X-API-Key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Header'] = 'Bearer'
+  # config.api_key_prefix['X-API-Key'] = 'Bearer'
 
   # Configure Bearer authorization: Bearer
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
 api_instance = Kleister::PackApi.new
-pack_id = 'pack_id_example' # String | A pack identifier or slug
-build_id = 'build_id_example' # String | A build identifier or slug
-build_version_params = Kleister::BuildVersionParams.new({mod: 'mod_example', version: 'version_example'}) # BuildVersionParams | The build version data to unlink
+pack_id = '"pack-1"' # String | A pack identifier or slug
+build_id = '"build-1"' # String | A build identifier or slug
+attach_build_to_version_request = Kleister::AttachBuildToVersionRequest.new({mod: 'mod_example', version: 'version_example'}) # AttachBuildToVersionRequest | The build version data to create or delete
 
 begin
   # Unlink a version from a build
-  result = api_instance.delete_build_from_version(pack_id, build_id, build_version_params)
+  result = api_instance.delete_build_from_version(pack_id, build_id, attach_build_to_version_request)
   p result
 rescue Kleister::ApiError => e
   puts "Error when calling PackApi->delete_build_from_version: #{e}"
@@ -574,12 +539,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Notification>, Integer, Hash)> delete_build_from_version_with_http_info(pack_id, build_id, build_version_params)
+> <Array(<Notification>, Integer, Hash)> delete_build_from_version_with_http_info(pack_id, build_id, attach_build_to_version_request)
 
 ```ruby
 begin
   # Unlink a version from a build
-  data, status_code, headers = api_instance.delete_build_from_version_with_http_info(pack_id, build_id, build_version_params)
+  data, status_code, headers = api_instance.delete_build_from_version_with_http_info(pack_id, build_id, attach_build_to_version_request)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Notification>
@@ -594,7 +559,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **pack_id** | **String** | A pack identifier or slug |  |
 | **build_id** | **String** | A build identifier or slug |  |
-| **build_version_params** | [**BuildVersionParams**](BuildVersionParams.md) | The build version data to unlink |  |
+| **attach_build_to_version_request** | [**AttachBuildToVersionRequest**](AttachBuildToVersionRequest.md) | The build version data to create or delete |  |
 
 ### Return type
 
@@ -602,7 +567,7 @@ end
 
 ### Authorization
 
-[Cookie](../README.md#Cookie), [Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
+[Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -623,26 +588,21 @@ require 'time'
 require 'kleister'
 # setup authorization
 Kleister.configure do |config|
-  # Configure API key authorization: Cookie
-  config.api_key['Cookie'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Cookie'] = 'Bearer'
-
   # Configure HTTP basic authorization: Basic
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 
   # Configure API key authorization: Header
-  config.api_key['Header'] = 'YOUR API KEY'
+  config.api_key['X-API-Key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Header'] = 'Bearer'
+  # config.api_key_prefix['X-API-Key'] = 'Bearer'
 
   # Configure Bearer authorization: Bearer
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
 api_instance = Kleister::PackApi.new
-pack_id = 'pack_id_example' # String | A pack identifier or slug
+pack_id = '"pack-1"' # String | A pack identifier or slug
 
 begin
   # Delete a specific pack
@@ -683,7 +643,7 @@ end
 
 ### Authorization
 
-[Cookie](../README.md#Cookie), [Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
+[Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -691,11 +651,11 @@ end
 - **Accept**: application/json
 
 
-## delete_pack_from_team
+## delete_pack_from_group
 
-> <Notification> delete_pack_from_team(pack_id, pack_team_params)
+> <Notification> delete_pack_from_group(pack_id, delete_pack_from_group_request)
 
-Unlink a team from pack
+Unlink a group from pack
 
 ### Examples
 
@@ -704,52 +664,47 @@ require 'time'
 require 'kleister'
 # setup authorization
 Kleister.configure do |config|
-  # Configure API key authorization: Cookie
-  config.api_key['Cookie'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Cookie'] = 'Bearer'
-
   # Configure HTTP basic authorization: Basic
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 
   # Configure API key authorization: Header
-  config.api_key['Header'] = 'YOUR API KEY'
+  config.api_key['X-API-Key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Header'] = 'Bearer'
+  # config.api_key_prefix['X-API-Key'] = 'Bearer'
 
   # Configure Bearer authorization: Bearer
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
 api_instance = Kleister::PackApi.new
-pack_id = 'pack_id_example' # String | A pack identifier or slug
-pack_team_params = Kleister::PackTeamParams.new({team: 'team_example'}) # PackTeamParams | The pack team data to unlink
+pack_id = '"pack-1"' # String | A pack identifier or slug
+delete_pack_from_group_request = Kleister::DeletePackFromGroupRequest.new({group: 'group_example'}) # DeletePackFromGroupRequest | The pack group data to unlink
 
 begin
-  # Unlink a team from pack
-  result = api_instance.delete_pack_from_team(pack_id, pack_team_params)
+  # Unlink a group from pack
+  result = api_instance.delete_pack_from_group(pack_id, delete_pack_from_group_request)
   p result
 rescue Kleister::ApiError => e
-  puts "Error when calling PackApi->delete_pack_from_team: #{e}"
+  puts "Error when calling PackApi->delete_pack_from_group: #{e}"
 end
 ```
 
-#### Using the delete_pack_from_team_with_http_info variant
+#### Using the delete_pack_from_group_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Notification>, Integer, Hash)> delete_pack_from_team_with_http_info(pack_id, pack_team_params)
+> <Array(<Notification>, Integer, Hash)> delete_pack_from_group_with_http_info(pack_id, delete_pack_from_group_request)
 
 ```ruby
 begin
-  # Unlink a team from pack
-  data, status_code, headers = api_instance.delete_pack_from_team_with_http_info(pack_id, pack_team_params)
+  # Unlink a group from pack
+  data, status_code, headers = api_instance.delete_pack_from_group_with_http_info(pack_id, delete_pack_from_group_request)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Notification>
 rescue Kleister::ApiError => e
-  puts "Error when calling PackApi->delete_pack_from_team_with_http_info: #{e}"
+  puts "Error when calling PackApi->delete_pack_from_group_with_http_info: #{e}"
 end
 ```
 
@@ -758,7 +713,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **pack_id** | **String** | A pack identifier or slug |  |
-| **pack_team_params** | [**PackTeamParams**](PackTeamParams.md) | The pack team data to unlink |  |
+| **delete_pack_from_group_request** | [**DeletePackFromGroupRequest**](DeletePackFromGroupRequest.md) | The pack group data to unlink |  |
 
 ### Return type
 
@@ -766,7 +721,7 @@ end
 
 ### Authorization
 
-[Cookie](../README.md#Cookie), [Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
+[Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -776,7 +731,7 @@ end
 
 ## delete_pack_from_user
 
-> <Notification> delete_pack_from_user(pack_id, pack_user_params)
+> <Notification> delete_pack_from_user(pack_id, delete_pack_from_user_request)
 
 Unlink a user from pack
 
@@ -787,31 +742,26 @@ require 'time'
 require 'kleister'
 # setup authorization
 Kleister.configure do |config|
-  # Configure API key authorization: Cookie
-  config.api_key['Cookie'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Cookie'] = 'Bearer'
-
   # Configure HTTP basic authorization: Basic
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 
   # Configure API key authorization: Header
-  config.api_key['Header'] = 'YOUR API KEY'
+  config.api_key['X-API-Key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Header'] = 'Bearer'
+  # config.api_key_prefix['X-API-Key'] = 'Bearer'
 
   # Configure Bearer authorization: Bearer
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
 api_instance = Kleister::PackApi.new
-pack_id = 'pack_id_example' # String | A pack identifier or slug
-pack_user_params = Kleister::PackUserParams.new({user: 'user_example'}) # PackUserParams | The pack user data to unlink
+pack_id = '"pack-1"' # String | A pack identifier or slug
+delete_pack_from_user_request = Kleister::DeletePackFromUserRequest.new({user: 'user_example'}) # DeletePackFromUserRequest | The pack user data to unlink
 
 begin
   # Unlink a user from pack
-  result = api_instance.delete_pack_from_user(pack_id, pack_user_params)
+  result = api_instance.delete_pack_from_user(pack_id, delete_pack_from_user_request)
   p result
 rescue Kleister::ApiError => e
   puts "Error when calling PackApi->delete_pack_from_user: #{e}"
@@ -822,12 +772,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Notification>, Integer, Hash)> delete_pack_from_user_with_http_info(pack_id, pack_user_params)
+> <Array(<Notification>, Integer, Hash)> delete_pack_from_user_with_http_info(pack_id, delete_pack_from_user_request)
 
 ```ruby
 begin
   # Unlink a user from pack
-  data, status_code, headers = api_instance.delete_pack_from_user_with_http_info(pack_id, pack_user_params)
+  data, status_code, headers = api_instance.delete_pack_from_user_with_http_info(pack_id, delete_pack_from_user_request)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Notification>
@@ -841,7 +791,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **pack_id** | **String** | A pack identifier or slug |  |
-| **pack_user_params** | [**PackUserParams**](PackUserParams.md) | The pack user data to unlink |  |
+| **delete_pack_from_user_request** | [**DeletePackFromUserRequest**](DeletePackFromUserRequest.md) | The pack user data to unlink |  |
 
 ### Return type
 
@@ -849,7 +799,7 @@ end
 
 ### Authorization
 
-[Cookie](../README.md#Cookie), [Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
+[Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -859,7 +809,7 @@ end
 
 ## list_build_versions
 
-> <BuildVersions> list_build_versions(pack_id, build_id, opts)
+> <ListBuildVersions200Response> list_build_versions(pack_id, build_id, opts)
 
 Fetch all versions attached to build
 
@@ -870,30 +820,25 @@ require 'time'
 require 'kleister'
 # setup authorization
 Kleister.configure do |config|
-  # Configure API key authorization: Cookie
-  config.api_key['Cookie'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Cookie'] = 'Bearer'
-
   # Configure HTTP basic authorization: Basic
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 
   # Configure API key authorization: Header
-  config.api_key['Header'] = 'YOUR API KEY'
+  config.api_key['X-API-Key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Header'] = 'Bearer'
+  # config.api_key_prefix['X-API-Key'] = 'Bearer'
 
   # Configure Bearer authorization: Bearer
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
 api_instance = Kleister::PackApi.new
-pack_id = 'pack_id_example' # String | A pack identifier or slug
-build_id = 'build_id_example' # String | A build identifier or slug
+pack_id = '"pack-1"' # String | A pack identifier or slug
+build_id = '"build-1"' # String | A build identifier or slug
 opts = {
-  search: '"John Doe"', # String | Search query
-  sort: 'name', # String | Sorting column
+  search: 'search_example', # String | Search query
+  sort: 'sort_example', # String | Sorting column
   order: 'asc', # String | Sorting order
   limit: 100, # Integer | Paging limit
   offset: 0 # Integer | Paging offset
@@ -912,7 +857,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<BuildVersions>, Integer, Hash)> list_build_versions_with_http_info(pack_id, build_id, opts)
+> <Array(<ListBuildVersions200Response>, Integer, Hash)> list_build_versions_with_http_info(pack_id, build_id, opts)
 
 ```ruby
 begin
@@ -920,7 +865,7 @@ begin
   data, status_code, headers = api_instance.list_build_versions_with_http_info(pack_id, build_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <BuildVersions>
+  p data # => <ListBuildVersions200Response>
 rescue Kleister::ApiError => e
   puts "Error when calling PackApi->list_build_versions_with_http_info: #{e}"
 end
@@ -933,18 +878,18 @@ end
 | **pack_id** | **String** | A pack identifier or slug |  |
 | **build_id** | **String** | A build identifier or slug |  |
 | **search** | **String** | Search query | [optional] |
-| **sort** | **String** | Sorting column | [optional][default to &#39;name&#39;] |
+| **sort** | **String** | Sorting column | [optional] |
 | **order** | **String** | Sorting order | [optional][default to &#39;asc&#39;] |
-| **limit** | **Integer** | Paging limit | [optional] |
-| **offset** | **Integer** | Paging offset | [optional] |
+| **limit** | **Integer** | Paging limit | [optional][default to 100] |
+| **offset** | **Integer** | Paging offset | [optional][default to 0] |
 
 ### Return type
 
-[**BuildVersions**](BuildVersions.md)
+[**ListBuildVersions200Response**](ListBuildVersions200Response.md)
 
 ### Authorization
 
-[Cookie](../README.md#Cookie), [Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
+[Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -954,7 +899,7 @@ end
 
 ## list_builds
 
-> <Builds> list_builds(pack_id, opts)
+> <ListBuilds200Response> list_builds(pack_id, opts)
 
 Fetch all available builds for a pack
 
@@ -965,29 +910,24 @@ require 'time'
 require 'kleister'
 # setup authorization
 Kleister.configure do |config|
-  # Configure API key authorization: Cookie
-  config.api_key['Cookie'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Cookie'] = 'Bearer'
-
   # Configure HTTP basic authorization: Basic
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 
   # Configure API key authorization: Header
-  config.api_key['Header'] = 'YOUR API KEY'
+  config.api_key['X-API-Key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Header'] = 'Bearer'
+  # config.api_key_prefix['X-API-Key'] = 'Bearer'
 
   # Configure Bearer authorization: Bearer
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
 api_instance = Kleister::PackApi.new
-pack_id = 'pack_id_example' # String | A pack identifier or slug
+pack_id = '"pack-1"' # String | A pack identifier or slug
 opts = {
-  search: '"John Doe"', # String | Search query
-  sort: 'name', # String | Sorting column
+  search: 'search_example', # String | Search query
+  sort: 'sort_example', # String | Sorting column
   order: 'asc', # String | Sorting order
   limit: 100, # Integer | Paging limit
   offset: 0 # Integer | Paging offset
@@ -1006,7 +946,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Builds>, Integer, Hash)> list_builds_with_http_info(pack_id, opts)
+> <Array(<ListBuilds200Response>, Integer, Hash)> list_builds_with_http_info(pack_id, opts)
 
 ```ruby
 begin
@@ -1014,7 +954,7 @@ begin
   data, status_code, headers = api_instance.list_builds_with_http_info(pack_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <Builds>
+  p data # => <ListBuilds200Response>
 rescue Kleister::ApiError => e
   puts "Error when calling PackApi->list_builds_with_http_info: #{e}"
 end
@@ -1026,18 +966,18 @@ end
 | ---- | ---- | ----------- | ----- |
 | **pack_id** | **String** | A pack identifier or slug |  |
 | **search** | **String** | Search query | [optional] |
-| **sort** | **String** | Sorting column | [optional][default to &#39;name&#39;] |
+| **sort** | **String** | Sorting column | [optional] |
 | **order** | **String** | Sorting order | [optional][default to &#39;asc&#39;] |
-| **limit** | **Integer** | Paging limit | [optional] |
-| **offset** | **Integer** | Paging offset | [optional] |
+| **limit** | **Integer** | Paging limit | [optional][default to 100] |
+| **offset** | **Integer** | Paging offset | [optional][default to 0] |
 
 ### Return type
 
-[**Builds**](Builds.md)
+[**ListBuilds200Response**](ListBuilds200Response.md)
 
 ### Authorization
 
-[Cookie](../README.md#Cookie), [Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
+[Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -1045,11 +985,11 @@ end
 - **Accept**: application/json
 
 
-## list_pack_teams
+## list_pack_groups
 
-> <PackTeams> list_pack_teams(pack_id, opts)
+> <ListPackGroups200Response> list_pack_groups(pack_id, opts)
 
-Fetch all teams attached to pack
+Fetch all groups attached to pack
 
 ### Examples
 
@@ -1058,58 +998,53 @@ require 'time'
 require 'kleister'
 # setup authorization
 Kleister.configure do |config|
-  # Configure API key authorization: Cookie
-  config.api_key['Cookie'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Cookie'] = 'Bearer'
-
   # Configure HTTP basic authorization: Basic
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 
   # Configure API key authorization: Header
-  config.api_key['Header'] = 'YOUR API KEY'
+  config.api_key['X-API-Key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Header'] = 'Bearer'
+  # config.api_key_prefix['X-API-Key'] = 'Bearer'
 
   # Configure Bearer authorization: Bearer
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
 api_instance = Kleister::PackApi.new
-pack_id = 'pack_id_example' # String | A pack identifier or slug
+pack_id = '"pack-1"' # String | A pack identifier or slug
 opts = {
-  search: '"John Doe"', # String | Search query
-  sort: 'slug', # String | Sorting column
+  search: 'search_example', # String | Search query
+  sort: 'sort_example', # String | Sorting column
   order: 'asc', # String | Sorting order
   limit: 100, # Integer | Paging limit
   offset: 0 # Integer | Paging offset
 }
 
 begin
-  # Fetch all teams attached to pack
-  result = api_instance.list_pack_teams(pack_id, opts)
+  # Fetch all groups attached to pack
+  result = api_instance.list_pack_groups(pack_id, opts)
   p result
 rescue Kleister::ApiError => e
-  puts "Error when calling PackApi->list_pack_teams: #{e}"
+  puts "Error when calling PackApi->list_pack_groups: #{e}"
 end
 ```
 
-#### Using the list_pack_teams_with_http_info variant
+#### Using the list_pack_groups_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<PackTeams>, Integer, Hash)> list_pack_teams_with_http_info(pack_id, opts)
+> <Array(<ListPackGroups200Response>, Integer, Hash)> list_pack_groups_with_http_info(pack_id, opts)
 
 ```ruby
 begin
-  # Fetch all teams attached to pack
-  data, status_code, headers = api_instance.list_pack_teams_with_http_info(pack_id, opts)
+  # Fetch all groups attached to pack
+  data, status_code, headers = api_instance.list_pack_groups_with_http_info(pack_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <PackTeams>
+  p data # => <ListPackGroups200Response>
 rescue Kleister::ApiError => e
-  puts "Error when calling PackApi->list_pack_teams_with_http_info: #{e}"
+  puts "Error when calling PackApi->list_pack_groups_with_http_info: #{e}"
 end
 ```
 
@@ -1119,18 +1054,18 @@ end
 | ---- | ---- | ----------- | ----- |
 | **pack_id** | **String** | A pack identifier or slug |  |
 | **search** | **String** | Search query | [optional] |
-| **sort** | **String** | Sorting column | [optional][default to &#39;name&#39;] |
+| **sort** | **String** | Sorting column | [optional] |
 | **order** | **String** | Sorting order | [optional][default to &#39;asc&#39;] |
 | **limit** | **Integer** | Paging limit | [optional][default to 100] |
 | **offset** | **Integer** | Paging offset | [optional][default to 0] |
 
 ### Return type
 
-[**PackTeams**](PackTeams.md)
+[**ListPackGroups200Response**](ListPackGroups200Response.md)
 
 ### Authorization
 
-[Cookie](../README.md#Cookie), [Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
+[Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -1140,7 +1075,7 @@ end
 
 ## list_pack_users
 
-> <PackUsers> list_pack_users(pack_id, opts)
+> <ListPackUsers200Response> list_pack_users(pack_id, opts)
 
 Fetch all users attached to pack
 
@@ -1151,29 +1086,24 @@ require 'time'
 require 'kleister'
 # setup authorization
 Kleister.configure do |config|
-  # Configure API key authorization: Cookie
-  config.api_key['Cookie'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Cookie'] = 'Bearer'
-
   # Configure HTTP basic authorization: Basic
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 
   # Configure API key authorization: Header
-  config.api_key['Header'] = 'YOUR API KEY'
+  config.api_key['X-API-Key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Header'] = 'Bearer'
+  # config.api_key_prefix['X-API-Key'] = 'Bearer'
 
   # Configure Bearer authorization: Bearer
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
 api_instance = Kleister::PackApi.new
-pack_id = 'pack_id_example' # String | A pack identifier or slug
+pack_id = '"pack-1"' # String | A pack identifier or slug
 opts = {
-  search: '"John Doe"', # String | Search query
-  sort: 'username', # String | Sorting column
+  search: 'search_example', # String | Search query
+  sort: 'sort_example', # String | Sorting column
   order: 'asc', # String | Sorting order
   limit: 100, # Integer | Paging limit
   offset: 0 # Integer | Paging offset
@@ -1192,7 +1122,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<PackUsers>, Integer, Hash)> list_pack_users_with_http_info(pack_id, opts)
+> <Array(<ListPackUsers200Response>, Integer, Hash)> list_pack_users_with_http_info(pack_id, opts)
 
 ```ruby
 begin
@@ -1200,7 +1130,7 @@ begin
   data, status_code, headers = api_instance.list_pack_users_with_http_info(pack_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <PackUsers>
+  p data # => <ListPackUsers200Response>
 rescue Kleister::ApiError => e
   puts "Error when calling PackApi->list_pack_users_with_http_info: #{e}"
 end
@@ -1212,18 +1142,18 @@ end
 | ---- | ---- | ----------- | ----- |
 | **pack_id** | **String** | A pack identifier or slug |  |
 | **search** | **String** | Search query | [optional] |
-| **sort** | **String** | Sorting column | [optional][default to &#39;username&#39;] |
+| **sort** | **String** | Sorting column | [optional] |
 | **order** | **String** | Sorting order | [optional][default to &#39;asc&#39;] |
 | **limit** | **Integer** | Paging limit | [optional][default to 100] |
 | **offset** | **Integer** | Paging offset | [optional][default to 0] |
 
 ### Return type
 
-[**PackUsers**](PackUsers.md)
+[**ListPackUsers200Response**](ListPackUsers200Response.md)
 
 ### Authorization
 
-[Cookie](../README.md#Cookie), [Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
+[Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -1233,7 +1163,7 @@ end
 
 ## list_packs
 
-> <Packs> list_packs(opts)
+> <ListPacks200Response> list_packs(opts)
 
 Fetch all available packs
 
@@ -1244,19 +1174,14 @@ require 'time'
 require 'kleister'
 # setup authorization
 Kleister.configure do |config|
-  # Configure API key authorization: Cookie
-  config.api_key['Cookie'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Cookie'] = 'Bearer'
-
   # Configure HTTP basic authorization: Basic
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 
   # Configure API key authorization: Header
-  config.api_key['Header'] = 'YOUR API KEY'
+  config.api_key['X-API-Key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Header'] = 'Bearer'
+  # config.api_key_prefix['X-API-Key'] = 'Bearer'
 
   # Configure Bearer authorization: Bearer
   config.access_token = 'YOUR_BEARER_TOKEN'
@@ -1264,8 +1189,8 @@ end
 
 api_instance = Kleister::PackApi.new
 opts = {
-  search: '"John Doe"', # String | Search query
-  sort: 'slug', # String | Sorting column
+  search: 'search_example', # String | Search query
+  sort: 'sort_example', # String | Sorting column
   order: 'asc', # String | Sorting order
   limit: 100, # Integer | Paging limit
   offset: 0 # Integer | Paging offset
@@ -1284,7 +1209,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Packs>, Integer, Hash)> list_packs_with_http_info(opts)
+> <Array(<ListPacks200Response>, Integer, Hash)> list_packs_with_http_info(opts)
 
 ```ruby
 begin
@@ -1292,7 +1217,7 @@ begin
   data, status_code, headers = api_instance.list_packs_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <Packs>
+  p data # => <ListPacks200Response>
 rescue Kleister::ApiError => e
   puts "Error when calling PackApi->list_packs_with_http_info: #{e}"
 end
@@ -1303,18 +1228,18 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **search** | **String** | Search query | [optional] |
-| **sort** | **String** | Sorting column | [optional][default to &#39;name&#39;] |
+| **sort** | **String** | Sorting column | [optional] |
 | **order** | **String** | Sorting order | [optional][default to &#39;asc&#39;] |
 | **limit** | **Integer** | Paging limit | [optional][default to 100] |
 | **offset** | **Integer** | Paging offset | [optional][default to 0] |
 
 ### Return type
 
-[**Packs**](Packs.md)
+[**ListPacks200Response**](ListPacks200Response.md)
 
 ### Authorization
 
-[Cookie](../README.md#Cookie), [Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
+[Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -1322,11 +1247,11 @@ end
 - **Accept**: application/json
 
 
-## permit_pack_team
+## permit_pack_group
 
-> <Notification> permit_pack_team(pack_id, pack_team_params)
+> <Notification> permit_pack_group(pack_id, permit_pack_group_request)
 
-Update team perms for pack
+Update group perms for pack
 
 ### Examples
 
@@ -1335,52 +1260,47 @@ require 'time'
 require 'kleister'
 # setup authorization
 Kleister.configure do |config|
-  # Configure API key authorization: Cookie
-  config.api_key['Cookie'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Cookie'] = 'Bearer'
-
   # Configure HTTP basic authorization: Basic
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 
   # Configure API key authorization: Header
-  config.api_key['Header'] = 'YOUR API KEY'
+  config.api_key['X-API-Key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Header'] = 'Bearer'
+  # config.api_key_prefix['X-API-Key'] = 'Bearer'
 
   # Configure Bearer authorization: Bearer
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
 api_instance = Kleister::PackApi.new
-pack_id = 'pack_id_example' # String | A pack identifier or slug
-pack_team_params = Kleister::PackTeamParams.new({team: 'team_example'}) # PackTeamParams | The team data to update
+pack_id = '"pack-1"' # String | A pack identifier or slug
+permit_pack_group_request = Kleister::PermitPackGroupRequest.new({group: 'group_example', perm: 'perm_example'}) # PermitPackGroupRequest | The pack group data to permit
 
 begin
-  # Update team perms for pack
-  result = api_instance.permit_pack_team(pack_id, pack_team_params)
+  # Update group perms for pack
+  result = api_instance.permit_pack_group(pack_id, permit_pack_group_request)
   p result
 rescue Kleister::ApiError => e
-  puts "Error when calling PackApi->permit_pack_team: #{e}"
+  puts "Error when calling PackApi->permit_pack_group: #{e}"
 end
 ```
 
-#### Using the permit_pack_team_with_http_info variant
+#### Using the permit_pack_group_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Notification>, Integer, Hash)> permit_pack_team_with_http_info(pack_id, pack_team_params)
+> <Array(<Notification>, Integer, Hash)> permit_pack_group_with_http_info(pack_id, permit_pack_group_request)
 
 ```ruby
 begin
-  # Update team perms for pack
-  data, status_code, headers = api_instance.permit_pack_team_with_http_info(pack_id, pack_team_params)
+  # Update group perms for pack
+  data, status_code, headers = api_instance.permit_pack_group_with_http_info(pack_id, permit_pack_group_request)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Notification>
 rescue Kleister::ApiError => e
-  puts "Error when calling PackApi->permit_pack_team_with_http_info: #{e}"
+  puts "Error when calling PackApi->permit_pack_group_with_http_info: #{e}"
 end
 ```
 
@@ -1389,7 +1309,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **pack_id** | **String** | A pack identifier or slug |  |
-| **pack_team_params** | [**PackTeamParams**](PackTeamParams.md) | The team data to update |  |
+| **permit_pack_group_request** | [**PermitPackGroupRequest**](PermitPackGroupRequest.md) | The pack group data to permit |  |
 
 ### Return type
 
@@ -1397,7 +1317,7 @@ end
 
 ### Authorization
 
-[Cookie](../README.md#Cookie), [Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
+[Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -1407,7 +1327,7 @@ end
 
 ## permit_pack_user
 
-> <Notification> permit_pack_user(pack_id, pack_user_params)
+> <Notification> permit_pack_user(pack_id, permit_pack_user_request)
 
 Update user perms for pack
 
@@ -1418,31 +1338,26 @@ require 'time'
 require 'kleister'
 # setup authorization
 Kleister.configure do |config|
-  # Configure API key authorization: Cookie
-  config.api_key['Cookie'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Cookie'] = 'Bearer'
-
   # Configure HTTP basic authorization: Basic
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 
   # Configure API key authorization: Header
-  config.api_key['Header'] = 'YOUR API KEY'
+  config.api_key['X-API-Key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Header'] = 'Bearer'
+  # config.api_key_prefix['X-API-Key'] = 'Bearer'
 
   # Configure Bearer authorization: Bearer
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
 api_instance = Kleister::PackApi.new
-pack_id = 'pack_id_example' # String | A pack identifier or slug
-pack_user_params = Kleister::PackUserParams.new({user: 'user_example'}) # PackUserParams | The user data to update
+pack_id = '"pack-1"' # String | A pack identifier or slug
+permit_pack_user_request = Kleister::PermitPackUserRequest.new({user: 'user_example', perm: 'perm_example'}) # PermitPackUserRequest | The pack user data to permit
 
 begin
   # Update user perms for pack
-  result = api_instance.permit_pack_user(pack_id, pack_user_params)
+  result = api_instance.permit_pack_user(pack_id, permit_pack_user_request)
   p result
 rescue Kleister::ApiError => e
   puts "Error when calling PackApi->permit_pack_user: #{e}"
@@ -1453,12 +1368,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Notification>, Integer, Hash)> permit_pack_user_with_http_info(pack_id, pack_user_params)
+> <Array(<Notification>, Integer, Hash)> permit_pack_user_with_http_info(pack_id, permit_pack_user_request)
 
 ```ruby
 begin
   # Update user perms for pack
-  data, status_code, headers = api_instance.permit_pack_user_with_http_info(pack_id, pack_user_params)
+  data, status_code, headers = api_instance.permit_pack_user_with_http_info(pack_id, permit_pack_user_request)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Notification>
@@ -1472,7 +1387,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **pack_id** | **String** | A pack identifier or slug |  |
-| **pack_user_params** | [**PackUserParams**](PackUserParams.md) | The user data to update |  |
+| **permit_pack_user_request** | [**PermitPackUserRequest**](PermitPackUserRequest.md) | The pack user data to permit |  |
 
 ### Return type
 
@@ -1480,7 +1395,7 @@ end
 
 ### Authorization
 
-[Cookie](../README.md#Cookie), [Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
+[Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -1501,27 +1416,22 @@ require 'time'
 require 'kleister'
 # setup authorization
 Kleister.configure do |config|
-  # Configure API key authorization: Cookie
-  config.api_key['Cookie'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Cookie'] = 'Bearer'
-
   # Configure HTTP basic authorization: Basic
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 
   # Configure API key authorization: Header
-  config.api_key['Header'] = 'YOUR API KEY'
+  config.api_key['X-API-Key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Header'] = 'Bearer'
+  # config.api_key_prefix['X-API-Key'] = 'Bearer'
 
   # Configure Bearer authorization: Bearer
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
 api_instance = Kleister::PackApi.new
-pack_id = 'pack_id_example' # String | A pack identifier or slug
-build_id = 'build_id_example' # String | A build identifier or slug
+pack_id = '"pack-1"' # String | A pack identifier or slug
+build_id = '"build-1"' # String | A build identifier or slug
 
 begin
   # Fetch a specific build for a pack
@@ -1563,7 +1473,7 @@ end
 
 ### Authorization
 
-[Cookie](../README.md#Cookie), [Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
+[Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -1584,26 +1494,21 @@ require 'time'
 require 'kleister'
 # setup authorization
 Kleister.configure do |config|
-  # Configure API key authorization: Cookie
-  config.api_key['Cookie'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Cookie'] = 'Bearer'
-
   # Configure HTTP basic authorization: Basic
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 
   # Configure API key authorization: Header
-  config.api_key['Header'] = 'YOUR API KEY'
+  config.api_key['X-API-Key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Header'] = 'Bearer'
+  # config.api_key_prefix['X-API-Key'] = 'Bearer'
 
   # Configure Bearer authorization: Bearer
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
 api_instance = Kleister::PackApi.new
-pack_id = 'pack_id_example' # String | A pack identifier or slug
+pack_id = '"pack-1"' # String | A pack identifier or slug
 
 begin
   # Fetch a specific pack
@@ -1644,7 +1549,7 @@ end
 
 ### Authorization
 
-[Cookie](../README.md#Cookie), [Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
+[Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -1654,7 +1559,7 @@ end
 
 ## update_build
 
-> <Build> update_build(pack_id, build_id, build)
+> <Build> update_build(pack_id, build_id, create_build_request)
 
 Update a specific build for a pack
 
@@ -1665,32 +1570,27 @@ require 'time'
 require 'kleister'
 # setup authorization
 Kleister.configure do |config|
-  # Configure API key authorization: Cookie
-  config.api_key['Cookie'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Cookie'] = 'Bearer'
-
   # Configure HTTP basic authorization: Basic
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 
   # Configure API key authorization: Header
-  config.api_key['Header'] = 'YOUR API KEY'
+  config.api_key['X-API-Key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Header'] = 'Bearer'
+  # config.api_key_prefix['X-API-Key'] = 'Bearer'
 
   # Configure Bearer authorization: Bearer
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
 api_instance = Kleister::PackApi.new
-pack_id = 'pack_id_example' # String | A pack identifier or slug
-build_id = 'build_id_example' # String | A build identifier or slug
-build = Kleister::Build.new # Build | The build data to update
+pack_id = '"pack-1"' # String | A pack identifier or slug
+build_id = '"build-1"' # String | A build identifier or slug
+create_build_request = Kleister::CreateBuildRequest.new # CreateBuildRequest | The build data to update
 
 begin
   # Update a specific build for a pack
-  result = api_instance.update_build(pack_id, build_id, build)
+  result = api_instance.update_build(pack_id, build_id, create_build_request)
   p result
 rescue Kleister::ApiError => e
   puts "Error when calling PackApi->update_build: #{e}"
@@ -1701,12 +1601,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Build>, Integer, Hash)> update_build_with_http_info(pack_id, build_id, build)
+> <Array(<Build>, Integer, Hash)> update_build_with_http_info(pack_id, build_id, create_build_request)
 
 ```ruby
 begin
   # Update a specific build for a pack
-  data, status_code, headers = api_instance.update_build_with_http_info(pack_id, build_id, build)
+  data, status_code, headers = api_instance.update_build_with_http_info(pack_id, build_id, create_build_request)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Build>
@@ -1721,7 +1621,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **pack_id** | **String** | A pack identifier or slug |  |
 | **build_id** | **String** | A build identifier or slug |  |
-| **build** | [**Build**](Build.md) | The build data to update |  |
+| **create_build_request** | [**CreateBuildRequest**](CreateBuildRequest.md) | The build data to update |  |
 
 ### Return type
 
@@ -1729,7 +1629,7 @@ end
 
 ### Authorization
 
-[Cookie](../README.md#Cookie), [Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
+[Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -1739,7 +1639,7 @@ end
 
 ## update_pack
 
-> <Pack> update_pack(pack_id, pack)
+> <Pack> update_pack(pack_id, create_pack_request)
 
 Update a specific pack
 
@@ -1750,31 +1650,26 @@ require 'time'
 require 'kleister'
 # setup authorization
 Kleister.configure do |config|
-  # Configure API key authorization: Cookie
-  config.api_key['Cookie'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Cookie'] = 'Bearer'
-
   # Configure HTTP basic authorization: Basic
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
 
   # Configure API key authorization: Header
-  config.api_key['Header'] = 'YOUR API KEY'
+  config.api_key['X-API-Key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Header'] = 'Bearer'
+  # config.api_key_prefix['X-API-Key'] = 'Bearer'
 
   # Configure Bearer authorization: Bearer
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
 api_instance = Kleister::PackApi.new
-pack_id = 'pack_id_example' # String | A pack identifier or slug
-pack = Kleister::Pack.new # Pack | The pack data to update
+pack_id = '"pack-1"' # String | A pack identifier or slug
+create_pack_request = Kleister::CreatePackRequest.new # CreatePackRequest | The pack data to update
 
 begin
   # Update a specific pack
-  result = api_instance.update_pack(pack_id, pack)
+  result = api_instance.update_pack(pack_id, create_pack_request)
   p result
 rescue Kleister::ApiError => e
   puts "Error when calling PackApi->update_pack: #{e}"
@@ -1785,12 +1680,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Pack>, Integer, Hash)> update_pack_with_http_info(pack_id, pack)
+> <Array(<Pack>, Integer, Hash)> update_pack_with_http_info(pack_id, create_pack_request)
 
 ```ruby
 begin
   # Update a specific pack
-  data, status_code, headers = api_instance.update_pack_with_http_info(pack_id, pack)
+  data, status_code, headers = api_instance.update_pack_with_http_info(pack_id, create_pack_request)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Pack>
@@ -1804,7 +1699,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **pack_id** | **String** | A pack identifier or slug |  |
-| **pack** | [**Pack**](Pack.md) | The pack data to update |  |
+| **create_pack_request** | [**CreatePackRequest**](CreatePackRequest.md) | The pack data to update |  |
 
 ### Return type
 
@@ -1812,7 +1707,7 @@ end
 
 ### Authorization
 
-[Cookie](../README.md#Cookie), [Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
+[Basic](../README.md#Basic), [Header](../README.md#Header), [Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
