@@ -14,8 +14,7 @@ require 'time'
 module Kleister
   # Model to represent build
   class Build
-    attr_accessor :id, :pack, :minecraft_id, :minecraft, :forge_id, :forge, :neoforge_id, :neoforge, :quilt_id, :quilt, :fabric_id, :fabric, :name, :java, :memory, :latest, :recommended, :public,
-                  :created_at, :updated_at
+    attr_accessor :id, :pack, :minecraft_id, :minecraft, :forge_id, :forge, :neoforge_id, :neoforge, :quilt_id, :quilt, :fabric_id, :fabric, :name, :java, :memory, :latest, :recommended, :public, :created_at, :updated_at
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map

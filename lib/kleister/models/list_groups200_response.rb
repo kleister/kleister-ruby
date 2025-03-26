@@ -56,8 +56,7 @@ module Kleister
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) do |(k, v), h|
         unless self.class.attribute_map.key?(k.to_sym)
-          raise ArgumentError,
-                "`#{k}` is not a valid attribute in `Kleister::ListGroups200Response`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          raise ArgumentError, "`#{k}` is not a valid attribute in `Kleister::ListGroups200Response`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
 
         h[k.to_sym] = v
