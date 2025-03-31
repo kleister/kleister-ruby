@@ -1,5 +1,21 @@
 # Changelog
 
+## [1.15.0](https://github.com/kleister/kleister-ruby/compare/v1.14.1...v1.15.0) (2025-03-31)
+
+
+### Features
+
+* automated openapi client update ([2a81ac3](https://github.com/kleister/kleister-ruby/commit/2a81ac385ddd2c854a530c545192733b50857908))
+* **deps:** update dependency pry-byebug to v3.11.0 ([7fe1a83](https://github.com/kleister/kleister-ruby/commit/7fe1a8338b00a2c4ea8514abad26352d717f06b7))
+* **deps:** update dependency rubocop to '~> 1.74.0' ([#96](https://github.com/kleister/kleister-ruby/issues/96)) ([91d13fd](https://github.com/kleister/kleister-ruby/commit/91d13fda3044d30e322d41dc7616c383231d6253))
+* **deps:** update dependency rubocop to '~> 1.75.0' ([#97](https://github.com/kleister/kleister-ruby/issues/97)) ([488d85b](https://github.com/kleister/kleister-ruby/commit/488d85b8a81ca53f0576b5c54b280fb835b80892))
+
+
+### Bugfixes
+
+* **deps:** update dependency rubocop to v1.75.1 ([#98](https://github.com/kleister/kleister-ruby/issues/98)) ([4a59c58](https://github.com/kleister/kleister-ruby/commit/4a59c58be202cff27bc10796d47b9d2319b747ee))
+* use correct spec and update definition ([2fe1b8a](https://github.com/kleister/kleister-ruby/commit/2fe1b8ab42dd98302b3d0d8d510682fd6922ca30))
+
 ## [1.14.1](https://github.com/kleister/kleister-ruby/compare/v1.14.0...v1.14.1) (2025-03-10)
 
 
