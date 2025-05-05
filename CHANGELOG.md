@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.16.0](https://github.com/kleister/kleister-ruby/compare/v1.15.3...v1.16.0) (2025-05-05)
+
+
+### Features
+
+* automated openapi client update ([9f4ab17](https://github.com/kleister/kleister-ruby/commit/9f4ab177f5c010aa6053e10c05def2ff50c27bce))
+
+
+### Bugfixes
+
+* **deps:** update dependency rubocop to v1.75.4 ([#104](https://github.com/kleister/kleister-ruby/issues/104)) ([5eab6ae](https://github.com/kleister/kleister-ruby/commit/5eab6aeea0f637b77f9f6d6d219e9326731bb9f9))
+* **deps:** update dependency rubocop to v1.75.5 ([#105](https://github.com/kleister/kleister-ruby/issues/105)) ([bddd4e2](https://github.com/kleister/kleister-ruby/commit/bddd4e2e149f1e282d6fb535c335e30170cf7522))
+
 ## [1.15.3](https://github.com/kleister/kleister-ruby/compare/v1.15.2...v1.15.3) (2025-04-28)
 
 
