@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.16.1](https://github.com/kleister/kleister-ruby/compare/v1.16.0...v1.16.1) (2025-05-19)
+
+
+### Bugfixes
+
+* **deps:** update dependency rubocop to v1.75.6 ([#107](https://github.com/kleister/kleister-ruby/issues/107)) ([7bad281](https://github.com/kleister/kleister-ruby/commit/7bad281405e8b82ed557f84273140101a88e419d))
+* **deps:** update dependency ruby to v3.4.4 ([#106](https://github.com/kleister/kleister-ruby/issues/106)) ([3b522a1](https://github.com/kleister/kleister-ruby/commit/3b522a187c367916be4afe3a3b84fa9555b42b40))
+
 ## [1.16.0](https://github.com/kleister/kleister-ruby/compare/v1.15.3...v1.16.0) (2025-05-05)
 
 
