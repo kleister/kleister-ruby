@@ -6,7 +6,7 @@ gemHomepage: https://github.com/kleister/kleister-ruby
 gemLicense: Apache-2.0
 gemName: kleister
 gemSummary: Manage mod packs for Minecraft
-gemVersion: 1.18.1
+gemVersion: 1.19.0
 moduleName: Kleister
 library: faraday
 enablePostProcessFile: true
