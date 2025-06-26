@@ -1125,7 +1125,7 @@ end
 
 ## list_mod_groups
 
-> <ListModGroups200Response> list_mod_groups(mod_id, opts)
+> <InlineObject13> list_mod_groups(mod_id, opts)
 
 Fetch all groups attached to mod
 
@@ -1172,7 +1172,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<ListModGroups200Response>, Integer, Hash)> list_mod_groups_with_http_info(mod_id, opts)
+> <Array(<InlineObject13>, Integer, Hash)> list_mod_groups_with_http_info(mod_id, opts)
 
 ```ruby
 begin
@@ -1180,7 +1180,7 @@ begin
   data, status_code, headers = api_instance.list_mod_groups_with_http_info(mod_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <ListModGroups200Response>
+  p data # => <InlineObject13>
 rescue Kleister::ApiError => e
   puts "Error when calling ModApi->list_mod_groups_with_http_info: #{e}"
 end
@@ -1199,7 +1199,7 @@ end
 
 ### Return type
 
-[**ListModGroups200Response**](ListModGroups200Response.md)
+[**InlineObject13**](InlineObject13.md)
 
 ### Authorization
 
@@ -1213,7 +1213,7 @@ end
 
 ## list_mod_users
 
-> <ListModUsers200Response> list_mod_users(mod_id, opts)
+> <InlineObject12> list_mod_users(mod_id, opts)
 
 Fetch all users attached to mod
 
@@ -1260,7 +1260,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<ListModUsers200Response>, Integer, Hash)> list_mod_users_with_http_info(mod_id, opts)
+> <Array(<InlineObject12>, Integer, Hash)> list_mod_users_with_http_info(mod_id, opts)
 
 ```ruby
 begin
@@ -1268,7 +1268,7 @@ begin
   data, status_code, headers = api_instance.list_mod_users_with_http_info(mod_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <ListModUsers200Response>
+  p data # => <InlineObject12>
 rescue Kleister::ApiError => e
   puts "Error when calling ModApi->list_mod_users_with_http_info: #{e}"
 end
@@ -1287,7 +1287,7 @@ end
 
 ### Return type
 
-[**ListModUsers200Response**](ListModUsers200Response.md)
+[**InlineObject12**](InlineObject12.md)
 
 ### Authorization
 
@@ -1301,7 +1301,7 @@ end
 
 ## list_mods
 
-> <ListMods200Response> list_mods(opts)
+> <InlineObject11> list_mods(opts)
 
 Fetch all available mods
 
@@ -1347,7 +1347,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<ListMods200Response>, Integer, Hash)> list_mods_with_http_info(opts)
+> <Array(<InlineObject11>, Integer, Hash)> list_mods_with_http_info(opts)
 
 ```ruby
 begin
@@ -1355,7 +1355,7 @@ begin
   data, status_code, headers = api_instance.list_mods_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <ListMods200Response>
+  p data # => <InlineObject11>
 rescue Kleister::ApiError => e
   puts "Error when calling ModApi->list_mods_with_http_info: #{e}"
 end
@@ -1373,7 +1373,7 @@ end
 
 ### Return type
 
-[**ListMods200Response**](ListMods200Response.md)
+[**InlineObject11**](InlineObject11.md)
 
 ### Authorization
 
@@ -1387,7 +1387,7 @@ end
 
 ## list_version_builds
 
-> <ListVersionBuilds200Response> list_version_builds(mod_id, version_id, opts)
+> <InlineObject15> list_version_builds(mod_id, version_id, opts)
 
 Fetch all builds attached to version
 
@@ -1435,7 +1435,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<ListVersionBuilds200Response>, Integer, Hash)> list_version_builds_with_http_info(mod_id, version_id, opts)
+> <Array(<InlineObject15>, Integer, Hash)> list_version_builds_with_http_info(mod_id, version_id, opts)
 
 ```ruby
 begin
@@ -1443,7 +1443,7 @@ begin
   data, status_code, headers = api_instance.list_version_builds_with_http_info(mod_id, version_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <ListVersionBuilds200Response>
+  p data # => <InlineObject15>
 rescue Kleister::ApiError => e
   puts "Error when calling ModApi->list_version_builds_with_http_info: #{e}"
 end
@@ -1463,7 +1463,7 @@ end
 
 ### Return type
 
-[**ListVersionBuilds200Response**](ListVersionBuilds200Response.md)
+[**InlineObject15**](InlineObject15.md)
 
 ### Authorization
 
@@ -1477,7 +1477,7 @@ end
 
 ## list_versions
 
-> <ListVersions200Response> list_versions(mod_id, opts)
+> <InlineObject14> list_versions(mod_id, opts)
 
 Fetch all available versions for a mod
 
@@ -1524,7 +1524,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<ListVersions200Response>, Integer, Hash)> list_versions_with_http_info(mod_id, opts)
+> <Array(<InlineObject14>, Integer, Hash)> list_versions_with_http_info(mod_id, opts)
 
 ```ruby
 begin
@@ -1532,7 +1532,7 @@ begin
   data, status_code, headers = api_instance.list_versions_with_http_info(mod_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <ListVersions200Response>
+  p data # => <InlineObject14>
 rescue Kleister::ApiError => e
   puts "Error when calling ModApi->list_versions_with_http_info: #{e}"
 end
@@ -1551,7 +1551,7 @@ end
 
 ### Return type
 
-[**ListVersions200Response**](ListVersions200Response.md)
+[**InlineObject14**](InlineObject14.md)
 
 ### Authorization
 

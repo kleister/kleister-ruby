@@ -169,7 +169,7 @@ end
 
 ## list_neoforge_builds
 
-> <ListNeoforgeBuilds200Response> list_neoforge_builds(neoforge_id, opts)
+> <InlineObject6> list_neoforge_builds(neoforge_id, opts)
 
 Fetch the builds attached to a Neoforge version
 
@@ -216,7 +216,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<ListNeoforgeBuilds200Response>, Integer, Hash)> list_neoforge_builds_with_http_info(neoforge_id, opts)
+> <Array(<InlineObject6>, Integer, Hash)> list_neoforge_builds_with_http_info(neoforge_id, opts)
 
 ```ruby
 begin
@@ -224,7 +224,7 @@ begin
   data, status_code, headers = api_instance.list_neoforge_builds_with_http_info(neoforge_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <ListNeoforgeBuilds200Response>
+  p data # => <InlineObject6>
 rescue Kleister::ApiError => e
   puts "Error when calling NeoforgeApi->list_neoforge_builds_with_http_info: #{e}"
 end
@@ -243,7 +243,7 @@ end
 
 ### Return type
 
-[**ListNeoforgeBuilds200Response**](ListNeoforgeBuilds200Response.md)
+[**InlineObject6**](InlineObject6.md)
 
 ### Authorization
 
@@ -257,7 +257,7 @@ end
 
 ## list_neoforges
 
-> <ListNeoforges200Response> list_neoforges(opts)
+> <InlineObject5> list_neoforges(opts)
 
 Fetch the available Neoforge versions
 
@@ -299,7 +299,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<ListNeoforges200Response>, Integer, Hash)> list_neoforges_with_http_info(opts)
+> <Array(<InlineObject5>, Integer, Hash)> list_neoforges_with_http_info(opts)
 
 ```ruby
 begin
@@ -307,7 +307,7 @@ begin
   data, status_code, headers = api_instance.list_neoforges_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <ListNeoforges200Response>
+  p data # => <InlineObject5>
 rescue Kleister::ApiError => e
   puts "Error when calling NeoforgeApi->list_neoforges_with_http_info: #{e}"
 end
@@ -321,7 +321,7 @@ end
 
 ### Return type
 
-[**ListNeoforges200Response**](ListNeoforges200Response.md)
+[**InlineObject5**](InlineObject5.md)
 
 ### Authorization
 

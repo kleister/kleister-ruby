@@ -169,7 +169,7 @@ end
 
 ## list_quilt_builds
 
-> <ListQuiltBuilds200Response> list_quilt_builds(quilt_id, opts)
+> <InlineObject8> list_quilt_builds(quilt_id, opts)
 
 Fetch the builds attached to a Quilt version
 
@@ -216,7 +216,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<ListQuiltBuilds200Response>, Integer, Hash)> list_quilt_builds_with_http_info(quilt_id, opts)
+> <Array(<InlineObject8>, Integer, Hash)> list_quilt_builds_with_http_info(quilt_id, opts)
 
 ```ruby
 begin
@@ -224,7 +224,7 @@ begin
   data, status_code, headers = api_instance.list_quilt_builds_with_http_info(quilt_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <ListQuiltBuilds200Response>
+  p data # => <InlineObject8>
 rescue Kleister::ApiError => e
   puts "Error when calling QuiltApi->list_quilt_builds_with_http_info: #{e}"
 end
@@ -243,7 +243,7 @@ end
 
 ### Return type
 
-[**ListQuiltBuilds200Response**](ListQuiltBuilds200Response.md)
+[**InlineObject8**](InlineObject8.md)
 
 ### Authorization
 
@@ -257,7 +257,7 @@ end
 
 ## list_quilts
 
-> <ListQuilts200Response> list_quilts(opts)
+> <InlineObject7> list_quilts(opts)
 
 Fetch the available Quilt versions
 
@@ -299,7 +299,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<ListQuilts200Response>, Integer, Hash)> list_quilts_with_http_info(opts)
+> <Array(<InlineObject7>, Integer, Hash)> list_quilts_with_http_info(opts)
 
 ```ruby
 begin
@@ -307,7 +307,7 @@ begin
   data, status_code, headers = api_instance.list_quilts_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <ListQuilts200Response>
+  p data # => <InlineObject7>
 rescue Kleister::ApiError => e
   puts "Error when calling QuiltApi->list_quilts_with_http_info: #{e}"
 end
@@ -321,7 +321,7 @@ end
 
 ### Return type
 
-[**ListQuilts200Response**](ListQuilts200Response.md)
+[**InlineObject7**](InlineObject7.md)
 
 ### Authorization
 
