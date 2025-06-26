@@ -169,7 +169,7 @@ end
 
 ## list_fabric_builds
 
-> <ListFabricBuilds200Response> list_fabric_builds(fabric_id, opts)
+> <InlineObject10> list_fabric_builds(fabric_id, opts)
 
 Fetch the builds attached to a Fabric version
 
@@ -216,7 +216,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<ListFabricBuilds200Response>, Integer, Hash)> list_fabric_builds_with_http_info(fabric_id, opts)
+> <Array(<InlineObject10>, Integer, Hash)> list_fabric_builds_with_http_info(fabric_id, opts)
 
 ```ruby
 begin
@@ -224,7 +224,7 @@ begin
   data, status_code, headers = api_instance.list_fabric_builds_with_http_info(fabric_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <ListFabricBuilds200Response>
+  p data # => <InlineObject10>
 rescue Kleister::ApiError => e
   puts "Error when calling FabricApi->list_fabric_builds_with_http_info: #{e}"
 end
@@ -243,7 +243,7 @@ end
 
 ### Return type
 
-[**ListFabricBuilds200Response**](ListFabricBuilds200Response.md)
+[**InlineObject10**](InlineObject10.md)
 
 ### Authorization
 
@@ -257,7 +257,7 @@ end
 
 ## list_fabrics
 
-> <ListFabrics200Response> list_fabrics(opts)
+> <InlineObject9> list_fabrics(opts)
 
 Fetch the available Fabric versions
 
@@ -299,7 +299,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<ListFabrics200Response>, Integer, Hash)> list_fabrics_with_http_info(opts)
+> <Array(<InlineObject9>, Integer, Hash)> list_fabrics_with_http_info(opts)
 
 ```ruby
 begin
@@ -307,7 +307,7 @@ begin
   data, status_code, headers = api_instance.list_fabrics_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <ListFabrics200Response>
+  p data # => <InlineObject9>
 rescue Kleister::ApiError => e
   puts "Error when calling FabricApi->list_fabrics_with_http_info: #{e}"
 end
@@ -321,7 +321,7 @@ end
 
 ### Return type
 
-[**ListFabrics200Response**](ListFabrics200Response.md)
+[**InlineObject9**](InlineObject9.md)
 
 ### Authorization
 

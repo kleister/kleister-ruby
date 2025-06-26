@@ -169,7 +169,7 @@ end
 
 ## list_minecraft_builds
 
-> <ListMinecraftBuilds200Response> list_minecraft_builds(minecraft_id, opts)
+> <InlineObject2> list_minecraft_builds(minecraft_id, opts)
 
 Fetch the builds attached to a Minecraft version
 
@@ -216,7 +216,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<ListMinecraftBuilds200Response>, Integer, Hash)> list_minecraft_builds_with_http_info(minecraft_id, opts)
+> <Array(<InlineObject2>, Integer, Hash)> list_minecraft_builds_with_http_info(minecraft_id, opts)
 
 ```ruby
 begin
@@ -224,7 +224,7 @@ begin
   data, status_code, headers = api_instance.list_minecraft_builds_with_http_info(minecraft_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <ListMinecraftBuilds200Response>
+  p data # => <InlineObject2>
 rescue Kleister::ApiError => e
   puts "Error when calling MinecraftApi->list_minecraft_builds_with_http_info: #{e}"
 end
@@ -243,7 +243,7 @@ end
 
 ### Return type
 
-[**ListMinecraftBuilds200Response**](ListMinecraftBuilds200Response.md)
+[**InlineObject2**](InlineObject2.md)
 
 ### Authorization
 
@@ -257,7 +257,7 @@ end
 
 ## list_minecrafts
 
-> <ListMinecrafts200Response> list_minecrafts(opts)
+> <InlineObject1> list_minecrafts(opts)
 
 Fetch the available Minecraft versions
 
@@ -299,7 +299,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<ListMinecrafts200Response>, Integer, Hash)> list_minecrafts_with_http_info(opts)
+> <Array(<InlineObject1>, Integer, Hash)> list_minecrafts_with_http_info(opts)
 
 ```ruby
 begin
@@ -307,7 +307,7 @@ begin
   data, status_code, headers = api_instance.list_minecrafts_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <ListMinecrafts200Response>
+  p data # => <InlineObject1>
 rescue Kleister::ApiError => e
   puts "Error when calling MinecraftApi->list_minecrafts_with_http_info: #{e}"
 end
@@ -321,7 +321,7 @@ end
 
 ### Return type
 
-[**ListMinecrafts200Response**](ListMinecrafts200Response.md)
+[**InlineObject1**](InlineObject1.md)
 
 ### Authorization
 
