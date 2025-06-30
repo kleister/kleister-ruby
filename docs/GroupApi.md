@@ -645,7 +645,7 @@ end
 
 ## list_group_mods
 
-> <ListGroupMods200Response> list_group_mods(group_id, opts)
+> <InlineObject23> list_group_mods(group_id, opts)
 
 Fetch all mods attached to group
 
@@ -692,7 +692,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<ListGroupMods200Response>, Integer, Hash)> list_group_mods_with_http_info(group_id, opts)
+> <Array(<InlineObject23>, Integer, Hash)> list_group_mods_with_http_info(group_id, opts)
 
 ```ruby
 begin
@@ -700,7 +700,7 @@ begin
   data, status_code, headers = api_instance.list_group_mods_with_http_info(group_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <ListGroupMods200Response>
+  p data # => <InlineObject23>
 rescue Kleister::ApiError => e
   puts "Error when calling GroupApi->list_group_mods_with_http_info: #{e}"
 end
@@ -719,7 +719,7 @@ end
 
 ### Return type
 
-[**ListGroupMods200Response**](ListGroupMods200Response.md)
+[**InlineObject23**](InlineObject23.md)
 
 ### Authorization
 
@@ -733,7 +733,7 @@ end
 
 ## list_group_packs
 
-> <ListGroupPacks200Response> list_group_packs(group_id, opts)
+> <InlineObject24> list_group_packs(group_id, opts)
 
 Fetch all packs attached to group
 
@@ -780,7 +780,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<ListGroupPacks200Response>, Integer, Hash)> list_group_packs_with_http_info(group_id, opts)
+> <Array(<InlineObject24>, Integer, Hash)> list_group_packs_with_http_info(group_id, opts)
 
 ```ruby
 begin
@@ -788,7 +788,7 @@ begin
   data, status_code, headers = api_instance.list_group_packs_with_http_info(group_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <ListGroupPacks200Response>
+  p data # => <InlineObject24>
 rescue Kleister::ApiError => e
   puts "Error when calling GroupApi->list_group_packs_with_http_info: #{e}"
 end
@@ -807,7 +807,7 @@ end
 
 ### Return type
 
-[**ListGroupPacks200Response**](ListGroupPacks200Response.md)
+[**InlineObject24**](InlineObject24.md)
 
 ### Authorization
 
@@ -821,7 +821,7 @@ end
 
 ## list_group_users
 
-> <ListGroupUsers200Response> list_group_users(group_id, opts)
+> <InlineObject22> list_group_users(group_id, opts)
 
 Fetch all users attached to group
 
@@ -868,7 +868,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<ListGroupUsers200Response>, Integer, Hash)> list_group_users_with_http_info(group_id, opts)
+> <Array(<InlineObject22>, Integer, Hash)> list_group_users_with_http_info(group_id, opts)
 
 ```ruby
 begin
@@ -876,7 +876,7 @@ begin
   data, status_code, headers = api_instance.list_group_users_with_http_info(group_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <ListGroupUsers200Response>
+  p data # => <InlineObject22>
 rescue Kleister::ApiError => e
   puts "Error when calling GroupApi->list_group_users_with_http_info: #{e}"
 end
@@ -895,7 +895,7 @@ end
 
 ### Return type
 
-[**ListGroupUsers200Response**](ListGroupUsers200Response.md)
+[**InlineObject22**](InlineObject22.md)
 
 ### Authorization
 
@@ -909,7 +909,7 @@ end
 
 ## list_groups
 
-> <ListGroups200Response> list_groups(opts)
+> <InlineObject21> list_groups(opts)
 
 Fetch all available groups
 
@@ -955,7 +955,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<ListGroups200Response>, Integer, Hash)> list_groups_with_http_info(opts)
+> <Array(<InlineObject21>, Integer, Hash)> list_groups_with_http_info(opts)
 
 ```ruby
 begin
@@ -963,7 +963,7 @@ begin
   data, status_code, headers = api_instance.list_groups_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <ListGroups200Response>
+  p data # => <InlineObject21>
 rescue Kleister::ApiError => e
   puts "Error when calling GroupApi->list_groups_with_http_info: #{e}"
 end
@@ -981,7 +981,7 @@ end
 
 ### Return type
 
-[**ListGroups200Response**](ListGroups200Response.md)
+[**InlineObject21**](InlineObject21.md)
 
 ### Authorization
 

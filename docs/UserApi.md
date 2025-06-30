@@ -645,7 +645,7 @@ end
 
 ## list_user_groups
 
-> <ListUserGroups200Response> list_user_groups(user_id, opts)
+> <InlineObject26> list_user_groups(user_id, opts)
 
 Fetch all groups attached to user
 
@@ -692,7 +692,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<ListUserGroups200Response>, Integer, Hash)> list_user_groups_with_http_info(user_id, opts)
+> <Array(<InlineObject26>, Integer, Hash)> list_user_groups_with_http_info(user_id, opts)
 
 ```ruby
 begin
@@ -700,7 +700,7 @@ begin
   data, status_code, headers = api_instance.list_user_groups_with_http_info(user_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <ListUserGroups200Response>
+  p data # => <InlineObject26>
 rescue Kleister::ApiError => e
   puts "Error when calling UserApi->list_user_groups_with_http_info: #{e}"
 end
@@ -719,7 +719,7 @@ end
 
 ### Return type
 
-[**ListUserGroups200Response**](ListUserGroups200Response.md)
+[**InlineObject26**](InlineObject26.md)
 
 ### Authorization
 
@@ -733,7 +733,7 @@ end
 
 ## list_user_mods
 
-> <ListUserMods200Response> list_user_mods(user_id, opts)
+> <InlineObject27> list_user_mods(user_id, opts)
 
 Fetch all mods attached to user
 
@@ -780,7 +780,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<ListUserMods200Response>, Integer, Hash)> list_user_mods_with_http_info(user_id, opts)
+> <Array(<InlineObject27>, Integer, Hash)> list_user_mods_with_http_info(user_id, opts)
 
 ```ruby
 begin
@@ -788,7 +788,7 @@ begin
   data, status_code, headers = api_instance.list_user_mods_with_http_info(user_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <ListUserMods200Response>
+  p data # => <InlineObject27>
 rescue Kleister::ApiError => e
   puts "Error when calling UserApi->list_user_mods_with_http_info: #{e}"
 end
@@ -807,7 +807,7 @@ end
 
 ### Return type
 
-[**ListUserMods200Response**](ListUserMods200Response.md)
+[**InlineObject27**](InlineObject27.md)
 
 ### Authorization
 
@@ -821,7 +821,7 @@ end
 
 ## list_user_packs
 
-> <ListUserPacks200Response> list_user_packs(user_id, opts)
+> <InlineObject28> list_user_packs(user_id, opts)
 
 Fetch all packs attached to user
 
@@ -868,7 +868,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<ListUserPacks200Response>, Integer, Hash)> list_user_packs_with_http_info(user_id, opts)
+> <Array(<InlineObject28>, Integer, Hash)> list_user_packs_with_http_info(user_id, opts)
 
 ```ruby
 begin
@@ -876,7 +876,7 @@ begin
   data, status_code, headers = api_instance.list_user_packs_with_http_info(user_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <ListUserPacks200Response>
+  p data # => <InlineObject28>
 rescue Kleister::ApiError => e
   puts "Error when calling UserApi->list_user_packs_with_http_info: #{e}"
 end
@@ -895,7 +895,7 @@ end
 
 ### Return type
 
-[**ListUserPacks200Response**](ListUserPacks200Response.md)
+[**InlineObject28**](InlineObject28.md)
 
 ### Authorization
 
@@ -909,7 +909,7 @@ end
 
 ## list_users
 
-> <ListUsers200Response> list_users(opts)
+> <InlineObject25> list_users(opts)
 
 Fetch all available users
 
@@ -955,7 +955,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<ListUsers200Response>, Integer, Hash)> list_users_with_http_info(opts)
+> <Array(<InlineObject25>, Integer, Hash)> list_users_with_http_info(opts)
 
 ```ruby
 begin
@@ -963,7 +963,7 @@ begin
   data, status_code, headers = api_instance.list_users_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <ListUsers200Response>
+  p data # => <InlineObject25>
 rescue Kleister::ApiError => e
   puts "Error when calling UserApi->list_users_with_http_info: #{e}"
 end
@@ -981,7 +981,7 @@ end
 
 ### Return type
 
-[**ListUsers200Response**](ListUsers200Response.md)
+[**InlineObject25**](InlineObject25.md)
 
 ### Authorization
 

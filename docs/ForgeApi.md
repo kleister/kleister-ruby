@@ -169,7 +169,7 @@ end
 
 ## list_forge_builds
 
-> <ListForgeBuilds200Response> list_forge_builds(forge_id, opts)
+> <InlineObject4> list_forge_builds(forge_id, opts)
 
 Fetch the builds attached to a Forge version
 
@@ -216,7 +216,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<ListForgeBuilds200Response>, Integer, Hash)> list_forge_builds_with_http_info(forge_id, opts)
+> <Array(<InlineObject4>, Integer, Hash)> list_forge_builds_with_http_info(forge_id, opts)
 
 ```ruby
 begin
@@ -224,7 +224,7 @@ begin
   data, status_code, headers = api_instance.list_forge_builds_with_http_info(forge_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <ListForgeBuilds200Response>
+  p data # => <InlineObject4>
 rescue Kleister::ApiError => e
   puts "Error when calling ForgeApi->list_forge_builds_with_http_info: #{e}"
 end
@@ -243,7 +243,7 @@ end
 
 ### Return type
 
-[**ListForgeBuilds200Response**](ListForgeBuilds200Response.md)
+[**InlineObject4**](InlineObject4.md)
 
 ### Authorization
 
@@ -257,7 +257,7 @@ end
 
 ## list_forges
 
-> <ListForges200Response> list_forges(opts)
+> <InlineObject3> list_forges(opts)
 
 Fetch the available Forge versions
 
@@ -299,7 +299,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<ListForges200Response>, Integer, Hash)> list_forges_with_http_info(opts)
+> <Array(<InlineObject3>, Integer, Hash)> list_forges_with_http_info(opts)
 
 ```ruby
 begin
@@ -307,7 +307,7 @@ begin
   data, status_code, headers = api_instance.list_forges_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <ListForges200Response>
+  p data # => <InlineObject3>
 rescue Kleister::ApiError => e
   puts "Error when calling ForgeApi->list_forges_with_http_info: #{e}"
 end
@@ -321,7 +321,7 @@ end
 
 ### Return type
 
-[**ListForges200Response**](ListForges200Response.md)
+[**InlineObject3**](InlineObject3.md)
 
 ### Authorization
 

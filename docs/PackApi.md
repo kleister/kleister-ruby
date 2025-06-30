@@ -809,7 +809,7 @@ end
 
 ## list_build_versions
 
-> <ListBuildVersions200Response> list_build_versions(pack_id, build_id, opts)
+> <InlineObject20> list_build_versions(pack_id, build_id, opts)
 
 Fetch all versions attached to build
 
@@ -857,7 +857,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<ListBuildVersions200Response>, Integer, Hash)> list_build_versions_with_http_info(pack_id, build_id, opts)
+> <Array(<InlineObject20>, Integer, Hash)> list_build_versions_with_http_info(pack_id, build_id, opts)
 
 ```ruby
 begin
@@ -865,7 +865,7 @@ begin
   data, status_code, headers = api_instance.list_build_versions_with_http_info(pack_id, build_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <ListBuildVersions200Response>
+  p data # => <InlineObject20>
 rescue Kleister::ApiError => e
   puts "Error when calling PackApi->list_build_versions_with_http_info: #{e}"
 end
@@ -885,7 +885,7 @@ end
 
 ### Return type
 
-[**ListBuildVersions200Response**](ListBuildVersions200Response.md)
+[**InlineObject20**](InlineObject20.md)
 
 ### Authorization
 
@@ -899,7 +899,7 @@ end
 
 ## list_builds
 
-> <ListBuilds200Response> list_builds(pack_id, opts)
+> <InlineObject19> list_builds(pack_id, opts)
 
 Fetch all available builds for a pack
 
@@ -946,7 +946,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<ListBuilds200Response>, Integer, Hash)> list_builds_with_http_info(pack_id, opts)
+> <Array(<InlineObject19>, Integer, Hash)> list_builds_with_http_info(pack_id, opts)
 
 ```ruby
 begin
@@ -954,7 +954,7 @@ begin
   data, status_code, headers = api_instance.list_builds_with_http_info(pack_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <ListBuilds200Response>
+  p data # => <InlineObject19>
 rescue Kleister::ApiError => e
   puts "Error when calling PackApi->list_builds_with_http_info: #{e}"
 end
@@ -973,7 +973,7 @@ end
 
 ### Return type
 
-[**ListBuilds200Response**](ListBuilds200Response.md)
+[**InlineObject19**](InlineObject19.md)
 
 ### Authorization
 
@@ -987,7 +987,7 @@ end
 
 ## list_pack_groups
 
-> <ListPackGroups200Response> list_pack_groups(pack_id, opts)
+> <InlineObject18> list_pack_groups(pack_id, opts)
 
 Fetch all groups attached to pack
 
@@ -1034,7 +1034,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<ListPackGroups200Response>, Integer, Hash)> list_pack_groups_with_http_info(pack_id, opts)
+> <Array(<InlineObject18>, Integer, Hash)> list_pack_groups_with_http_info(pack_id, opts)
 
 ```ruby
 begin
@@ -1042,7 +1042,7 @@ begin
   data, status_code, headers = api_instance.list_pack_groups_with_http_info(pack_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <ListPackGroups200Response>
+  p data # => <InlineObject18>
 rescue Kleister::ApiError => e
   puts "Error when calling PackApi->list_pack_groups_with_http_info: #{e}"
 end
@@ -1061,7 +1061,7 @@ end
 
 ### Return type
 
-[**ListPackGroups200Response**](ListPackGroups200Response.md)
+[**InlineObject18**](InlineObject18.md)
 
 ### Authorization
 
@@ -1075,7 +1075,7 @@ end
 
 ## list_pack_users
 
-> <ListPackUsers200Response> list_pack_users(pack_id, opts)
+> <InlineObject17> list_pack_users(pack_id, opts)
 
 Fetch all users attached to pack
 
@@ -1122,7 +1122,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<ListPackUsers200Response>, Integer, Hash)> list_pack_users_with_http_info(pack_id, opts)
+> <Array(<InlineObject17>, Integer, Hash)> list_pack_users_with_http_info(pack_id, opts)
 
 ```ruby
 begin
@@ -1130,7 +1130,7 @@ begin
   data, status_code, headers = api_instance.list_pack_users_with_http_info(pack_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <ListPackUsers200Response>
+  p data # => <InlineObject17>
 rescue Kleister::ApiError => e
   puts "Error when calling PackApi->list_pack_users_with_http_info: #{e}"
 end
@@ -1149,7 +1149,7 @@ end
 
 ### Return type
 
-[**ListPackUsers200Response**](ListPackUsers200Response.md)
+[**InlineObject17**](InlineObject17.md)
 
 ### Authorization
 
@@ -1163,7 +1163,7 @@ end
 
 ## list_packs
 
-> <ListPacks200Response> list_packs(opts)
+> <InlineObject16> list_packs(opts)
 
 Fetch all available packs
 
@@ -1209,7 +1209,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<ListPacks200Response>, Integer, Hash)> list_packs_with_http_info(opts)
+> <Array(<InlineObject16>, Integer, Hash)> list_packs_with_http_info(opts)
 
 ```ruby
 begin
@@ -1217,7 +1217,7 @@ begin
   data, status_code, headers = api_instance.list_packs_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <ListPacks200Response>
+  p data # => <InlineObject16>
 rescue Kleister::ApiError => e
   puts "Error when calling PackApi->list_packs_with_http_info: #{e}"
 end
@@ -1235,7 +1235,7 @@ end
 
 ### Return type
 
-[**ListPacks200Response**](ListPacks200Response.md)
+[**InlineObject16**](InlineObject16.md)
 
 ### Authorization
 
