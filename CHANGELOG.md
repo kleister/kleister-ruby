@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.20.0](https://github.com/kleister/kleister-ruby/compare/v1.19.0...v1.20.0) (2025-07-07)
+
+
+### Features
+
+* upgrade all definitions ([aec8430](https://github.com/kleister/kleister-ruby/commit/aec8430da085388360ad336a03b1d8987c8b50c4))
+
+
+### Bugfixes
+
+* get all tests working again ([d692c3a](https://github.com/kleister/kleister-ruby/commit/d692c3a4102c3d41f097f9235fbf5715c9e8abfa))
+
 ## [1.19.0](https://github.com/kleister/kleister-ruby/compare/v1.18.1...v1.19.0) (2025-06-23)
 
 
