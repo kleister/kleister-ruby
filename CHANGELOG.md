@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.23.2](https://github.com/kleister/kleister-ruby/compare/v1.23.1...v1.23.2) (2025-09-08)
+
+
+### Bugfixes
+
+* **deps:** update dependency rexml to v3.4.3 ([#132](https://github.com/kleister/kleister-ruby/issues/132)) ([2202fb1](https://github.com/kleister/kleister-ruby/commit/2202fb1476568c2fbd5506ada6c19083d2bf7fb0))
+* **deps:** update dependency rubocop to v1.80.2 ([#130](https://github.com/kleister/kleister-ruby/issues/130)) ([3a93a63](https://github.com/kleister/kleister-ruby/commit/3a93a635eada4461ce252535ccdca3bca3e10653))
+
 ## [1.23.1](https://github.com/kleister/kleister-ruby/compare/v1.23.0...v1.23.1) (2025-09-01)
 
 
