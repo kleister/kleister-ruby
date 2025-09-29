@@ -9,5 +9,5 @@
 #
 
 module Kleister
-  VERSION = '1.23.3'.freeze
+  VERSION = '1.24.0'.freeze
 end
