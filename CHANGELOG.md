@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.24.1](https://github.com/kleister/kleister-ruby/compare/v1.24.0...v1.24.1) (2025-10-13)
+
+
+### Bugfixes
+
+* **deps:** update dependency ruby to v3.4.7 ([86017a3](https://github.com/kleister/kleister-ruby/commit/86017a30e49060e51bd41e87f65ca687b6f5149c))
+
 ## [1.24.0](https://github.com/kleister/kleister-ruby/compare/v1.23.3...v1.24.0) (2025-09-29)
 
 
