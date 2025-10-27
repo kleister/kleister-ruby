@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.24.2](https://github.com/kleister/kleister-ruby/compare/v1.24.1...v1.24.2) (2025-10-27)
+
+
+### Bugfixes
+
+* **deps:** update dependency rspec to v3.13.2 ([#139](https://github.com/kleister/kleister-ruby/issues/139)) ([942bd33](https://github.com/kleister/kleister-ruby/commit/942bd33a74a0f862924295a7caba1feef218e8f2))
+* **deps:** update dependency rubocop to v1.81.6 ([#140](https://github.com/kleister/kleister-ruby/issues/140)) ([60fe9a2](https://github.com/kleister/kleister-ruby/commit/60fe9a2efd4e6dd56f24b65da60c21dbc7345f7d))
+
 ## [1.24.1](https://github.com/kleister/kleister-ruby/compare/v1.24.0...v1.24.1) (2025-10-13)
 
 
