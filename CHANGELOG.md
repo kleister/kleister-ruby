@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.24.3](https://github.com/kleister/kleister-ruby/compare/v1.24.2...v1.24.3) (2025-11-03)
+
+
+### Bugfixes
+
+* **deps:** update dependency rake to v13.3.1 ([#142](https://github.com/kleister/kleister-ruby/issues/142)) ([6e753cf](https://github.com/kleister/kleister-ruby/commit/6e753cf702162854395eb2f312444f4a2c696b1b))
+* **deps:** update dependency rubocop to v1.81.7 ([#143](https://github.com/kleister/kleister-ruby/issues/143)) ([0e6938b](https://github.com/kleister/kleister-ruby/commit/0e6938b0882a8c17c693b25b55c71a2a0c32e609))
+
 ## [1.24.2](https://github.com/kleister/kleister-ruby/compare/v1.24.1...v1.24.2) (2025-10-27)
 
 
