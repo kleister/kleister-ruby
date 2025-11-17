@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.0.0](https://github.com/kleister/kleister-ruby/compare/v1.24.3...v2.0.0) (2025-11-17)
+
+
+### ⚠ BREAKING CHANGES
+
+* increase minimum required ruby version 3.0
+* increase minimum required ruby version
+
+### Features
+
+* automated openapi client update ([1620f06](https://github.com/kleister/kleister-ruby/commit/1620f064b9847ca2ef8c7e1918cee8e2a2f73cfd))
+* increase minimum required ruby version ([f05a259](https://github.com/kleister/kleister-ruby/commit/f05a25901ae36be4214d7c2bb2a0d82819600749))
+* increase minimum required ruby version 3.0 ([bc3939d](https://github.com/kleister/kleister-ruby/commit/bc3939d2d535f129d7e6ecd0b16c78e9a295efa4))
+
 ## [1.24.3](https://github.com/kleister/kleister-ruby/compare/v1.24.2...v1.24.3) (2025-11-03)
 
 
