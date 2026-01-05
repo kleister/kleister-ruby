@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.0.0](https://github.com/kleister/kleister-ruby/compare/v2.1.1...v3.0.0) (2026-01-05)
+
+
+### Features
+
+* **major:** update dependency ruby to v4 ([#160](https://github.com/kleister/kleister-ruby/issues/160)) ([374150c](https://github.com/kleister/kleister-ruby/commit/374150ca890f11e655cdb108174de5bee94d8bc0))
+
 ## [2.1.1](https://github.com/kleister/kleister-ruby/compare/v2.1.0...v2.1.1) (2025-12-29)
 
 
