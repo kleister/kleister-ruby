@@ -1,5 +1,37 @@
 # Changelog
 
+## [3.1.0](https://github.com/kleister/kleister-ruby/compare/v3.0.0...v3.1.0) (2026-08-07)
+
+### Features
+
+* restructure repo and build processes ([3c48f89](https://github.com/kleister/kleister-ruby/commit/3c48f89696650a2bf85ad05e5745cd7fbd110e16))
+
+### Dependencies
+
+* **deps:** lock file maintenance ([5f7404c](https://github.com/kleister/kleister-ruby/commit/5f7404c926b5a8a83c173ee889f404ffc02ebcdb))
+* **minor:** update dependency pry-byebug to v3.12.0 ([#165](https://github.com/kleister/kleister-ruby/issues/165)) ([61cb594](https://github.com/kleister/kleister-ruby/commit/61cb5949d1003337cbb6ddaee9c69e2c51e9022a))
+* **minor:** update dependency rake to '~> 13.4.0' ([#187](https://github.com/kleister/kleister-ruby/issues/187)) ([698fa18](https://github.com/kleister/kleister-ruby/commit/698fa182166143762c5793afe3e361a987218370))
+* **minor:** update dependency rubocop to '~> 1.84.0' ([#166](https://github.com/kleister/kleister-ruby/issues/166)) ([0ebae0d](https://github.com/kleister/kleister-ruby/commit/0ebae0dac63188a8f6f6ce84e6d9f84406dc92e5))
+* **minor:** update dependency rubocop to '~> 1.85.0' ([#171](https://github.com/kleister/kleister-ruby/issues/171)) ([5337943](https://github.com/kleister/kleister-ruby/commit/53379434796deca325c2273f9fbf44714871458f))
+* **minor:** update dependency rubocop to '~> 1.86.0' ([#181](https://github.com/kleister/kleister-ruby/issues/181)) ([79e013d](https://github.com/kleister/kleister-ruby/commit/79e013d29b3b126e3b6b9d2c02e63be246a153cc))
+* **minor:** update dependency rubocop to '~> 1.87.0' ([#196](https://github.com/kleister/kleister-ruby/issues/196)) ([eb10e0d](https://github.com/kleister/kleister-ruby/commit/eb10e0d8ab4f854021f963371994bef03123dbca))
+* **minor:** update dependency rubocop to '~> 1.88.0' ([#199](https://github.com/kleister/kleister-ruby/issues/199)) ([e2edba4](https://github.com/kleister/kleister-ruby/commit/e2edba421364f3e0e13b327b730100051a926cf9))
+* **minor:** update dependency rubocop to '~> 1.89.0' ([#210](https://github.com/kleister/kleister-ruby/issues/210)) ([8083305](https://github.com/kleister/kleister-ruby/commit/80833054f6985c635f2e7da408f3bf6c86adaa28))
+* **patch:** update dependency rake to v13.4.2 ([#188](https://github.com/kleister/kleister-ruby/issues/188)) ([d1283c3](https://github.com/kleister/kleister-ruby/commit/d1283c3eec90903cdfc593a1ea5d12cf4420dd6e))
+* **patch:** update dependency rubocop to v1.84.1 ([#167](https://github.com/kleister/kleister-ruby/issues/167)) ([bc453e2](https://github.com/kleister/kleister-ruby/commit/bc453e2e70ad4818c0d91344caeec2022df0566e))
+* **patch:** update dependency rubocop to v1.84.2 ([#168](https://github.com/kleister/kleister-ruby/issues/168)) ([659db72](https://github.com/kleister/kleister-ruby/commit/659db72997910ec3a2074ccc2dc594feeceede95))
+* **patch:** update dependency rubocop to v1.85.1 ([#173](https://github.com/kleister/kleister-ruby/issues/173)) ([1f2c6aa](https://github.com/kleister/kleister-ruby/commit/1f2c6aa350521cb917b66daba2012dcd2b5257c3))
+* **patch:** update dependency rubocop to v1.86.1 ([#185](https://github.com/kleister/kleister-ruby/issues/185)) ([9e7f647](https://github.com/kleister/kleister-ruby/commit/9e7f647277e2f247ddf157fb592160e7dc68e492))
+* **patch:** update dependency rubocop to v1.86.2 ([#194](https://github.com/kleister/kleister-ruby/issues/194)) ([2049d21](https://github.com/kleister/kleister-ruby/commit/2049d215ac719c45424158dd314d717a611472e8))
+* **patch:** update dependency rubocop to v1.88.1 ([#202](https://github.com/kleister/kleister-ruby/issues/202)) ([040294c](https://github.com/kleister/kleister-ruby/commit/040294c1766dab774086eb1d8db76f5ab729fe3b))
+* **patch:** update dependency rubocop to v1.88.2 ([#204](https://github.com/kleister/kleister-ruby/issues/204)) ([562be39](https://github.com/kleister/kleister-ruby/commit/562be3905459808b9b9f8b5d9997053d0568cd03))
+* **patch:** update dependency ruby to v4.0.1 ([#163](https://github.com/kleister/kleister-ruby/issues/163)) ([4d634f0](https://github.com/kleister/kleister-ruby/commit/4d634f0a4afc24f924e2277f0968e43be2ab5861))
+* **patch:** update dependency ruby to v4.0.2 ([#177](https://github.com/kleister/kleister-ruby/issues/177)) ([4ea85a3](https://github.com/kleister/kleister-ruby/commit/4ea85a37497d7eb867a181baf98b8f6ce979e026))
+* **patch:** update dependency ruby to v4.0.3 ([#190](https://github.com/kleister/kleister-ruby/issues/190)) ([1a34b4b](https://github.com/kleister/kleister-ruby/commit/1a34b4b386768d22d035acc0e724140efe113fc4))
+* **patch:** update dependency ruby to v4.0.4 ([#193](https://github.com/kleister/kleister-ruby/issues/193)) ([112cff8](https://github.com/kleister/kleister-ruby/commit/112cff87ba6c0aec2b5dfe3c369d2052f08949d0))
+* **patch:** update dependency ruby to v4.0.5 ([#195](https://github.com/kleister/kleister-ruby/issues/195)) ([d6889d9](https://github.com/kleister/kleister-ruby/commit/d6889d91b26b3bd84696c4ea82b9b2d6192edab8))
+* **patch:** update dependency ruby to v4.0.6 ([#206](https://github.com/kleister/kleister-ruby/issues/206)) ([1935988](https://github.com/kleister/kleister-ruby/commit/1935988d78400030f8d74c096077551a5604382e))
+
 ## [3.0.0](https://github.com/kleister/kleister-ruby/compare/v2.1.1...v3.0.0) (2026-01-05)
 
 
