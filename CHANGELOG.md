@@ -1,5 +1,11 @@
 # Changelog
 
+## [3.1.1](https://github.com/kleister/kleister-ruby/compare/v3.1.0...v3.1.1) (2026-08-17)
+
+### Dependencies
+
+* **patch:** update dependency pre-commit to v4.6.2 ([#213](https://github.com/kleister/kleister-ruby/issues/213)) ([164342d](https://github.com/kleister/kleister-ruby/commit/164342db5fee799c9020b45107fa8263d418de29))
+
 ## [3.1.0](https://github.com/kleister/kleister-ruby/compare/v3.0.0...v3.1.0) (2026-08-07)
 
 ### Features
