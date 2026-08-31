@@ -1,5 +1,11 @@
 # Changelog
 
+## [3.2.0](https://github.com/kleister/kleister-ruby/compare/v3.1.1...v3.2.0) (2026-08-31)
+
+### Dependencies
+
+* **minor:** update dependency rubocop to '~> 1.90.0' ([#215](https://github.com/kleister/kleister-ruby/issues/215)) ([6927a2e](https://github.com/kleister/kleister-ruby/commit/6927a2e38994d589a874c409c920be8576d684f0))
+
 ## [3.1.1](https://github.com/kleister/kleister-ruby/compare/v3.1.0...v3.1.1) (2026-08-17)
 
 ### Dependencies
