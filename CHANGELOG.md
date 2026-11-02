@@ -1,5 +1,13 @@
 # Changelog
 
+## [3.4.2](https://github.com/kleister/kleister-ruby/compare/v3.4.1...v3.4.2) (2026-11-02)
+
+### Dependencies
+
+* **mise:** update dependency prek to v0.5.9 ([#236](https://github.com/kleister/kleister-ruby/issues/236)) ([0450e2b](https://github.com/kleister/kleister-ruby/commit/0450e2b10687e1bfd5d3df9905ec03b01ec649e2))
+* **mise:** update node.js to v26 ([#234](https://github.com/kleister/kleister-ruby/issues/234)) ([051d766](https://github.com/kleister/kleister-ruby/commit/051d76670b66e1a1e69d55b49ed67de1138c68db))
+* **patch:** update dependency rubocop to v1.92.2 ([#235](https://github.com/kleister/kleister-ruby/issues/235)) ([c250bd7](https://github.com/kleister/kleister-ruby/commit/c250bd76c65760252f01da491209eb5b5e293f49))
+
 ## [3.4.1](https://github.com/kleister/kleister-ruby/compare/v3.4.0...v3.4.1) (2026-10-26)
 
 ### Dependencies
