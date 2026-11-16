@@ -1,5 +1,19 @@
 # Changelog
 
+## [4.0.0](https://github.com/kleister/kleister-ruby/compare/v3.4.2...v4.0.0) (2026-11-16)
+
+* **mise:** lock file maintenance ([#239](https://github.com/kleister/kleister-ruby/issues/239)) ([e8242b2](https://github.com/kleister/kleister-ruby/commit/e8242b2c1a081249b3bbf214c10278e2d0c572d7))
+* **mise:** lock file maintenance ([#244](https://github.com/kleister/kleister-ruby/issues/244)) ([801f361](https://github.com/kleister/kleister-ruby/commit/801f3612971ebe94712e36b259ae7ebe551db393))
+
+### Dependencies
+
+* **major:** update dependency marcel to v2 ([#242](https://github.com/kleister/kleister-ruby/issues/242)) ([9c0fbbb](https://github.com/kleister/kleister-ruby/commit/9c0fbbbcdcfc928eac47494b90d5b6c0ee910e3f))
+* **minor:** update dependency faraday to '~> 2.14.0' [security] ([#240](https://github.com/kleister/kleister-ruby/issues/240)) ([71339d3](https://github.com/kleister/kleister-ruby/commit/71339d3180884ab3a68dffcc97b180fe0fcf8bbf))
+* **minor:** update dependency faraday to '~> 2.15.0' ([#243](https://github.com/kleister/kleister-ruby/issues/243)) ([26cad30](https://github.com/kleister/kleister-ruby/commit/26cad301639010064659932b8d7a99e74fc1e2d6))
+* **minor:** update dependency marcel to '~> 1.2.0' ([#241](https://github.com/kleister/kleister-ruby/issues/241)) ([3e5568e](https://github.com/kleister/kleister-ruby/commit/3e5568ebb2600932d5428e796c14752c52ac1a0f))
+* **mise:** update dependency prek to v0.5.10 ([#238](https://github.com/kleister/kleister-ruby/issues/238)) ([014456d](https://github.com/kleister/kleister-ruby/commit/014456dc4518589ef47ad08a8c70912eee4cea9e))
+* **mise:** update dependency prek to v0.5.11 ([#245](https://github.com/kleister/kleister-ruby/issues/245)) ([59d874f](https://github.com/kleister/kleister-ruby/commit/59d874fc78a164d7e81db18e9d153e4ff3d0b798))
+
 ## [3.4.2](https://github.com/kleister/kleister-ruby/compare/v3.4.1...v3.4.2) (2026-11-02)
 
 ### Dependencies

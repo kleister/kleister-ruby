@@ -8,5 +8,5 @@
 # Generator version: 7.17.0
 
 module Kleister
-  VERSION = '3.4.2'.freeze
+  VERSION = '4.0.0'.freeze
 end
