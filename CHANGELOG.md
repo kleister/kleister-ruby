@@ -1,5 +1,13 @@
 # Changelog
 
+## [4.0.1](https://github.com/kleister/kleister-ruby/compare/v4.0.0...v4.0.1) (2026-11-23)
+
+* **mise:** lock file maintenance ([#247](https://github.com/kleister/kleister-ruby/issues/247)) ([0f8ed28](https://github.com/kleister/kleister-ruby/commit/0f8ed28cbe952c341c2507b44ac76ef193d09cfc))
+
+### Dependencies
+
+* **patch:** update dependency rubocop to v1.92.3 ([#246](https://github.com/kleister/kleister-ruby/issues/246)) ([647c3dc](https://github.com/kleister/kleister-ruby/commit/647c3dcf018cddcf52d7dddbe0e35ba66d0ba26f))
+
 ## [4.0.0](https://github.com/kleister/kleister-ruby/compare/v3.4.2...v4.0.0) (2026-11-16)
 
 * **mise:** lock file maintenance ([#239](https://github.com/kleister/kleister-ruby/issues/239)) ([e8242b2](https://github.com/kleister/kleister-ruby/commit/e8242b2c1a081249b3bbf214c10278e2d0c572d7))
